@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.util.Set\ todasAsFaixas()
+comment0.text=\ public\ List<Faixa>\ getFaixas(String\ autor)\ throws\ AutorInexistenteException\ {\n\ \ \ \ \ \ \ \ List<Faixa>\ faixas\ \=\ this.musicas.get(autor);\n\ \ \ \ \ \ \ \ //\ o\ stor\ provavelmente\ prefere\ que\ se\ use\ o\ containsKey\ aqui\ antes\n\ \ \ \ \ \ \ \ if\ (faixas\ \=\=\ null)\ throw\ new\ AutorInexistenteException("O\ autor\ n\u00E3o\ existe\!");\n\ \ \ \ \ \ \ \ ArrayList<Faixa>\ faixasAutor\ \=\ new\ ArrayList<Faixa>();\n\ \ \ \ \ \ \ \ for(Faixa\ f\ \:\ faixas)\ faixasAutor.add(f.clone());\n\ \ \ \ \ \ \ \ return\ faixasAutor;\n\ \ \ \ }\n\ \ \ \ \n\ \ \ \ /*\ 2\ b)\ \n\ \ \ \ \n\ \ \ \ public\ double\ tempoTotal(String\ autor)\ throws\ AutorInexistenteException\ {\n\ \ \ \ \ \ \ \ List<Faixa>\ faixas\ \=\ this.musicas.get(autor);\n\ \ \ \ \ \ \ \ if\ (faixas\ \=\=\ null)\ throw\ new\ AutorInexistenteException("O\ autor\ n\u00E3o\ existe\!");\n\ \ \ \ \ \ \ \ double\ tempoTotal\ \=\ 0;\n\ \ \ \ \ \ \ \ for\ (Faixa\ f\:\ faixas)\ tempoTotal\ +\=\ f.getDuracao();\n\ \ \ \ \ \ \ \ return\ tempoTotal;\n\ \ \ \ }\n
+comment1.params=
+comment1.target=java.util.Map\ faixasPorClass()
+comment1.text=3\ b)\ N\u00C3O\ \u00C9\ NECESS\u00C1RIO\ FAZER\ CLONE\ POIS\ J\u00C1\ \u00C9\ FEITO\ EM\ TODASASFAIXAS
+numComments=2

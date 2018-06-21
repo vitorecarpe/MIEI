@@ -1,0 +1,71 @@
+%if False
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% colorcode.fmt
+%
+% colored code for poly style in lhs2TeX
+%
+% Permission is granted to include this file (or parts of this file) 
+% literally into other documents, regardless of the conditions or 
+% license applying to these documents.
+%
+% Andres Loeh, January 2008, ver 1.7
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%endif
+%if not lhs2tex_colorcode_fmt_read
+%let lhs2tex_colorcode_fmt_read = True
+%include polycode.fmt
+%
+%if style /= newcode
+\ReadOnlyOnce{colorcode.fmt}%
+
+\RequirePackage{colortbl}
+\RequirePackage{calc}
+
+\makeatletter
+\newenvironment{colorhscode}%
+  {\hsnewpar\abovedisplayskip
+   \hscodestyle
+   \tabular{@@{}>{\columncolor{codecolor}}p{\linewidth}@@{}}%
+   \let\\=\@@normalcr
+   \(\pboxed}%
+  {\endpboxed\)%
+   \endtabular
+   \hsnewpar\belowdisplayskip
+   \ignorespacesafterend}
+
+\newenvironment{tightcolorhscode}%
+  {\hsnewpar\abovedisplayskip
+   \hscodestyle
+   \tabular{@@{}>{\columncolor{codecolor}\(}l<{\)}@@{}}%
+   \pmboxed}%
+  {\endpmboxed%
+   \endtabular
+   \hsnewpar\belowdisplayskip
+   \ignorespacesafterend}
+
+\newenvironment{barhscode}%
+  {\hsnewpar\abovedisplayskip
+   \hscodestyle
+   \arrayrulecolor{codecolor}%
+   \arrayrulewidth=\coderulewidth
+   \tabular{||p{\linewidth-\arrayrulewidth-\tabcolsep}@@{}}%
+   \let\\=\@@normalcr
+   \(\pboxed}%
+  {\endpboxed\)%
+   \endtabular
+   \hsnewpar\belowdisplayskip
+   \ignorespacesafterend}
+\makeatother
+
+\def\colorcode{\columncolor{codecolor}}
+\definecolor{codecolor}{rgb}{1,1,.667}
+\newlength{\coderulewidth}
+\setlength{\coderulewidth}{3pt}
+
+\newcommand{\colorhs}{\sethscode{colorhscode}}
+\newcommand{\tightcolorhs}{\sethscode{tightcolorhscode}}
+\newcommand{\barhs}{\sethscode{barhscode}}
+
+\EndFmtInput
+%endif
+%endif

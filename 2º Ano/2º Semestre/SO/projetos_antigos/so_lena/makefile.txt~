@@ -1,0 +1,22 @@
+all: const filter spawn window matrix rdto control4
+
+const: const.c
+    gcc -o const const.c
+
+filter: filter.c
+    gcc -o filter filter.c
+
+spawn: spawn.c
+    gcc -o spawn spawn.c
+
+window: window.c
+    gcc -o window window.c
+
+matrix: matrix.c
+    gcc -o matrix matrix.c
+
+rdto: rdto.c
+    gcc -o rdto rdto.c
+
+control4: control4.c
+    gcc -o control4 control4.c

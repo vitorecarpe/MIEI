@@ -1,0 +1,1 @@
+int parteString(char* args[], char *comando);

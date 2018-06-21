@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=HotelDiscount()
+comment1.params=hotel
+comment1.target=HotelDiscount(HotelDiscount)
+comment2.params=codigo\ nome\ localidade\ precoBaseQuarto\ numQuartos\ estrelas\ ocupacao
+comment2.target=HotelDiscount(java.lang.String,\ java.lang.String,\ java.lang.String,\ double,\ int,\ int,\ double)
+comment3.params=ocupacao
+comment3.target=void\ setOcupacao(double)
+comment4.params=
+comment4.target=double\ getOcupacao()
+comment5.params=
+comment5.target=double\ precoNoite()
+comment5.text=\n\ Calcula\ o\ pre\u00E7o\ de\ uma\ noite\ no\ hotel\n\ @return\ valor\ do\ pre\u00E7o\ base\ afectado\ pela\ ocupa\u00E7\u00E3o.\n
+comment6.params=
+comment6.target=HotelDiscount\ clone()
+comment7.params=obj
+comment7.target=boolean\ equals(java.lang.Object)
+comment7.text=\n\ Compara\ a\ igualdade\ com\ outro\ objecto\n\ @param\ obj\n\ @return\ \n
+comment8.params=
+comment8.target=java.lang.String\ toString()
+comment8.text=\n\ Devolve\ uma\ representa\u00E7\u00E3o\ textual\ do\ hotel\n\ @return\ \n
+numComments=9

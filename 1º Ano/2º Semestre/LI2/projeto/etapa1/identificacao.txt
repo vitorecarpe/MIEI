@@ -1,0 +1,16 @@
++------------------- GRUPO 75 PL7 --------------------+ 
+|		  ------------------		      |
+|	    	         MIEI		              |
+|					              |
+|  -> A78416 --- Francisco José Moreira Oliveira      |
+|  -> A78764 --- Ricardo André Araújo Neves	      |
+|  -> A79175 --- Vitor Emanuel Carvalho Peixoto       |
+|						      |
+|  NOTA: As imagens das cartas, botões, plano de      |
+|  fundo e outras imagens, encontram-se na pasta      |
+|  cards, que é a mesma que normalmente se encontra   |
+|  na diretoria /var/www/html/cards		      |
+|						      |
++-----------------------------------------------------+
+
+		    

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=eb
+comment0.target=EntradaBase(EntradaBase)
+comment1.params=
+comment1.target=java.lang.String\ getTermo()
+comment2.params=
+comment2.target=java.lang.String\ getDefinicao()
+comment3.params=o
+comment3.target=boolean\ equals(java.lang.Object)
+comment4.params=
+comment4.target=EntradaBase\ clone()
+comment5.params=e
+comment5.target=int\ compareTo(EntradaBase)
+numComments=6

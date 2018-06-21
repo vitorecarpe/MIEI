@@ -1,0 +1,102 @@
+module Main where
+
+import qualified Data.Text as T
+
+inStr :: String -> [String]
+inStr [] = []
+inStr ['\n'] = [[],[]]
+inStr (x:xs) = case x of
+    '\n' -> []:inStr xs
+    otherwise -> case inStr xs of
+        y:ys -> (x:y):ys
+        [] -> [[x]]
+
+outStr :: [String] -> String
+outStr [] = "\n"
+outStr t = unlines (map (T.unpack . T.stripEnd . T.pack) t)
+
+main = do inp <- getContents
+          putStr (outStr (tarefa2 (inStr inp)))
+
+tarefa2 :: [String] -> [String]
+tarefa2 tabuleiro = funcaoPlantaMelhor tabuleiro
+
+
+
+funcaoPlantaMelhor :: [String] -> [String]
+funcaoPlantaMelhor tabuleiro = funcaoPlantaMelhorAux (reverse (sepTABCoord tabuleiro)) (1) (sepTabCOORDpares tabuleiro) where
+    funcaoPlantaMelhorAux tabuleiro 1 ((x,y):[]) = ["O Sokoban nao pode jogar sem caixas!"]
+    funcaoPlantaMelhorAux tabuleiro 1 ((x,y):z) = funcaoPlantaMelhorAux (updateTABsokoban tabuleiro (x,y)) 0 (z)
+    funcaoPlantaMelhorAux tabuleiro 0 ((x,y):[]) = reverse (updateTABcaixas tabuleiro (x,y))
+    funcaoPlantaMelhorAux tabuleiro 0 ((x,y):z) = funcaoPlantaMelhorAux (updateTABcaixas tabuleiro (x,y)) 0 (z)
+
+
+
+
+updateTABcaixas :: [String] -> (Int,Int) -> [String]
+updateTABcaixas ((x:y):z) (a,0) = (updateTABcaixasAux (x:y) a) : z
+updateTABcaixas ((x:y):z) (a,b) = (x:y) : updateTABcaixas (z) (a,b-1)
+
+updateTABcaixasAux :: String -> Int -> String
+updateTABcaixasAux (x:y) 0 = if (x==' ') then "H" ++ y
+                                else "I" ++ y
+updateTABcaixasAux (x:y) posicao = [x] ++ updateTABcaixasAux y (posicao-1)
+
+
+
+updateTABsokoban :: [String] -> (Int,Int) -> [String]
+updateTABsokoban ((x:y):z) (a,0) = (updateTABsokobanAux (x:y) a) : z
+updateTABsokoban ((x:y):z) (a,b) = (x:y) : updateTABsokoban (z) (a,b-1)
+
+updateTABsokobanAux :: String -> Int -> String
+updateTABsokobanAux (x:y) 0 = "o" ++ y
+updateTABsokobanAux (x:y) posicao = [x] ++ updateTABsokobanAux y (posicao-1)
+
+
+
+
+-- == SEPARAR TABULEIRO DE COORDENADAS
+
+-- |Separação do tabuleiro das coordenadas. Dá apenas o tabuleiro.
+sepTABCoord :: [String] -> [String]
+sepTABCoord tabuleiro = sepTABCoordAux (tabuleiro) 1 where
+    sepTABCoordAux tabuleiro 1 = (head tabuleiro):sepTABCoordAux (tail tabuleiro) 0
+    sepTABCoordAux [] 0 = []
+    sepTABCoordAux tabuleiro 0 = if ((nub1 (head tabuleiro)) == "#") then (head tabuleiro):[]
+                                    else (head tabuleiro):(sepTABCoordAux (tail tabuleiro) 0)
+
+-- |Separação das coordenadas do tabuleiro. Dá apenas as coordenadas da localização do Sokoban e das caixas.
+sepTabCOORD :: [String] -> [String]
+sepTabCOORD tabuleiro = sepTabCOORDAux (tabuleiro) 1 where
+    sepTabCOORDAux tabuleiro 1 = sepTabCOORDAux (tail tabuleiro) 0
+    sepTabCOORDAux [] 0 = []
+    sepTabCOORDAux tabuleiro 0 = if ((nub1 (head tabuleiro)) == "#") then (tail tabuleiro)
+                                    else sepTabCOORDAux (tail tabuleiro) 0
+
+-- |Separa as coordenadas uma a uma.
+sepCOORD1 :: [String] -> [String]
+sepCOORD1 (x:[]) = words x
+sepCOORD1 (x:y)  = (words x) ++ (sepCOORD1 y)
+
+-- |Após separar as coordenadas uma a uma, juntamo-las aos pares.
+sepCOORD2 :: [String] -> [(Int,Int)]
+sepCOORD2 (x:y:[]) = [((read x :: Int),(read y :: Int))]
+sepCOORD2 (x:y:z)  = [((read x :: Int),(read y :: Int))] ++ sepCOORD2 z
+
+-- |Juntamos as três anteriores funções e executamos todas apenas nesta.
+--
+sepTabCOORDpares :: [String] -> [(Int,Int)]
+sepTabCOORDpares tabuleiro = sepCOORD2 (sepCOORD1 (sepTabCOORD tabuleiro))
+
+-- |Função predefinida que elimina as repetições dos elementos de uma lista.
+-- 
+-- EXEMPLO
+--
+-- >>> nub1 [1,3,1,5,3,4,2,3,1,3]
+-- [1,3,5,4,2]
+nub1 :: Eq a => [a] -> [a]
+nub1 []=[]
+nub1 a = nub1Aux [] a where
+  nub1Aux a [] = a
+  nub1Aux a (b:bs) = if ((elem b a)== False) then (nub1Aux (a ++ [b]) bs)
+                   else (nub1Aux a bs)

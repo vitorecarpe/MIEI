@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=y
+comment0.target=int\ sampleMethod(int)
+comment0.text=\n\ An\ example\ of\ a\ method\ header\ -\ replace\ this\ comment\ with\ your\ own\n\ \n\ @param\ \ y\ \ \ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ \ \ \ \ the\ result\ produced\ by\ sampleMethod\ \n
+numComments=1

@@ -1,0 +1,7 @@
+\select@language {portuguese}
+\contentsline {section}{\numberline {1}Pre\IeC {\^a}mbulo}{2}{section.1}
+\contentsline {section}{\numberline {2}Documenta\IeC {\c c}\IeC {\~a}o}{2}{section.2}
+\contentsline {section}{\numberline {3}Como realizar o trabalho}{3}{section.3}
+\contentsline {section}{\numberline {A}M\IeC {\'o}nade para probabilidades e estat\IeC {\'\i }stica}{10}{appendix.A}
+\contentsline {section}{\numberline {B}Defini\IeC {\c c}\IeC {\~o}es auxiliares}{11}{appendix.B}
+\contentsline {section}{\numberline {C}Solu\IeC {\c c}\IeC {\~o}es propostas}{11}{appendix.C}

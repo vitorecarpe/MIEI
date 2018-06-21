@@ -1,0 +1,10 @@
+\select@language {portuguese}
+\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{2}{chapter.1}
+\contentsline {chapter}{\numberline {2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{3}{chapter.2}
+\contentsline {chapter}{\numberline {3}Concep\IeC {\c c}\IeC {\~a}o da Solu\IeC {\c c}\IeC {\~a}o}{4}{chapter.3}
+\contentsline {section}{\numberline {3.1}Idealiza\IeC {\c c}\IeC {\~a}o}{4}{section.3.1}
+\contentsline {section}{\numberline {3.2}Implementa\IeC {\c c}\IeC {\~a}o da Estrutura}{4}{section.3.2}
+\contentsline {section}{\numberline {3.3}Opera\IeC {\c c}\IeC {\~o}es \IeC {\`a} Estrutura}{7}{section.3.3}
+\contentsline {section}{\numberline {3.4}Interroga\IeC {\c c}\IeC {\~o}es}{7}{section.3.4}
+\contentsline {section}{\numberline {3.5}Modularidade e Encapsulamento}{9}{section.3.5}
+\contentsline {chapter}{\numberline {4}Testes}{11}{chapter.4}

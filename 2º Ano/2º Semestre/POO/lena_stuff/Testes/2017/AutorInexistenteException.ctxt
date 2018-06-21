@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=AutorInexistenteException()
+comment1.params=msg
+comment1.target=AutorInexistenteException(java.lang.String)
+comment2.params=cause
+comment2.target=AutorInexistenteException(java.lang.Throwable)
+comment3.params=msg\ cause
+comment3.target=AutorInexistenteException(java.lang.String,\ java.lang.Throwable)
+numComments=4

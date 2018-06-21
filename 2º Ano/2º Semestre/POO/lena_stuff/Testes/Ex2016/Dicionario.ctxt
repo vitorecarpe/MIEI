@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=nomeDic
+comment0.target=Dicionario(java.lang.String)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Dicionario\n
+comment1.params=ed
+comment1.target=void\ add(Entrada)
+comment2.params=termo
+comment2.target=boolean\ exists(java.lang.String)
+comment3.params=termo
+comment3.target=Entrada\ get(java.lang.String)
+comment4.params=
+comment4.target=java.util.Collection\ getAll()
+comment5.params=termo1\ termo2
+comment5.target=boolean\ sinonimos(java.lang.String,\ java.lang.String)
+comment6.params=
+comment6.target=java.util.Map\ getSinonimosExt()
+comment7.params=
+comment7.target=java.util.Map\ getSinonimosInt()
+numComments=8

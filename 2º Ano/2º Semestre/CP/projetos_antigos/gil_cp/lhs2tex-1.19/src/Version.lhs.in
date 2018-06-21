@@ -1,0 +1,58 @@
+%if doc
+\newcommand\ProgramVersion{@VERSION@}
+%else
+% - - - - - - - - - - - - - - - = - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection{Program version information}
+% - - - - - - - - - - - - - - - = - - - - - - - - - - - - - - - - - - - - - - -
+
+> module Version where
+>
+> import FileNameUtils
+> import Data.List
+> import System.Info
+>
+> version                       :: String
+> version                       =  "@VERSION@"
+> numversion                    :: Int
+> numversion                    =  @NUMVERSION@
+
+Used internally to distinguish prereleases.
+
+> pre                           :: Int
+> pre                           =  @PRE@
+
+> isWindows = "win" `isPrefixOf` os || "Win" `isPrefixOf` os
+
+% - - - - - - - - - - - - - - - = - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection{Search path}
+% - - - - - - - - - - - - - - - = - - - - - - - - - - - - - - - - - - - - - - -
+
+> searchPath                    =  "." :
+>                                  [  deep (joinPath (env "HOME" : [p ++ x]))
+>                                  |  p <- ["","."]
+>                                  ,  x <- lhs2TeXNames
+>                                  ] ++
+>                                  [deep (joinPath [env "LHS2TEX"])] ++
+>                                  [deep stydir] ++
+>                                  [  deep (path [dir])
+>                                  |  dir  <-  lhs2TeXNames
+>                                  ,  path <-  if isWindows then [] else
+>                                              [\x -> absPath (joinPath $ ["usr","local","share"] ++ x)
+>                                              ,\x -> absPath (joinPath $ ["usr","local","lib"] ++ x)
+>                                              ,\x -> absPath (joinPath $ ["usr","share"] ++ x)
+>                                              ,\x -> absPath (joinPath $ ["usr","lib"] ++ x)
+>                                              ]
+>                                  ]
+>
+> lhs2TeXNames                  :: [FilePath]
+> lhs2TeXNames                  =  ["lhs2tex-@SHORTVERSION@"
+>                                  ,"lhs2tex"
+>                                  ,"lhs2TeX"
+>                                  ]
+>
+> stydir                        =  replace (replace "@stydir@" "datarootdir" "@datarootdir@") "prefix" "@prefix@"
+>   where replace x w y  |  ("$" ++ w) `isPrefixOf` x = y ++ drop (length w + 1) x
+>                        |  ("${" ++ w ++ "}") `isPrefixOf` x = y ++ drop (length w + 3) x
+>                        |  otherwise = x
+
+%endif

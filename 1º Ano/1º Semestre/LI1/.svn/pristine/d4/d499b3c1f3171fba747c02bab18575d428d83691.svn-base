@@ -1,0 +1,388 @@
+module Main where
+
+import Graphics.Gloss
+import Graphics.Gloss.Data.Picture          -- importar o tipo Picture
+import Graphics.Gloss.Interface.Pure.Game   -- importar o tipo Event
+import Graphics.Gloss.Data.Bitmap
+import Graphics.Gloss.Data.Color
+
+-----------------------------------------------------------
+
+import qualified Data.Text as T
+
+-- |Função que dada uma /String/, separa-a onde encontra /\\n/ e junta as diferentes /String/ criadas numa lista de /String/.
+--
+-- >>> "Ola\nMundo"
+-- ["Ola","Mundo"]
+inStr :: String -> [String]
+inStr [] = []
+inStr ['\n'] = [[],[]]
+inStr (x:xs) = case x of
+    '\n' -> []:inStr xs
+    otherwise -> case inStr xs of
+        y:ys -> (x:y):ys
+        [] -> [[x]]
+
+-- |Função que dada uma lista de /String/ devolve os elementos da lista, agrupados e apenas separados por /\\n/. Função inversa de /inStr/.
+--
+-- >>> ["Ola","Mundo"]
+-- "Ola\nMundo\n"
+outStr :: [String] -> String
+outStr [] = "\n"
+outStr t = unlines (map (T.unpack . T.stripEnd . T.pack) t)
+
+-----------------------------------------------------------
+
+
+--type MARIOtheme = [Picture]
+--data MARIOtheme = Pictures [boxoff,boxon,ponto,mario,chao,parede]
+
+-- Uma representacao do estado do jogo
+type Estado = (String,[Picture],String)
+
+main = do
+      boxoff <- loadBMP "BOXOFF.bmp"
+      boxon <- loadBMP "BOXON.bmp"
+      ponto <- loadBMP "PONTO.bmp"
+      chao <- loadBMP "BACKGROUND.bmp"
+      parede <- loadBMP "BRICK.bmp"
+      mario <- loadBMP "PLAYER.bmp"
+      joga (mapaInicial,[boxoff,boxon,ponto,chao,parede,mario],"") desenhaJogo reageEvento
+
+-- funçao que atualiza e desenha o jogo
+joga :: Estado -> (Estado -> Picture) -> (Event -> Estado -> Estado) -> IO ()
+joga tabuleiro desenha reage = play (InWindow "Sokoban" (480,480) (0,0))
+                                    (makeColorI 153 217 234 1) 45
+                                    tabuleiro desenha reage (\time estado -> estado)
+
+-- O estado inicial do jogo
+mapaInicial :: String
+--mapaInicial = outStr ["######","#    #","#  . #","#    #","######","1 2","2 2",""] --lvl1
+mapaInicial = outStr ["#######","#     #","#    .#","#    .#","#######","1 2","2 2","2 1",""] --lvl2
+
+-- Funcao que desenha o jogo
+desenhaJogo :: Estado -> Picture
+desenhaJogo (tabuleiro,mariotheme,moves) = Pictures [ ( Translate (-40) (-40) (Pictures (desenhaJogoAux (reverse ( tarefa4 ( (init (init (inStr tabuleiro)))++[moves]++[""] ) ),mariotheme) (0,0)
+                                                                                        ) 
+                                                                              ) 
+                                                      ) ,
+                                                      (Pictures [ (Color yellow (Line [(-40,-40),(40,-40),(40,40),(-40,40),(-40,-40)]) ) ,
+                                                                  ( Translate (-120) (0) (Color blue (Polygon [(-40,-40),(40,-40),(40,40),(-40,40),(-40,-40)])) )
+                                                                ] 
+                                                      )
+                                                    ] where
+-- desenhaJogo tabuleiro = desenhaJogoAux (reverse (funcaoPlantaMelhor (sepTABCoord (inStr (init tabuleiro))))) (0,0) where
+  desenhaJogoAux (((a:[]):[]),[boxoff,boxon,ponto,chao,parede,mario]) (x,y)| (a=='H') = (Translate (40*x+20) (40*y+20) boxoff):(Translate (40*x+20) (40*y+20) (Color green (Circle 20))):[]
+                                                                           | (a=='I') = (Translate (40*x+20) (40*y+20) boxon ):(Translate (40*x+20) (40*y+20) (Color green (Circle 20))):[]
+                                                                           | (a=='.') = (Translate (40*x+20) (40*y+20) ponto ):(Translate (40*x+20) (40*y+20) (Color green (Circle 20))):[]
+                                                                           | (a==' ') = (Translate (40*x+20) (40*y+20) chao  ):(Translate (40*x+20) (40*y+20) (Color green (Circle 20))):[]
+                                                                           | (a=='#') = (Translate (40*x+20) (40*y+20) parede):(Translate (40*x+20) (40*y+20) (Color green (Circle 20))):[]
+                                                                           | (a=='o') = (Translate (40*x+20) (40*y+20) mario ):(Translate (40*x+20) (40*y+20) (Color green (Circle 20))):[]
+                                                                           | otherwise = Translate (40*x+20) (40*y+20) (Color red (Circle 15)):(Translate (40*x+20) (40*y+20) (Color green (Circle 20))):[]
+  desenhaJogoAux (((a:b):[]),[boxoff,boxon,ponto,chao,parede,mario]) (x,y) | (a=='H') = (Translate (40*x+20) (40*y+20) boxoff):(desenhaJogoAux ((b:[]),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+                                                                           | (a=='I') = (Translate (40*x+20) (40*y+20) boxon ):(desenhaJogoAux ((b:[]),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+                                                                           | (a=='.') = (Translate (40*x+20) (40*y+20) ponto ):(desenhaJogoAux ((b:[]),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+                                                                           | (a==' ') = (Translate (40*x+20) (40*y+20) chao  ):(desenhaJogoAux ((b:[]),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+                                                                           | (a=='#') = (Translate (40*x+20) (40*y+20) parede):(desenhaJogoAux ((b:[]),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+                                                                           | (a=='o') = (Translate (40*x+20) (40*y+20) mario ):(desenhaJogoAux ((b:[]),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+                                                                           | otherwise = Translate (40*x+20) (40*y+20) (Color red (Circle 15)):(desenhaJogoAux ((b:[]),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+  desenhaJogoAux (((a:[]):c),[boxoff,boxon,ponto,chao,parede,mario]) (x,y) | (a=='H') = (Translate (40*x+20) (40*y+20) boxoff):(desenhaJogoAux ((c),[boxoff,boxon,ponto,chao,parede,mario]) (0,y+1))
+                                                                           | (a=='I') = (Translate (40*x+20) (40*y+20) boxon ):(desenhaJogoAux ((c),[boxoff,boxon,ponto,chao,parede,mario]) (0,y+1))
+                                                                           | (a=='.') = (Translate (40*x+20) (40*y+20) ponto ):(desenhaJogoAux ((c),[boxoff,boxon,ponto,chao,parede,mario]) (0,y+1))
+                                                                           | (a==' ') = (Translate (40*x+20) (40*y+20) chao  ):(desenhaJogoAux ((c),[boxoff,boxon,ponto,chao,parede,mario]) (0,y+1))
+                                                                           | (a=='#') = (Translate (40*x+20) (40*y+20) parede):(desenhaJogoAux ((c),[boxoff,boxon,ponto,chao,parede,mario]) (0,y+1))
+                                                                           | (a=='o') = (Translate (40*x+20) (40*y+20) mario ):(desenhaJogoAux ((c),[boxoff,boxon,ponto,chao,parede,mario]) (0,y+1))
+                                                                           | otherwise = Translate (40*x+20) (40*y+20) (Color red (Circle 15)):(desenhaJogoAux ((c),[boxoff,boxon,ponto,chao,parede,mario]) (0,y+1))
+  desenhaJogoAux (((a:b):c),[boxoff,boxon,ponto,chao,parede,mario]) (x,y)  | (a=='H') = (Translate (40*x+20) (40*y+20) boxoff):(desenhaJogoAux ((b:c),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+                                                                           | (a=='I') = (Translate (40*x+20) (40*y+20) boxon ):(desenhaJogoAux ((b:c),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+                                                                           | (a=='.') = (Translate (40*x+20) (40*y+20) ponto ):(desenhaJogoAux ((b:c),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+                                                                           | (a==' ') = (Translate (40*x+20) (40*y+20) chao  ):(desenhaJogoAux ((b:c),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+                                                                           | (a=='#') = (Translate (40*x+20) (40*y+20) parede):(desenhaJogoAux ((b:c),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+                                                                           | (a=='o') = (Translate (40*x+20) (40*y+20) mario ):(desenhaJogoAux ((b:c),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+                                                                           | otherwise = Translate (40*x+20) (40*y+20) (Color red (Circle 15)):(desenhaJogoAux ((b:c),[boxoff,boxon,ponto,chao,parede,mario]) (x+1,y))
+  {-
+  desenhaJogoAux (((a:b):c),[boxoff,boxon,ponto,chao,parede,mario]) (x,y) = Translate (-40) (-40) (Pictures [Translate (20) 60 boxoff,
+                                                                                                             Translate (20) (20) boxon,
+                                                                                                             Translate 60 60 ponto,
+                                                                                                             Translate 100 60 chao,
+                                                                                                             Translate 100 (20) parede,
+                                                                                                             Translate 60 (20) mario])
+  -}
+  desenhaJogoAux _ (x,y) = (Circle 50):[]
+
+
+-- Funcao que altera o estado do jogo.
+reageEvento :: Event -> Estado -> Estado
+reageEvento (EventKey (MouseButton LeftButton ) (Down) (modifiers) (a,b)) (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves) = if ( (a>=(-40))&&(a<=40)&&(b>=(-40))&&(b<=40) ) then (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],init moves)
+                                                                                                                                else (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves)
+reageEvento (EventKey (MouseButton RightButton) (Down) (modifiers) (a,b)) (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves) = (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves)
+reageEvento (EventKey (SpecialKey KeyUp       ) (Down) (_) (pos)        ) (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves) = (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves++"U")
+reageEvento (EventKey (SpecialKey KeyLeft     ) (Down) (_) (pos)        ) (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves) = (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves++"L")
+reageEvento (EventKey (SpecialKey KeyDown     ) (Down) (_) (pos)        ) (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves) = (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves++"D")
+reageEvento (EventKey (SpecialKey KeyRight    ) (Down) (_) (pos)        ) (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves) = (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves++"R")
+reageEvento (event                                                      ) (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves) = (tabuleiro,[boxoff,boxon,ponto,chao,parede,mario],moves)
+{-
+-- Funçao que nao altera o tabuleiro com o passar do tempo
+passatempo :: Float -> Estado -> Estado
+passatempo _ estado = estado
+-}
+
+
+------------------------------------------------------------------------------------
+
+-- |Função que dado um tabuleiro retribui 
+--
+-- >>> tarefa4 ["#####","#. .#","#   #","#   #","#####","2 1","1 2","3 2","RUDLLU"]
+-- 
+--
+-- >>> tarefa4 ["#####","#. .#","#   #","#   #","#####","2 1","1 2","3 2","RUDLL"]
+-- 
+--
+-- == FUNÇÕES DE SEQUÊNCIA DE COMANDOS
+--
+tarefa4 :: [String] -> [String]
+tarefa4 tabuleiro = rinceAndRepeat (tabuleiro) (last (init tabuleiro))
+
+
+-- |Função rinceAndRepeat
+--
+--
+-- == FUNÇÕES IMPORTADAS DE OUTRAS TAREFAS
+--
+rinceAndRepeat :: [String] -> String -> [String]
+rinceAndRepeat tabuleiro direcoes = rinceAndRepeatAux (funcaoPlantaMelhor tabuleiro) (head (sepTabCOORDpares tabuleiro)) (detetaPontos (sepTABCoord tabuleiro)) 0 direcoes where
+    rinceAndRepeatAux tabuleiro coordsoko pontos ticks [] = tabuleiro
+    rinceAndRepeatAux tabuleiro coordsoko pontos ticks direcoes = if ((vitoria tabuleiro)=="FIM") then tabuleiro
+                                                              else ( rinceAndRepeatAux ( updateTABpontos (fst(fst(tarefa3' tabuleiro coordsoko ([head direcoes])))) (pontos) ) (snd(fst(tarefa3' tabuleiro coordsoko ([head direcoes])))) (pontos) (ticks+(snd(tarefa3' tabuleiro coordsoko ([head direcoes])))) (tail direcoes) )
+
+
+--
+--
+detetaPontos :: [String] -> [(Int,Int)]
+detetaPontos tabuleiro = detetaPontosAux (reverse tabuleiro) (0,0) where
+  detetaPontosAux ((a:[]):[]) (x,y)= if ( (a=='.')||(a=='I') ) then (x,y):[]
+                                      else []
+  detetaPontosAux ((a:b):[]) (x,y) = if ( (a=='.')||(a=='I') ) then (x,y):detetaPontosAux [b] (x+1,y)
+                                      else detetaPontosAux [b] (x+1,y)
+  detetaPontosAux ((a:[]):c) (x,y) = if ( (a=='.')||(a=='I') ) then (x,y):detetaPontosAux (c) (0,y+1)
+                                      else detetaPontosAux (c) (0,y+1)
+  detetaPontosAux ((a:b):c) (x,y)  = if ( (a=='.')||(a=='I') ) then (x,y):detetaPontosAux (b:c) (x+1,y)
+                                     else detetaPontosAux (b:c) (x+1,y)
+
+--
+--
+updateTABpontos :: [String] -> [(Int,Int)] -> [String]
+updateTABpontos tabuleiro [] = tabuleiro
+updateTABpontos tabuleiro (x:y) = updateTABpontos (reverse(updateTABponto (reverse tabuleiro) x)) y
+
+--
+--
+updateTABponto :: [String] -> (Int,Int) -> [String]
+updateTABponto ((x:y):z) (a,0) = (updateTABpontoAux (x:y) a) : z
+updateTABponto ((x:y):z) (a,b) = (x:y) : updateTABponto (z) (a,b-1)
+
+-- 
+--
+updateTABpontoAux :: String -> Int -> String
+updateTABpontoAux (x:y) 0 = if (x==' ') then "." ++ y
+                              else [x]++y
+updateTABpontoAux (x:y) posicao = [x] ++ updateTABpontoAux y (posicao-1)
+
+
+
+-- |Função que testa se o conjunto de comandos introduzidos levou à vitória, ou seja, se as caixas ficaram localizadas em cima dos pontos.
+--
+vitoria :: [String] -> String
+vitoria ((x:[]):[])= if (x=='H') then "INCOMPLETO"
+                      else "FIM"
+vitoria ((x:y):[]) = if (x=='H') then "INCOMPLETO"
+                      else vitoria [y]
+vitoria ((x:[]):z) = if (x=='H') then "INCOMPLETO"
+                      else vitoria z
+vitoria ((x:y):z)  = if (x=='H') then "INCOMPLETO"
+                      else vitoria (y:z)
+
+
+-- |Função importada da Tarefa C que dado um tabuleiro com as coordenadas do Sokoban, caixas e um comando de movimentos (U,D,R,L) devolve a nova coordenada do Sokoban resultante desse movimento.
+--
+tarefa3' :: [String] -> (Int,Int) -> String -> ( ( [String],(Int,Int) ),Int )
+tarefa3' tabuleiro (a,b) direcao | direcao=="U" = movORnot tabuleiro (a,b) (0,1)
+                                 | direcao=="D" = movORnot tabuleiro (a,b) (0,-1)
+                                 | direcao=="L" = movORnot tabuleiro (a,b) (-1,0)
+                                 | direcao=="R" = movORnot tabuleiro (a,b) (1,0)
+                                 | otherwise = error "riptarefa3"
+
+-- |Função que movimenta o Sokoban através da introdução das coordenadas do Sokoban e das coordenadas definidas para movimentar o Sokoban ((0,1) para cima ||| (0,-1) para baixo ||| (1,0) para a direita ||| (-1,0) para a esquerda).
+--
+movORnot :: [String] -> (Int,Int) -> (Int,Int) -> ( ( [String],(Int,Int) ),Int )
+movORnot tabuleiro (a,b) (c,d) | (charNaPosicao (reverse tabuleiro) (a+c,b+d))==' ' = ((movTOempty tabuleiro (a,b) (c,d),(a+c,b+d)),1)
+                               | (charNaPosicao (reverse tabuleiro) (a+c,b+d))=='.' = ((movTOempty tabuleiro (a,b) (c,d),(a+c,b+d)),1)
+                               | (charNaPosicao (reverse tabuleiro) (a+c,b+d))=='#' = ((tabuleiro,(a,b)),0)
+                               | ( ((charNaPosicao (reverse tabuleiro) (a+c,b+d))=='H') || ((charNaPosicao (reverse tabuleiro) (a+c,b+d))=='I') ) = if ( ((charNaPosicao (reverse tabuleiro) (a+2*c,b+2*d))=='H')||(charNaPosicao (reverse tabuleiro) (a+2*c,b+2*d))=='I'||(charNaPosicao (reverse tabuleiro) (a+2*c,b+2*d))=='#' ) then ((tabuleiro,(a,b)),0)
+                                                                                      else ((movTObox tabuleiro (a,b) (c,d),(a+c,b+d)),1)
+                               | otherwise = error "ripmov"
+
+--
+--
+movTOempty :: [String] -> (Int,Int) -> (Int,Int) -> [String]
+movTOempty tabuleiro (a,b) (c,d) = reverse ( updateTABempty ( updateTABsokoban (reverse tabuleiro) (a+c,b+d) ) (a,b) ) 
+
+--
+--
+movTObox :: [String] -> (Int,Int) -> (Int,Int) -> [String]
+movTObox tabuleiro (a,b) (c,d) = movTOempty ( reverse (updateTABcaixas (reverse tabuleiro) (a+2*c,b+2*d))  ) (a,b) (c,d)
+
+-- |Função auxiliar de /movORnot/ que dado um tabuleiro e as coordenadas de uma caixa ou Sokoban diz o que está nessa coordenada. Se estiver vazio, está disponível para receber uma caixa ou o Sokoban.
+--
+-- >>> charNaPosicao ["#####","#. .#","#   #","#   #","#####"] (2,2)
+-- ' '
+--
+-- >>> charNaPosicao ["#####","#. .#","#   #","#   #","#####"] (4,1)
+-- '#'
+--
+-- == FUNÇÃO /PLANTAMELHOR/ E SUAS AUXILIARES
+charNaPosicao :: [String] -> (Int,Int) -> Char
+charNaPosicao ((x:y):z) (0,0) = x
+charNaPosicao ((x:[]):z) (a,0) = '!'
+charNaPosicao ((x:y):z) (a,0) = charNaPosicao ((y):z) (a-1,0)
+charNaPosicao ((x:y):[]) (a,b) = '!'
+charNaPosicao ((x:y):z) (a,b) = charNaPosicao (z) (a,b-1)
+
+
+
+-- | Dado o tabuleiro com as coordenadas (/String/) devolve o tabuleiro com o Sokoban nas respetivas coordenadas e representado pelo "o", as caixas também nas respetivas coordenadas representadas por ""H"" e as caixas quando estão em cima do ponto são representadas por ""I"".
+--
+-- >>> funcaoPlantaMelhor ["#####","#. .#","#   #","#   #","#####","2 1","1 2","3 2"," "]
+-- ["#####","#. .#","#H H#","# o #","#####"]
+--
+-- >>> funcaoPlantaMelhor ["#####","#. .#","#   #","#   #","#####","2 2","1 2","3 3"," "] 
+-- ["#####","#. I#","#Ho #","#   #","#####"]
+--
+-- == FUNÇÕES UPDATE
+--
+funcaoPlantaMelhor :: [String] -> [String]
+funcaoPlantaMelhor tabuleiro = funcaoPlantaMelhorAux (reverse (sepTABCoord tabuleiro)) (1) (sepTabCOORDpares tabuleiro) where
+    funcaoPlantaMelhorAux tabuleiro 1 ((x,y):[]) = ["O Sokoban nao pode jogar sem caixas!"]
+    funcaoPlantaMelhorAux tabuleiro 1 ((x,y):z) = funcaoPlantaMelhorAux (updateTABsokoban tabuleiro (x,y)) 0 (z)
+    funcaoPlantaMelhorAux tabuleiro 0 ((x,y):[]) = (reverse (updateTABcaixas tabuleiro (x,y)))
+    funcaoPlantaMelhorAux tabuleiro 0 ((x,y):z) = funcaoPlantaMelhorAux (updateTABcaixas tabuleiro (x,y)) 0 (z)
+
+
+
+-- |Função auxiliar de /funcaoPlantaMelhor/ que dado um tabuleiro e a coordenada de uma caixa, coloca essa caixa no tabuleiro, que fica representada pelo carater ""H"" caso a caixa se localize num espaço vazio ou pelo carater ""I"" caso fique em cima de qualquer outro carater, ou seja, o ponto.
+--
+-- >>> updateTABcaixas ["#####","#. .#","#   #","#   #","#####"] (1,2)
+-- ["#####","#. .#","#H  #","#   #","#####"]
+--
+-- >>> updateTABcaixas ["#####","#. .#","#   #","#   #","#####"] (1,1)
+-- ["#####","#I .#","#   #","#   #","#####"]
+updateTABcaixas :: [String] -> (Int,Int) -> [String]
+updateTABcaixas ((x:y):z) (a,0) = (updateTABcaixasAux (x:y) a) : z
+updateTABcaixas ((x:y):z) (a,b) = (x:y) : updateTABcaixas (z) (a,b-1)
+
+-- |Função auxiliar de /funcaoPlantaMelhor/ que dado um tabuleiro e a coordenada do Sokoban, coloca-o no tabuleiro, na sua respetiva coordenada. O Sokoban está representado pelo carater "o".
+--
+-- >>> updateTABsokoban ["#####","#. .#","#   #","#   #","#####"] (1,1)
+-- ["#####","#o .#","#   #","#   #","#####"]
+--
+-- >>> updateTABsokoban ["#####","#. .#","#   #","#   #","#####"] (3,2)
+-- ["#####","#. .#","#  o#","#   #","#####"]
+--
+updateTABsokoban :: [String] -> (Int,Int) -> [String]
+updateTABsokoban ((x:y):z) (a,0) = (updateTABsokobanAux (x:y) a) : z
+updateTABsokoban ((x:y):z) (a,b) = (x:y) : updateTABsokoban (z) (a,b-1)
+
+--
+--
+updateTABempty :: [String] -> (Int,Int) -> [String]
+updateTABempty ((x:y):z) (a,0) = (updateTABemptyAux (x:y) a) : z
+updateTABempty ((x:y):z) (a,b) = (x:y) : updateTABempty (z) (a,b-1)
+
+
+-- |Função auxiliar de /updateTABcaixas/ que define a letra a colocar na coordenada da caixa. Se no espaço estiver o carater " ", coloca ""H"". Se não for vazio, coloca o carater ""I"".
+updateTABcaixasAux :: String -> Int -> String
+updateTABcaixasAux (x:y) 0 = if (x==' ') then "H" ++ y
+                                else "I" ++ y
+updateTABcaixasAux (x:y) posicao = [x] ++ updateTABcaixasAux y (posicao-1)
+
+-- |Função auxiliar de /updateTABsokoban/ que lê a coordenada do Sokoban e o coloca no tabuleiro representado pelo carater "o".
+--
+updateTABsokobanAux :: String -> Int -> String
+updateTABsokobanAux (x:y) 0 = "o" ++ y
+updateTABsokobanAux (x:y) posicao = [x] ++ updateTABsokobanAux y (posicao-1)
+
+--
+--
+-- == SEPARAR TABULEIRO DAS COORDENADAS
+--
+updateTABemptyAux :: String -> Int -> String
+updateTABemptyAux (x:y) 0 = " " ++ y
+updateTABemptyAux (x:y) posicao = [x] ++ updateTABemptyAux y (posicao-1)
+
+
+
+
+
+-- |Função auxiliar de /funcaoPlantaMelhor/ que separa o tabuleiro das coordenadas. Dá apenas o tabuleiro.
+--
+-- >>> sepTABCoord ["#####","#. .#","#   #","#   #","#####","2 1","1 2","3 2"," "]
+-- ["#####","#. .#","#   #","#   #","#####"]
+--
+sepTABCoord :: [String] -> [String]
+sepTABCoord ((x:y):z) = if (algarismos x) then [] 
+                        else (x:y):sepTABCoord z
+
+-- |Separação das coordenadas do tabuleiro. Dá apenas as coordenadas da localização do Sokoban e das caixas.
+--
+-- >>> sepTabCOORD ["#####","#. .#","#   #","#   #","#####","2 1","1 2","3 2"," "]
+-- ["2 1","1 2","3 2"]
+--
+sepTabCOORD :: [String] -> [String]
+sepTabCOORD ([]:[]) = []
+sepTabCOORD ((x:y):[]) = []
+sepTabCOORD ("":z) = []
+sepTabCOORD ((x:y):z) = if (algarismos x) then (x:y):sepTabCOORD z
+                            else sepTabCOORD z
+
+-- |Separa as coordenadas uma a uma.
+--
+-- >>> sepCOORD1 ["2 1","1 2","3 2"]
+-- ["2","1","1","2","3","2"]
+--
+sepCOORD1 :: [String] -> [String]
+sepCOORD1 (x:[]) = words x
+sepCOORD1 (x:y)  = (words x) ++ (sepCOORD1 y)
+
+-- |Após separar as coordenadas uma a uma, juntamo-las em pares de inteiros.
+--
+-- >>> sepCOORD2 ["2","1","1","2","3","2"]
+-- [(2,1),(1,2),(3,2)]
+--
+sepCOORD2 :: [String] -> [(Int,Int)]
+sepCOORD2 (x:[]) = []
+sepCOORD2 (x:y:[]) = [((read x :: Int),(read y :: Int))]
+sepCOORD2 (x:y:z)  = [((read x :: Int),(read y :: Int))] ++ sepCOORD2 z
+
+-- |Função auxiliar de /funcaoPlantaMelhor/ que junta as três anteriores funções e executa todas apenas nesta.
+--
+-- >>> sepTabCOORDpares ["#####","#. .#","#   #","#   #","#####","2 1","1 2","3 2"," "]
+-- [(2,1),(1,2),(3,2)]
+--
+-- == FUNÇÕES AUXILIARES
+--
+sepTabCOORDpares :: [String] -> [(Int,Int)]
+sepTabCOORDpares tabuleiro = sepCOORD2 (sepCOORD1 (sepTabCOORD tabuleiro))
+
+
+
+-- |Função auxiliar de /testeCOORDso2numeros/ que dada uma lista de /Char/ diz se essa lista tem apenas números. Qualquer outro tipo de carater devolve /Falso/.
+--
+-- >>> algarismos [1,3,5,a,6,b]
+-- False
+--
+-- >>> algarismos [1,3,7,4,2]
+-- True
+--
+algarismos :: Char -> Bool
+algarismos a = if (a >= '0') && (a <= '9') then True
+                else False

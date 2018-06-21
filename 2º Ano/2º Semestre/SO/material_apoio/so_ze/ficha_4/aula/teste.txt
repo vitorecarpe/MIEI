@@ -1,0 +1,5 @@
+exp1
+exp1.c
+exp2
+exp2.c
+teste.txt

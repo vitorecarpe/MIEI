@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=filename\ type
+comment0.target=void\ escreveEmFicheiroTxt(java.lang.String,\ java.lang.String)
+comment0.text=5\ b)\ Gravar\ em\ modo\ texto\ os\ hoteis\ de\ um\ tipo\ passado\ como\ parametro
+comment1.params=filename\ type
+comment1.target=void\ escreveEmFicheiro(java.lang.String,\ java.lang.String)
+comment2.params=filename
+comment2.target=AgenciaViagens\ readFrom(java.lang.String)
+comment2.text=5\ c)\ Reload\ de\ uma\ AgenciadeViagens\ /\ Ler\ bin\u00E1rio
+numComments=3

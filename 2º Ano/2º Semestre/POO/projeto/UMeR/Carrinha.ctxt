@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Carrinha
+comment1.params=
+comment1.target=Carrinha()
+comment1.text=Construtor\ padrao.
+comment2.params=c
+comment2.target=Carrinha(Carrinha)
+comment2.text=Construtor\ parameterizado\ que\ usa\ super()\ para\ chamar\ o\ contrutor\ da\ superclasse\ Viatura.
+comment3.params=matricula\ velocidade\ preco\ fiabilidade\ motorista\ x1\ y1\ cliente\ x2\ y2\ faturacao
+comment3.target=Carrinha(java.lang.String,\ int,\ double,\ int,\ Motorista,\ double,\ double,\ Cliente,\ double,\ double,\ double)
+comment3.text=\ Construtor\ parameterizado\ com\ as\ variaveis\ de\ instancia\ da\ classe\ Viatura\ para\ \nas\ obter\ usa-se\ \ super()\ que\ recebe\ como\ parametros\ as\ variaveis.
+comment4.params=
+comment4.target=Carrinha\ clone()
+comment4.text=Faz\ o\ clone\ da\ Carrinha\ *
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment5.text=Faz\ o\ toString\ da\ classe\ utilizando\ um\ string\ builder.
+comment6.params=v
+comment6.target=boolean\ equals(Viatura)
+comment6.text=Fun\u00E7ao\ equals\ que\ verifica\ se\ as\ Matriculas\ sao\ iguais,\ se\ forem\ retorna\ true\ senao\ false.
+numComments=7

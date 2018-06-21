@@ -1,0 +1,2 @@
+O nodo com o nome 4 teve a sua saída descartada
+

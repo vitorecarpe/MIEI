@@ -1,0 +1,531 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>SO Projeto: Stream Processing: Referência ao ficheiro window.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">SO Projeto: Stream Processing
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Ficheiros</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;ficheiros</span></a></li>
+      <li><a href="globals.html"><span>Ficheiros&#160;membro</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tudo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Ficheiros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funções</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variáveis</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Definições de tipos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Páginas</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Definições de tipos</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro window.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Executa o comando window.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;unistd.h&gt;</code><br/>
+<code>#include &lt;string.h&gt;</code><br/>
+<code>#include &lt;limits.h&gt;</code><br/>
+<code>#include &lt;signal.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="stringProcessing_8h_source.html">stringProcessing.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvalues__.html">values_</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac377db81b810bff5ff74221befd2ccc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#ac377db81b810bff5ff74221befd2ccc0">AVG</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ac377db81b810bff5ff74221befd2ccc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392fb874e547e582e9c66a08a1f23326"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#a392fb874e547e582e9c66a08a1f23326">MAX</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a392fb874e547e582e9c66a08a1f23326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbd5cbe76e047a39e0a34f085cdae6fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#adbd5cbe76e047a39e0a34f085cdae6fe">MIN</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:adbd5cbe76e047a39e0a34f085cdae6fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1319745524dbd8748dba95bb12b19f19"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#a1319745524dbd8748dba95bb12b19f19">SUM</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a1319745524dbd8748dba95bb12b19f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Definições de tipos</h2></td></tr>
+<tr class="memitem:a922fe5ddeef7e22b68654d38b8d1dd3c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structvalues__.html">values_</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a></td></tr>
+<tr class="separator:a922fe5ddeef7e22b68654d38b8d1dd3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a14aae194e71a8babb28d8e375ba227a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#a14aae194e71a8babb28d8e375ba227a0">window_handler</a> (int sig)</td></tr>
+<tr class="memdesc:a14aae194e71a8babb28d8e375ba227a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tratará dos sinais de saída.  <a href="#a14aae194e71a8babb28d8e375ba227a0">Mais...</a><br/></td></tr>
+<tr class="separator:a14aae194e71a8babb28d8e375ba227a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ab81c723d775df3d2b9153511c3920c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#a9ab81c723d775df3d2b9153511c3920c">initValues</a> ()</td></tr>
+<tr class="memdesc:a9ab81c723d775df3d2b9153511c3920c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa a estrutura de valores.  <a href="#a9ab81c723d775df3d2b9153511c3920c">Mais...</a><br/></td></tr>
+<tr class="separator:a9ab81c723d775df3d2b9153511c3920c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc84f6073d5bef110344ce0d1b2486d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#aafc84f6073d5bef110344ce0d1b2486d">reallocValues</a> (<a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a> values)</td></tr>
+<tr class="memdesc:aafc84f6073d5bef110344ce0d1b2486d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realoca espaço para o array de valores.  <a href="#aafc84f6073d5bef110344ce0d1b2486d">Mais...</a><br/></td></tr>
+<tr class="separator:aafc84f6073d5bef110344ce0d1b2486d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd2d8d59bd9105ca9695191ffd7160ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#afd2d8d59bd9105ca9695191ffd7160ba">avg</a> (<a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a> values, int n)</td></tr>
+<tr class="memdesc:afd2d8d59bd9105ca9695191ffd7160ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devolve a média dos n ultimos valores.  <a href="#afd2d8d59bd9105ca9695191ffd7160ba">Mais...</a><br/></td></tr>
+<tr class="separator:afd2d8d59bd9105ca9695191ffd7160ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacba8746d4364ed55a88cd1340b732ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#aacba8746d4364ed55a88cd1340b732ae">max</a> (<a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a> values, int n)</td></tr>
+<tr class="memdesc:aacba8746d4364ed55a88cd1340b732ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devolve o máximo dos n ultimos valores.  <a href="#aacba8746d4364ed55a88cd1340b732ae">Mais...</a><br/></td></tr>
+<tr class="separator:aacba8746d4364ed55a88cd1340b732ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec3b1ce2826162955652ae3f6e19baba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#aec3b1ce2826162955652ae3f6e19baba">min</a> (<a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a> values, int n)</td></tr>
+<tr class="memdesc:aec3b1ce2826162955652ae3f6e19baba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devolve o mínimo dos n ultimos valores.  <a href="#aec3b1ce2826162955652ae3f6e19baba">Mais...</a><br/></td></tr>
+<tr class="separator:aec3b1ce2826162955652ae3f6e19baba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae566ef8a02344c6acfe51137ac1a6593"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#ae566ef8a02344c6acfe51137ac1a6593">sum</a> (<a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a> values, int n)</td></tr>
+<tr class="memdesc:ae566ef8a02344c6acfe51137ac1a6593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devolve a soma dos n ultimos valores.  <a href="#ae566ef8a02344c6acfe51137ac1a6593">Mais...</a><br/></td></tr>
+<tr class="separator:ae566ef8a02344c6acfe51137ac1a6593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ba3960e795358ac1377c14febd521d6"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#a4ba3960e795358ac1377c14febd521d6">window</a> (char *input, <a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a> values, int i, int op, int n)</td></tr>
+<tr class="memdesc:a4ba3960e795358ac1377c14febd521d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devolve uma nova string com o resultado de efetuar uma operação nos n ultimos números da coluna i.  <a href="#a4ba3960e795358ac1377c14febd521d6">Mais...</a><br/></td></tr>
+<tr class="separator:a4ba3960e795358ac1377c14febd521d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="window_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função main de window.  <a href="#a0ddf1224851353fc92bfbff6f499fa97">Mais...</a><br/></td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Executa o comando window. </p>
+<p>Este módulo contem o comando window, que irá devolver um novo input com o resultado de executar uma operação (avg,max,min,sum) sobre os inputs anteriores. </p>
+</div><h2 class="groupheader">Documentação das macros</h2>
+<a class="anchor" id="ac377db81b810bff5ff74221befd2ccc0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVG&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a392fb874e547e582e9c66a08a1f23326"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adbd5cbe76e047a39e0a34f085cdae6fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1319745524dbd8748dba95bb12b19f19"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SUM&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos tipos</h2>
+<a class="anchor" id="a922fe5ddeef7e22b68654d38b8d1dd3c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structvalues__.html">values_</a>* <a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a class="anchor" id="afd2d8d59bd9105ca9695191ffd7160ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int avg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a>&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devolve a média dos n ultimos valores. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td><a class="el" href="structEstrutura.html">Estrutura</a> de valores </td></tr>
+    <tr><td class="paramname">n</td><td>Número de elementos a contabilizar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Média </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9ab81c723d775df3d2b9153511c3920c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a> initValues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa a estrutura de valores. </p>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="structEstrutura.html">Estrutura</a> inicializada </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função main de window. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Número de argumentos </td></tr>
+    <tr><td class="paramname">argv</td><td>Array de argumentos </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>&mdash; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aacba8746d4364ed55a88cd1340b732ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int max </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a>&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devolve o máximo dos n ultimos valores. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td><a class="el" href="structEstrutura.html">Estrutura</a> de valores </td></tr>
+    <tr><td class="paramname">n</td><td>Número de elementos a contabilizar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Máximo </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aec3b1ce2826162955652ae3f6e19baba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int min </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a>&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devolve o mínimo dos n ultimos valores. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td><a class="el" href="structEstrutura.html">Estrutura</a> de valores </td></tr>
+    <tr><td class="paramname">n</td><td>Número de elementos a contabilizar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Mínimo </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aafc84f6073d5bef110344ce0d1b2486d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reallocValues </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a>&#160;</td>
+          <td class="paramname"><em>values</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realoca espaço para o array de valores. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td><a class="el" href="structEstrutura.html">Estrutura</a> de valores </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae566ef8a02344c6acfe51137ac1a6593"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sum </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a>&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devolve a soma dos n ultimos valores. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td><a class="el" href="structEstrutura.html">Estrutura</a> de valores </td></tr>
+    <tr><td class="paramname">n</td><td>Número de elementos a contabilizar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Soma </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4ba3960e795358ac1377c14febd521d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* window </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="window_8c.html#a922fe5ddeef7e22b68654d38b8d1dd3c">Values</a>&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devolve uma nova string com o resultado de efetuar uma operação nos n ultimos números da coluna i. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Input </td></tr>
+    <tr><td class="paramname">values</td><td><a class="el" href="structEstrutura.html">Estrutura</a> de valores </td></tr>
+    <tr><td class="paramname">i</td><td>Coluna da qual queremos aplicar a operação </td></tr>
+    <tr><td class="paramname">op</td><td>Operação a realizar </td></tr>
+    <tr><td class="paramname">n</td><td>Número de elementos a contabilizar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>String com o input + resultado </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a14aae194e71a8babb28d8e375ba227a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void window_handler </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sig</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tratará dos sinais de saída. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sig</td><td>Sinal </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado em Sexta, 2 de Junho de 2017 20:00:15 para SO Projeto: Stream Processing por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

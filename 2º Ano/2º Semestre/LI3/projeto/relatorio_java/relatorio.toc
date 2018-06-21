@@ -1,0 +1,8 @@
+\select@language {portuguese}
+\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{2}{chapter.1}
+\contentsline {chapter}{\numberline {2}Concep\IeC {\c c}\IeC {\~a}o da Solu\IeC {\c c}\IeC {\~a}o}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Parsing}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Implementa\IeC {\c c}\IeC {\~a}o da Estrutura}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Opera\IeC {\c c}\IeC {\~o}es \IeC {\`a} Estrutura}{5}{section.2.3}
+\contentsline {section}{\numberline {2.4}Interroga\IeC {\c c}\IeC {\~o}es}{6}{section.2.4}
+\contentsline {chapter}{\numberline {3}Conclus\IeC {\~a}o}{8}{chapter.3}

@@ -1,0 +1,16 @@
+Exercício prático
+
+Implementar uma stack de inteiros (int) e um programa (program.c) que faça operações sobre a mesma.
+
+stack.h terá de definir as operações:
+
+TAD_Stack init_stack();
+TAD_Stack push_to_stack(TAD_Stack stack,int value); //adiciona valor ao ínicio da stack
+int get_value_stack(TAD_Stack stack);	//retorna valor no ínicio da stack
+TAD_Stack remove_from_stack(TAD_Stack stack);	//remove valor do ínicio da stack
+TAD_Stack destroy_stack(TAD_Stack stack);
+
+Duas implementações deverão ser efetuadas:
+
+array_stack.c - A implementação da stack utiliza um array de tamanho fixo para guardar os valores.
+list_stack.c - A implementação da stack utiliza uma lista ligada de tamanho dinâmico para guardar os valores.

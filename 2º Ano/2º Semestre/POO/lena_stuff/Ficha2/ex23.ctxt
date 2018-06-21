@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=n\ arr\ i
+comment0.target=void\ inserir(int,\ int[],\ int)
+comment1.params=n
+comment1.target=int[]\ lerArrayInt(int)
+comment2.params=arr
+comment2.target=int\ minPos(int[])
+comment2.text=\n\ Fun\u00E7\u00E3o\ dispens\u00E1vel,\ porque\ o\ menor\ elemento\ estar\u00E1\ sempre\ na\ \u00FAltima\ posi\u00E7\u00E3o.\n
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4

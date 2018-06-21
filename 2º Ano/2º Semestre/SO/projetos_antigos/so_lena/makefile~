@@ -1,0 +1,8 @@
+SRC = const.c filter.c spawn.c window.c matrix.c rdto.c control4.c
+BIN = $(patsubst %.c,%,$(SRC))
+
+all: $(BIN)
+
+
+clean:
+	rm -f $(BIN)

@@ -1,0 +1,1 @@
+int acrescenta(char* buf, int n, char* new);

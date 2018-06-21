@@ -1,0 +1,36 @@
+\relax 
+\catcode `"\active 
+\select@language{portuguese}
+\@writefile{toc}{\select@language{portuguese}}
+\@writefile{lof}{\select@language{portuguese}}
+\@writefile{lot}{\select@language{portuguese}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{2}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Tarefa D}{3}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.1}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \sl  Fun\IeC {\c c}\IeC {\~a}o tarefa3' que dado o tabuleiro, as coordenadas das caixas, do Sokoban e um movimento (U,D,L,R) devolve um par de inteiros com as novas coordenadas do Sokoban.\/}{3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Tarefa E}{4}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces \relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \sl  Le Doge}}{4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Problema F}{5}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces \relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \sl  Le Doge Again}}{5}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Testes}{6}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclus\IeC {\~o}es}{7}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}EN}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}ES}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}PT}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}IT}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}FR}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.6}DE}{7}}
+\newlabel{LastPage}{{}{9}}
+\xdef\lastpage@lastpage{9}
+\gdef\lastpage@lastpageHy{}

@@ -1,0 +1,8 @@
+node 1 const 1
+node 2 const 2
+node 3 const 3
+node 4 const 4
+connect 1 2 3
+connect 2 4
+connect 3 4
+inject 1 ls

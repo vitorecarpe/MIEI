@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=MatriculaValida
+comment1.params=
+comment1.target=java.lang.String\ getMatri()
+comment1.text=Getter\ da\ matricula
+comment2.params=matri
+comment2.target=void\ setMatri(java.lang.String)
+comment2.text=Setter\ da\ matricula
+comment3.params=matri
+comment3.target=MatriculaValida(java.lang.String)
+comment3.text=Contrutor\ parameterizado
+comment4.params=
+comment4.target=boolean\ isValid()
+comment4.text=Verifica\ se\ a\ matricula\ e\ valida\ ou\ nao
+numComments=5

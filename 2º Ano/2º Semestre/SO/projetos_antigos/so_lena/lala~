@@ -1,0 +1,6 @@
+node 1 ./window 2 avg 10
+node 2 tee a.txt
+connect 1 2
+inject 1 cat input
+change 1 ./window 2 avg 4
+

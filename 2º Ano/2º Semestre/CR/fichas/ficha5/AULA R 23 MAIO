@@ -1,0 +1,104 @@
+sAULA R 23 MAIO
+
+Ficha 5
+
+setwd("/home/vitor/Documentos/MIEI/CR")
+
+read.csv("bnames.csv")
+
+----- 1. a)
+
+?CO2
+ 
+str(CO2)
+
+class(CO2[["conc"]])
+[1] "numeric"
+
+> class(CO2["conc"])
+[1] "nfnGroupedData" "nfGroupedData"  "groupedData"    "data.frame"    
+
+----- 1. b)
+
+> sum(CO2$Treatment=="chilled")
+[1] 42
+
+----- 1. c)
+
+> CO2Q <- CO2[CO2$Type == "Quebec", ]
+> CO2Q
+   Plant   Type  Treatment conc uptake
+1    Qn1 Quebec nonchilled   95   16.0
+2    Qn1 Quebec nonchilled  175   30.4
+...
+...
+
+Escreve em txt
+> write.table(CO2Q, "CO2Que.txt") 
+
+----- 1. exercicio extra
+
+Eliminar a coluna relativa a type em CO2Q 
+e acrescentar uma coluna com informação
+qualitativa acerca da variável "conc".
+A coluna deve ter 5 niveis de conc:
+"very small" "small" "moderate" "high"
+"very high".
+Efetuar uma partiçao de conc em 5 partes
+iguais.
+
+> conc5 <- cut(CO2Q$conc, 5, labels=c("very small", "small", "moderate", "high", "very high")) 
+//efetua partição
+
+> CO2Q$concSize<-conc5
+//cria coluna chamada "concSize" e atribui
+os valores dados em conc5.
+
+> subset(CO2Q, select=-c(Type)) 
+//elimina a type
+
+Acrescentar ainda uma outra coluna relativa
+à "uptake".
+Se uptake >  mediana -> "great"
+   uptake <= mediana -> "low"
+
+> CO2Q$uplevels <- ifelse(CO2Q$uptake > median(CO2Q$uptake), "great", "low")
+
+> CO2Q
+   Plant   Type  Treatment conc uptake   concSize uplevels
+1    Qn1 Quebec nonchilled   95   16.0 very small      low
+2    Qn1 Quebec nonchilled  175   30.4 very small      low
+3    Qn1 Quebec nonchilled  250   34.8 very small      low
+4    Qn1 Quebec nonchilled  350   37.2      small    great
+...
+
+g)
+
+//CO2 mais elevado
+maxC <- max(CO2$uptake)
+CO2[which(CO2$uptake == maxC), -5]
+
+   Plant   Type  Treatment conc uplevels
+21   Qn3 Quebec nonchilled 1000    great
+
+//Por regioes
+tapply(CO2$uptake, CO2$Type, max)
+
+     Quebec Mississippi 
+       45.5        35.5 
+
+h)
+
+> CO2M<-CO2[CO2$Type=="Mississippi",]
+> CO2M[which(CO2$uptake[CO2$Type=="Mississippi"] == 35.5), -5]
+   Plant        Type  Treatment conc uplevels
+49   Mn1 Mississippi nonchilled 1000    great
+
+//Elaborar um grafico de dispersao de uptake
+em funçao de conc
+> plot(CO2$uptake ~ CO2$conc, xlab="conc CO2 ar", ylab="consumo CO2")
+
+> CO2S <- CO2[c("conc","uptake")]
+> CO2S$conc<-as.factor(CO2S$conc)
+> class(CO2S$conc)
+[1] "factor"

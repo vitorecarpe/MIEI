@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Complexo
+comment0.text=\n\ Write\ a\ description\ of\ class\ complexo\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=a\ b
+comment1.target=Complexo(double,\ double)
+comment2.params=
+comment2.target=double\ getA()
+comment3.params=
+comment3.target=double\ getB()
+comment4.params=a
+comment4.target=void\ setA(double)
+comment5.params=b
+comment5.target=void\ setB(double)
+comment6.params=
+comment6.target=Complexo\ conjugado()
+comment7.params=comp
+comment7.target=Complexo\ soma(Complexo)
+comment8.params=comp
+comment8.target=Complexo\ produto(Complexo)
+comment9.params=
+comment9.target=Complexo\ reciproco()
+numComments=10

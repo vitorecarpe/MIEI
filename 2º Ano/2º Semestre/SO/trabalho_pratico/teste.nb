@@ -1,0 +1,12 @@
+Este comando lista os ficheiros na pasta:
+$ ls
+Agora ordenamos os ficheiros por ordem alfabetica decrescente:
+$| sort -r
+Agora wordcount do resultado:
+$| wc
+Este comando mostra o path ate a pasta atual:
+$ pwd
+Este comando mostra a lista de ficheiros com descricao:
+$ ls -l
+Vamos contar linhas:
+$| wc -l

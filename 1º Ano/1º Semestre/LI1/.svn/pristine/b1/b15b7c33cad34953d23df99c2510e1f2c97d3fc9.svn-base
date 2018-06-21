@@ -1,0 +1,222 @@
+module Main where
+
+import qualified Data.Text as T
+
+inStr :: String -> [String]
+inStr [] = []
+inStr ['\n'] = [[],[]]
+inStr (x:xs) = case x of
+    '\n' -> []:inStr xs
+    otherwise -> case inStr xs of
+        y:ys -> (x:y):ys
+        [] -> [[x]]
+
+outStr :: [String] -> String
+outStr [] = "\n"
+outStr t = unlines (map (T.unpack . T.stripEnd . T.pack) t)
+
+main = do inp <- getContents
+          putStr (outStr (tarefa4 (inStr inp)))
+
+tarefa4 :: [String] -> [String]
+tarefa4 tabuleiro = rinceAndRepeat (tabuleiro) (last (init tabuleiro))
+
+
+----- funçao testar se ja ganhou/acabou
+{-
+vitoria :: [String] -> [(Int,Int)] -> Bool
+vitoria tabuleiro (x:[]) = if ((charNaPosicao tabuleiro x)=='#') then True
+                            else False
+vitoria tabuleiro (x:y)  = if ((charNaPosicao tabuleiro x)=='#') then vitoria tabuleiro y
+                            else False
+-}
+
+
+
+rinceAndRepeat :: [String] -> String -> [String]
+rinceAndRepeat tabuleiro direcoes = rinceAndRepeatAux (funcaoPlantaMelhor tabuleiro) (head (sepTabCOORDpares tabuleiro)) direcoes where
+  rinceAndRepeatAux tabuleiro coordsoko direcoes = tabuleiro
+
+
+------------------------------------------------------------------
+-- outras funçoes de trabalhos anteriores pra ajudar
+
+----------------------------------
+-- funçao do movimento
+
+-- >>> tarefa3' ["#####","#. .#","#   #","#   #","#####","2 1","1 2","3 2","U"]
+-- (2,2)
+--
+tarefa3' :: [String] -> (Int,Int)
+tarefa3' tabuleiro = tarefa3Aux (reverse (funcaoPlantaMelhor tabuleiro)) (head (sepTabCOORDpares tabuleiro)) (last (init tabuleiro)) where 
+    tarefa3Aux ((x:y):z) (a,b) direcao | direcao=="U" = movimentos ((x:y):z) (a,b) (0,1)
+                                       | direcao=="D" = movimentos ((x:y):z) (a,b) (0,-1)
+                                       | direcao=="L" = movimentos ((x:y):z) (a,b) (-1,0)
+                                       | direcao=="R" = movimentos ((x:y):z) (a,b) (1,0)
+                                       | otherwise = error "ript3"
+
+-- >>> movimentos ["###","#.#","# #","# #","###"] (1,1) (0,1)
+-- (1,2)
+--
+movimentos :: [String] -> (Int,Int) -> (Int,Int) -> (Int,Int)
+movimentos ((x:y):z) (a,b) (c,d) | (charNaPosicao ((x:y):z) (a+c,b+d))==' ' = (a+c,b+d)
+                                 | (charNaPosicao ((x:y):z) (a+c,b+d))=='.' = (a+c,b+d)
+                                 | (charNaPosicao ((x:y):z) (a+c,b+d))=='#' = (a,b)
+                                 | (charNaPosicao ((x:y):z) (a+c,b+d))=='H' = if ( ((charNaPosicao ((x:y):z) (a+2*c,b+2*d))=='H')||(charNaPosicao ((x:y):z) (a+2*c,b+2*d))=='I'||(charNaPosicao ((x:y):z) (a+2*c,b+2*d))=='#' ) then (a,b)
+                                                                              else (a+c,b+d)
+                                 | (charNaPosicao ((x:y):z) (a+c,b+d))=='I' = if ( ((charNaPosicao ((x:y):z) (a+2*c,b+2*d))=='H')||(charNaPosicao ((x:y):z) (a+2*c,b+2*d))=='I'||(charNaPosicao ((x:y):z) (a+2*c,b+2*d))=='#' ) then (a,b)
+                                                                              else (a+c,b+d)
+                                 | otherwise = error "ripmov"
+
+-- |Função auxiliar de /movimentos/ que dado um tabuleiro e as coordenadas de uma caixa ou Sokoban diz o que está nessa coordenada. Se estiver vazio, está disponível para receber uma caixa ou o Sokoban.
+--
+-- >>> charNaPosicao ["#####","#. .#","#   #","#   #","#####"] (2,2)
+-- ' '
+--
+-- >>> charNaPosicao ["#####","#. .#","#   #","#   #","#####"] (4,1)
+-- '#'
+--
+charNaPosicao :: [String] -> (Int,Int) -> Char
+charNaPosicao ((x:y):z) (0,0) = x
+charNaPosicao ((x:[]):z) (a,0) = '!'
+charNaPosicao ((x:y):z) (a,0) = charNaPosicao ((y):z) (a-1,0)
+charNaPosicao ((x:y):[]) (a,b) = '!'
+charNaPosicao ((x:y):z) (a,b) = charNaPosicao (z) (a,b-1)
+
+-----------------------------------------
+-- planta melhor e auxiliares
+
+
+-- | Dado o tabuleiro com as coordenadas (/String/) devolve o tabuleiro com o Sokoban nas respetivas coordenadas e representado pelo "o", as caixas também nas respetivas coordenadas representadas por ""H"" e as caixas quando estão em cima do ponto são representadas por ""I"".
+--
+-- >>> funcaoPlantaMelhor ["#####","#. .#","#   #","#   #","#####","2 1","1 2","3 2"," "]
+-- ["#####","#. .#","#H H#","# o #","#####"]
+--
+-- >>> funcaoPlantaMelhor ["#####","#. .#","#   #","#   #","#####","2 2","1 2","3 3"," "] 
+-- ["#####","#. I#","#Ho #","#   #","#####"]
+funcaoPlantaMelhor :: [String] -> [String]
+funcaoPlantaMelhor tabuleiro = funcaoPlantaMelhorAux (reverse (sepTABCoord tabuleiro)) (1) (sepTabCOORDpares tabuleiro) where
+    funcaoPlantaMelhorAux tabuleiro 1 ((x,y):[]) = ["O Sokoban nao pode jogar sem caixas!"]
+    funcaoPlantaMelhorAux tabuleiro 1 ((x,y):z) = funcaoPlantaMelhorAux (updateTABsokoban tabuleiro (x,y)) 0 (z)
+    funcaoPlantaMelhorAux tabuleiro 0 ((x,y):[]) = (reverse (updateTABcaixas tabuleiro (x,y)))
+    funcaoPlantaMelhorAux tabuleiro 0 ((x,y):z) = funcaoPlantaMelhorAux (updateTABcaixas tabuleiro (x,y)) 0 (z)
+
+
+-- funçoes update
+
+
+-- |Função auxiliar de /FuncaoPlantaMelhor/ que dado um tabuleiro e a coordenada de uma caixa, coloca essa caixa no tabuleiro, que fica representada pelo carater ""H"" caso a caixa se localize num espaço vazio ou pelo carater ""I"" caso fique em cima de qualquer outro carater, ou seja, o ponto.
+--
+-- >>> updateTABcaixas ["#####","#. .#","#   #","#   #","#####"] (1,2)
+-- ["#####","#. .#","#H  #","#   #","#####"]
+--
+-- >>> updateTABcaixas ["#####","#. .#","#   #","#   #","#####"] (1,1)
+-- ["#####","#I .#","#   #","#   #","#####"]
+updateTABcaixas :: [String] -> (Int,Int) -> [String]
+updateTABcaixas ((x:y):z) (a,0) = (updateTABcaixasAux (x:y) a) : z
+updateTABcaixas ((x:y):z) (a,b) = (x:y) : updateTABcaixas (z) (a,b-1)
+
+-- |Função auxiliar de /FuncaoPlantaMelhor/ que dado um tabuleiro e a coordenada do Sokoban, coloca-o no tabuleiro, na sua respetiva coordenada. O Sokoban está representado pelo carater "o".
+--
+-- >>> updateTABsokoban ["#####","#. .#","#   #","#   #","#####"] (1,1)
+-- ["#####","#o .#","#   #","#   #","#####"]
+--
+-- >>> updateTABsokoban ["#####","#. .#","#   #","#   #","#####"] (3,2)
+-- ["#####","#. .#","#  o#","#   #","#####"]
+--
+updateTABsokoban :: [String] -> (Int,Int) -> [String]
+updateTABsokoban ((x:y):z) (a,0) = (updateTABsokobanAux (x:y) a) : z
+updateTABsokoban ((x:y):z) (a,b) = (x:y) : updateTABsokoban (z) (a,b-1)
+
+-- |Função auxiliar de /updateTAB/.
+--
+-- >>> updateTABAux "#   #" 1
+-- "##  #"
+--
+updateTABAux :: String -> Int -> String
+updateTABAux (x:y) 0 = "?" ++ y
+updateTABAux (x:y) posicao = [x] ++ updateTABAux y (posicao-1)
+
+-- |Função auxiliar de /updateTABcaixas/ que define a letra a colocar na coordenada da caixa. Se no espaço estiver o carater " ", coloca ""H"". Se não for vazio, coloca o carater ""I"".
+updateTABcaixasAux :: String -> Int -> String
+updateTABcaixasAux (x:y) 0 = if (x==' ') then "H" ++ y
+                                else "I" ++ y
+updateTABcaixasAux (x:y) posicao = [x] ++ updateTABcaixasAux y (posicao-1)
+
+-- |Função auxiliar de /updateTABsokoban/ que lê a coordenada do Sokoban e o coloca no tabuleiro representado pelo carater "o".
+updateTABsokobanAux :: String -> Int -> String
+updateTABsokobanAux (x:y) 0 = "o" ++ y
+updateTABsokobanAux (x:y) posicao = [x] ++ updateTABsokobanAux y (posicao-1)
+
+
+---------------------------------------------
+-- dividir tabuleiro
+
+
+-- |Função auxiliar de /FuncaoPlantaMelhor/ que separa o tabuleiro das coordenadas. Dá apenas o tabuleiro.
+--
+-- >>> sepTABCoord ["#####","#. .#","#   #","#   #","#####","2 1","1 2","3 2"," "]
+-- ["#####","#. .#","#   #","#   #","#####"]
+--
+sepTABCoord :: [String] -> [String]
+sepTABCoord ((x:y):z) = if (algarismos x) then [] 
+                        else (x:y):sepTABCoord z
+
+-- |Separação das coordenadas do tabuleiro. Dá apenas as coordenadas da localização do Sokoban e das caixas.
+--
+-- >>> sepTabCOORD ["#####","#. .#","#   #","#   #","#####","2 1","1 2","3 2"," "]
+-- ["2 1","1 2","3 2"]
+--
+sepTabCOORD :: [String] -> [String]
+sepTabCOORD ([]:[]) = []
+sepTabCOORD ((x:y):[]) = []
+sepTabCOORD ((x:y):z) = if (algarismos x) then (x:y):sepTabCOORD z
+                            else sepTabCOORD z
+
+-- |Separa as coordenadas uma a uma.
+--
+-- >>> sepCOORD1 ["2 1","1 2","3 2"]
+-- ["2","1","1","2","3","2"]
+--
+sepCOORD1 :: [String] -> [String]
+sepCOORD1 (x:[]) = words x
+sepCOORD1 (x:y)  = (words x) ++ (sepCOORD1 y)
+
+-- |Após separar as coordenadas uma a uma, juntamo-las em pares de inteiros.
+--
+-- >>> sepCOORD2 ["2","1","1","2","3","2"]
+-- [(2,1),(1,2),(3,2)]
+--
+sepCOORD2 :: [String] -> [(Int,Int)]
+sepCOORD2 (x:[]) = []
+sepCOORD2 (x:y:[]) = [((read x :: Int),(read y :: Int))]
+sepCOORD2 (x:y:z)  = [((read x :: Int),(read y :: Int))] ++ sepCOORD2 z
+
+-- |Função auxiliar de /funcaoPlantaMelhor/ que junta as três anteriores funções e executa todas apenas nesta.
+--
+-- >>> sepTabCOORDpares ["#####","#. .#","#   #","#   #","#####","2 1","1 2","3 2"," "]
+-- [(2,1),(1,2),(3,2)]
+--
+sepTabCOORDpares :: [String] -> [(Int,Int)]
+sepTabCOORDpares tabuleiro = sepCOORD2 (sepCOORD1 (sepTabCOORD tabuleiro))
+
+----------------
+-- auxiliares
+
+-- |Função auxiliar de /testeCOORDso2numeros/ que dada uma lista de /Char/ diz se essa lista tem apenas números. Qualquer outro tipo de carater devolve /Falso/.
+--
+-- >>> algarismos [1,3,5,a,6,b]
+-- False
+--
+-- >>> algarismos [1,3,7,4,2]
+-- True
+--
+-- == FUNÇÕES PREDEFINIDAS
+--
+algarismos :: Char -> Bool
+algarismos a = if (a >= '0') && (a <= '9') then True
+                else False
+
+--------------------------------------------------------------------------------------------
+
+

@@ -1,0 +1,1058 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>SO Projeto: Stream Processing: Referência ao ficheiro controller.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">SO Projeto: Stream Processing
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Ficheiros</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;ficheiros</span></a></li>
+      <li><a href="globals.html"><span>Ficheiros&#160;membro</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tudo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Ficheiros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funções</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variáveis</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Definições de tipos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Páginas</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#typedef-members">Definições de tipos</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro controller.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Módulo responsável pelo controlador.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;unistd.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;fcntl.h&gt;</code><br/>
+<code>#include &lt;sys/types.h&gt;</code><br/>
+<code>#include &lt;sys/wait.h&gt;</code><br/>
+<code>#include &lt;sys/stat.h&gt;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;string.h&gt;</code><br/>
+<code>#include &lt;signal.h&gt;</code><br/>
+<code>#include &lt;math.h&gt;</code><br/>
+<code>#include &lt;limits.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="stringProcessing_8h_source.html">stringProcessing.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcontrollerNode.html">controllerNode</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcontrollerInfo.html">controllerInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Definições de tipos</h2></td></tr>
+<tr class="memitem:a78418a2899f8be3d2f675d90c0c3af3e"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcontrollerNode.html">controllerNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a78418a2899f8be3d2f675d90c0c3af3e">ControllerNode</a></td></tr>
+<tr class="separator:a78418a2899f8be3d2f675d90c0c3af3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b3f5570ef77cf838004f0945e65a1b5"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcontrollerInfo.html">controllerInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a></td></tr>
+<tr class="separator:a9b3f5570ef77cf838004f0945e65a1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a52c3c95d77f86b922fb7d302ed234159"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a52c3c95d77f86b922fb7d302ed234159">alloc_node</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, int i)</td></tr>
+<tr class="separator:a52c3c95d77f86b922fb7d302ed234159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8124e25ca600d2c1a8c960a3c0b42228"><td class="memItemLeft" align="right" valign="top"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a8124e25ca600d2c1a8c960a3c0b42228">initControllerInfo</a> (int size)</td></tr>
+<tr class="memdesc:a8124e25ca600d2c1a8c960a3c0b42228"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa um ControllerInfo.  <a href="#a8124e25ca600d2c1a8c960a3c0b42228">Mais...</a><br/></td></tr>
+<tr class="separator:a8124e25ca600d2c1a8c960a3c0b42228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13b4f33f7867b27aba503d4bc4bdaafd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a13b4f33f7867b27aba503d4bc4bdaafd">reallocControllerInfo</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info)</td></tr>
+<tr class="memdesc:a13b4f33f7867b27aba503d4bc4bdaafd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realoca memória para a estrutra.  <a href="#a13b4f33f7867b27aba503d4bc4bdaafd">Mais...</a><br/></td></tr>
+<tr class="separator:a13b4f33f7867b27aba503d4bc4bdaafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30d696b06acb3b3c32e43e0fb8bac668"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a30d696b06acb3b3c32e43e0fb8bac668">reallocNodeIds</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, int id, char *id_name)</td></tr>
+<tr class="memdesc:a30d696b06acb3b3c32e43e0fb8bac668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realoca memória para o array de ids de um nodo.  <a href="#a30d696b06acb3b3c32e43e0fb8bac668">Mais...</a><br/></td></tr>
+<tr class="separator:a30d696b06acb3b3c32e43e0fb8bac668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b440b8eaf04255aa2bba7864ad774e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a6b440b8eaf04255aa2bba7864ad774e2">findID</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, int id)</td></tr>
+<tr class="memdesc:a6b440b8eaf04255aa2bba7864ad774e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a posição de um ID na estrutura.  <a href="#a6b440b8eaf04255aa2bba7864ad774e2">Mais...</a><br/></td></tr>
+<tr class="separator:a6b440b8eaf04255aa2bba7864ad774e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae6561f20e64422a5c9d5bc4e4dc153"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a6ae6561f20e64422a5c9d5bc4e4dc153">removeID</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, int id)</td></tr>
+<tr class="memdesc:a6ae6561f20e64422a5c9d5bc4e4dc153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove um determiado nodo da estrutura.  <a href="#a6ae6561f20e64422a5c9d5bc4e4dc153">Mais...</a><br/></td></tr>
+<tr class="separator:a6ae6561f20e64422a5c9d5bc4e4dc153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b1dcd5e99f391e3ea75268bf0efdab0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a8b1dcd5e99f391e3ea75268bf0efdab0">findValue</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, int id, int value, char *c)</td></tr>
+<tr class="memdesc:a8b1dcd5e99f391e3ea75268bf0efdab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procura se um determinado ID já liga a um nodo.  <a href="#a8b1dcd5e99f391e3ea75268bf0efdab0">Mais...</a><br/></td></tr>
+<tr class="separator:a8b1dcd5e99f391e3ea75268bf0efdab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cf9e095842432d21c033c3cbc0a24fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a1cf9e095842432d21c033c3cbc0a24fa">addValue</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, int id, int value, char *c)</td></tr>
+<tr class="memdesc:a1cf9e095842432d21c033c3cbc0a24fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um ID à lista de ids de um nodo.  <a href="#a1cf9e095842432d21c033c3cbc0a24fa">Mais...</a><br/></td></tr>
+<tr class="separator:a1cf9e095842432d21c033c3cbc0a24fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed90a8b41cef8142969324dae3b143ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#aed90a8b41cef8142969324dae3b143ab">removeValue</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, int id, int value, char *c)</td></tr>
+<tr class="separator:aed90a8b41cef8142969324dae3b143ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a548f76595c1d470575d82e8be4f96056"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a548f76595c1d470575d82e8be4f96056">removeFildes</a> (int *out_ids, int *fildes, int size, int id)</td></tr>
+<tr class="memdesc:a548f76595c1d470575d82e8be4f96056"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove um id de um array e o respetivo descritor de ficheiro.  <a href="#a548f76595c1d470575d82e8be4f96056">Mais...</a><br/></td></tr>
+<tr class="separator:a548f76595c1d470575d82e8be4f96056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4f09bcec4a832ffd3335d6bc3509b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a1d4f09bcec4a832ffd3335d6bc3509b9">stop_proc</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, int id)</td></tr>
+<tr class="separator:a1d4f09bcec4a832ffd3335d6bc3509b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7209731fc180bd87323f9dddc7fa823"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#ac7209731fc180bd87323f9dddc7fa823">cont_proc</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, int id)</td></tr>
+<tr class="separator:ac7209731fc180bd87323f9dddc7fa823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bcf8451e73f9bccb1f132e52be0b035"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a6bcf8451e73f9bccb1f132e52be0b035">nodeHandler</a> (int sig)</td></tr>
+<tr class="memdesc:a6bcf8451e73f9bccb1f132e52be0b035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trata dos sinais recebidos pelo execNode.  <a href="#a6bcf8451e73f9bccb1f132e52be0b035">Mais...</a><br/></td></tr>
+<tr class="separator:a6bcf8451e73f9bccb1f132e52be0b035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae17d34849d80a46d856c08831d50fe1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#ae17d34849d80a46d856c08831d50fe1d">execNode</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, int id)</td></tr>
+<tr class="memdesc:ae17d34849d80a46d856c08831d50fe1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Irá ser responsável por executar um comando de um nodo.  <a href="#ae17d34849d80a46d856c08831d50fe1d">Mais...</a><br/></td></tr>
+<tr class="separator:ae17d34849d80a46d856c08831d50fe1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab92f7560550c9f03093fc59d0b306c61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#ab92f7560550c9f03093fc59d0b306c61">default_handler</a> (int sig)</td></tr>
+<tr class="memdesc:ab92f7560550c9f03093fc59d0b306c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apenas servirá para quando um node é substituido, recebendo o sinal do novo node dizendo que pode remover o anterior (createNode) ou para o connect sinalizar que recebeu e processou um bit (disconnect)  <a href="#ab92f7560550c9f03093fc59d0b306c61">Mais...</a><br/></td></tr>
+<tr class="separator:ab92f7560550c9f03093fc59d0b306c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42326d071e3db6d81e6f66e3c50f2ba5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a42326d071e3db6d81e6f66e3c50f2ba5">createNode</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, char **c)</td></tr>
+<tr class="memdesc:a42326d071e3db6d81e6f66e3c50f2ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo nodo (ou substitui um existente)  <a href="#a42326d071e3db6d81e6f66e3c50f2ba5">Mais...</a><br/></td></tr>
+<tr class="separator:a42326d071e3db6d81e6f66e3c50f2ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a927ec2ead49866185e2a5b7548fcaa25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a927ec2ead49866185e2a5b7548fcaa25">inject</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, char **c)</td></tr>
+<tr class="memdesc:a927ec2ead49866185e2a5b7548fcaa25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Irá enviar um input para um nodo.  <a href="#a927ec2ead49866185e2a5b7548fcaa25">Mais...</a><br/></td></tr>
+<tr class="separator:a927ec2ead49866185e2a5b7548fcaa25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa35d409147bbdafcc5bfc392d6ead9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a2fa35d409147bbdafcc5bfc392d6ead9">connect_handler</a> (int sig)</td></tr>
+<tr class="memdesc:a2fa35d409147bbdafcc5bfc392d6ead9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tratará dos sinais do connect (receberá os bits de disconnect)  <a href="#a2fa35d409147bbdafcc5bfc392d6ead9">Mais...</a><br/></td></tr>
+<tr class="separator:a2fa35d409147bbdafcc5bfc392d6ead9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accdaddc862ebabb809457c531b72a012"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#accdaddc862ebabb809457c531b72a012">connect</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, char **c)</td></tr>
+<tr class="memdesc:accdaddc862ebabb809457c531b72a012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Irá ligar um nodo a um ou mais nodos.  <a href="#accdaddc862ebabb809457c531b72a012">Mais...</a><br/></td></tr>
+<tr class="separator:accdaddc862ebabb809457c531b72a012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ea7a60d4acb4d637f4a5b7fe1b642f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a49ea7a60d4acb4d637f4a5b7fe1b642f">disconnect</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, char **c)</td></tr>
+<tr class="memdesc:a49ea7a60d4acb4d637f4a5b7fe1b642f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Irá remover a ligação entre dois nós.  <a href="#a49ea7a60d4acb4d637f4a5b7fe1b642f">Mais...</a><br/></td></tr>
+<tr class="separator:a49ea7a60d4acb4d637f4a5b7fe1b642f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae49484a00ecee432cfd182162b9453b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#ae49484a00ecee432cfd182162b9453b4">removeNode</a> (<a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info, char **c)</td></tr>
+<tr class="memdesc:ae49484a00ecee432cfd182162b9453b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove um nó da rede.  <a href="#ae49484a00ecee432cfd182162b9453b4">Mais...</a><br/></td></tr>
+<tr class="separator:ae49484a00ecee432cfd182162b9453b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2463a3acef2df4c951ce942a3229e44e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a2463a3acef2df4c951ce942a3229e44e">quit</a> ()</td></tr>
+<tr class="memdesc:a2463a3acef2df4c951ce942a3229e44e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Termina o programa.  <a href="#a2463a3acef2df4c951ce942a3229e44e">Mais...</a><br/></td></tr>
+<tr class="separator:a2463a3acef2df4c951ce942a3229e44e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7479b7e7a5abe6155ac3dda3278ef93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#ac7479b7e7a5abe6155ac3dda3278ef93">readCommand</a> (char *buf, <a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> info)</td></tr>
+<tr class="memdesc:ac7479b7e7a5abe6155ac3dda3278ef93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifica o comando lido e chama a função adqueada.  <a href="#ac7479b7e7a5abe6155ac3dda3278ef93">Mais...</a><br/></td></tr>
+<tr class="separator:ac7479b7e7a5abe6155ac3dda3278ef93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Módulo responsável pelo controlador. </p>
+<p>Este programa irá ler informação passada pelo stdin ou por um ficheiro e irá criar uma rede de nodos (stream processing).</p>
+<p>Cada nodo irá executar um comando sobre o input recebido e irá enviar a sua saída (ou não) para um processo 'connect', que por sua vez irá passar esse resultado para um ou mais nodos. </p>
+</div><h2 class="groupheader">Documentação dos tipos</h2>
+<a class="anchor" id="a9b3f5570ef77cf838004f0945e65a1b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structcontrollerInfo.html">controllerInfo</a>* <a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a78418a2899f8be3d2f675d90c0c3af3e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structcontrollerNode.html">controllerNode</a>* <a class="el" href="controller_8c.html#a78418a2899f8be3d2f675d90c0c3af3e">ControllerNode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a class="anchor" id="a1cf9e095842432d21c033c3cbc0a24fa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adiciona um ID à lista de ids de um nodo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">id</td><td>ID do nodo </td></tr>
+    <tr><td class="paramname">value</td><td>ID do nodo a ligar a id </td></tr>
+    <tr><td class="paramname">c</td><td>Se o ID liga à entrada ("in") ou à saída ("out") </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a52c3c95d77f86b922fb7d302ed234159"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void alloc_node </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Aloca memória num node </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">i</td><td>Indice a alocar memória </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="accdaddc862ebabb809457c531b72a012"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void connect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Irá ligar um nodo a um ou mais nodos. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">c</td><td>Informação com as ligações </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2fa35d409147bbdafcc5bfc392d6ead9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void connect_handler </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sig</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tratará dos sinais do connect (receberá os bits de disconnect) </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sig</td><td>Sinal </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac7209731fc180bd87323f9dddc7fa823"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cont_proc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Continua todos os nodos de entrada de um determinado nodo </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">id</td><td>ID do nodo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a42326d071e3db6d81e6f66e3c50f2ba5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void createNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um novo nodo (ou substitui um existente) </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">c</td><td>Array com informação do nodo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab92f7560550c9f03093fc59d0b306c61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void default_handler </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sig</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Apenas servirá para quando um node é substituido, recebendo o sinal do novo node dizendo que pode remover o anterior (createNode) ou para o connect sinalizar que recebeu e processou um bit (disconnect) </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sig</td><td>Sinal </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a49ea7a60d4acb4d637f4a5b7fe1b642f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void disconnect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Irá remover a ligação entre dois nós. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">c</td><td>Array de strings com os ids </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae17d34849d80a46d856c08831d50fe1d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void execNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Irá ser responsável por executar um comando de um nodo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">id</td><td>ID do nodo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6b440b8eaf04255aa2bba7864ad774e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int findID </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna a posição de um ID na estrutura. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">id</td><td>ID a procurar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Posição do ID (-1 se não existir) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8b1dcd5e99f391e3ea75268bf0efdab0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int findValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Procura se um determinado ID já liga a um nodo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">id</td><td>ID do nodo </td></tr>
+    <tr><td class="paramname">value</td><td>ID do nodo que liga a id </td></tr>
+    <tr><td class="paramname">c</td><td>Se o ID liga à entrada ("in") ou à saída ("out") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Já existe um value a ligar ao id (true) ou não (false) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8124e25ca600d2c1a8c960a3c0b42228"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a> initControllerInfo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa um ControllerInfo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>Tamanho inicial </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Nova estrutra </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a927ec2ead49866185e2a5b7548fcaa25"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void inject </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Irá enviar um input para um nodo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">c</td><td>Array com o comando a executar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função main de controller. Irá ler o input e passar a readCommand </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Número de argumentos </td></tr>
+    <tr><td class="paramname">argv</td><td>Argumentos </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>&ndash; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6bcf8451e73f9bccb1f132e52be0b035"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nodeHandler </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sig</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Trata dos sinais recebidos pelo execNode. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sig</td><td>Sinal </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2463a3acef2df4c951ce942a3229e44e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void quit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Termina o programa. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac7479b7e7a5abe6155ac3dda3278ef93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void readCommand </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Identifica o comando lido e chama a função adqueada. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>Buffer com o input </td></tr>
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a13b4f33f7867b27aba503d4bc4bdaafd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reallocControllerInfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realoca memória para a estrutra. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a30d696b06acb3b3c32e43e0fb8bac668"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reallocNodeIds </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>id_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realoca memória para o array de ids de um nodo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">id</td><td>ID do nodo </td></tr>
+    <tr><td class="paramname">id_name</td><td>Se é para alocar a entrada ("in") ou a saída ("out") </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a548f76595c1d470575d82e8be4f96056"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeFildes </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>out_ids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>fildes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove um id de um array e o respetivo descritor de ficheiro. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out_ids</td><td>Array com os ids </td></tr>
+    <tr><td class="paramname">fildes</td><td>Array com os descritores </td></tr>
+    <tr><td class="paramname">size</td><td>Tamanho dos arrays </td></tr>
+    <tr><td class="paramname">id</td><td>ID a remover </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6ae6561f20e64422a5c9d5bc4e4dc153"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeID </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove um determiado nodo da estrutura. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">id</td><td>ID do nodo a remover </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae49484a00ecee432cfd182162b9453b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove um nó da rede. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">c</td><td>Arary de strings com o nodo a remover </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aed90a8b41cef8142969324dae3b143ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Remove um determinado ID (value) da lista de ligações de outro (ID) </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">id</td><td>ID do nodo </td></tr>
+    <tr><td class="paramname">value</td><td>ID a ser removido </td></tr>
+    <tr><td class="paramname">c</td><td>Se é para remover uma entrada ("in") ou uma saída ("out") </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1d4f09bcec4a832ffd3335d6bc3509b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stop_proc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controller_8c.html#a9b3f5570ef77cf838004f0945e65a1b5">ControllerInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Para todos os nodos de entrada de um determinado nodo </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td><a class="el" href="structEstrutura.html">Estrutura</a> </td></tr>
+    <tr><td class="paramname">id</td><td>ID do nodo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado em Sexta, 2 de Junho de 2017 20:00:15 para SO Projeto: Stream Processing por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

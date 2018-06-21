@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=arr\ n
+comment0.target=int[]\ ch(int[],\ int)
+comment1.params=arr
+comment1.target=int[]\ escreveArray(int[])
+comment2.params=arrp\ arrc
+comment2.target=int\ ciguais(int[],\ int[])
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4

@@ -1,0 +1,191 @@
+\documentclass[a4paper,12pt]{report}
+
+%Preambulo
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{grffile}
+\usepackage{color}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{courier}
+\usepackage{indentfirst}
+\usepackage{tcolorbox}
+\usepackage{blindtext}
+\usepackage{rotating}
+\usepackage{tikz}
+
+
+\title{\bf Projeto Sokoban \paragraph*{II FASE} }
+\author{Francisco Oliveira \and Vitor Peixoto}
+\date{20 Dezembro 2015 \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\  {\bf Laboratórios de Informática I \\ \\ Mestrado Integrado em Engenharia Informática}}
+
+
+
+%Cabeçalho e Rodapé
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyfoot[C]{Página \thepage\ de \pageref{LastPage}}
+	\rhead{{\bf MIEI} Laboratórios de Informática I}
+	\lhead{2ª Fase - Projeto Sokoban}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+}	
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Laboratórios de Informática I - {\bf MIEI}}
+\lhead{2ª Fase - Projeto Sokoban}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[C]{Página \thepage\ de \pageref{LastPage}}
+\definecolor{light-gray}{gray}{0.98}
+%Estilo das Listings (Funções)
+\lstset{
+	backgroundcolor=\color{light-gray},
+	frame=single,
+	xleftmargin=2pt,
+	stepnumber=1,
+	breakatwhitespace=false,         
+	breaklines=true, 
+	numbers=left,
+	numbersep=5pt,
+	numberstyle=\ttfamily\tiny\color[gray]{0.35},
+	belowcaptionskip=\bigskipamount,
+	captionpos=b,
+	escapeinside={*'}{'*},
+	language=haskell,
+	tabsize=4,
+	emphstyle={\bf},
+	commentstyle=\it,
+	stringstyle=\footnotesize\ttfamily,
+	showspaces=false,
+	columns=flexible,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\footnotesize\ttfamily,
+	showstringspaces=false,
+	morecomment=[l]\%,
+	tabsize=4
+}
+\renewcommand*{\lstlistlistingname}{Lista de Funções}
+
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+\chapter{Introdução}
+
+Este projeto foi realizado no âmbito da 2ª fase proposta na unidade curricular de Laboratórios de Informática I do 1º semestre de Engenharia Informática. Foi-nos então proposto criar o jogo {\sl Sokoban}, que já havia sido trabalhado na 1ª fase do projeto, em modo gráfico 2D usando como ferramenta essencial a biblioteca {\sl Gloss}. Dada a sua utilidade para esta fase usamos funções de tarefas da 1ª fase, embora que ligeiramente modificadas e criamos outras funções de raiz, todas respetivamente documentadas através do gerador de documentação {\sl Haddock}.
+
+\chapter{Tarefa D}
+
+Esta tarefa será a responsável pela organização e sequencialização dos comandos. Assim, a biblioteca {\sl Gloss} ainda não será usada nesta tarefa computacional. Como dito no enunciado do projeto, esta tarefa não será mais do que uma sequência de comandos efetuados em um só comando.
+\\
+\begin{lstlisting}[caption={\small\sl Função {\tt tarefa3'} que dado o tabuleiro, as coordenadas das caixas, do Sokoban e um movimento (U,D,L,R) devolve um par de inteiros com as novas coordenadas do Sokoban.\/}]
+tarefa3' :: [String] -> (Int,Int)
+tarefa3' tabuleiro = tarefa3Aux (reverse (funcaoPlantaMelhor tabuleiro)) (head (sepTabCOORDpares tabuleiro)) (last (init tabuleiro)) where 
+	tarefa3Aux ((x:y):z) (a,b) direcao 
+		| direcao=="U" = movimentos ((x:y):z) (a,b) (0,1)
+		| direcao=="D" = movimentos ((x:y):z) (a,b) (0,-1)
+		| direcao=="L" = movimentos ((x:y):z) (a,b) (-1,0)
+		| direcao=="R" = movimentos ((x:y):z) (a,b) (1,0)
+		| otherwise = error "Erro"
+\end{lstlisting}
+
+A função supradescrita será extremamente útil pois, usando como auxiliar nesta nova tarefa, será capaz de dar a nova coordenada do {\sl Sokoban} após um movimento. Ou seja, uma repetição desta função irá levar o {\sl Sokoban} a fazer a sequência de comandos inserida até chegar à vitória ou até os comandos terem terminado.
+
+A função que executa o conjunto de comandos e devolve a resposta é a função {\tt tarefa4}. Nesta função é introduzido um tabuleiro com as coordenadas das caixas, do {\sl Sokoban} e as sequências de movimentos e devolve {\tt "FIM <tick\_count>" } caso as caixas estejam todas colocadas nos pontos, ou seja, o jogo esteja terminado, onde {\tt <tick\_count>} é o número de movimentos funcionais (aqueles em que o {\sl Sokoban} realmente moveu-se) efetuados, ou devolve {\tt "INCOMPLETO <tick\_count>" } caso as caixas não estejam todas colocadas nos pontos, ou seja, o jogo não esteja ainda acabado.
+\\
+\begin{lstlisting}[caption={\small\sl Função {\tt tarefa4} que dado o tabuleiro, as coordenadas das caixas, do Sokoban e uma sequência de movimentos ("UDLR" e.g.) devolve o estado do jogo e o número de movimentos funcionais efetuados.}]
+tarefa4 :: [String] -> [String]
+tarefa4 tabuleiro = rinceAndRepeat (tabuleiro) (last (init tabuleiro))
+\end{lstlisting}
+
+
+\begin{tcolorbox}[width=\textwidth,colback={black},title={\sf Linha de Comandos 2.1:},outer arc=0mm,colupper=white]    
+	{\footnotesize\tt *Main> tarefa4 ["\#\#\#\#\#","\#. .\#","\#   \#","\#   \#","\#\#\#\#\#","2 1","1 2","3 2","RUDLLU"]
+
+	"FIM 6" }
+\end{tcolorbox} 
+
+\begin{tcolorbox}[width=\textwidth,colback={black},title={\sf Linha de Comandos 2.2:},outer arc=0mm,colupper=white]    
+	{\footnotesize\tt *Main> tarefa4 ["\#\#\#\#\#","\#. .\#","\#   \#","\#   \#","\#\#\#\#\#","2 1","1 2","3 2","RUDLLLL"]
+		
+	"INCOMPLETO 5" }
+\end{tcolorbox}   
+
+
+
+\chapter{Tarefa E}
+A Tarefa E não tem como propósito desenvolver o jogo, mas sim as nossas capacidades com a biblioteca {\sl Gloss} através do tipo {\tt Picture}, um tipo que será fundamental na Tarefa F. O objetivo é determinar as dimensões do menor retângulo que envolve uma {\tt Picture}
+\\
+\begin{figure}[h]
+	\centering
+	\includegraphics{image1}
+	\caption{\small\sl Exemplo de retângulos de menores dimensões que envolve cada figura geométrica.}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Tarefa F}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.25\textwidth]{image2}
+	\caption{\small\sl Le Doge Strikes Back}
+\end{figure}
+
+\chapter {Testes}
+TESTES AQUI
+
+\chapter {Conclusões}
+CONCLUSOES AQUI
+
+\section {EN}
+Hello
+
+\section {ES}
+Hola
+
+\section {PT}
+Olá
+
+\section {IT}
+Ciao
+
+\section {FR}
+Bonjour
+
+\section{DE}
+Hallo
+
+
+
+
+\lstlistoflistings
+
+\listoffigures
+
+\end{document}

@@ -1,0 +1,615 @@
+\documentclass[a4paper,12pt]{report}
+
+
+%Preambulo
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{grffile}
+\usepackage{color}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{courier}
+\usepackage{indentfirst}
+\usepackage{tcolorbox}
+\usepackage{bold-extra}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{rotating}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{slantsc}
+\usepackage{blindtext}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{inputenc}
+\usepackage{csquotes}
+\usepackage{geometry} 
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+
+
+\begin{document}
+\title{\bf Projeto LI3} 
+\author{Francisco Oliveira \and Raul Vilas Boas \and Vitor Peixoto}
+\date{{\bf Grupo 33} \\ \\ \today \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\  {\bf Laboratórios de Informática III \\ \\ Mestrado Integrado em Engenharia Informática}}
+
+
+
+%Cabeçalho e Rodapé
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyfoot[C]{Página \thepage\ de \pageref{LastPage}}
+	\rhead{Laboratórios de Informática III - {\bf MIEI}}
+	\lhead{Projeto LI3}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+}	
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Laboratórios de Informática III - {\bf MIEI}}
+\lhead{Projeto LI3}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[C]{Página \thepage\ de \pageref{LastPage}}
+\definecolor{light-gray}{gray}{0.97}
+%Estilo das Listings (Funções)
+\definecolor{lightgreen}{rgb}{0.4,0.8,0.1}
+\definecolor{darkgray}{rgb}{0.1,0.1,0.1}
+\definecolor{mauve}{rgb}{0.2,0.3,0.0}
+\definecolor{deadred}{rgb}{1,0.35,0.35}
+\definecolor{deadorange}{rgb}{1,0.9,0.3}
+\definecolor{deadgreen}{rgb}{0.7,1,0.1}
+\definecolor{lightblue}{rgb}{0.3,0.8,0.9}
+\definecolor{newpink}{rgb}{0.9,0.5,0.8}
+\makeatletter
+\newcommand\processAsterisk{
+	\ifnum\lst@mode=\lst@Pmode\relax
+	\textcolor{newpink}{*}
+	\else
+	*
+	\fi
+}
+\makeatother
+
+\lstset{frame=tb,
+	language=C,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily\color{white}},
+	numbers=none,
+	literate={*}{\processAsterisk}1,
+	morecomment=[l]\%,
+	backgroundcolor=\color{darkgray},
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{newpink},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\renewcommand*{\lstlistlistingname}{Lista de Funções}
+
+
+
+
+\maketitle
+\tableofcontents
+
+
+\chapter{Introdução}
+
+Este relatório foi realizado no âmbito do projeto proposto na unidade curricular de Laboratórios de Informática III do Mestrado Integrado em Engenharia Informática. Foi-nos então proposto criar um sistema que permitisse analisar diversos artigos presentes nos backups da Wikipedia disponibilizados pela equipa docente. Esse sistema deve também ser capaz de extrair informação útil desses backups, como por exemplo o número de revisões, o número total de artigos, os maiores artigos, etc. 
+Foi nos indicado para realizar este projeto na linguagem {\sl C} e ter como ponto de partida um \href{http://xmlsoft.org/tutorial/}{tutorial em {\sl XML}}.
+
+
+
+Para chegarmos a resultados concretos adotamos uma postura que se baseia na aprendizagem através do erros. Tudo o que foi desenvolvido foi alcançado através de diversos erros e falhas que fizeram melhorar as nossas capacidades com a linguagem {\sl C}, descobrir outros novos aspetos desta linguagem com os quais não estavamos familiarizados, tais como o encapsulamento de dados, e aprender o funcionamento da estruturação e as capacidades da biblioteca {\sl libxml2}.
+
+Este relatório está orientado por quatro secções, onde serão explorado os problemas a resolver, a nossa abordagem para as suas resoluções e os testes efetuados e respetivos {\sl outputs}.
+
+
+
+
+
+\chapter{Descrição do Problema}
+
+O ponto fulcral deste projeto era desenvolver um sistema que permita analisar backups da Wikipedia de vários meses e conseguir obter informação útil dos mesmos. A informação que deveríamos obter foi-nos dada pela equipa docente sob a forma de interrogações.
+
+O primeiro problema com que nos deparamos foi como organizar a informação de forma a poder ser encontrada de uma maneira rápida, eficaz e fiável. Seria impossível resolver as questões percorrendo diversas vezes os backups porque seria bastante lento (uma vez que o tamanho dos backups somados ronda os 1,7 GB) e complicado (porque iria envolver bastante uso da livraria {\sl XML}).
+
+Ao longo da construção deste projeto fomo-nos deparando diversas vezes com novos problemas, como a necessidade de agrupar os contribuidores num sistema àparte que será falado no próximo capítulo, algumas dificuldades com umas {\sl tags} ocultas do {\sl XML}, entre outros.
+
+
+
+\chapter{Concepção da Solução}
+
+
+\section{Idealização}
+Para começar achamos necessário aprender mais sobre a livraria {\sl XML} e o seu funcionamento. Após uma larga pesquisa acerca da livraria, do seu funcionamento (tendo como fonte principal o tutorial em {\sl XML}) e de termos criado umas funções de teste para os nossos backups começamos a pensar no próximo obstáculo que seria como organizar a informação de cada backup de modo a ser encontrada rápida e eficazmente.
+
+Após termos conferenciado com colegas de outros grupos e pesquisado na internet, chegamos à conclusão que o método mais eficaz e rápido seria mesmo usar uma tabela de hash ({\sl hashtable}) orientada pelo ID de cada artigo. Esta tabela de hash vai conter diversas informações para cada artigo, especificadas na Figura 3.1.
+
+Esta tabela de hash é {\sl closed addressing} ou seja, em cada posição da hash terá uma lista ligada composta por "caixas"\space e cada caixa é uma {\sl struct} que vai conter a informação sobre um artigo (ver Figura 3.1).
+
+Este projeto foi iniciado num contexto de {\sl small-scale programming} contudo, conforme o crescimento das funções vimo-nos na necessidade de implementar modularidade, para termos uma melhor organização do código, e também encapsulamento, de modo a garantir um acesso controlado à estrutura.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{image1}
+	\caption{\small\sl Organização da tabela de hash com closed addressing.}
+	\captionsetup[figure]{list=yes}
+\end{figure}
+
+
+\section{Implementação da Estrutura}
+
+Após a idealização da estrutura tivemos que implementar a tabela de hash e os backups na mesma. Primeiro tivemos de criar uma simples {\sl struct} demonstrada no Excerto 3.1 para a lista ligada de cada posição da tabela de hash ({\tt DataObject}). Depois foi criado o array de listas ligadas que será a hash ({\tt hashTableID[SIZE]}) dentro da estrutura {\tt TCD\_istruct} em que {\tt SIZE=7001}.
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 3.1: Implementação da tabela de hash.},outer arc=2mm,colupper=white]    
+	{\footnotesize\ttfamily {\color{newpink}typedef struct} DataObject \{
+			
+	\tab {\color{newpink}char *} title;
+			
+	\tab {\color{newpink}long} id;
+			
+	\tab {\color{newpink}int} revid;
+		
+	\tab {\color{newpink}char *} revtimestamp;
+			
+	\tab {\color{newpink}char *} contributorname;
+			
+	\tab {\color{newpink}int} contributorid;
+	
+	\tab {\color{newpink}long} tamanho;
+	
+	\tab {\color{newpink}long} palavras;
+			
+	\tab {\color{newpink}struct} DataObject{\color{newpink}*} next;
+		
+	\} {\color{newpink}*}object;
+	 
+	           {\color{darkgray}.}
+	           
+			{\color{newpink}typedef struct} TCD\_istruct \{
+			
+			\tab object hashTableID[SIZE];
+			
+			\tab {\color{gray}//contributor hashTableRevID[SIZE];}
+			    
+			\} {\color{newpink}*}TAD\_istruct;
+	}
+\end{tcolorbox} 
+
+Após termos a hash criada é necessário adicionar a informação dos artigos à hash. Para o fazer necessitamos dos conhecimentos em {\sl XML} obtidos inicialmente com o tutorial e alguns exemplos que fomos desenvolvendo para termos um melhor entrosamento com a livraria. Para criar uma caixa foi criada a função {\tt getObject} que percorre cada {\sl tag} dentro da {\sl tag "page}"\space e guarda a informação útil nos locais corretos da caixa.
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 3.2: Exemplo da {\tt getObject} para guardar o título do artigo.},outer arc=2mm,colupper=white]{\footnotesize\tt
+		
+	object {\color{lightblue}getObject} (xmlNodePtr node, xmlDocPtr doc) \{
+
+		\tab object artigo {\color{newpink}=} (object) {\color{lightblue}malloc} ({\color{newpink}sizeof}({\color{newpink}struct} DataObject));
+
+		\tab node {\color{newpink}=} node->{\color{deadred}children};
+
+        \tab {\color{darkgray}.}
+		
+		\tab {\color{gray}//Título do artigo }
+		
+		\tab {\color{newpink}while}({\color{lightblue}xmlStrcmp}(node->{\color{deadred}name},({\color{newpink}const} xmlChar {\color{newpink}*}){\color{deadgreen}{"title}}\color{deadgreen}"\color{white}))
+		
+		\tab \tab node {\color{newpink}=} node->{\color{deadred}next};
+		
+		\tab artigo->{\color{deadred}title} {\color{newpink}=} (({\color{newpink}char *}){\color{lightblue}xmlNodeListGetString}(doc,node->{\color{deadred}xmlChildren
+			
+	    Node},{\color{deadorange}1}));
+
+		\tab {\color{gray}...}
+		
+\}		 
+}
+\end{tcolorbox} 
+
+O que a função está a fazer resumidamente (e para este pequeno caso específico - título do artigo) é:
+\begin{itemize}
+	\setlength\itemsep{0.00001em}
+	\item Enquanto o nome do nó não for "title" avança para o próximo nó; 
+	\item Quando encontrar sai do ciclo {\sl while} e guarda o nome do que está dentro desse nó na variável {\tt title}  "caixa" da tabela de hash.
+\end{itemize}
+
+Após construída uma caixa esta vai ser inserida na hash. A função responsável é a {\tt insertHashID} (Excerto 3.3) que calcula o resto da divisão por {\tt SIZE=7001} (usando uma função auxiliar) que dará o índice do array da hash onde colocar a caixa e a insere na cabeça da lista ligada, como se pode observar na Figura 3.2.
+
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 3.3: {\tt insertHashID}.},outer arc=2mm,colupper=white]{\footnotesize\tt
+		
+		{\color{newpink}void} {\color{lightblue}insertHashID} (TAD\_istruct qs, object artigo) \{
+		
+		\tab {\color{newpink}int} hashcode {\color{newpink}=} {\color{lightblue}hashCode}(artigo->{\color{deadred}id});
+		
+		\tab artigo->{\color{deadred}next} {\color{newpink}=} qs->{\color{deadred}hashTableID}[hashcode];
+		
+		\tab qs->{\color{deadred}hashTableID}[hashcode] {\color{newpink}=} artigo;
+		
+		\}		 
+	}
+\end{tcolorbox} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{image2}
+	\caption{\small\sl Funcionamento da função {\tt insertHashID}.}
+	\captionsetup[figure]{list=yes}
+\end{figure}
+
+
+\section{Operações à Estrutura}
+
+Após termos a tabela de hash funcional começamos a escrever as funções definidas no {\tt interface.h}, começando pela {\tt init}, {\tt load} e {\tt clean}.
+
+A {\tt init} tem a função de alocar o espaço necessário para a estrutura e inicializar todas as posições da hash a {\tt NULL}.
+
+A {\tt load} recebe os backups e carrega-os na estrutura. Faz o {\sl parse} do documento e verifica se é válido com a função {\tt parseDoc}. Caso seja avança até à {\sl tag "page}", cria uma caixa para aquele artigo invocando a função {\tt getObject} e insere-o na hash pela função {\tt insertHashID}. No fim liberta as variáveis alocadas na memória e retorna a estrutura.
+
+A {\tt clean} liberta todo o espaço alocado pela estrutura (começando por libertar primeiramente as caixas das listas ligadas da hash).
+
+\section{Interrogações}
+
+Por fim chegamos à parte em que podemos começar a desenvolver as interrogações, tendo em conta o funcionamento da tabela de hash implantada.
+
+Funções como a {\tt all\_articles}, {\tt article\_title}, {\tt contributor\_name} e \\ {\tt article\_timestamp} foram bastante simples de responder visto que envolve unicamente uma pesquisa pela hash à procura da informação que necessitamos. Deixamos no Excerto 3.4 o exemplo de como foi implantada a função {\tt article\_title}.
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 3.4: {\tt article\_title}.},outer arc=2mm,colupper=white]{\footnotesize\tt
+		
+		{\color{newpink}char*} {\color{lightblue}article\_title}({\color{newpink}long} article\_id, TAD\_istruct qs)\{
+		
+			\tab object caixa {\color{newpink}=} qs->{\color{deadred}hashTableID}[{\color{lightblue}hashCode}(article\_id)];
+			
+			\tab {\color{newpink}while}(caixa{\color{newpink}!=}{\color{deadorange}NULL})\{
+			
+				\tab \tab {\color{newpink}if}(caixa->{\color{deadred}id} {\color{newpink}==} article\_id)\{
+			
+			    \tab \tab \tab {\color{newpink}char*} title = {\color{lightblue}mystrdup}(caixa->{\color{deadred}title});
+			            
+			    \tab \tab \tab {\color{newpink}return} title;
+			    
+			    \tab \tab \}
+			    
+				\tab \tab caixa {\color{newpink}=} caixa->{\color{deadred}next};
+			
+			\tab \}
+			
+			\tab {\color{newpink}return} {\color{deadorange}NULL};
+		
+		\} 
+	}
+\end{tcolorbox} 
+
+A função {\tt article\_title} faz uso do argumento {\tt article\_id} para descobrir em que posição da hash procurar. Dentro dessa posição vamos andar pela lista ligada procurar quando o ID guardado nessa caixa é igual ao ID fornecido como argumento. Quando encontrar, aloca uma variável {\tt title} para retornar o que está guardado na posição do título dessa caixa. O facto de alocarmos uma variável para ser retornada e não retornar imediatamente o elemento da hash está ligado ao encapsulamento que falaremos mais à frente (o alocamento é feito na função {\tt mystrdup}). Caso chegue ao fim da lista ligada e não encontre o ID que procura retorna {\tt NULL}.
+
+Depois tivemos funções com um grau de dificuldade um bocado maior, mas ainda bastante acessíveis como a {\tt unique\_articles} que vai percorrer todas as posições da tabela de hash e para cada posição verifica se o ID do artigo existe num {\sl array} auxiliar criado que guarda os ID's não repetidos. Se existir avança para a próxima "caixa", se não existir adiciona esse ID ao {\sl array} auxiliar e incrementa 1 num contador. No fim retorna esse contador que vai conter o número de artigos sem repetições
+
+A {\tt all\_revisions} também foi uma função que mostrou alguma resistência mas foi também resolvida. Para tal recorremos a uma matriz para cada posição da tabela de hash e a uma nova tabela de hash que achamos ser vantajosa para a resolução desta questão e da {\tt top\_10\_contributors} (e que foi aproveitada também para melhorar o desempenho da {\tt contributor\_name}). A nova tabela de hash vai conter o ID do artigo, o ID da revisão, o nome do contribuidor e o seu ID também. A matriz vai conter diversas linhas, uma para cada ID de artigo, cada linha vai ter na 1ª posição o número de ID's de revisão para esse artigo, na 2ª posição o ID do artigo e o resto da linha é ocupada com os ID's de revisão desse artigo. Essa matriz vai ser útil na medida em que para cada revisão vamos procurar o seu ID. Se já estiver registado o ID e a revisão, não fazemos nada. Se o ID já estiver registado mas não o ID de revisão, registamos a revisão nessa linha (linha desse ID de artigo) e incrementamos 1 ao número de revisões desse artigo. Se esse artigo ainda nem sequer estiver na matriz adicionamos esse ID de artigo e o de revisão e iniciamos com 1 na posição 0 da linha (nº de revisões existentes). Quando chegarmos ao fim dessa posição da tabela de hash adicionamos todos os valores das primeiras posições de todas as linhas à variável {\tt count} e iniciamos uma nova matriz para a nova posição. No fim a soma dos {\tt count} dá o número de revisões.
+
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 3.5: Implementação da nova tabela de hash para revisões.},outer arc=2mm,colupper=white]    
+	{\footnotesize\ttfamily {\color{newpink}typedef struct} DataContributor \{
+
+		\tab {\color{newpink}long} id;
+		
+		\tab {\color{newpink}int} revid;
+
+		\tab {\color{newpink}char *} contributorname;
+		
+		\tab {\color{newpink}int} contributorid;
+		
+		\tab {\color{newpink}struct} DataContributor{\color{newpink}*} next;
+		
+		\} {\color{newpink}*}contributor;
+		
+		{\color{darkgray}.}
+		
+		{\color{newpink}typedef struct} TCD\_istruct \{
+		
+		\tab object hashTableID[SIZE];
+		
+		\tab contributor hashTableRevID[SIZE]; 
+		
+		\} {\color{newpink}*}TAD\_istruct;
+	}
+\end{tcolorbox} 
+
+Outra das funções que nos mostrou dificuldades foi a {\tt top\_20\_largest\_articles} e a {\tt top\_N\_articles\_with\_more\_words}, mas só iremos abordar a {\tt top\_20\_largest\_ar
+ticles} devido ao facto de serem muito semelhantes.
+Para estas funções foram criados mais dois elementos na tabela de hash de artigos, o tamanho e as palavras do texto do artigo (usando para isso a função {\tt strlen} e {\tt contaPalavras} dentro da {\tt getObject}, sendo que a {\tt contaPalavras} foi uma função criada por nós).
+Para responder a esta questão decidimos criar dois {\sl arrays} que se acompanham (algo como uma matriz), sendo que um {\sl array} contém os ID's dos artigos e o outro contém o tamanho desse ID.
+Inicialmente é verificado se esse ID já é existente no {\sl array} dos ID's. Se não existir e caso seja maior que o ID de menor tamanho elimina esse ID e assume a sua posição e entra num ciclo verificando sempre se o seguinte é menor (ou se é igual, mas o ID é maior), se for vai avançando (tanto o ID como o tamanho vão avançando simultaneamente para que o índice de cada {\sl array} seja o correspondente ao mesmo conjunto ID - tamanho) até quebrar a condição. Caso o ID já exista no array temos de verificar se o tamanho que queremos por é maior. Caso seja, trocamos o tamanho que tinha no {\sl array} pelo que queremos por e voltamos a iniciar o ciclo para avançar no {\sl array} dependendo do tamanho.
+No fim iremos obter o {\sl array} dos ID's ordenado pelos de maior tamanho.
+
+A função {\tt top\_N\_articles\_with\_more\_words} é exatamente igual, mas iremos usar o elemento palavras da tabela de hash e o tamanho do {\sl array} não é fixo em 20, mas definido pelo argumento "N" dado à função.
+
+A função {\tt titles\_with\_prefix} inicialmente vai criar um {\sl array} com todos os ID's dos artigos sem repetições. Percorre a lista de ID's e para cada ID obtemos o título correspondente (sendo que esse título é sempre o da revisão mais recente do artigo, devido à tabela de hash ser construída com inserção à cabeça) e verifica se o argumento dado à função é prefixo do título através da função {\tt myStrcmp} e caso seja esse título é guardado num {\sl array} que após percorrer todos os ID's será devolvido como {\sl output} após ser ordenado alfabeticamente.
+
+Por último, para a interrogação {\tt top\_10\_contributors} foi criada uma lista ligada de {\sl structs}. Cada "caixa" guarda informação acerca do contribuidor (ID, contador de revisões únicas, ID de todas as revisões únicas e uma variável que diz o tamanho máximo alocado para sabermos quando é necessário realocar memória). Verificamos se o contribuidor já existe na lista ligada com uma função auxiliar, caso não exista é criada uma "caixa" com os dados desse contribuidor (o seu ID e a revisão inicial) e insere-se na lista. Caso esse contribuidor já esteja presente na lista é verificada se a revisão que queremos inserir já existe na lista, se já existir ignoramos, se não existir acrescentamos à lista e incrementamos 1 no número de revisões desse contribuidor. Antes de se introduzir uma nova revisão verificamos se a estrutura está "lotada" e caso esteja realocamos mais espaço para esta e para futuras revisões a ser introduzidas. No fim vamos adicionar os contadores de revisões e ID do contribuidor responsável num duplo {\sl array} ordenado pelo número de revisões e de tamanho 10. Após a inserção ordenada é devolvido o {\sl array} que irá conter os 10 maiores contribuidores.
+
+\section{Modularidade e Encapsulamento}
+
+Como tema abordado nesta unidade curricular	nas primeiras semanas e indo de encontro ao material disponível na {\sl Blackboard} tentamos ao máximo implementar modularidade e encapsulamento na nossa solução.
+
+Como tal, tivemos preocupação em manter a estrutura num ficheiro {"\sl.c }" ao invés do {\sl header} para obtermos uma estrutura privada, opaca. Por isso criamos um ficheiro {\sl hash.h} com a declaração das estruturas e um {\sl hash.c} onde estas estão definidas.
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 3.6: hash.h},outer arc=2mm,colupper=white]    
+	{\footnotesize\ttfamily 
+		
+		{\color{newpink}typedef struct} DataObject {\color{newpink}*}object;
+		
+		{\color{newpink}typedef struct} DataContributor {\color{newpink}*}contributor;
+
+		{\color{newpink}typedef struct} titlesWprefix {\color{newpink}*}TWD;
+		
+		{\color{newpink}typedef struct} top10contributor {\color{newpink}*}T10C;
+		
+	}
+\end{tcolorbox} 
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 3.7: hash.c},outer arc=2mm,colupper=white]    
+	{\footnotesize\ttfamily {\color{newpink}typedef struct} DataContributor \{
+		
+		\tab {\color{newpink}long} id;
+		
+		\tab {\color{newpink}int} revid;
+		
+		\tab {\color{newpink}char *} contributorname;
+		
+		\tab {\color{newpink}int} contributorid;
+		
+		\tab {\color{newpink}struct} DataContributor{\color{newpink}*} next;
+		
+		\} {\color{newpink}*}contributor;
+		
+		{\color{gray}...}
+	
+	}
+\end{tcolorbox} 
+
+De modo a facilitar a correção de erros, a compreensão do código e a reutilização de pedaços de código para outros problemas optamos por implementar o nosso código em vários módulos, visto que o programa acabou por demonstrar uma grande dimensão. Por isso dividimos o código nos seguintes módulos demonstrados na Figura 3.3.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{image3}
+	\caption{\small\sl Módulos do sistema.}
+	\captionsetup[figure]{list=yes}
+\end{figure}
+
+O módulo {\sl hash.c} guarda a estrutura geral, as tabelas de hash e outras estruturas de apoio a questões específicas, que estão declaradas no módulo {\sl hash.h} em conjunto com outras funções que precisam de ser globais a vários módulos. O ficheiro {\sl load.c} inclui todas as funções responsáveis por fazer o {\sl parse} dos backups, obter a informação que necessitamos e guardar na estrutura ({\tt load}), bem como iniciá-la ({\tt init}) e limpá-la no fim ({\tt clean}). O módulo {\sl program.c} inclui a {\tt main} e serve como ferramenta de teste às funções, visto que a equipa docente utiliza a sua própria {\tt main}. O {\sl questoes.c} inclui todas as funções	necessárias para responder às interrogações, bem como as suas auxiliares, tendo a estrutura já com a informação necessária. Por último temos um {\sl Makefile} que usamos para compilar o programa, não fazendo no entanto parte do programa em si e consequentemente não faz parte da estrutura modular.
+
+Para não permitir o acesso à estrutura tivemos de ter cuidado em como retornar os valores da estrutura para a consola. Para isso não podemos devolver diretamente valores da estrutura, mas sim alocar espaço na memória para o que queremos retornar e no fim retornar esse espaço criado, assim a estrutura está oculta.
+\\
+\\
+\begin{minipage}[t]{0.5\textwidth}
+	\begin{tcolorbox}[colback={darkgray},title={\sf Endereço da estrutura transparente.}, outer arc=2mm, colupper=white]
+{\footnotesize\tt	
+	{\color{gray}//retorna o título do artigo.}
+	
+	{\color{newpink}return} caixa->{\color{deadred}title};
+	
+	{\color{darkgray}.}
+	
+	{\color{darkgray}.}
+	
+}
+	\end{tcolorbox}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+	\begin{tcolorbox}[colback={darkgray},title={\sf Endereço da estrutura oculto.}, outer arc=2mm, colupper=white]
+{\footnotesize\tt
+	{\color{gray}//retorna o título do artigo.}
+
+	{\color{newpink}char*} title;
+	
+	title{\color{darkgray}.}{\color{newpink}=}{\color{darkgray}.}{\color{lightblue}strdup}(caixa->{\color{deadred}title});
+	
+	{\color{newpink}return} title;
+	
+}
+	\end{tcolorbox}
+	
+\end{minipage}
+
+Tentamos cobrir qualquer ponto de acesso à estrutura que encontramos, seja através dos {\sl header files} ou através dos {\sl returns} das funções, em conjunto com um programa modularizado de uma maneira, que a nosso ver, é a que mais sentido faz. 
+\\
+
+{\bf NOTA:} Apesar de não fazer parte deste capítulo, achamos importante referir que o alocamento de memória foi um dos pontos importantes neste projeto visto que a sua libertação é crucial para obter um programa que funcione numa velocidade aceitável, sem bloquear os nossos computadores (que infelizmente ocorreu bastantes vezes). Evitamos ao máximo atitudes desde recorrer a funções da {\sl libxml2} que alocavam memória até à preocupação em usar a ferramenta {\sl Valgrind} para verificar quantos alocamentos não eram libertados, tendo sempre como objetivo diminuir a diferença entre os alocamentos e libertações. Talvez por isso tenhamos obtido um trabalho com uma velocidade bastante boa sem ter havido necessidade de recorrer a outras livrarias ou a paralelismo do processador (embora fosse uma opção válida).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter {Testes}
+
+Nesta secção são executados diversos testes feitos na nossa consola às interrogações, semelhantes aos testes feitos no portal dos resultados da unidade curricular. 
+
+Felizmente conseguimos responder a todas as questões e por isso os resultados dos nossos testes são iguais aos esperados.
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 4.1: All Articles.},outer arc=2mm,colupper=white]{\footnotesize\tt
+
+{\color{lightblue}printf}({\color{deadgreen}"1. All articles:} {\color{deadorange}\%ld}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, {\color{lightblue}all\_articles}(qs)); 
+
+1. All articles: 59593
+}
+\end{tcolorbox} 
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 4.2: Unique Articles.},outer arc=2mm,colupper=white]{\footnotesize\tt
+		
+		{\color{lightblue}printf}({\color{deadgreen}"2. Unique articles:} {\color{deadorange}\%ld}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, {\color{lightblue}unique\_articles}(qs)); 
+								
+		2. Unique articles: 19867
+	}
+\end{tcolorbox} 
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 4.3: All Revisions.},outer arc=2mm,colupper=white]{\footnotesize\tt
+		
+		{\color{lightblue}printf}({\color{deadgreen}"3. All revisions:} {\color{deadorange}\%ld}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, {\color{lightblue}all\_revisions}(qs)); 
+				
+		3. All revisions: 40131
+	}
+\end{tcolorbox} 
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 4.4: Top 10 Contributors.},outer arc=2mm,colupper=white]{\footnotesize\tt
+		
+				{\color{newpink}long*} auxTop10 = {\color{lightblue}top\_10\_contributors}(qs);
+				
+				{\color{lightblue}printf}({\color{deadgreen}"4. Top 10 contributors:} {\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white});
+				
+				{\color{newpink}for}(i{\color{newpink}=}{\color{deadorange}0}; i{\color{newpink}<}{\color{deadorange}10}; i{\color{newpink}++})
+				
+				\tab {\color{lightblue}printf}(\color{deadgreen}"\color{white}   {\color{deadorange}\%ld}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, auxTop10[i]);
+
+				4. Top 10 contributors: (28903366, 13286072, 27823944, 27015025, 194203, 212624, 7852030, 7328338, 7611264, 14508071)
+		
+}
+\end{tcolorbox} 
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 4.5: Contributor Name.},outer arc=2mm,colupper=white]{\footnotesize\tt
+		
+		{\color{lightblue}printf}({\color{deadgreen}"5. Contributor name:} {\color{deadorange}\%s}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, {\color{lightblue}contributor\_name}({\color{deadorange}28903366},qs));
+
+		5. Contributor name: Bender the Bot
+		
+		{\color{darkgray}.}
+		
+		{\color{lightblue}printf}({\color{deadgreen}"5. Contributor name:} {\color{deadorange}\%s}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, {\color{lightblue}contributor\_name}({\color{deadorange}194203},qs)); 
+
+		5. Contributor name: Graham87
+		
+		{\color{darkgray}.}
+		
+		{\color{lightblue}printf}({\color{deadgreen}"5. Contributor name:} {\color{deadorange}\%s}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, {\color{lightblue}contributor\_name}({\color{deadorange}1000},qs)); 
+
+		5. Contributor name: (null)
+	}
+\end{tcolorbox} 
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 4.6: Top 20 Largest Articles.},outer arc=2mm,colupper=white]{\footnotesize\tt
+		    
+		{\color{newpink}long*} auxTop20 = {\color{lightblue}top\_20\_largest\_articles}(qs);
+		
+		{\color{lightblue}printf}({\color{deadgreen}"6. Top 20 largest articles:} {\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white});
+		
+		{\color{newpink}for}(i{\color{newpink}=}{\color{deadorange}0}; i{\color{newpink}<}{\color{deadorange}20}; i{\color{newpink}++})
+		
+		\tab {\color{lightblue}printf}(\color{deadgreen}"\color{white}   {\color{deadorange}\%ld}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, auxTop20[i]);
+	
+		6. Top 20 largest articles: (15910, 23235, 11812, 28678, 14604, 23440, 26847, 25507, 26909, 18166, 4402, 14889, 23805, 25391, 7023, 13224, 12108, 13913, 23041, 18048)
+	}
+\end{tcolorbox} 
+
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 4.7: Article Title.},outer arc=2mm,colupper=white]{\footnotesize\tt
+		
+		{\color{lightblue}printf}({\color{deadgreen}"7. Article title:} {\color{deadorange}\%s}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, {\color{lightblue}article\_title}({\color{deadorange}15910},qs));
+
+		7. Article title: List of compositions by Johann Sebastian Bach
+		
+		{\color{darkgray}.}
+		
+		{\color{lightblue}printf}({\color{deadgreen}"7. Article title:} {\color{deadorange}\%s}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, {\color{lightblue}article\_title}({\color{deadorange}25507},qs)); 
+
+		7. Article title: Roman Empire
+		
+		{\color{darkgray}.}
+		
+		{\color{lightblue}printf}({\color{deadgreen}"7. Article title:} {\color{deadorange}\%s}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, {\color{lightblue}article\_title}({\color{deadorange}1111},qs)); 
+		
+		7. Article title: Politics of American Samoa
+	}
+\end{tcolorbox} 
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 4.8: Top N Articles With More Words.},outer arc=2mm,colupper=white]{\footnotesize\tt		
+				    
+		{\color{newpink}int} n {\color{newpink}=} {\color{deadorange}30};
+		
+		{\color{newpink}long*} auxTopN = {\color{lightblue}top\_N\_articles\_with\_more\_words}({\color{deadorange}30},qs);
+				    
+		{\color{lightblue}printf}({\color{deadgreen}"8. Top {\color{deadorange}\%d} articles with more words:} {\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, n);
+				    
+		{\color{newpink}for}(i{\color{newpink}=}{\color{deadorange}0}; i{\color{newpink}<}{\color{deadorange}n}; i{\color{newpink}++})
+				    
+		\tab {\color{lightblue}printf}(\color{deadgreen}"\color{white}   {\color{deadorange}\%ld}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, auxTopN[i]);
+		    
+		8. Top 30 articles with more words: (15910, 25507, 23235, 11812, 13224, 26847, 14889, 7023, 14604, 13289, 18166, 4402, 12157, 13854, 23805, 25401, 10186, 23041, 18048, 16772, 22936, 28678, 27069, 9516, 12108, 13913, 13890, 21217, 23440, 25391)
+		
+	}
+\end{tcolorbox} 
+
+
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 4.9: Titles With Prefix.},outer arc=2mm,colupper=white]{\footnotesize\tt
+		
+		{\color{newpink}char**} auxPrefix = {\color{lightblue}titles\_with\_prefix}(\color{deadgreen}"Anax"\color{white},qs);
+		
+		{\color{lightblue}printf}({\color{deadgreen}"9. Titles with prefix "Anax":}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white});
+		
+		{\color{newpink}for}(i{\color{newpink}=}{\color{deadorange}0}; auxPrefix[i]; i{\color{newpink}++})
+		
+		\tab {\color{lightblue}printf}(\color{deadgreen}"\color{white}   {\color{deadorange}\%s}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, auxPrefix[i]);
+		
+		9. Titles with prefix "Anax": (Anaxagoras, Anaxarchus, Anaximander, Anaximenes of Lampsacus, Anaximenes of Miletus)
+
+	}
+\end{tcolorbox} 
+
+\begin{tcolorbox}[width=\textwidth,colback={darkgray},title={\sf Excerto 4.10: Article Timestamp.},outer arc=2mm,colupper=white]{\footnotesize\tt
+		
+		{\color{lightblue}printf}({\color{deadgreen}"10.{\color{darkgray}.}Article timestamp:}{\color{darkgray}.}{\color{deadorange}\%s}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, {\color{lightblue}article\_timestamp}({\color{deadorange}12},{\color{deadorange}763082287},qs));
+
+		10. Article timestamp: 2017-02-01T06:11:56Z
+		
+		{\color{darkgray}.}
+		
+		{\color{lightblue}printf}({\color{deadgreen}"10.{\color{darkgray}.}Article timestamp:}{\color{darkgray}.}{\color{deadorange}\%s}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, {\color{lightblue}article\_timestamp}({\color{deadorange}12},{\color{deadorange}755779730},qs));
+		
+		10. Article timestamp: 2016-12-20T04:02:33Z
+		
+		{\color{darkgray}.}
+		
+		{\color{lightblue}printf}({\color{deadgreen}"10.{\color{darkgray}.}Article timestamp:}{\color{darkgray}.}{\color{deadorange}\%s}{\color{lightblue}\texttt{\textbackslash n}}\color{deadgreen}"\color{white}, {\color{lightblue}article\_timestamp}({\color{deadorange}12},{\color{deadorange}4479730},qs));
+
+		10. Article timestamp: (null)
+		
+	}
+\end{tcolorbox} 
+
+\end{document}

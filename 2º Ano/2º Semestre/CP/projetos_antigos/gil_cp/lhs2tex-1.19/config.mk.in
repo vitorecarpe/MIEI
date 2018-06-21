@@ -1,0 +1,46 @@
+
+PACKAGE_TARNAME := @PACKAGE_TARNAME@
+PACKAGE_VERSION := @PACKAGE_VERSION@
+DISTDIR         := $(PACKAGE_TARNAME)-$(PACKAGE_VERSION)
+
+bindir          = @bindir@
+datarootdir     = @datarootdir@
+datadir         = @datadir@
+stydir          = @stydir@
+docdir          = @docdir@
+mandir          = @mandir@
+prefix          = @prefix@
+exec_prefix     = @exec_prefix@
+
+# binpath	:= $(HOME)/bin
+
+GHC		= @GHC@
+# GHCFLAGS	:= -Wall -O -recomp
+GHCFLAGS        = -O
+
+HUGS            = @HUGS@
+
+INSTALL         = @INSTALL@
+MV              = @MV@
+CP              = @CP@
+RM              = @RM@
+MKDIR           = @MKDIR@
+TOUCH           = @TOUCH@
+DIFF            = @DIFF@
+FIND            = @FIND@
+LN_S            = @LN_S@
+LATEX           = @LATEX@
+PDFLATEX        = @PDFLATEX@
+XDVI            = @XDVI@
+GV              = @GV@
+DVIPS           = @DVIPS@
+SED             = @SED@
+GREP            = @GREP@
+SORT            = @SORT@
+UNIQ            = @UNIQ@
+
+polydir         = @texmf@/tex/latex/polytable
+texdir          = @texmf@/tex/latex/lhs2tex
+INSTALL_POLYTABLE = @POLYTABLE_INSTALL@
+MKTEXLSR        = @MKTEXLSR@
+

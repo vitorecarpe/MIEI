@@ -1,0 +1,15 @@
+adicional
+aula
+bla.txt
+erros.txt
+exe2
+exe2.c
+exe3
+exe3.c
+exe4
+exe4.c
+myexe4.c
+ole.txt
+redir
+redir2
+saida.txt

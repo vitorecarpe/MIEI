@@ -1,0 +1,83 @@
+//FICHA 3 CR
+
+
+3.
+c)
+set.seed(987654321)
+mat<-matrix(sample(10,60,replace=T),nr=6)
+S<-colSums(mat)   SOMA DAS COLUNAS
+L<-outer(S,S,"+")>75
+L2<-lower.tri(L,diag=FALSE)
+Lfinal<-which(L&L2)
+LL<-lower.tri(L)&L
+which(LL,arr.ind=T)
+
+4.
+a)
+m<-matrix(0,nr=20,nc=5)
+for(i in 1:20){
+  for(j in 1:5){
+    m[i,jn]<-(i^4)/(3+j)
+  }
+}
+sum(outer((1:20)^4,3+(1:5),"/"))
+
+c)
+mc<-matrix(0,nr=10,nc=10)
+for(i in 1:10){
+  for(j in 1:i)){
+    mc[i,j]<-(i^4)/(3+i*j)
+  }
+}
+f<- function(i,j){
+  (i>=j)*(i^4/(3+i*j))
+}
+sum(outer(1:10,1:10,"f"))
+
+5.
+a)
+set.seed(123456789)
+x<-sample(1:10,5)
+y<-sample(1:11,6)
+
+L<-outer(y,x,"<")
+colSums(L)
+
+b)
+g<-function(a) (a<x)
+sapply(y,g) #transposta de L
+zb<-rowSums(sapply(y,g))
+
+c)
+mat<-1:30
+vapply(y,g,mat)
+
+5.
+f1<-function(a,b) {
+colSums(outer(b,a),"<")
+}
+
+f2<-function(a,b){
+rowSums(sapply(b,FUN=function(w){w<a}))
+}
+
+f3<-function(a,b) {
+rowSums(vappply(b,FUN=function(w) {w<a }, FUN.VALUE = seq(along=a) ))
+}
+
+f4<-function(a,b) {               #f4 não está a funcionar due to parêntesis
+m = length(b)
+mat = matrix (rep(a,m),by row = T, nr = m,
+apply(b < mat,2,sum))
+}
+
+
+# EX 6
+
+apply(is.na (A),1,any)
+
+       #(falta-me passar VÁRIAS coisas aqui)
+
+
+x<- rnom(n)
+medx <-mean(x)

@@ -1,0 +1,22 @@
+Features planned for 2.0
+========================
+
+* Finish the manual.
+
+* Formatting directives parameterized by arity.
+
+* Facilitate Windows use.
+
+* Use ndm's FilePath library.
+
+Features planned for post-2.0
+=============================
+
+* Configurable lexer.
+
+Features planned for future versions of polytable
+=================================================
+
+* Private columns are not shared with save-/restorecolumns. (?)
+
+* Support for rules.

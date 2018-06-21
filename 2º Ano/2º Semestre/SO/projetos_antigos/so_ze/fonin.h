@@ -1,0 +1,1 @@
+void fonin(char* nome, char** argv, int argc);

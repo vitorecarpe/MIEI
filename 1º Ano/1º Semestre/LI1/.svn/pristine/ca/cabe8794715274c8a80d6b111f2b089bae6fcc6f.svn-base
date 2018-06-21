@@ -1,0 +1,94 @@
+\documentclass[a4paper,12pt]{report}
+
+%Preambulo
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+
+\title{\bfseries Projeto de Laboratórios de Informática I \paragraph*{SOKOBAN} }
+
+\author{Francisco Oliveira \and Vitor Peixoto}
+\date{20 Dezembro 2015 \paragraph*{Mestrado Integrado em Engenharia Informática} }
+
+%Cabeçalho e Rodapé
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyfoot[C]{Página \thepage\ de \pageref{LastPage}}
+	\rhead{2ª Fase}
+	\lhead{Sokoban}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+}	
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{2ª Fase}
+\lhead{Sokoban}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[C]{Página \thepage\ de \pageref{LastPage}}
+
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\chapter {Introdução}
+
+Este projeto foi realizado no âmbito da 2ª fase proposta na unidade curricular de Laboratórios de Informática I do 1º semestre de Engenharia Informática. Foi-nos então proposto efetuar melhoramentos à 1ª fase do jogo {\it Sokoban\/} já realizada e adicionar novas funções de modo a produzir um programa {\sl Haskell\/} com o jogo completamente funcional e em ambiente gráfico usando a ferramenta {\sl Gloss\/}.
+
+\chapter {Desenvolvimento}
+
+Lorem ipsum dolor sit amet, modo nominavi suscipit has in, atqui mucius adolescens te qui, ex nam verterem suavitate. Alienum intellegam definitionem in per, ei integre quaestio suavitate has, mei ut essent blandit. Te unum melius mea, est ex dolor albucius. Ius ut putent expetenda, sumo alterum qualisque eam ei. Malis ullamcorper in nam, eu sit summo affert. His suscipit dissentias at, ius agam simul definitiones id.
+
+Nam bonorum expetenda definiebas ei, te mea solet possit. Epicuri mentitum an mel, his in tamquam nusquam, vim laudem albucius delicata at. Fastidii gubergren in quo, usu ne probo adhuc menandri. Vim id mandamus conceptam, simul omnes sit ei. Mea te tale fabellas mandamus.
+
+Nemore complectitur ei nec, et alterum consectetuer vim. Falli minimum ex qui, cu euismod phaedrum vulputate has. Facer definitiones mea ex. At iudico tritani ius, augue eleifend complectitur ex est.
+
+No qui modo saperet, perfecto complectitur eu sit. Veri porro evertitur ex sed, tantas verterem disputando ei nam, cu quod omnis nec. Ex sed simul quando molestiae. Mea verear vocibus tibique te, pro hinc soleat option ex. Ad minim persius cum.
+
+Sed urbanitas suscipiantur te, usu te primis gubergren. Legere dignissim nam id, mel an nisl mundi mediocrem. Cum debitis cotidieque ei, inani urbanitas omittantur ex mei. Cum ad illum quidam. Et pri agam dicam dictas, eam te offendit consetetur interesset. Ancillae phaedrum urbanitas ei eam, ei qui graece efficiantur.
+
+
+\chapter {Testes}
+
+Lorem ipsum dolor sit amet, modo nominavi suscipit has in, atqui mucius adolescens te qui, ex nam verterem suavitate. Alienum intellegam definitionem in per, ei integre quaestio suavitate has, mei ut essent blandit. Te unum melius mea, est ex dolor albucius. Ius ut putent expetenda, sumo alterum qualisque eam ei. Malis ullamcorper in nam, eu sit summo affert. His suscipit dissentias at, ius agam simul definitiones id.
+
+Nam bonorum expetenda definiebas ei, te mea solet possit. Epicuri mentitum an mel, his in tamquam nusquam, vim laudem albucius delicata at. Fastidii gubergren in quo, usu ne probo adhuc menandri. Vim id mandamus conceptam, simul omnes sit ei. Mea te tale fabellas mandamus.
+
+Nemore complectitur ei nec, et alterum consectetuer vim. Falli minimum ex qui, cu euismod phaedrum vulputate has. Facer definitiones mea ex. At iudico tritani ius, augue eleifend complectitur ex est.
+
+No qui modo saperet, perfecto complectitur eu sit. Veri porro evertitur ex sed, tantas verterem disputando ei nam, cu quod omnis nec. Ex sed simul quando molestiae. Mea verear vocibus tibique te, pro hinc soleat option ex. Ad minim persius cum.
+
+Sed urbanitas suscipiantur te, usu te primis gubergren. Legere dignissim nam id, mel an nisl mundi mediocrem. Cum debitis cotidieque ei, inani urbanitas omittantur ex mei. Cum ad illum quidam. Et pri agam dicam dictas, eam te offendit consetetur interesset. Ancillae phaedrum urbanitas ei eam, ei qui graece efficiantur.
+
+
+\chapter {Conclusões}
+
+\section {Lorem ipsum}
+
+Lorem ipsum dolor sit amet, modo nominavi suscipit has in, atqui mucius adolescens te qui, ex nam verterem suavitate. Alienum intellegam definitionem in per, ei integre quaestio suavitate has, mei ut essent blandit. Te unum melius mea, est ex dolor albucius. Ius ut putent expetenda, sumo alterum qualisque eam ei. Malis ullamcorper in nam, eu sit summo affert. His suscipit dissentias at, ius agam simul definitiones id.
+
+\section {Nam bonorum}
+
+Nam bonorum expetenda definiebas ei, te mea solet possit. Epicuri mentitum an mel, his in tamquam nusquam, vim laudem albucius delicata at. Fastidii gubergren in quo, usu ne probo adhuc menandri. Vim id mandamus conceptam, simul omnes sit ei. Mea te tale fabellas mandamus.
+
+\section {Nemore complectitur}
+
+Nemore complectitur ei nec, et alterum consectetuer vim. Falli minimum ex qui, cu euismod phaedrum vulputate has. Facer definitiones mea ex. At iudico tritani ius, augue eleifend complectitur ex est.
+
+\section {No qui modo}
+
+No qui modo saperet, perfecto complectitur eu sit. Veri porro evertitur ex sed, tantas verterem disputando ei nam, cu quod omnis nec. Ex sed simul quando molestiae. Mea verear vocibus tibique te, pro hinc soleat option ex. Ad minim persius cum.
+
+\section {Sed urbanitas}
+
+Sed urbanitas suscipiantur te, usu te primis gubergren. Legere dignissim nam id, mel an nisl mundi mediocrem. Cum debitis cotidieque ei, inani urbanitas omittantur ex mei. Cum ad illum quidam. Et pri agam dicam dictas, eam te offendit consetetur interesset. Ancillae phaedrum urbanitas ei eam, ei qui graece efficiantur.
+
+
+
+\end{document}

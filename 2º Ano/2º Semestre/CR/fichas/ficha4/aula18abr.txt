@@ -1,0 +1,59 @@
+#AULA CR 18
+
+#considere a experiencia que consiste em lançar uma moeda equilibrada até sair cara pela 1ª vez.
+#o objetivo é obter estimativas para a prob dos acontecimentos associados ao "nº de coroas obtido na experiencia"
+
+moeda <- c("cara","coroa")
+lanc <- sample(moeda,1)
+while (){
+
+}
+
+f <- function(...){
+  res<-c( )
+  i<-"coroa"
+  while(i=="coroa"){
+    i=sample(moeda,1)
+    res=c(res,i)
+  }
+  sum(res=="coroa")
+}
+
+f()
+
+
+replicate(10,f())
+
+sapply(1:10,f)
+
+
+tab<-table(replicate(1000,f()))
+prop.table(tab) #frequencias relativas
+plot(prot.title(tab))
+
+#data frame: tabela de dados com colunas que podem ser objetos de tipo diferente e representam variaveis (qualitativas ou quantitativas) que são
+#medidas em n ind (linhas). Está associada uma dimensão. As colunas têm obrigatoriamente um nome associado.
+
+setwd("/home/vitor/Desktop")
+
+traf<-read.table("trafico.txt",header=T)
+str(traf)
+
+attach(traf)
+names(traf)
+
+tab<-table(limite)
+barplot(tab,border="red",main="Indicação limite velocidade")
+ac<-table(acidentes)
+ac #a variavel toma um nº elevado de valores diferentes
+
+hist(acidentes, prob=T, ylab="densidade",density=3), etc... etc... etc...
+out<-boxplot(acidentes,plot=F)$out
+
+which(acidentes==out[1] | acidentes==out[2] | acidentes==out[3] | acidentes==out[4])
+traf[c(61,132, ), ]
+
+cereais <- read.csv("Cereais.csv",header=T)
+str(cereais)
+
+plot(cereais$area ~ cereais$ano)

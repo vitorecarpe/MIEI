@@ -1,0 +1,2108 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.6)  8 JUN 2017 13:51
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**cp1617t.tex
+(./cp1617t.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/palatino.sty
+Package: palatino 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen111
+\Hy@linkcounter=\count90
+\Hy@pagecounter=\count91
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count92
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count93
+
+
+! LaTeX Error: File `url.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: cp1617t.pdf
+(./cp1617t.pdf
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 3
+     5 0 obj
+? q
+OK, entering \batchmode...
+Missing character: There is no Ú in font cmr10!
+Missing character: There is no ­ in font cmr10!
+Missing character: There is no Ë in font cmr10!
+Missing character: There is no Û in font cmr10!
+! Text line contains an invalid character.
+l.9 xÚ­TËRÛ0^^T
+               İç+´´§c¡«‡%-!P^^F^^F:´¤+`¡$^^F<ã^^GU^^RÚé×÷ÊVÀ^^FRèL½ˆ^^]=Î9÷...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no İ in font cmr10!
+Missing character: There is no ç in font cmr10!
+Missing character: There is no ´ in font cmr10!
+Missing character: There is no ´ in font cmr10!
+Missing character: There is no § in font cmr10!
+Missing character: There is no ¡ in font cmr10!
+Missing character: There is no « in font cmr10!
+Missing character: There is no ‡ in font cmr10!
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 6
+      „õFT^^L^^W³ç­^^P”‹ìrÈ^^AäTs‹^^_‚Z^^YƒüŞ”…_•K·å]F^^]çesß»ƒz!^^Oæ^^HjT...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no „ in font cmr10!
+Missing character: There is no õ in font cmr10!
+! Text line contains an invalid character.
+l.11 6„õFT^^L^^W
+                ³ç­^^P”‹ìrÈ^^AäTs‹^^_‚Z^^YƒüŞ”…_•K·å]F^^]çesß»ƒz!^^Oæ^^HjT...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 6„õFT^^L^^W³
+                 ç­^^P”‹ìrÈ^^AäTs‹^^_‚Z^^YƒüŞ”…_•K·å]F^^]çesß»ƒz!^^Oæ^^HjT...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ³ in font cmr10!
+Missing character: There is no ç in font cmr10!
+Missing character: There is no ­ in font cmr10!
+! Text line contains an invalid character.
+l.11 6„õFT^^L^^W³ç­^^P
+                      ”‹ìrÈ^^AäTs‹^^_‚Z^^YƒüŞ”…_•K·å]F^^]çesß»ƒz!^^Oæ^^HjT...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ” in font cmr10!
+Missing character: There is no ‹ in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no È in font cmr10!
+Missing character: There is no  in font cmr10!
+! Text line contains an invalid character.
+l.11 6„õFT^^L^^W³ç­^^P”‹ìrÈ^^A
+                               äTs‹^^_‚Z^^YƒüŞ”…_•K·å]F^^]çesß»ƒz!^^Oæ^^HjT...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ä in font cmr10!
+Missing character: There is no ‹ in font cmr10!
+! Text line contains an invalid character.
+l.11 6„õFT^^L^^W³ç­^^P”‹ìrÈ^^AäTs‹^^_
+                                      ‚Z^^YƒüŞ”…_•K·å]F^^]çesß»ƒz!^^Oæ^^HjT...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ‚ in font cmr10!
+! Text line contains an invalid character.
+l.11 6„õFT^^L^^W³ç­^^P”‹ìrÈ^^AäTs‹^^_‚Z^^Y
+                                           ƒüŞ”…_•K·å]F^^]çesß»ƒz!^^Oæ^^HjT...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ƒ in font cmr10!
+Missing character: There is no ü in font cmr10!
+Missing character: There is no Ş in font cmr10!
+Missing character: There is no ” in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no … in font cmr10!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.11 6„õFT^^L^^W³ç­^^P”‹ìrÈ^^AäTs‹^^_‚Z^^YƒüŞ”…_
+                                                  •K·å]F^^]çesß»ƒz!^^Oæ^^HjT...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 11.
+! Text line contains an invalid character.
+l.11 ...ç­^^P”‹ìrÈ^^AäTs‹^^_‚Z^^YƒüŞ”…_•K·å]F^^]
+                                                  çesß»ƒz!^^Oæ^^HjT¤ÙŸû²z^^U...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.11 ...^^AäTs‹^^_‚Z^^YƒüŞ”…_•K·å]F^^]çesß»ƒz!^^O
+                                                  æ^^HjT¤ÙŸû²z^^Uy^^Wö«^^ZB%...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.11 ...Ts‹^^_‚Z^^YƒüŞ”…_•K·å]F^^]çesß»ƒz!^^Oæ^^H
+                                                  jT¤ÙŸû²z^^Uy^^Wö«^^ZB%z¤D^^ZÊ
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.11 ...ƒüŞ”…_•K·å]F^^]çesß»ƒz!^^Oæ^^HjT¤ÙŸû²z^^U
+                                                  y^^Wö«^^ZB%z¤D^^ZÊ
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.11 ...…_•K·å]F^^]çesß»ƒz!^^Oæ^^HjT¤ÙŸû²z^^Uy^^W
+                                                  ö«^^ZB%z¤D^^ZÊ
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.11 ...·å]F^^]çesß»ƒz!^^Oæ^^HjT¤ÙŸû²z^^Uy^^Wö«^^Z
+                                                  B%z¤D^^ZÊ
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.12 Ö‚P^^H
+           ¨{Àc¿yhßÒ-Ğ-,<Ö^^_k|ªeBÓ^^L^^Xc‰µ19L±‡®rŠ¢YÜ^^W^^^^^W Ór4›ü˜^^@Şf...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.12 Ö‚P^^H¨{Àc¿yhßÒ-Ğ-,<Ö^^_
+                             k|ªeBÓ^^L^^Xc‰µ19L±‡®rŠ¢YÜ^^W^^^^^W Ór4›ü˜^^@Şf...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.12 Ö‚P^^H¨{Àc¿yhßÒ-Ğ-,<Ö^^_k|ªeBÓ^^L
+                                      ^^Xc‰µ19L±‡®rŠ¢YÜ^^W^^^^^W Ór4›ü˜^^@Şf...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.12 Ö‚P^^H¨{Àc¿yhßÒ-Ğ-,<Ö^^_k|ªeBÓ^^L
+                                      ^^Xc‰µ19L±‡®rŠ¢YÜ^^W^^^^^W Ór4›ü˜^^@Şf...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no • in font cmr7!
+Missing character: There is no · in font cmr10!
+Missing character: There is no å in font cmr10!
+Missing character: There is no ç in font cmr10!
+Missing character: There is no ß in font cmr10!
+Missing character: There is no » in font cmr10!
+Missing character: There is no ƒ in font cmr10!
+Missing character: There is no æ in font cmr10!
+Missing character: There is no ¤ in font cmr10!
+Missing character: There is no Ù in font cmr10!
+Missing character: There is no Ÿ in font cmr10!
+Missing character: There is no û in font cmr10!
+Missing character: There is no ² in font cmr10!
+Missing character: There is no ö in font cmr10!
+Missing character: There is no « in font cmr10!
+Missing character: There is no Ö in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no ¨ in font cmr10!
+Missing character: There is no À in font cmr10!
+Missing character: There is no ¿ in font cmr10!
+Missing character: There is no ß in font cmr10!
+Missing character: There is no Ò in font cmr10!
+Missing character: There is no Ğ in font cmr10!
+Missing character: There is no Ö in font cmr10!
+Missing character: There is no ª in font cmr10!
+Missing character: There is no Ó in font cmr10!
+! Text line contains an invalid character.
+l.12 Ö‚P^^H¨{Àc¿yhßÒ-Ğ-,<Ö^^_k|ªeBÓ^^L^^X
+                                         c‰µ19L±‡®rŠ¢YÜ^^W^^^^^W Ór4›ü˜^^@Şf...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 Ö‚P^^H¨{Àc¿yhßÒ-Ğ-,<Ö^^_k|ªeBÓ^^L^^Xc
+                                          ‰µ19L±‡®rŠ¢YÜ^^W^^^^^W Ór4›ü˜^^@Şf...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ‰ in font cmr10!
+Missing character: There is no µ in font cmr10!
+Missing character: There is no ± in font cmr10!
+Missing character: There is no ‡ in font cmr10!
+Missing character: There is no ® in font cmr10!
+Missing character: There is no Š in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no Ü in font cmr10!
+! Text line contains an invalid character.
+l.12 ...yhßÒ-Ğ-,<Ö^^_k|ªeBÓ^^L^^Xc‰µ19L±‡®rŠ¢YÜ^^W
+                                                  ^^^^^W Ór4›ü˜^^@Şf^^D°r9åè¼Ê
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.12 ...Ò-Ğ-,<Ö^^_k|ªeBÓ^^L^^Xc‰µ19L±‡®rŠ¢YÜ^^W^^^
+                                                  ^^W Ór4›ü˜^^@Şf^^D°r9åè¼Ê
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.12 ...-,<Ö^^_k|ªeBÓ^^L^^Xc‰µ19L±‡®rŠ¢YÜ^^W^^^^^W
+                                                   Ór4›ü˜^^@Şf^^D°r9åè¼Ê
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no   in font cmr10!
+Missing character: There is no Ó in font cmr10!
+Missing character: There is no › in font cmr10!
+Missing character: There is no ü in font cmr10!
+Missing character: There is no ˜ in font cmr10!
+! Text line contains an invalid character.
+l.12 ...eBÓ^^L^^Xc‰µ19L±‡®rŠ¢YÜ^^W^^^^^W Ór4›ü˜^^@
+                                                  Şf^^D°r9åè¼Ê
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no Ş in font cmr10!
+! Text line contains an invalid character.
+l.12 ...L^^Xc‰µ19L±‡®rŠ¢YÜ^^W^^^^^W Ór4›ü˜^^@Şf^^D
+                                                  °r9åè¼Ê
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ° in font cmr10!
+Missing character: There is no å in font cmr10!
+Missing character: There is no è in font cmr10!
+Missing character: There is no ¼ in font cmr10!
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no • in font cmr10!
+Missing character: There is no Ò in font cmr10!
+Missing character: There is no ’ in font cmr10!
+Missing character: There is no ¹ in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no ‰ in font cmr10!
+Missing character: There is no › in font cmr10!
+Missing character: There is no § in font cmr10!
+Missing character: There is no è in font cmr10!
+Missing character: There is no ® in font cmr10!
+Missing character: There is no ° in font cmr10!
+Missing character: There is no † in font cmr10!
+Missing character: There is no ü in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no Ö in font cmr10!
+Missing character: There is no ï in font cmr10!
+! Text line contains an invalid character.
+l.13 •Ò’E=¹ºad‰›§è®°†üìÖXï^^V
+                              -EÏIE.'_ŸûàY^^XG_xn‰Rˆfb^^X^^NÂƒª$^^SÉ—¶.à^^]…...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no Ï in font cmr10!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.13 •Ò’E=¹ºad‰›§è®°†üìÖXï^^V-EÏIE.'_
+                                      ŸûàY^^XG_xn‰Rˆfb^^X^^NÂƒª$^^SÉ—¶.à^^]…...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Text line contains an invalid character.
+l.13 •Ò’E=¹ºad‰›§è®°†üìÖXï^^V-EÏIE.'_ŸûàY^^X
+                                             G_xn‰Rˆfb^^X^^NÂƒª$^^SÉ—¶.à^^]…...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.13 ...›§è®°†üìÖXï^^V-EÏIE.'_ŸûàY^^XG_xn‰Rˆfb^^X
+                                                  ^^NÂƒª$^^SÉ—¶.à^^]…È0Jˆãá^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.13 ...®°†üìÖXï^^V-EÏIE.'_ŸûàY^^XG_xn‰Rˆfb^^X^^N
+                                                  Âƒª$^^SÉ—¶.à^^]…È0Jˆãá^^Y^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no Ÿ in font cmr7!
+Missing character: There is no û in font cmr10!
+Missing character: There is no à in font cmr10!
+Missing character: There is no ‰ in font cmr10!
+Missing character: There is no ˆ in font cmr10!
+Missing character: There is no Â in font cmr10!
+Missing character: There is no ƒ in font cmr10!
+Missing character: There is no ª in font cmr10!
+! Text line contains an invalid character.
+l.13 ...Xï^^V-EÏIE.'_ŸûàY^^XG_xn‰Rˆfb^^X^^NÂƒª$^^S
+                                                  É—¶.à^^]…È0Jˆãá^^Y^^@ğ^^?^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no É in font cmr10!
+Missing character: There is no — in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+Missing character: There is no à in font cmr10!
+! Text line contains an invalid character.
+l.13 ...IE.'_ŸûàY^^XG_xn‰Rˆfb^^X^^NÂƒª$^^SÉ—¶.à^^]
+                                                  …È0Jˆãá^^Y^^@ğ^^?^^E^^Pá^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no … in font cmr10!
+Missing character: There is no È in font cmr10!
+Missing character: There is no ˆ in font cmr10!
+Missing character: There is no ã in font cmr10!
+Missing character: There is no á in font cmr10!
+! Text line contains an invalid character.
+l.13 ...^XG_xn‰Rˆfb^^X^^NÂƒª$^^SÉ—¶.à^^]…È0Jˆãá^^Y
+                                                  ^^@ğ^^?^^E^^Pá^^Y^^@ˆw^^@ú...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.13 ..._xn‰Rˆfb^^X^^NÂƒª$^^SÉ—¶.à^^]…È0Jˆãá^^Y^^@
+                                                  ğ^^?^^E^^Pá^^Y^^@ˆw^^@úôH*...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ğ in font cmr10!
+! Text line contains an invalid character.
+l.13 ...Rˆfb^^X^^NÂƒª$^^SÉ—¶.à^^]…È0Jˆãá^^Y^^@ğ^^?
+                                                  ^^E^^Pá^^Y^^@ˆw^^@úôH*d^^^E
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.13 ...b^^X^^NÂƒª$^^SÉ—¶.à^^]…È0Jˆãá^^Y^^@ğ^^?^^E
+                                                  ^^Pá^^Y^^@ˆw^^@úôH*d^^^E
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.13 ...X^^NÂƒª$^^SÉ—¶.à^^]…È0Jˆãá^^Y^^@ğ^^?^^E^^P
+                                                  á^^Y^^@ˆw^^@úôH*d^^^E
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no á in font cmr10!
+! Text line contains an invalid character.
+l.13 ...Âƒª$^^SÉ—¶.à^^]…È0Jˆãá^^Y^^@ğ^^?^^E^^Pá^^Y
+                                                  ^^@ˆw^^@úôH*d^^^E
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.13 ...$^^SÉ—¶.à^^]…È0Jˆãá^^Y^^@ğ^^?^^E^^Pá^^Y^^@
+                                                  ˆw^^@úôH*d^^^E
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ˆ in font cmr10!
+! Text line contains an invalid character.
+l.13 ...—¶.à^^]…È0Jˆãá^^Y^^@ğ^^?^^E^^Pá^^Y^^@ˆw^^@
+                                                  úôH*d^^^E
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ô in font cmr10!
+! Text line contains an invalid character.
+l.13 ...È0Jˆãá^^Y^^@ğ^^?^^E^^Pá^^Y^^@ˆw^^@úôH*d^^^
+                                                  E
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.13 ...0Jˆãá^^Y^^@ğ^^?^^E^^Pá^^Y^^@ˆw^^@úôH*d^^^
+                                                  E
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no ± in font cmr10!
+Missing character: There is no ¨ in font cmr10!
+! Text line contains an invalid character.
+l.14 Ê±¨^^D
+           ö„Œu:m›5æ^^Y„í‹Ojl–mÌw0×ßE—¿ÅŒc/æ<^^Oˆ¨^^P×Œ÷X^^P³wá^^QÑH^^D^^D...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ö in font cmr10!
+Missing character: There is no „ in font cmr10!
+Missing character: There is no Œ in font cmr10!
+Missing character: There is no › in font cmr10!
+Missing character: There is no æ in font cmr10!
+! Text line contains an invalid character.
+l.14 Ê±¨^^Dö„Œu:m›5æ^^Y
+                       „í‹Ojl–mÌw0×ßE—¿ÅŒc/æ<^^Oˆ¨^^P×Œ÷X^^P³wá^^QÑH^^D^^D...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no „ in font cmr10!
+Missing character: There is no í in font cmr10!
+Missing character: There is no ‹ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no – in font cmr10!
+Missing character: There is no Ì in font cmr10!
+Missing character: There is no × in font cmr10!
+Missing character: There is no ß in font cmr10!
+Missing character: There is no — in font cmr10!
+Missing character: There is no ¿ in font cmr10!
+Missing character: There is no Å in font cmr10!
+Missing character: There is no Œ in font cmr10!
+Missing character: There is no æ in font cmr10!
+! Text line contains an invalid character.
+l.14 Ê±¨^^Dö„Œu:m›5æ^^Y„í‹Ojl–mÌw0×ßE—¿ÅŒc/æ<^^O
+                                                 ˆ¨^^P×Œ÷X^^P³wá^^QÑH^^D^^D...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ˆ in font cmr10!
+Missing character: There is no ¨ in font cmr10!
+! Text line contains an invalid character.
+l.14 ...„Œu:m›5æ^^Y„í‹Ojl–mÌw0×ßE—¿ÅŒc/æ<^^Oˆ¨^^P
+                                                  ×Œ÷X^^P³wá^^QÑH^^D^^D–JĞ‰...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no  in font cmr10!
+Missing character: There is no × in font cmr10!
+Missing character: There is no Œ in font cmr10!
+Missing character: There is no ÷ in font cmr10!
+! Text line contains an invalid character.
+l.14 ...^^Y„í‹Ojl–mÌw0×ßE—¿ÅŒc/æ<^^Oˆ¨^^P×Œ÷X^^P
+                                                  ³wá^^QÑH^^D^^D–JĞ‰«ça ^^Lk...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ³ in font cmr10!
+Missing character: There is no á in font cmr10!
+! Text line contains an invalid character.
+l.14 ...Ojl–mÌw0×ßE—¿ÅŒc/æ<^^Oˆ¨^^P×Œ÷X^^P³wá^^Q
+                                                  ÑH^^D^^D–JĞ‰«ça ^^LkˆH,^^V...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no Ñ in font cmr10!
+! Text line contains an invalid character.
+l.14 ...mÌw0×ßE—¿ÅŒc/æ<^^Oˆ¨^^P×Œ÷X^^P³wá^^QÑH^^D
+                                                  ^^D–JĞ‰«ça ^^LkˆH,^^V…Âbşù...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.14 ...0×ßE—¿ÅŒc/æ<^^Oˆ¨^^P×Œ÷X^^P³wá^^QÑH^^D^^D
+                                                  –JĞ‰«ça ^^LkˆH,^^V…Âbşù^^N...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no – in font cmr10!
+Missing character: There is no Ğ in font cmr10!
+Missing character: There is no ‰ in font cmr10!
+Missing character: There is no « in font cmr10!
+Missing character: There is no ç in font cmr10!
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 ...^^Oˆ¨^^P×Œ÷X^^P³wá^^QÑH^^D^^D–JĞ‰«ça ^^Lk
+                                                  ˆH,^^V…Âbşù^^NF,ªxpÔÃ<R^^]...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ˆ in font cmr10!
+! Text line contains an invalid character.
+l.14 ...^P×Œ÷X^^P³wá^^QÑH^^D^^D–JĞ‰«ça ^^LkˆH,^^V
+                                                  …Âbşù^^NF,ªxpÔÃ<R^^]¶‹Mè1—...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no … in font cmr10!
+Missing character: There is no Â in font cmr10!
+Missing character: There is no ş in font cmr10!
+Missing character: There is no ù in font cmr10!
+! Text line contains an invalid character.
+l.14 ...^P³wá^^QÑH^^D^^D–JĞ‰«ça ^^LkˆH,^^V…Âbşù^^N
+                                                  F,ªxpÔÃ<R^^]¶‹Mè1—f*GBÍRal...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ª in font cmr10!
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no Ã in font cmr10!
+! Text line contains an invalid character.
+l.14 ...D^^D–JĞ‰«ça ^^LkˆH,^^V…Âbşù^^NF,ªxpÔÃ<R^^]
+                                                  ¶‹Mè1—f*GBÍRal²ˆü"òÿWn^^Q¹...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ¶ in font cmr10!
+Missing character: There is no ‹ in font cmr10!
+Missing character: There is no è in font cmr10!
+Missing character: There is no — in font cmr10!
+Missing character: There is no Í in font cmr10!
+Missing character: There is no ² in font cmr10!
+Missing character: There is no ˆ in font cmr10!
+Missing character: There is no ü in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ÿ in font cmr10!
+! Text line contains an invalid character.
+l.14 ...şù^^NF,ªxpÔÃ<R^^]¶‹Mè1—f*GBÍRal²ˆü"òÿWn^^Q
+                                                  ¹§m^^][Ê^^W®*^^?;ßÿ‹‹ëí ^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ¹ in font cmr10!
+Missing character: There is no § in font cmr10!
+! Text line contains an invalid character.
+l.14 ...,ªxpÔÃ<R^^]¶‹Mè1—f*GBÍRal²ˆü"òÿWn^^Q¹§m^^]
+                                                  [Ê^^W®*^^?;ßÿ‹‹ëí ^^[Q_e‚s...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no Ê in font cmr10!
+! Text line contains an invalid character.
+l.14 ...Ã<R^^]¶‹Mè1—f*GBÍRal²ˆü"òÿWn^^Q¹§m^^][Ê^^W
+                                                  ®*^^?;ßÿ‹‹ëí ^^[Q_e‚s°^^H²...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ® in font cmr10!
+! Text line contains an invalid character.
+l.14 ...]¶‹Mè1—f*GBÍRal²ˆü"òÿWn^^Q¹§m^^][Ê^^W®*^^?
+                                                  ;ßÿ‹‹ëí ^^[Q_e‚s°^^H²ƒ“Éö...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ß in font cmr10!
+Missing character: There is no ÿ in font cmr10!
+Missing character: There is no ‹ in font cmr10!
+Missing character: There is no ‹ in font cmr10!
+Missing character: There is no ë in font cmr10!
+Missing character: There is no í in font cmr10!
+! Text line contains an invalid character.
+l.14 ...ÍRal²ˆü"òÿWn^^Q¹§m^^][Ê^^W®*^^?;ßÿ‹‹ëí ^^[
+                                                  Q_e‚s°^^H²ƒ“ÉöÓLsœ#'ğ˜"©...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.14 ...al²ˆü"òÿWn^^Q¹§m^^][Ê^^W®*^^?;ßÿ‹‹ëí ^^[Q_
+                                                  e‚s°^^H²ƒ“ÉöÓLsœ#'ğ˜"©’¶...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Text line contains an invalid character.
+l.14 ...ÿWn^^Q¹§m^^][Ê^^W®*^^?;ßÿ‹‹ëí ^^[Q_e‚s°^^H
+                                                  ²ƒ“ÉöÓLsœ#'ğ˜"©’¶yêkœ3.~...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! You can't use `macro parameter character #' in math mode.
+l.14 ...[Ê^^W®*^^?;ßÿ‹‹ëí ^^[Q_e‚s°^^H²ƒ“ÉöÓLsœ#
+                                                  'ğ˜"©’¶yêkœ3.~ùvîæeÕ5ıª_‹‡...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Text line contains an invalid character.
+l.14 ...œ#'ğ˜"©’¶yêkœ3.~ùvîæeÕ5ıª_‹‡ŠÕÚ­»ÛXCX2^^\
+                                                  VÛy2ÔÆ¥`:Á¬½#.6Å^^AÚŒp‡Å5c...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! You can't use `macro parameter character #' in math mode.
+l.14 ...œ3.~ùvîæeÕ5ıª_‹‡ŠÕÚ­»ÛXCX2^^\VÛy2ÔÆ¥`:Á¬½#
+                                                  .6Å^^AÚŒp‡Å5c¼)_å —^^\’^^P...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Text line contains an invalid character.
+l.14 ...îæeÕ5ıª_‹‡ŠÕÚ­»ÛXCX2^^\VÛy2ÔÆ¥`:Á¬½#.6Å^^A
+                                                  ÚŒp‡Å5c¼)_å —^^\’^^P$o%¹Í/...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.14 ...XCX2^^\VÛy2ÔÆ¥`:Á¬½#.6Å^^AÚŒp‡Å5c¼)_å —^^\
+                                                  ’^^P$o%¹Í/Ôè|±z™^^UA•mV^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.14 ...^^\VÛy2ÔÆ¥`:Á¬½#.6Å^^AÚŒp‡Å5c¼)_å —^^\’^^P
+                                                  $o%¹Í/Ôè|±z™^^UA•mV^^@ş’–...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no ° in font cmr10!
+Missing character: There is no ² in font cmr10!
+Missing character: There is no ƒ in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no É in font cmr10!
+Missing character: There is no ö in font cmr10!
+Missing character: There is no Ó in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no ˜ in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no ’ in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+Missing character: There is no ê in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no î in font cmr10!
+Missing character: There is no æ in font cmr10!
+Missing character: There is no Õ in font cmr10!
+Missing character: There is no ı in font cmr10!
+Missing character: There is no ª in font cmr10!
+Missing character: There is no ‹ in font cmr7!
+Missing character: There is no ‡ in font cmr10!
+Missing character: There is no Š in font cmr10!
+Missing character: There is no Õ in font cmr10!
+Missing character: There is no Ú in font cmr10!
+Missing character: There is no ­ in font cmr10!
+Missing character: There is no » in font cmr10!
+Missing character: There is no Û in font cmr10!
+Missing character: There is no Û in font cmr10!
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no Æ in font cmr10!
+Missing character: There is no ¥ in font cmr10!
+Missing character: There is no Á in font cmr10!
+Missing character: There is no ¬ in font cmr10!
+Missing character: There is no ½ in font cmr10!
+Missing character: There is no Å in font cmr10!
+Missing character: There is no Ú in font cmr10!
+Missing character: There is no Œ in font cmr10!
+Missing character: There is no ‡ in font cmr10!
+Missing character: There is no Å in font cmr10!
+Missing character: There is no ¼ in font cmr10!
+Missing character: There is no å in font cmr7!
+Missing character: There is no   in font cmr10!
+Missing character: There is no — in font cmr10!
+Missing character: There is no ’ in font cmr10!
+! Text line contains an invalid character.
+l.15 =9h^^A
+           ”`iè)®pXÀ¶^^Q†7pTı^^Av^^AÄ/
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ” in font cmr10!
+Missing character: There is no è in font cmr10!
+Missing character: There is no ® in font cmr10!
+Missing character: There is no À in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+! Text line contains an invalid character.
+l.15 =9h^^A”`iè)®pXÀ¶^^Q
+                        †7pTı^^Av^^AÄ/
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no † in font cmr10!
+Missing character: There is no ı in font cmr10!
+! Text line contains an invalid character.
+l.15 =9h^^A”`iè)®pXÀ¶^^Q†7pTı^^A
+                                v^^AÄ/
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.15 =9h^^A”`iè)®pXÀ¶^^Q†7pTı^^Av^^A
+                                    Ä/
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no Ú in font cmr10!
+Missing character: There is no ¥ in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no Û in font cmr10!
+Missing character: There is no ¸ in font cmr10!
+! Text line contains an invalid character.
+l.24 xÚ¥ZK“Û¸^^Q
+                ¾Ï¯Ğ-R•^^D^^S H‚sHjí8ëÊnvìlÕVÙ®
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ¾ in font cmr10!
+Missing character: There is no Ï in font cmr10!
+Missing character: There is no ¯ in font cmr10!
+Missing character: There is no Ğ in font cmr10!
+Missing character: There is no • in font cmr10!
+! Text line contains an invalid character.
+l.24 xÚ¥ZK“Û¸^^Q¾Ï¯Ğ-R•^^D
+                          ^^S H‚sHjí8ëÊnvìlÕVÙ®
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.24 xÚ¥ZK“Û¸^^Q¾Ï¯Ğ-R•^^D^^S
+                              H‚sHjí8ëÊnvìlÕVÙ®
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no í in font cmr10!
+Missing character: There is no ë in font cmr10!
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no Õ in font cmr10!
+Missing character: There is no Ù in font cmr10!
+Missing character: There is no ® in font cmr10!
+Missing character: There is no ´ in font cmr10!
+Missing character: There is no æ in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ø in font cmr10!
+Missing character: There is no × in font cmr10!
+Missing character: There is no § in font cmr10!
+Missing character: There is no  in font cmr10!
+! Extra }, or forgotten $.
+l.27 …}
+       ôcºÌìÖH× ½·õ‚«yµ©õV78Ôš-eÕ–fWë&k‹Gjîëb^^G\é^^Rç™]^^CüÕ8F|î^^Gt³E¨Rà...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Misplaced alignment tab character &.
+l.27 …}ôcºÌìÖH× ½·õ‚«yµ©õV78Ôš-eÕ–fWë&
+                                        k‹Gjîëb^^G\é^^Rç™]^^CüÕ8F|î^^Gt³E¨Rà...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Text line contains an invalid character.
+l.27 …}ôcºÌìÖH× ½·õ‚«yµ©õV78Ôš-eÕ–fWë&k‹Gjîëb^^G
+                                                  \é^^Rç™]^^CüÕ8F|î^^Gt³E¨Rà...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Undefined control sequence.
+l.27 ...ÌìÖH× ½·õ‚«yµ©õV78Ôš-eÕ–fWë&k‹Gjîëb^^G\é
+                                                  ^^Rç™]^^CüÕ8F|î^^Gt³E¨Rà,	...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Text line contains an invalid character.
+l.27 ...H× ½·õ‚«yµ©õV78Ôš-eÕ–fWë&k‹Gjîëb^^G\é^^R
+                                                  ç™]^^CüÕ8F|î^^Gt³E¨Rà,	^^\...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.27 ...‚«yµ©õV78Ôš-eÕ–fWë&k‹Gjîëb^^G\é^^Rç™]^^C
+                                                  üÕ8F|î^^Gt³E¨Rà,	^^\g!Y^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.27 ...Ôš-eÕ–fWë&k‹Gjîëb^^G\é^^Rç™]^^CüÕ8F|î^^G
+                                                  t³E¨Rà,	^^\g!Y^^T†c®Ãà,×^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.27 ...&k‹Gjîëb^^G\é^^Rç™]^^CüÕ8F|î^^Gt³E¨Rà,	^^\
+                                                  g!Y^^T†c®Ãà,×^^S«}·ÂÙa
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.27 ...b^^G\é^^Rç™]^^CüÕ8F|î^^Gt³E¨Rà,	^^\g!Y^^T
+                                                  †c®Ãà,×^^S«}·ÂÙa
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.27 ...™]^^CüÕ8F|î^^Gt³E¨Rà,	^^\g!Y^^T†c®Ãà,×^^S
+                                                  «}·ÂÙa
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Extra }, or forgotten $.
+l.27 ...CüÕ8F|î^^Gt³E¨Rà,	^^\g!Y^^T†c®Ãà,×^^S«}
+                                                  ·ÂÙa
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Text line contains an invalid character.
+l.28 ^^R
+        ^^C)®8giDZWnwc^^O^^TFş^^\¡œw[]#±Ú)…Ùµ&—)K¢Ó2
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.28 ^^R^^C
+           )®8giDZWnwc^^O^^TFş^^\¡œw[]#±Ú)…Ùµ&—)K¢Ó2
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.28 ^^R^^C)®8giD
+                  ZWnwc^^O^^TFş^^\¡œw[]#±Ú)…Ùµ&—)K¢Ó2
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.28 ^^R^^C)®8giDZWnwc^^O
+                           ^^TFş^^\¡œw[]#±Ú)…Ùµ&—)K¢Ó2
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.28 ^^R^^C)®8giDZWnwc^^O^^T
+                              Fş^^\¡œw[]#±Ú)…Ùµ&—)K¢Ó2
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.28 ^^R^^C)®8giDZWnwc^^O^^TFş^^\
+                                   ¡œw[]#±Ú)…Ùµ&—)K¢Ó2
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! You can't use `macro parameter character #' in math mode.
+l.28 ^^R^^C)®8giDZWnwc^^O^^TFş^^\¡œw[]#
+                                          ±Ú)…Ùµ&—)K¢Ó2
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Misplaced alignment tab character &.
+l.28 ^^R^^C)®8giDZWnwc^^O^^TFş^^\¡œw[]#±Ú)…Ùµ&
+                                                  —)K¢Ó2
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Text line contains an invalid character.
+l.29 ˜^^P
+         éˆ¹÷àïƒ@dš-Va^^PÍßêšH^^VMC»îuİšUchkzv[^^\EV÷¦¦ı^^AE±<s§œ^^E1^^_1PÕ...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.29 ˜^^Péˆ¹÷àïƒ@dš-Va^^P
+                          ÍßêšH^^VMC»îuİšUchkzv[^^\EV÷¦¦ı^^AE±<s§œ^^E1^^_1PÕ...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.29 ˜^^Péˆ¹÷àïƒ@dš-Va^^PÍßêšH^^V
+                                  MC»îuİšUchkzv[^^\EV÷¦¦ı^^AE±<s§œ^^E1^^_1PÕ...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.29 ...éˆ¹÷àïƒ@dš-Va^^PÍßêšH^^VMC»îuİšUchkzv[^^\
+                                                  EV÷¦¦ı^^AE±<s§œ^^E1^^_1PÕE...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.29 ...dš-Va^^PÍßêšH^^VMC»îuİšUchkzv[^^\EV÷¦¦ı^^A
+                                                  E±<s§œ^^E1^^_1PÕEÕÓu Rj^^@...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.29 ...ßêšH^^VMC»îuİšUchkzv[^^\EV÷¦¦ı^^AE±<s§œ^^E
+                                                  1^^_1PÕEÕÓu Rj^^@ª0dB*À–›^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.29 ...^^VMC»îuİšUchkzv[^^\EV÷¦¦ı^^AE±<s§œ^^E1^^_
+                                                  1PÕEÕÓu Rj^^@ª0dB*À–›^^L‚X...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.29 ...kzv[^^\EV÷¦¦ı^^AE±<s§œ^^E1^^_1PÕEÕÓu Rj^^@
+                                                  ª0dB*À–›^^L‚XÃ‘^^Oâ9Fa^^T;...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.29 ...¦ı^^AE±<s§œ^^E1^^_1PÕEÕÓu Rj^^@ª0dB*À–›^^L
+                                                  ‚XÃ‘^^Oâ9Fa^^T;Ò‚Ï^^]1{_Õ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no ˜ in font cmr10!
+Missing character: There is no … in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no Ì in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no Ö in font cmr10!
+Missing character: There is no × in font cmr10!
+Missing character: There is no ½ in font cmr10!
+Missing character: There is no · in font cmr10!
+Missing character: There is no õ in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no « in font cmr10!
+Missing character: There is no µ in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no õ in font cmr10!
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no š in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no Õ in font cmr10!
+Missing character: There is no – in font cmr10!
+Missing character: There is no ë in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‹ in font cmr10!
+Missing character: There is no î in font cmr10!
+Missing character: There is no ë in font cmr10!
+Missing character: There is no ç in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no ü in font cmr10!
+Missing character: There is no Õ in font cmr10!
+Missing character: There is no î in font cmr10!
+Missing character: There is no ³ in font cmr10!
+Missing character: There is no ¨ in font cmr10!
+Missing character: There is no à in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no † in font cmr10!
+Missing character: There is no ® in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no à in font cmr10!
+Missing character: There is no × in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no « in font cmr10!
+Missing character: There is no · in font cmr10!
+Missing character: There is no Â in font cmr10!
+Missing character: There is no Ù in font cmr10!
+Missing character: There is no ® in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ş in font cmr10!
+Missing character: There is no ¡ in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ± in font cmr10!
+Missing character: There is no Ú in font cmr10!
+Missing character: There is no … in font cmr10!
+Missing character: There is no Ù in font cmr10!
+Missing character: There is no µ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no — in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no Ó in font cmr10!
+Missing character: There is no ˜ in font cmr10!
+Missing character: There is no é in font cmr10!
+Missing character: There is no ˆ in font cmr10!
+Missing character: There is no ¹ in font cmr10!
+Missing character: There is no ÷ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no à in font cmr10!
+Missing character: There is no ï in font cmr10!
+Missing character: There is no ƒ in font cmr10!
+Missing character: There is no š in font cmr10!
+Missing character: There is no Í in font cmr10!
+Missing character: There is no ß in font cmr10!
+Missing character: There is no ê in font cmr10!
+Missing character: There is no š in font cmr10!
+Missing character: There is no » in font cmr10!
+Missing character: There is no î in font cmr10!
+Missing character: There is no İ in font cmr10!
+Missing character: There is no š in font cmr10!
+Missing character: There is no ÷ in font cmr10!
+Missing character: There is no ¦ in font cmr10!
+Missing character: There is no ¦ in font cmr10!
+Missing character: There is no ı in font cmr10!
+Missing character: There is no ± in font cmr10!
+Missing character: There is no § in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no Õ in font cmr10!
+Missing character: There is no Õ in font cmr10!
+Missing character: There is no Ó in font cmr10!
+Missing character: There is no   in font cmr10!
+Missing character: There is no ª in font cmr10!
+Missing character: There is no À in font cmr10!
+Missing character: There is no – in font cmr10!
+Missing character: There is no › in font cmr10!
+
+Overfull \hbox (48.67233pt too wide) in paragraph at lines 14--29
+[]\OT1/cmr/m/n/10 kH,bF,xp<RM1f*GBRal"Wnm[*; Q$[]\OML/cmm/m/it/10 sLs[]\OT1/cmr
+/m/n/10 "\OML/cmm/m/it/10 yk\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 : []ve\OT1/cmr/m/
+n/10 5[]\OML/cmm/m/it/10 XCX\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 Vy\OT1/cmr/m/n/10
+ 2` : \OML/cmm/m/it/10 :\OT1/cmr/m/n/10 6\OML/cmm/m/it/10 p\OT1/cmr/m/n/10 5\OM
+L/cmm/m/it/10 c\OT1/cmr/m/n/10 )[]$o=9h`i)pX7pTv/
+ []
+
+
+Overfull \hbox (47.433pt too wide) in paragraph at lines 14--29
+\OT1/cmr/m/n/10 R HsHj8nvlV Db4)QcnP$\OML/cmm/m/it/10 cHyV\OT1/cmr/m/n/10 78 \O
+MS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 efWkGjb\OT1/cmr/m/n/10 ]8\OML/cmm/m/it/10 F
+\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 tER; g\OT1/cmr/m/n/10 !\OML/cmm/m/it/10 Yc; 
+a\OT1/cmr/m/n/10 )8\OML/cmm/m/it/10 giDZWnwcFw\OT1/cmr/m/n/10 []))\OML/cmm/m/it
+/10 K\OT1/cmr/m/n/10 2@\OML/cmm/m/it/10 d \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 ...ı^^AE±<s§œ^^E1^^_1PÕEÕÓu Rj^^@ª0dB*À–›^^L‚
+                                                  XÃ‘^^Oâ9Fa^^T;Ò‚Ï^^]1{_Õ[...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+! Text line contains an invalid character.
+l.29 ...<s§œ^^E1^^_1PÕEÕÓu Rj^^@ª0dB*À–›^^L‚XÃ‘^^O
+                                                  â9Fa^^T;Ò‚Ï^^]1{_Õ[½õBOY¤...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no â in font cmr10!
+! Text line contains an invalid character.
+l.29 ...1^^_1PÕEÕÓu Rj^^@ª0dB*À–›^^L‚XÃ‘^^Oâ9Fa^^T
+                                                  ;Ò‚Ï^^]1{_Õ[½õBOY¤Æ2·‚µƒ€...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no  in font cmr10!
+Missing character: There is no Ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ï in font cmr10!
+! Text line contains an invalid character.
+l.29 ...ÕÓu Rj^^@ª0dB*À–›^^L‚XÃ‘^^Oâ9Fa^^T;Ò‚Ï^^]
+                                                  1{_Õ[½õBOY¤Æ2·‚µƒ€àT\ÇY£...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.29 ... Rj^^@ª0dB*À–›^^L‚XÃ‘^^Oâ9Fa^^T;Ò‚Ï^^]1{_
+                                                  Õ[½õBOY¤Æ2·‚µƒ€àT\ÇY£¸ø<...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Undefined control sequence.
+l.29 ...Ã‘^^Oâ9Fa^^T;Ò‚Ï^^]1{_Õ[½õBOY¤Æ2·‚µƒ€àT\
+                                                  ÇY£¸ø<§ç^^T8ê^^@œ4¶l^…^^[...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Text line contains an invalid character.
+l.29 ...;Ò‚Ï^^]1{_Õ[½õBOY¤Æ2·‚µƒ€àT\ÇY£¸ø<§ç^^T
+                                                  8ê^^@œ4¶l^…^^[ ø>ˆ‚¬Ú}ìv-õà
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.29 ...^^]1{_Õ[½õBOY¤Æ2·‚µƒ€àT\ÇY£¸ø<§ç^^T8ê^^@
+                                                  œ4¶l^…^^[ ø>ˆ‚¬Ú}ìv-õà
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.29 ...õBOY¤Æ2·‚µƒ€àT\ÇY£¸ø<§ç^^T8ê^^@œ4¶l^…^^[
+                                                   ø>ˆ‚¬Ú}ìv-õà
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Extra }, or forgotten $.
+l.29 ...‚µƒ€àT\ÇY£¸ø<§ç^^T8ê^^@œ4¶l^…^^[ ø>ˆ‚¬Ú}
+                                                  ìv-õà
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Text line contains an invalid character.
+l.30 ğyiŠ^^F
+            ßº]ñhêFû6MhLG^^]^^YŠ¬*ñTÌ^^@'^^WŸ^^Sî¨^^A6øˆx×è-^^BúšÆô[Ñ%yŒ^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.30 ğyiŠ^^Fßº]ñhêFû6MhLG^^]
+                            ^^YŠ¬*ñTÌ^^@'^^WŸ^^Sî¨^^A6øˆx×è-^^BúšÆô[Ñ%yŒ^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.30 ğyiŠ^^Fßº]ñhêFû6MhLG^^]^^Y
+                               Š¬*ñTÌ^^@'^^WŸ^^Sî¨^^A6øˆx×è-^^BúšÆô[Ñ%yŒ^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.30 ğyiŠ^^Fßº]ñhêFû6MhLG^^]^^YŠ¬*ñTÌ^^@
+                                         '^^WŸ^^Sî¨^^A6øˆx×è-^^BúšÆô[Ñ%yŒ^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.30 ğyiŠ^^Fßº]ñhêFû6MhLG^^]^^YŠ¬*ñTÌ^^@'^^W
+                                             Ÿ^^Sî¨^^A6øˆx×è-^^BúšÆô[Ñ%yŒ^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.30 ğyiŠ^^Fßº]ñhêFû6MhLG^^]^^YŠ¬*ñTÌ^^@'^^WŸ^^S
+                                                 î¨^^A6øˆx×è-^^BúšÆô[Ñ%yŒ^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.30 ...ßº]ñhêFû6MhLG^^]^^YŠ¬*ñTÌ^^@'^^WŸ^^Sî¨^^A
+                                                  6øˆx×è-^^BúšÆô[Ñ%yŒ^^G!¨K...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.30 ...LG^^]^^YŠ¬*ñTÌ^^@'^^WŸ^^Sî¨^^A6øˆx×è-^^B
+                                                  úšÆô[Ñ%yŒ^^G!¨K4–÷^^AßQ`ñ¥ñ
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.31 ÎÙ´õBÍ»¢¦±‘~^^_
+                    ^^C„‡ÀhÂ^^G^^HÙWM‘^^UÕN—[Ğ	s^^B#
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.31 ÎÙ´õBÍ»¢¦±‘~^^_^^C
+                       „‡ÀhÂ^^G^^HÙWM‘^^UÕN—[Ğ	s^^B#
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.31 ÎÙ´õBÍ»¢¦±‘~^^_^^C„‡ÀhÂ^^G
+                               ^^HÙWM‘^^UÕN—[Ğ	s^^B#
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.31 ÎÙ´õBÍ»¢¦±‘~^^_^^C„‡ÀhÂ^^G^^H
+                                  ÙWM‘^^UÕN—[Ğ	s^^B#
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.31 ÎÙ´õBÍ»¢¦±‘~^^_^^C„‡ÀhÂ^^G^^HÙWM‘^^U
+                                         ÕN—[Ğ	s^^B#
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.31 ...BÍ»¢¦±‘~^^_^^C„‡ÀhÂ^^G^^HÙWM‘^^UÕN—[Ğ	s^^B
+                                                  #
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! You can't use `macro parameter character #' in math mode.
+l.31 ...Í»¢¦±‘~^^_^^C„‡ÀhÂ^^G^^HÙWM‘^^UÕN—[Ğ	s^^B#
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Text line contains an invalid character.
+l.32 ^^P
+        Ê^^S¿d‰^^[^^UM[!^^D$‚³²ID2’¡åzƒGÚè]^bİu}DñsÁäÔ€<!~\k¾^^B‹öD
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.32 ^^PÊ^^S
+            ¿d‰^^[^^UM[!^^D$‚³²ID2’¡åzƒGÚè]^bİu}DñsÁäÔ€<!~\k¾^^B‹öD
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.32 ^^PÊ^^S¿d‰^^[
+                  ^^UM[!^^D$‚³²ID2’¡åzƒGÚè]^bİu}DñsÁäÔ€<!~\k¾^^B‹öD
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.32 ^^PÊ^^S¿d‰^^[^^U
+                     M[!^^D$‚³²ID2’¡åzƒGÚè]^bİu}DñsÁäÔ€<!~\k¾^^B‹öD
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.32 ^^PÊ^^S¿d‰^^[^^UM[!^^D
+                           $‚³²ID2’¡åzƒGÚè]^bİu}DñsÁäÔ€<!~\k¾^^B‹öD
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no Õ in font cmr7!
+Missing character: There is no ½ in font cmr10!
+Missing character: There is no õ in font cmr10!
+Missing character: There is no ¤ in font cmr10!
+Missing character: There is no Æ in font cmr10!
+Missing character: There is no · in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no µ in font cmr10!
+Missing character: There is no ƒ in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no à in font cmr10!
+Missing character: There is no Ç in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no £ in font cmr10!
+Missing character: There is no ¸ in font cmr10!
+Missing character: There is no ø in font cmr10!
+Missing character: There is no § in font cmr10!
+Missing character: There is no ç in font cmr10!
+Missing character: There is no ê in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+Missing character: There is no … in font cmr7!
+Missing character: There is no ø in font cmr10!
+Missing character: There is no ˆ in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no ¬ in font cmr10!
+Missing character: There is no Ú in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no õ in font cmr10!
+Missing character: There is no à in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no Š in font cmr10!
+Missing character: There is no ß in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no ñ in font cmr10!
+Missing character: There is no ê in font cmr10!
+Missing character: There is no û in font cmr10!
+Missing character: There is no Š in font cmr10!
+Missing character: There is no ¬ in font cmr10!
+Missing character: There is no ñ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no Ì in font cmr10!
+Missing character: There is no Ÿ in font cmr10!
+Missing character: There is no î in font cmr10!
+Missing character: There is no ¨ in font cmr10!
+Missing character: There is no ø in font cmr10!
+Missing character: There is no ˆ in font cmr10!
+Missing character: There is no × in font cmr10!
+Missing character: There is no è in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no š in font cmr10!
+Missing character: There is no Æ in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no Ñ in font cmr10!
+Missing character: There is no Î in font cmr10!
+Missing character: There is no Ù in font cmr10!
+Missing character: There is no ´ in font cmr10!
+Missing character: There is no õ in font cmr10!
+Missing character: There is no Í in font cmr10!
+Missing character: There is no » in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no ¦ in font cmr10!
+Missing character: There is no ± in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no „ in font cmr10!
+Missing character: There is no ‡ in font cmr10!
+Missing character: There is no À in font cmr10!
+Missing character: There is no Â in font cmr10!
+Missing character: There is no Ù in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no Õ in font cmr10!
+Missing character: There is no — in font cmr10!
+Missing character: There is no Ğ in font cmr10!
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no ¿ in font cmr10!
+Missing character: There is no ‰ in font cmr10!
+! Text line contains an invalid character.
+l.32 ^^PÊ^^S¿d‰^^[^^UM[!^^D$
+                             ‚³²ID2’¡åzƒGÚè]^bİu}DñsÁäÔ€<!~\k¾^^B‹öD
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no ³ in font cmr10!
+Missing character: There is no ² in font cmr10!
+Missing character: There is no ’ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ¡ in font cmr10!
+Missing character: There is no å in font cmr10!
+Missing character: There is no ƒ in font cmr10!
+Missing character: There is no Ú in font cmr10!
+Missing character: There is no è in font cmr10!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.32 ^^PÊ^^S¿d‰^^[^^UM[!^^D$‚³²ID2’¡åzƒGÚè]^
+                                              bİu}DñsÁäÔ€<!~\k¾^^B‹öD
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.32 ...^^S¿d‰^^[^^UM[!^^D$‚³²ID2’¡åzƒGÚè]^bİu}
+                                                  DñsÁäÔ€<!~\k¾^^B‹öD
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \k invalid in math mode on input line 32.
+
+
+! LaTeX Error: Command \k unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.32 ...M[!^^D$‚³²ID2’¡åzƒGÚè]^bİu}DñsÁäÔ€<!~\k
+                                                  ¾^^B‹öD
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Text line contains an invalid character.
+l.32 ...^D$‚³²ID2’¡åzƒGÚè]^bİu}DñsÁäÔ€<!~\k¾^^B
+                                                  ‹öD
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! You can't use `macro parameter character #' in math mode.
+l.33 #
+      ÁÂÑcËÎP°¿¸Ù^^Q\ıç^^N­UÂ8ŸìÅƒ³Ç^^A»H^^Tö&×^^[7/
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Text line contains an invalid character.
+l.33 #ÁÂÑcËÎP°¿¸Ù^^Q
+                    \ıç^^N­UÂ8ŸìÅƒ³Ç^^A»H^^Tö&×^^[7/
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Undefined control sequence.
+l.33 #ÁÂÑcËÎP°¿¸Ù^^Q\ı
+                      ç^^N­UÂ8ŸìÅƒ³Ç^^A»H^^Tö&×^^[7/
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Text line contains an invalid character.
+l.33 #ÁÂÑcËÎP°¿¸Ù^^Q\ıç^^N
+                          ­UÂ8ŸìÅƒ³Ç^^A»H^^Tö&×^^[7/
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.33 #ÁÂÑcËÎP°¿¸Ù^^Q\ıç^^N­UÂ8ŸìÅƒ³Ç^^A
+                                       »H^^Tö&×^^[7/
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.33 #ÁÂÑcËÎP°¿¸Ù^^Q\ıç^^N­UÂ8ŸìÅƒ³Ç^^A»H^^T
+                                            ö&×^^[7/
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Misplaced alignment tab character &.
+l.33 #ÁÂÑcËÎP°¿¸Ù^^Q\ıç^^N­UÂ8ŸìÅƒ³Ç^^A»H^^Tö&
+                                              ×^^[7/
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Text line contains an invalid character.
+l.33 #ÁÂÑcËÎP°¿¸Ù^^Q\ıç^^N­UÂ8ŸìÅƒ³Ç^^A»H^^Tö&×^^[
+                                                  7/
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no  in font cmr7!
+Missing character: There is no İ in font cmr10!
+Missing character: There is no ñ in font cmr10!
+Missing character: There is no Á in font cmr10!
+Missing character: There is no ä in font cmr10!
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¾ in font cmr10!
+Missing character: There is no ‹ in font cmr10!
+Missing character: There is no ö in font cmr10!
+Missing character: There is no Á in font cmr10!
+Missing character: There is no Â in font cmr10!
+Missing character: There is no Ñ in font cmr10!
+Missing character: There is no Ë in font cmr10!
+Missing character: There is no Î in font cmr10!
+Missing character: There is no ° in font cmr10!
+Missing character: There is no ¿ in font cmr10!
+Missing character: There is no ¸ in font cmr10!
+Missing character: There is no Ù in font cmr10!
+Missing character: There is no ç in font cmr10!
+Missing character: There is no ­ in font cmr10!
+Missing character: There is no Â in font cmr10!
+Missing character: There is no Ÿ in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no Å in font cmr10!
+Missing character: There is no ƒ in font cmr10!
+Missing character: There is no ³ in font cmr10!
+Missing character: There is no Ç in font cmr10!
+Missing character: There is no » in font cmr10!
+Missing character: There is no ö in font cmr10!
+Missing character: There is no × in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no £ in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ï in font cmr10!
+! Text line contains an invalid character.
+l.34 ™ºB£7EF$òÊ;ï^^W
+                      €V½óM^^G`^^X7MÛ¡´ú¹ö¥ iYW7¾^^W5^^Y^ĞÊ^^Hp_*‰.>Ö¶ßĞ³Ö^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no € in font cmr10!
+Missing character: There is no ½ in font cmr10!
+Missing character: There is no ó in font cmr10!
+! Text line contains an invalid character.
+l.34 ™ºB£7EF$òÊ;ï^^W€V½óM^^G
+                              `^^X7MÛ¡´ú¹ö¥ iYW7¾^^W5^^Y^ĞÊ^^Hp_*‰.>Ö¶ßĞ³Ö^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.34 ™ºB£7EF$òÊ;ï^^W€V½óM^^G`^^X
+                                  7MÛ¡´ú¹ö¥ iYW7¾^^W5^^Y^ĞÊ^^Hp_*‰.>Ö¶ßĞ³Ö^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no Û in font cmr10!
+Missing character: There is no ¡ in font cmr10!
+Missing character: There is no ´ in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ¹ in font cmr10!
+Missing character: There is no ö in font cmr10!
+Missing character: There is no ¥ in font cmr10!
+Missing character: There is no   in font cmr10!
+Missing character: There is no ¾ in font cmr10!
+! Text line contains an invalid character.
+l.34 ...EF$òÊ;ï^^W€V½óM^^G`^^X7MÛ¡´ú¹ö¥ iYW7¾^^W
+                                                  5^^Y^ĞÊ^^Hp_*‰.>Ö¶ßĞ³Ö^^[P...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.34 ...Ê;ï^^W€V½óM^^G`^^X7MÛ¡´ú¹ö¥ iYW7¾^^W5^^Y
+                                                  ^ĞÊ^^Hp_*‰.>Ö¶ßĞ³Ö^^[Pw‰G...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.34 ...;ï^^W€V½óM^^G`^^X7MÛ¡´ú¹ö¥ iYW7¾^^W5^^Y^
+                                                  ĞÊ^^Hp_*‰.>Ö¶ßĞ³Ö^^[Pw‰Gd...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Text line contains an invalid character.
+l.34 ...^W€V½óM^^G`^^X7MÛ¡´ú¹ö¥ iYW7¾^^W5^^Y^ĞÊ^^H
+                                                  p_*‰.>Ö¶ßĞ³Ö^^[Pw‰Gd®aãŒ...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.34 ...MÛ¡´ú¹ö¥ iYW7¾^^W5^^Y^ĞÊ^^Hp_*‰.>Ö¶ßĞ³Ö^^[
+                                                  Pw‰Gd®aãŒ^^]Ê˜+&@gQÆñèB4...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.34 ...¥ iYW7¾^^W5^^Y^ĞÊ^^Hp_*‰.>Ö¶ßĞ³Ö^^[Pw‰Gd
+                                                  ®aãŒ^^]Ê˜+&@gQÆñèB4,Ï¦:^^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.34 ...^^W5^^Y^ĞÊ^^Hp_*‰.>Ö¶ßĞ³Ö^^[Pw‰Gd®aãŒ^^]
+                                                  Ê˜+&@gQÆñèB4,Ï¦:^^^*ğhéU:^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Misplaced alignment tab character &.
+l.34 ...^^Y^ĞÊ^^Hp_*‰.>Ö¶ßĞ³Ö^^[Pw‰Gd®aãŒ^^]Ê˜+&
+                                                  @gQÆñèB4,Ï¦:^^^*ğhéU:^^N¤r...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Text line contains an invalid character.
+l.34 ...Ö¶ßĞ³Ö^^[Pw‰Gd®aãŒ^^]Ê˜+&@gQÆñèB4,Ï¦:^^^
+                                                  *ğhéU:^^N¤rØØà+^^Z)©À%ŸÇ ^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.34 ...Pw‰Gd®aãŒ^^]Ê˜+&@gQÆñèB4,Ï¦:^^^*ğhéU:^^N
+                                                  ¤rØØà+^^Z)©À%ŸÇ ^^ZŸ®­<æ^^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.34 ...ãŒ^^]Ê˜+&@gQÆñèB4,Ï¦:^^^*ğhéU:^^N¤rØØà+^^Z
+                                                  )©À%ŸÇ ^^ZŸ®­<æ^^F^^DÍî±*^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.35 ×:^^D
+          »½^^Z¤×ïÙ`^^?®±^^?^^D£PXVV™³^^A8`‡I%Æ'w˜–
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.35 ×:^^D»½^^Z
+               ¤×ïÙ`^^?®±^^?^^D£PXVV™³^^A8`‡I%Æ'w˜–
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.35 ×:^^D»½^^Z¤×ïÙ`^^?
+                       ®±^^?^^D£PXVV™³^^A8`‡I%Æ'w˜–
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.35 ×:^^D»½^^Z¤×ïÙ`^^?®±^^?
+                            ^^D£PXVV™³^^A8`‡I%Æ'w˜–
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.35 ×:^^D»½^^Z¤×ïÙ`^^?®±^^?^^D
+                               £PXVV™³^^A8`‡I%Æ'w˜–
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.35 ×:^^D»½^^Z¤×ïÙ`^^?®±^^?^^D£PX
+                                   VV™³^^A8`‡I%Æ'w˜–
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.35 ×:^^D»½^^Z¤×ïÙ`^^?®±^^?^^D£PXVV™³^^A
+                                          8`‡I%Æ'w˜–
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.36 üG·óïà?µ“€kà^^E
+                    ­Kƒ^^W$)n’ê)÷ÂS€Æ•ş^^E(¢f¹-À‡ Â',‘éµ„^^ZSÓ¹Öèmrûã°Ë®Ÿ^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.36 üG·óïà?µ“€kà^^E­Kƒ^^W
+                          $)n’ê)÷ÂS€Æ•ş^^E(¢f¹-À‡ Â',‘éµ„^^ZSÓ¹Öèmrûã°Ë®Ÿ^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no Ğ in font cmr7!
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no ‰ in font cmr10!
+Missing character: There is no Ö in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+Missing character: There is no ß in font cmr10!
+Missing character: There is no Ğ in font cmr10!
+Missing character: There is no ³ in font cmr10!
+Missing character: There is no Ö in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‰ in font cmr10!
+Missing character: There is no ® in font cmr10!
+Missing character: There is no ã in font cmr10!
+Missing character: There is no Œ in font cmr10!
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no ˜ in font cmr10!
+Missing character: There is no Æ in font cmr10!
+Missing character: There is no ñ in font cmr10!
+Missing character: There is no è in font cmr10!
+Missing character: There is no Ï in font cmr10!
+Missing character: There is no ¦ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no é in font cmr10!
+Missing character: There is no ¤ in font cmr10!
+Missing character: There is no Ø in font cmr10!
+Missing character: There is no Ø in font cmr10!
+Missing character: There is no à in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no À in font cmr10!
+Missing character: There is no × in font cmr10!
+Missing character: There is no » in font cmr10!
+Missing character: There is no ½ in font cmr10!
+Missing character: There is no ¤ in font cmr10!
+Missing character: There is no × in font cmr10!
+Missing character: There is no ï in font cmr10!
+Missing character: There is no Ù in font cmr10!
+Missing character: There is no ® in font cmr10!
+Missing character: There is no ± in font cmr10!
+Missing character: There is no £ in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no ³ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‡ in font cmr10!
+Missing character: There is no ü in font cmr10!
+Missing character: There is no · in font cmr10!
+Missing character: There is no ó in font cmr10!
+Missing character: There is no ï in font cmr10!
+Missing character: There is no à in font cmr10!
+Missing character: There is no µ in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no à in font cmr10!
+Missing character: There is no ­ in font cmr10!
+Missing character: There is no ƒ in font cmr10!
+Missing character: There is no ’ in font cmr10!
+Missing character: There is no ê in font cmr10!
+Missing character: There is no ÷ in font cmr10!
+Missing character: There is no Â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no Æ in font cmr10!
+Missing character: There is no • in font cmr10!
+Missing character: There is no ş in font cmr10!
+! Text line contains an invalid character.
+l.36 üG·óïà?µ“€kà^^E­Kƒ^^W$)n’ê)÷ÂS€Æ•ş^^E
+                                          (¢f¹-À‡ Â',‘éµ„^^ZSÓ¹Öèmrûã°Ë®Ÿ^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no ¹ in font cmr10!
+Missing character: There is no À in font cmr10!
+Missing character: There is no ‡ in font cmr10!
+Missing character: There is no   in font cmr10!
+Missing character: There is no Â in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no é in font cmr10!
+Missing character: There is no µ in font cmr10!
+Missing character: There is no „ in font cmr10!
+! Text line contains an invalid character.
+l.36 ...^E­Kƒ^^W$)n’ê)÷ÂS€Æ•ş^^E(¢f¹-À‡ Â',‘éµ„^^Z
+                                                  SÓ¹Öèmrûã°Ë®Ÿ^^^Åv_^^Zò^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no Ó in font cmr10!
+Missing character: There is no ¹ in font cmr10!
+Missing character: There is no Ö in font cmr10!
+Missing character: There is no è in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no û in font cmr10!
+Missing character: There is no ã in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ° in font cmr10!
+Missing character: There is no Ë in font cmr10!
+Missing character: There is no ® in font cmr10!
+Missing character: There is no Ÿ in font cmr10!
+! Text line contains an invalid character.
+l.36 ...Æ•ş^^E(¢f¹-À‡ Â',‘éµ„^^ZSÓ¹Öèmrûã°Ë®Ÿ^^^
+                                                  Åv_^^Zò^^WBÆ`n&fÍ.!j"^^?^...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no Å in font cmr10!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.36 ...^^E(¢f¹-À‡ Â',‘éµ„^^ZSÓ¹Öèmrûã°Ë®Ÿ^^^Åv_
+                                                  ^^Zò^^WBÆ`n&fÍ.!j"^^?^^G...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Text line contains an invalid character.
+l.36 ...(¢f¹-À‡ Â',‘éµ„^^ZSÓ¹Öèmrûã°Ë®Ÿ^^^Åv_^^Z
+                                                  ò^^WBÆ`n&fÍ.!j"^^?^^G0ã,...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.36 ...-À‡ Â',‘éµ„^^ZSÓ¹Öèmrûã°Ë®Ÿ^^^Åv_^^Zò^^W
+                                                  BÆ`n&fÍ.!j"^^?^^G0ã,^^\­...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Misplaced alignment tab character &.
+l.36 ...',‘éµ„^^ZSÓ¹Öèmrûã°Ë®Ÿ^^^Åv_^^Zò^^WBÆ`n&
+                                                  fÍ.!j"^^?^^G0ã,^^\­;š¿Ay...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Text line contains an invalid character.
+l.36 ...Ó¹Öèmrûã°Ë®Ÿ^^^Åv_^^Zò^^WBÆ`n&fÍ.!j"^^?
+                                                  ^^G0ã,^^\­;š¿Ay^^E^^P)qu...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.36 ...èmrûã°Ë®Ÿ^^^Åv_^^Zò^^WBÆ`n&fÍ.!j"^^?^^G
+                                                  0ã,^^\­;š¿Ay^^E^^P)qu^^Y...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.36 ...°Ë®Ÿ^^^Åv_^^Zò^^WBÆ`n&fÍ.!j"^^?^^G0ã,^^\
+                                                  ­;š¿Ay^^E^^P)qu^^Y^^FÊºØå...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.36 ..._^^Zò^^WBÆ`n&fÍ.!j"^^?^^G0ã,^^\­;š¿Ay^^E
+                                                  ^^P)qu^^Y^^FÊºØåôŠ^^QP0¯º...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.36 ...Zò^^WBÆ`n&fÍ.!j"^^?^^G0ã,^^\­;š¿Ay^^E^^P
+                                                  )qu^^Y^^FÊºØåôŠ^^QP0¯º^^V...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.36 ...`n&fÍ.!j"^^?^^G0ã,^^\­;š¿Ay^^E^^P)qu^^Y
+                                                  ^^FÊºØåôŠ^^QP0¯º^^Vo^^E»{¬...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.36 ...fÍ.!j"^^?^^G0ã,^^\­;š¿Ay^^E^^P)qu^^Y^^F
+                                                  ÊºØåôŠ^^QP0¯º^^Vo^^E»{¬ÜB;...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.36 ...?^^G0ã,^^\­;š¿Ay^^E^^P)qu^^Y^^FÊºØåôŠ^^Q
+                                                  P0¯º^^Vo^^E»{¬ÜB;M]wHÚg™ï£MK
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.36 ...,^^\­;š¿Ay^^E^^P)qu^^Y^^FÊºØåôŠ^^QP0¯º^^V
+                                                  o^^E»{¬ÜB;M]wHÚg™ï£MK
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.36 ...­;š¿Ay^^E^^P)qu^^Y^^FÊºØåôŠ^^QP0¯º^^Vo^^E
+                                                  »{¬ÜB;M]wHÚg™ï£MK
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.37 ^^_
+        y•uîˆ5Îj¨]6Z@^^Sòî[Q“!^^NÀò¨x^^RJš¯mE*†3^^TàŒÕÅ–%Û^^UYµ:D—^^Q^^PWW...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.37 ^^_y•uîˆ5Îj¨]6Z@^^S
+                         òî[Q“!^^NÀò¨x^^RJš¯mE*†3^^TàŒÕÅ–%Û^^UYµ:D—^^Q^^PWW...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.37 ^^_y•uîˆ5Îj¨]6Z@^^Sòî[Q“!^^N
+                                  Àò¨x^^RJš¯mE*†3^^TàŒÕÅ–%Û^^UYµ:D—^^Q^^PWW...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.37 ^^_y•uîˆ5Îj¨]6Z@^^Sòî[Q“!^^NÀò¨x^^R
+                                         Jš¯mE*†3^^TàŒÕÅ–%Û^^UYµ:D—^^Q^^PWW...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.37 ...îˆ5Îj¨]6Z@^^Sòî[Q“!^^NÀò¨x^^RJš¯mE*†3^^T
+                                                  àŒÕÅ–%Û^^UYµ:D—^^Q^^PWW^^G...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.38 ^^H
+        ŠCÉ„"›+(^^_ù»—Ôb^^EVÜaß*A^^FIJˆ(•<¶ün‚B‘n,ÁÏl!#¨±áx„§‹^^Xñµ^^@¸ÂUäÔ...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.38 ^^HŠCÉ„"›+(^^_
+                   ù»—Ôb^^EVÜaß*A^^FIJˆ(•<¶ün‚B‘n,ÁÏl!#¨±áx„§‹^^Xñµ^^@¸ÂUäÔ...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.38 ^^HŠCÉ„"›+(^^_ù»—Ôb^^E
+                           VÜaß*A^^FIJˆ(•<¶ün‚B‘n,ÁÏl!#¨±áx„§‹^^Xñµ^^@¸ÂUäÔ...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.38 ^^HŠCÉ„"›+(^^_ù»—Ôb^^EVÜaß*A^^F
+                                    IJˆ(•<¶ün‚B‘n,ÁÏl!#¨±áx„§‹^^Xñµ^^@¸ÂUäÔ...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! You can't use `macro parameter character #' in math mode.
+l.38 ...+(^^_ù»—Ôb^^EVÜaß*A^^FIJˆ(•<¶ün‚B‘n,ÁÏl!#
+                                                  ¨±áx„§‹^^Xñµ^^@¸ÂUäÔt§±ÏM...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Text line contains an invalid character.
+l.38 ...^^EVÜaß*A^^FIJˆ(•<¶ün‚B‘n,ÁÏl!#¨±áx„§‹^^X
+                                                  ñµ^^@¸ÂUäÔt§±ÏM°m³³F”P
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.38 ...aß*A^^FIJˆ(•<¶ün‚B‘n,ÁÏl!#¨±áx„§‹^^Xñµ^^@
+                                                  ¸ÂUäÔt§±ÏM°m³³F”P
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.39 m^^U
+          Â£Şú^4U^^PáíJó:¿€.Òƒ0’^^WÇ"ö¶ôø^^X^^D”>ßàÇ!Ã)[^^Bq·¼Ş‹^^U-¹÷B...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.39 m^^UÂ£Şú^4U^^P
+                     áíJó:¿€.Òƒ0’^^WÇ"ö¶ôø^^X^^D”>ßàÇ!Ã)[^^Bq·¼Ş‹^^U-¹÷B...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.39 m^^UÂ£Şú^4U^^Pá
+                        íJó:¿€.Òƒ0’^^WÇ"ö¶ôø^^X^^D”>ßàÇ!Ã)[^^Bq·¼Ş‹^^U-¹÷B...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.39 m^^UÂ£Şú^4U^^PáíJó:¿€.
+                                Òƒ0’^^WÇ"ö¶ôø^^X^^D”>ßàÇ!Ã)[^^Bq·¼Ş‹^^U-¹÷B...
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+! Text line contains an invalid character.
+l.39 m^^UÂ£Şú^4U^^PáíJó:¿€.Òƒ0’^^W
+                                       Ç"ö¶ôø^^X^^D”>ßàÇ!Ã)[^^Bq·¼Ş‹^^U-¹÷B...
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 3356 strings out of 495028
+ 49769 string characters out of 6181498
+ 125392 words of memory out of 5000000
+ 6609 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 33i,2n,19p,316b,54s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+!  ==> Fatal error occurred, no output PDF file produced!

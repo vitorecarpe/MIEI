@@ -1,0 +1,1 @@
+void fonout(char* programa, char* nome, char** argv, int argc);

@@ -1,0 +1,13 @@
+------- HotéisInc --------
+Cama e Pequeno AlmoçoNome da cadeia de hotéis: Cama e Pequeno Almoço
+Hotéis: (, {h1=Hotel 'BragaCentro'
+(h1) BragaPreço por quarto: 45.0€Numero de Quartos: 100Estrelas: 100**Epoca Alta: falsePreço final: 45.0€, h2=Hotel 'BragaUM'
+(h2) BragaPreço por quarto: 25.0€Numero de Quartos: 150Estrelas: 150**Epoca Alta: falsePreço final: 25.0€, h3=Hotel 'Falperra'
+(h3) BragaPreço por quarto: 75.0€Numero de Quartos: 120Estrelas: 120**
+Taxa: 60.0%Preço final: 4500.0€, h4=Hotel 'RioEste'
+(h4) BragaPreço por quarto: 95.0€Numero de Quartos: 90Estrelas: 90**
+Taxa: 83.0%Preço final: 7885.0€, h5=Hotel 'Avenida'
+(h5) PortoPreço por quarto: 50.0€Numero de Quartos: 50Estrelas: 50**
+Ocupação: 50.0Preço final: 1025.0€, h6=Hotel 'Alameda'
+(h6) PortoPreço por quarto: 60.0€Numero de Quartos: 75Estrelas: 75**
+Ocupação: 50.0Preço final: 1230.0€})

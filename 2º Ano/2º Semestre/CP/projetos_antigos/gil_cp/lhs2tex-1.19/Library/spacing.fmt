@@ -1,0 +1,36 @@
+%if False
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% spacing.fmt
+%
+% Formatting sequences of ^ as spaces of different width.
+% Note that the default formatting of (^) is affected by this.
+%
+% Permission is granted to include this file (or parts of this file) 
+% literally into other documents, regardless of the conditions or 
+% license applying to these documents.
+%
+% Andres Loeh, November 2005, ver 1.1
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%endif
+%if not lhs2tex_spacing_fmt_read
+%let lhs2tex_spacing_fmt_read = True
+%
+%if style == newcode
+
+%format ^ =
+%format ^^ = " "
+%format ^^^ = "  "
+%format ^^^^ = "   "
+%format ^^. =
+
+%else
+
+%format ^ = " "
+%format ^^ = "\;"
+%format ^^^ = "\quad "
+%format ^^^^ = "\qquad "
+%format ^^. = ^^ "."
+
+%endif
+%endif

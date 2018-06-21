@@ -1,0 +1,17 @@
+total 100
+drwxrwxr-x 4 jose jose 4096 Abr 12 12:58 .
+drwxr-xr-x 9 jose jose 4096 Abr  5 18:04 ..
+drwxrwxr-x 3 jose jose 4096 Abr  4 11:36 adicional
+drwxrwxr-x 2 jose jose 4096 Mar 28 18:42 aula
+-rw------- 1 jose jose  184 Abr 12 11:59 bla.txt
+-rw------- 1 jose jose   35 Abr 12 12:00 erros.txt
+-rwxrwxr-x 1 jose jose 8960 Mar 28 18:54 exe2
+-rw-rw-r-- 1 jose jose  385 Mar 28 18:54 exe2.c
+-rwxrwxr-x 1 jose jose 8960 Mar 28 18:59 exe3
+-rw-rw-r-- 1 jose jose  367 Mar 28 18:59 exe3.c
+-rwxrwxr-x 1 jose jose 8960 Mar 28 19:26 exe4
+-rw-rw-r-- 1 jose jose 1770 Abr 12 11:59 exe4.c
+-rw------- 1 jose jose    0 Abr 12 12:58 ole.txt
+-rwxrwxr-x 1 jose jose 8960 Abr  3 18:45 redir
+-rwxrwxr-x 1 jose jose 9064 Abr 12 11:59 redir2
+-rw------- 1 jose jose   24 Mar 28 19:26 saida.txt

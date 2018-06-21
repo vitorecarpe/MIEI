@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=nome\ autor\ duracao\ classificacao\ letra\ numeroVezesTocada\ ultimaVez\ video
+comment0.target=MusicaComVideo(java.lang.String,\ java.lang.String,\ double,\ int,\ java.util.ArrayList,\ int,\ java.time.LocalDateTime,\ java.lang.String)
+comment1.params=
+comment1.target=void\ play()
+numComments=2

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=termo\ definicao
+comment0.target=Palavra(java.lang.String,\ java.lang.String)
+comment1.params=p
+comment1.target=Palavra(Palavra)
+comment2.params=
+comment2.target=java.lang.String\ getTermo()
+comment3.params=
+comment3.target=java.lang.String\ getDefinicao()
+comment4.params=o
+comment4.target=boolean\ equals(java.lang.Object)
+comment5.params=
+comment5.target=Palavra\ clone()
+numComments=6

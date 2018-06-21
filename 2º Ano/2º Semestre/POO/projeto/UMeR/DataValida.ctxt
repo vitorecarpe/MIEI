@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=DataValida
+comment1.params=
+comment1.target=java.lang.String\ getDataS()
+comment1.text=Getter\ da\ dataS.
+comment2.params=dataS
+comment2.target=void\ setDataS(java.lang.String)
+comment2.text=Setter\ da\ dataS\ .
+comment3.params=dataS
+comment3.target=DataValida(java.lang.String)
+comment3.text=Construtor\ parameterizado
+comment4.params=
+comment4.target=boolean\ isValid()
+comment4.text=Testa\ se\ uma\ determinada\ data\ e\ valida\ ou\ nao.
+comment5.params=
+comment5.target=int\ convertToInt()
+comment5.text=Converte\ uma\ string\ para\ um\ inteiro
+numComments=6

@@ -1,0 +1,72 @@
+\begin{theindex}
+
+  \item \LaTeX  , \hyperpage{2}
+    \subitem lhs2TeX, \hyperpage{2}
+
+  \indexspace
+
+  \item B-tree, \hyperpage{4}
+
+  \indexspace
+
+  \item C\IeC {\'a}lculo de Programas, \hyperpage{3}
+    \subitem Material Pedag\IeC {\'o}gico, \hyperpage{2}
+      \subsubitem BTree.hs, \hyperpage{4, 5}
+      \subsubitem Exp.hs, \hyperpage{5}
+      \subsubitem LTree.hs, \hyperpage{8, 9}
+  \item Combinador ``pointfree''
+    \subitem \emph  {cata}, \hyperpage{7}
+    \subitem \emph  {either}, \hyperpage{7}
+
+  \indexspace
+
+  \item Fun\IeC {\c c}\IeC {\~a}o
+    \subitem $\pi _2$, \hyperpage{11}
+    \subitem \emph  {length}, \hyperpage{7}, \hyperpage{11}
+    \subitem \emph  {map}, \hyperpage{11}
+    \subitem \emph  {succ}, \hyperpage{7}
+    \subitem \emph  {uncurry}, \hyperpage{7}
+  \item Functor, \hyperpage{3}, \hyperpage{5}, \hyperpage{7--11}
+
+  \indexspace
+
+  \item Graphviz, \hyperpage{5, 6}
+    \subitem WebGraphviz, \hyperpage{6}
+
+  \indexspace
+
+  \item Haskell, \hyperpage{2, 3}
+    \subitem ``Literate Haskell'', \hyperpage{2}
+    \subitem Biblioteca
+      \subsubitem PFP, \hyperpage{10}
+      \subsubitem Probability, \hyperpage{8}, \hyperpage{10}
+    \subitem interpretador
+      \subsubitem GHCi, \hyperpage{3}, \hyperpage{10}
+    \subitem QuickCheck, \hyperpage{3, 4}, \hyperpage{7}
+
+  \indexspace
+
+  \item L-system, \hyperpage{6, 7}
+
+  \indexspace
+
+  \item Programa\IeC {\c c}\IeC {\~a}o liter\IeC {\'a}ria, 
+		\hyperpage{2}
+
+  \indexspace
+
+  \item Taylor series
+    \subitem Maclaurin series, \hyperpage{3}
+
+  \indexspace
+
+  \item U.Minho
+    \subitem Departamento de Inform\IeC {\'a}tica, \hyperpage{1}
+  \item Unix shell
+    \subitem wc, \hyperpage{4}
+  \item Utilit\IeC {\'a}rio
+    \subitem LaTeX
+      \subsubitem \texttt  {bibtex}, \hyperpage{3}
+      \subsubitem \texttt  {makeindex}, \hyperpage{3}
+
+\end{theindex}

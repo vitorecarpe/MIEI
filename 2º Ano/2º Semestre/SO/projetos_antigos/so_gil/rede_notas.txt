@@ -1,0 +1,45 @@
+node 1 const Notas
+node 2 const MediaTotal
+node 3 window 3 avg 400
+node 4 tee Notas.txt
+node 5 const 1:2:3:4:5:6:10
+node 6 filter 3 >= 12
+node 7 filter 3 < 12
+node 8 filter 2 == 6
+node 9 filter 2 == 7
+node 10 filter 2 == 8
+node 11 filter 2 == 9
+node 12 filter 2 == 10
+node 13 filter 2 == 11
+node 14 const Passou
+node 15 const NaoPassou
+node 16 const Fim
+node 17 tee EE.txt
+node 18 tee CP.txt
+node 19 tee SO.txt
+node 20 tee POO.txt
+node 21 tee LI.txt
+node 22 tee Opcao.txt
+node 23 const 18
+node 24 filter 3 >= 13
+node 25 const ProvaOral
+node 26 tee ProvaOral.txt
+node 27 spawn gedit Notas.txt
+connect 1 2 5 27
+connect 2 3
+connect 3 4
+connect 5 6 7
+connect 6 14 23
+connect 7 15
+connect 14 16
+connect 15 16
+connect 16 8 9 10 11 12 13
+connect 8 17
+connect 9 18
+connect 10 19
+connect 11 20
+connect 12 21
+connect 13 22
+connect 23 24
+connect 24 25
+connect 25 26

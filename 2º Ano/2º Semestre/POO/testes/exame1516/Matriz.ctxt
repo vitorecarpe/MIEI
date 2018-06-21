@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Matriz
+comment1.params=n\ m
+comment1.target=Matriz(int,\ int)
+comment2.params=n
+comment2.target=Matriz(int)
+comment3.params=l\ c
+comment3.target=java.lang.Object\ get(int,\ int)
+comment4.params=
+comment4.target=int\ size()
+comment5.params=o
+comment5.target=int\ count(java.lang.Object)
+comment6.params=o
+comment6.target=boolean\ equals(java.lang.Object)
+comment7.params=f
+comment7.target=void\ save(java.lang.String)
+comment8.params=
+comment8.target=boolean\ tri()
+numComments=9

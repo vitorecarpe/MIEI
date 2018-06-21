@@ -1,0 +1,9 @@
+elo.txt
+ls
+ola
+ole.txr
+ole.txt
+oli
+terminal
+terminal2
+terminal.c

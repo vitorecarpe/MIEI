@@ -1,0 +1,101 @@
+\documentclass[a4paper,12pt]{report}
+
+%Preambulo
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{grffile}
+
+\title{\bfseries Projeto de Laboratórios de Informática I \paragraph*{SOKOBAN} }
+\author{Francisco Oliveira \and Vitor Peixoto}
+\date{20 Dezembro 2015 \paragraph*{Mestrado Integrado em Engenharia Informática} }
+
+%Cabeçalho e Rodapé
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyfoot[C]{Página \thepage\ de \pageref{LastPage}}
+	\rhead{{\bf MIEI\/} Laboratórios de Informática I}
+	\lhead{2ª Fase - Projeto Sokoban}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+}	
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Laboratórios de Informática I - {\bf MIEI\/}}
+\lhead{2ª Fase - Projeto Sokoban}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[C]{Página \thepage\ de \pageref{LastPage}}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\graphicspath{ {C:/Users/vitor/Documents/"Engenharia Informática"/"1º Ano"/"1º Semestre"/"Laboratórios de Informática I"/rel/images/} }
+
+
+\chapter{Introdução}
+
+Este projeto foi realizado no âmbito da 2ª fase proposta na unidade curricular de Laboratórios de Informática I do 1º semestre de Engenharia Informática. Foi-nos então proposto efetuar melhoramentos à 1ª fase do jogo {\it Sokoban\/} já realizada e adicionar novas funções de modo a produzir um programa {\sl Haskell\/} com o jogo completamente funcional e em ambiente gráfico usando a ferramenta {\sl Gloss\/}, uma biblioteca {\sl Haskell\/} para a criação de gráficos 2D.
+
+\chapter{Tarefa D}
+
+Esta tarefa será a responsável pela organização e sequencialização dos comandos. Assim, a biblioteca {\sl Gloss\/} ainda não será usada nesta tarefa computacional. Como dito no enunciado do projeto, esta tarefa não será mais do que uma sequência de comandos efetuados em um só comando, assim tiramos proveito da maior parte das funções {\sl Haskell\/} da Tarefa C da primeira fase e executamos uma inteira sequência de comandos até que o jogo esteja concluído (todas as caixas estejam em cima dos pontos) ou que os comandos dados tenham terminado.
+\begin{lstlisting}
+tarefa3' :: [String] -> (Int,Int)
+tarefa3' tabuleiro = tarefa3Aux (reverse (funcaoPlantaMelhor tabuleiro)) (head (sepTabCOORDpares tabuleiro)) (last (init tabuleiro)) where 
+	tarefa3Aux ((x:y):z) (a,b) direcao 
+		| direcao=="U" = movimentos ((x:y):z) (a,b) (0,1)
+		| direcao=="D" = movimentos ((x:y):z) (a,b) (0,-1)
+		| direcao=="L" = movimentos ((x:y):z) (a,b) (-1,0)
+		| direcao=="R" = movimentos ((x:y):z) (a,b) (1,0)
+		| otherwise = error "ript3"
+\end{lstlisting}
+
+\chapter{Tarefa E}
+
+EEEE
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.25\textwidth]{src}
+	\caption{A Head Full Of Dreams}
+\end{figure}
+
+\chapter{Problema F}
+
+FFFF
+
+\chapter {Testes}
+
+hei
+
+\chapter {Conclusões}
+
+\section {EN}
+
+hello
+
+\section {ES}
+
+hola
+
+\section {PT}
+
+olá
+
+\section {IT}
+
+ciao
+
+\section {FR}
+
+bonjour
+
+\section{DE}
+
+hallo
+
+\end{document}

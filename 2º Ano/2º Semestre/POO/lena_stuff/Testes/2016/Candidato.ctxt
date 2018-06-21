@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=c
+comment0.target=Candidato(Candidato)
+comment1.params=
+comment1.target=java.lang.String\ getNome()
+comment2.params=
+comment2.target=Candidato\ clone()
+numComments=3

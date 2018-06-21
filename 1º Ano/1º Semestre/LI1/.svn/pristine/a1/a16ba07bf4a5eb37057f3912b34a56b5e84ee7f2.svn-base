@@ -1,0 +1,129 @@
+{-|
+Módulo: Main
+
+Título: Problema C
+
+Descrição: Módulo Haskell que dado um tabuleiro, efetua diversos testes ao tabuleiro de jogo.
+
+Copyright: Francisco Oliveira /a78416@alunos.uminho.pt/   | | |   Vitor Peixoto /a79175@alunos.uminho.pt/
+
+Resumo: Módulo contendo definições Haskell do Problema A da 1ª Fase do Projeto da disciplina de Laboratórios de Informática I. Este módulo contém funções que testam a funcionalidade do tabuleiro e os erros lógicos que impossibilitem a jogabilidade. Estes diversos testes estão juntos na função  "main", no entanto durante este período de testes é feito pela função "teste".
+
+== FUNÇÕES DEFINIDAS NO ESQUELETO INICIAL
+-}
+
+module Main where
+
+import qualified Data.Text as T
+
+-- |Função que dada uma /String/, separa-a onde encontra /\\n/ e junta as diferentes /String/ criadas numa lista de /String/.
+--
+-- >>> "Ola\nMundo"
+-- ["Ola","Mundo"]
+inStr :: String -> [String]
+inStr [] = []
+inStr ['\n'] = [[],[]]
+inStr (x:xs) = case x of
+    '\n' -> []:inStr xs
+    otherwise -> case inStr xs of
+        y:ys -> (x:y):ys
+        [] -> [[x]]
+
+-- |Função que dada uma lista de /String/ devolve os elementos da lista, agrupados e apenas separados por /\\n/. Função inversa de /inStr/.
+--
+-- >>> ["Ola","Mundo"]
+-- "Ola\nMundo\n"
+outStr :: [String] -> String
+outStr [] = "\n"
+outStr t = unlines (map (T.unpack . T.stripEnd . T.pack) t)
+
+-- |Função principal (/main/).
+main = do inp <- getContents
+          putStr (outStr (tarefa3 (inStr inp)))
+
+
+tarefa3 :: [String] -> [String]
+tarefa3 tabuleiro = tarefa3Aux (reverse (sepTABCoord tabuleiro)) (head (sepTabCOORDpares tabuleiro)) (last (sepCOORD1 (sepTabCOORD tabuleiro))) where 
+    tarefa3Aux ((x:y):z) (a,b) direcao | direcao=="U" = movimentos ((x:y):z) (a,b) (0,1)
+                                       | direcao=="D" = movimentos ((x:y):z) (a,b) (0,-1)
+                                       | direcao=="L" = movimentos ((x:y):z) (a,b) (-1,0)
+                                       | direcao=="R" = movimentos ((x:y):z) (a,b) (1,0)
+                                       | otherwise = ["COMANDO INCORRETO"]
+
+movimentos :: [String] -> (Int,Int) -> (Int,Int) -> [String]
+movimentos ((x:y):z) (a,b) (c,d) | (charNaPosicao ((x:y):z) (a+c,b+d))==' ' = ( show(a+c) ++ " " ++ show(b+d) ):[]
+                                 | (charNaPosicao ((x:y):z) (a+c,b+d))=='.' = ( show(a+c) ++ " " ++ show(b+d) ):[]
+                                 | (charNaPosicao ((x:y):z) (a+c,b+d))=='#' = ( show(a) ++ " " ++ show(b) ):[]
+                                 | (charNaPosicao ((x:y):z) (a+c,b+d))=='H' = if ( ((charNaPosicao ((x:y):z) (a+2*c,b+2*d))=='H')||(charNaPosicao ((x:y):z) (a+2*c,b+2*d))=='I'||(charNaPosicao ((x:y):z) (a+2*c,b+2*d))=='#' ) then (show(a) ++ " " ++ show(b)):[]
+                                                                              else ( show(a+c) ++ " " ++ show(b+d) ):[]
+                                 | (charNaPosicao ((x:y):z) (a+c,b+d))=='I' = if ( ((charNaPosicao ((x:y):z) (a+2*c,b+2*d))=='H')||(charNaPosicao ((x:y):z) (a+2*c,b+2*d))=='I'||(charNaPosicao ((x:y):z) (a+2*c,b+2*d))=='#' ) then (show(a) ++ " " ++ show(b)):[]
+                                                                              else ( show(a+c) ++ " " ++ show(b+d) ):[]
+                                 | otherwise = ( show(a) ++ " " ++ show(b) ):[]
+
+
+
+-- |Função auxiliar de /movimentos/ que dado um tabuleiro e as coordenadas de uma caixa ou Sokoban diz o que está nessa coordenada. Se estiver vazio, está disponível para receber uma caixa ou o Sokoban.
+charNaPosicao :: [String] -> (Int,Int) -> Char
+charNaPosicao ((x:y):z) (0,0) = x
+charNaPosicao ((x:[]):z) (a,0) = '!'
+charNaPosicao ((x:y):z) (a,0) = charNaPosicao ((y):z) (a-1,0)
+charNaPosicao ((x:y):[]) (a,b) = '!'
+charNaPosicao ((x:y):z) (a,b) = charNaPosicao (z) (a,b-1)
+
+
+
+
+
+-- == SEPARAR TABULEIRO DE COORDENADAS
+
+-- |Separação do tabuleiro das coordenadas. Dá apenas o tabuleiro.
+sepTABCoord :: [String] -> [String]
+sepTABCoord ((x:y):z) = if (algarismos x) then [] 
+                        else (x:y):sepTABCoord z
+
+-- |Separação das coordenadas do tabuleiro. Dá apenas as coordenadas da localização do Sokoban e das caixas.
+sepTabCOORD :: [String] -> [String]
+sepTabCOORD ((x:y):z) = if (algarismos x) then ((x:y):z) 
+                            else sepTabCOORD z
+
+-- |Separa as coordenadas uma a uma.
+sepCOORD1 :: [String] -> [String]
+sepCOORD1 (x:[]) = words x
+sepCOORD1 (x:y)  = (words x) ++ (sepCOORD1 y)
+
+-- |Após separar as coordenadas uma a uma, juntamo-las aos pares.
+sepCOORD2 :: [String] -> [(Int,Int)]
+sepCOORD2 (x:[]) = []
+sepCOORD2 (x:y:[]) = [((read x :: Int),(read y :: Int))]
+sepCOORD2 (x:y:z)  = [((read x :: Int),(read y :: Int))] ++ sepCOORD2 z
+
+-- |Juntamos as três anteriores funções e executamos todas apenas nesta.
+--
+sepTabCOORDpares :: [String] -> [(Int,Int)]
+sepTabCOORDpares tabuleiro = sepCOORD2 (sepCOORD1 (sepTabCOORD tabuleiro))
+
+-- |Função predefinida que elimina as repetições dos elementos de uma lista.
+-- 
+-- EXEMPLO
+--
+-- >>> nub1 [1,3,1,5,3,4,2,3,1,3]
+-- [1,3,5,4,2]
+nub1 :: Eq a => [a] -> [a]
+nub1 []=[]
+nub1 a = nub1Aux [] a where
+  nub1Aux a [] = a
+  nub1Aux a (b:bs) = if ((elem b a)== False) then (nub1Aux (a ++ [b]) bs)
+                   else (nub1Aux a bs)
+
+-- |Função auxiliar de /testeCOORDso2numeros/ que dada uma lista de /Char/ diz se essa lista tem apenas números. Qualquer outro tipo de carater devolve /Falso/.
+--
+-- EXEMPLO
+--
+-- >>> algarismos [1,3,5,a,6,b]
+-- False
+--
+-- >>> algarismos [1,3,7,4,2]
+-- True
+algarismos :: Char -> Bool
+algarismos a = if (a >= '0') && (a <= '9') then True
+                else False

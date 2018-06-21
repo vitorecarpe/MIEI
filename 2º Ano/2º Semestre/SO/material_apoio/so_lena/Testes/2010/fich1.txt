@@ -1,0 +1,7 @@
+lista de notícias
+contém apple
+não contém apple mas contém
+lalalalala
+não
+apple
+

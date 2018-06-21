@@ -1,0 +1,21 @@
+node 1 window 2 avg 4
+node 2 filter 2 < 4
+node 3 const 10
+node 4 tee a.txt
+node 5 tee b.txt
+node 6 tee c.txt
+connect 1 2 4
+connect 2 3 5
+connect 3 6
+inject 1 cat input
+showSt
+change 6 window 2 max 4
+node 15 tee c.txt
+connect 6 15
+inject 1 cat input
+showSt
+remove 2
+showSt
+inject 1 cat input
+
+

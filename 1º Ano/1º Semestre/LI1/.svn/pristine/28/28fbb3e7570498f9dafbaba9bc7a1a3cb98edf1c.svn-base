@@ -1,0 +1,144 @@
+\documentclass[a4paper,12pt]{report}
+
+%Preambulo
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{grffile}
+\usepackage{color}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{courier}
+\usepackage{indentfirst}
+
+
+\title{\bf Projeto de Laboratórios de Informática I \paragraph*{SOKOBAN} }
+\author{Francisco Oliveira \and Vitor Peixoto}
+\date{20 Dezembro 2015 \paragraph*{Mestrado Integrado em Engenharia Informática} }
+
+
+%Cabeçalho e Rodapé
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyfoot[C]{Página \thepage\ de \pageref{LastPage}}
+	\rhead{{\bf MIEI\/} Laboratórios de Informática I}
+	\lhead{2ª Fase - Projeto Sokoban}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+}	
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Laboratórios de Informática I - {\bf MIEI\/}}
+\lhead{2ª Fase - Projeto Sokoban}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[C]{Página \thepage\ de \pageref{LastPage}}
+%Estilo das Listings (Funções)
+\lstset{
+	frame=single,
+	xleftmargin=2pt,
+	stepnumber=1,
+	breakatwhitespace=false,         
+	breaklines=true, 
+	numbers=left,
+	numbersep=5pt,
+	numberstyle=\ttfamily\tiny\color[gray]{0.35},
+	belowcaptionskip=\bigskipamount,
+	captionpos=b,
+	escapeinside={*'}{'*},
+	language=haskell,
+	tabsize=2,
+	emphstyle={\bf},
+	commentstyle=\it,
+	stringstyle=\footnotesize\ttfamily,
+	showspaces=false,
+	columns=flexible,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\footnotesize\ttfamily,
+	showstringspaces=false,
+	morecomment=[l]\%,
+	tabsize=4
+}
+\renewcommand*{\lstlistlistingname}{Lista de Funções}
+
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+\chapter{Introdução}
+
+Este projeto foi realizado no âmbito da 2ª fase proposta na unidade curricular de Laboratórios de Informática I do 1º semestre de Engenharia Informática. Foi-nos então proposto efetuar melhoramentos à 1ª fase do jogo {\it Sokoban\/} já realizada e adicionar novas funções de modo a produzir um programa {\sl Haskell\/} com o jogo completamente funcional e em ambiente gráfico usando a ferramenta {\sl Gloss\/}, uma biblioteca {\sl Haskell\/} para a criação de gráficos 2D.
+
+\chapter{Tarefa D}
+
+Esta tarefa será a responsável pela organização e sequencialização dos comandos. Assim, a biblioteca {\sl Gloss\/} ainda não será usada nesta tarefa computacional. Como dito no enunciado do projeto, esta tarefa não será mais do que uma sequência de comandos efetuados em um só comando.
+\\
+\begin{lstlisting}[caption={\small\sl Função tarefa3' que dado o tabuleiro, as coordenadas das caixas, do Sokoban e um movimento (U,D,L,R) devolve um par de inteiros com as novas coordenadas do Sokoban.\/}]
+tarefa3' :: [String] -> (Int,Int)
+tarefa3' tabuleiro = tarefa3Aux (reverse (funcaoPlantaMelhor tabuleiro)) (head (sepTabCOORDpares tabuleiro)) (last (init tabuleiro)) where 
+	tarefa3Aux ((x:y):z) (a,b) direcao 
+		| direcao=="U" = movimentos ((x:y):z) (a,b) (0,1)
+		| direcao=="D" = movimentos ((x:y):z) (a,b) (0,-1)
+		| direcao=="L" = movimentos ((x:y):z) (a,b) (-1,0)
+		| direcao=="R" = movimentos ((x:y):z) (a,b) (1,0)
+		| otherwise = error "Erro"
+\end{lstlisting}
+
+Usando a função supradescrita presente na Tarefa C como função auxiliar nesta nova tarefa, conseguimos criar uma nova função que junte um conjunto de vários comandos que serão executados até que o jogo esteja ganho (todas as caixas estejam em cima dos pontos) ou que os comandos dados tenham acabado.
+
+\chapter{Tarefa E}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.25\textwidth]{image1}
+	\caption{\small\sl Le Doge}
+\end{figure}
+
+
+
+\chapter{Problema F}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.25\textwidth]{image1}
+	\caption{\small\sl Le Doge Again}
+\end{figure}
+
+\chapter {Testes}
+TESTES AQUI
+
+\chapter {Conclusões}
+CONCLUSOES AQUI
+
+\section {EN}
+Hello
+
+\section {ES}
+Hola
+
+\section {PT}
+Olá
+
+\section {IT}
+Ciao
+
+\section {FR}
+Bonjour
+
+\section{DE}
+Hallo
+
+
+
+
+\lstlistoflistings
+
+\listoffigures
+
+\end{document}

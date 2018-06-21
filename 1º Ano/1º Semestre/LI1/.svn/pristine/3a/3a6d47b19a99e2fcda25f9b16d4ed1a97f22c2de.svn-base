@@ -1,0 +1,100 @@
+module Main where
+
+import qualified Data.Text as T
+import GlossExtras
+import Graphics.Gloss
+
+main = do inp <- getContents
+          let (x,y) = tarefa5 (readPicture inp)
+          putStrLn (show x ++ " " ++ show y)
+
+type Caixa = (Point,Point)
+
+--
+--
+tarefa5 :: Picture -> (Int, Int)
+tarefa5 pic = elSize (elCanto (listadeCaixasdasPics (separadordePics pic)))
+
+-- funçao que dada uma Picture, a separada nas suas varias componentes
+--
+separadordePics :: Picture -> [Picture]
+separadordePics Blank = []
+separadordePics (Polygon []) = []
+separadordePics (Polygon [p]) = []
+separadordePics (Polygon p) = (Polygon p):[]
+separadordePics (Line []) = []
+separadordePics (Line [p]) = []
+separadordePics (Line p) = (Line p):[]
+separadordePics (Circle 0) = []
+separadordePics (Circle f) = (Circle f):[]
+separadordePics (Bitmap 0 0 dta b) = []
+separadordePics (Bitmap w h dta b) = (Bitmap w h dta b):[]
+separadordePics (Color c p) = separadordePics p 
+separadordePics (Translate f1 f2 p) = (Translate f1 f2 p):[]
+separadordePics (Rotate f p) = []
+separadordePics (Scale 0 _ p) = []
+separadordePics (Scale _ 0 p) = []
+separadordePics (Scale f1 f2 p) = (Scale f1 f2 p):[]
+separadordePics (Pictures (p:[])) = (separadordePics p)
+separadordePics (Pictures (p:t)) = (separadordePics p)++(separadordePics (Pictures t))
+
+-- funçao que dada uma lista de pictures devolve a lista dos quadrados que contem as figuras respetivamente
+listadeCaixasdasPics :: [Picture] -> [Caixa]
+listadeCaixasdasPics [] = []
+listadeCaixasdasPics (Blank:t) = (listadeCaixasdasPics t)
+listadeCaixasdasPics ((Polygon p):t) = (quaisSaoCantos p):(listadeCaixasdasPics t)
+listadeCaixasdasPics ((Line p):t) = (quaisSaoCantos p):(listadeCaixasdasPics t)
+listadeCaixasdasPics ((Circle r):t) = ((-r,-r),(r,r)):(listadeCaixasdasPics t)
+listadeCaixasdasPics ((Bitmap w h dta b):t) = ((fromIntegral (-w),fromIntegral (-h)),(fromIntegral w,fromIntegral h)):(listadeCaixasdasPics t)
+listadeCaixasdasPics ((Translate f1 f2 p):t) = kindaComplicated (Translate f1 f2 p):(listadeCaixasdasPics t)
+listadeCaixasdasPics ((Rotate f p):t) = kindaComplicated (Rotate f p):(listadeCaixasdasPics t)
+listadeCaixasdasPics ((Scale f1 f2 p):t) = kindaComplicated (Scale f1 f2 p):(listadeCaixasdasPics t)
+
+-- funçao que determina a caixa que contem uma figura depois de esta ser sujeita a alteraçoes (rotate,translate,scale)
+kindaComplicated :: Picture -> Caixa
+kindaComplicated (Translate f1 f2 p) = let ( (x3,y3),(x1,y1) )=(head (listadeCaixasdasPics (p:[])))
+                                       in ( (x3+f1,y3+f2),(x1+f1,y1+f2) )
+--kindaComplicated (Rotate f (x,y)) = (x*(cos f) + y*(sin f),y*(cos f) - x*(sin f))
+kindaComplicated (Rotate _ (Circle r)) = head (listadeCaixasdasPics [Circle r])
+kindaComplicated (Rotate f (Polygon p)) = kindaComplicated (Rotate f (Line p))
+kindaComplicated (Rotate f (Line ((x,y):[]))) = let ponto=(x*(cos f) + y*(sin f),y*(cos f) - x*(sin f))
+                                                in quaisSaoCantos [ponto]
+kindaComplicated (Rotate f (Line ((x,y):t))) = let ponto=(x*(cos f) + y*(sin f),y*(cos f) - x*(sin f))
+                                               in quaisSaoCantos [ ponto,doublePointintoPoint (kindaComplicated (Rotate f (Line t))) ]
+kindaComplicated (Rotate f (Bitmap w h dta b)) = let ( (x3,y3),(x1,y1) )=head (listadeCaixasdasPics ((Bitmap w h dta b):[]))
+                                                 in quaisSaoCantos [ doublePointintoPoint (quaisSaoCantos [ doublePointintoPoint (kindaComplicated (Rotate f (Line [(x1,y1)]))),
+                                                                                                            doublePointintoPoint (kindaComplicated (Rotate f (Line [((-x1),y1)]))),
+                                                                                                            doublePointintoPoint (kindaComplicated (Rotate f (Line [((-x1),(-y1))]))),
+                                                                                                            doublePointintoPoint (kindaComplicated (Rotate f (Line [(x1,(-y1))]))) 
+                                                                                                          ] ) ]
+kindaComplicated (Scale f1 f2 p) | (f1>0 && f2>0) = let ( (x3,y3),(x1,y1) )=(head (listadeCaixasdasPics (p:[])))
+                                                    in ( (x3*f1,y3*f2),(x1*f1,y1*f2) )
+                                 | (f1<0 && f2<0) = let ( (x3,y3),(x1,y1) )=(head (listadeCaixasdasPics (p:[])))
+                                                    in ( (x1*f1,y1*f2),(x3*f1,y3*f2) )
+                                 | (f1<0 && f2>0) = let ( (x3,y3),(x1,y1) )=(head (listadeCaixasdasPics (p:[])))
+                                                    in ( (x1*f1,y3*f2),(x3*f1,y1*f2) )
+                                 | (f1>0 && f2<0) = let ( (x3,y3),(x1,y1) )=(head (listadeCaixasdasPics (p:[])))
+                                                    in ( (x3*f1,y1*f2),(x1*f1,y3*f2) )
+
+-- 
+doublePointintoPoint :: Caixa -> Point
+doublePointintoPoint ((x,y),_) = (x,y)
+
+-- funçao que descobre os cantos do quadrado que comtem uma linha(s) ou poligono
+quaisSaoCantos :: [Point] -> Caixa
+quaisSaoCantos [] = ((0,0),(0,0))
+quaisSaoCantos ((x,y):t) = quaisSaoCantosAux (t) ( (x,y),(x,y) ) where --melhorar metendo as coords do x logo em vez de 0,0
+  quaisSaoCantosAux [] cantos = cantos
+  quaisSaoCantosAux ((x,y):t) ((x3,y3),(x1,y1)) = quaisSaoCantosAux (t) ((min x x3,min y y3),(max x x1,max y y1))
+
+
+-- funçao que define o quadrado que comten todos os outros quadrados, logo contendo todos os elementos
+elCanto :: [Caixa] -> Caixa
+elCanto [] = ((0,0),(0,0))
+elCanto (((x3,y3),(x1,y1)):t) = elCantoAux (t) ( (x3,y3),(x1,y1) ) where
+  elCantoAux [] ( (xmin,ymin),(xmax,ymax) ) = ( (xmin,ymin),(xmax,ymax) )
+  elCantoAux (((x3,y3),(x1,y1)):t) ( (xmin,ymin),(xmax,ymax) ) = elCantoAux (t) ( (min x3 xmin,min y3 ymin),(max x1 xmax,max y1 ymax) )
+
+-- funçao que dada a caixa que comtem todas as imagens calcula a sua largura e altura
+elSize :: Caixa -> (Int,Int)
+elSize ((x3,y3),(x1,y1)) = (round (abs (x1-x3)),round (abs (y1-y3)))
