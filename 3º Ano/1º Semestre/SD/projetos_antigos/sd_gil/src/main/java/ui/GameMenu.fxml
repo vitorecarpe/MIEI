@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #2a110d;" stylesheets="@resources/image_button.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.GameMenu">
+   <children>
+      <AnchorPane layoutX="-5.0" layoutY="96.0" prefHeight="420.0" prefWidth="1032.0" style="-fx-background-color: #4f2900;" />
+      <Label layoutX="65.0" layoutY="-5.0" prefHeight="105.0" prefWidth="218.0" text="Game" textFill="#d0d0d0">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="96.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="114.0" prefHeight="35.0" prefWidth="207.0" text="Choose Hero" textFill="#d0d0d0">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="32.0" />
+         </font>
+      </Label>
+      <ImageView id="image" fx:id="mario_button" fitHeight="100.0" fitWidth="73.0" layoutX="58.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/mario.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="peach_button" fitHeight="100.0" layoutX="221.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/peach.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="goomba_button" fitHeight="100.0" layoutX="305.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/goomba.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="bowser_button" fitHeight="100.0" layoutX="409.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/bowser.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="luigi_button" fitHeight="100.0" layoutX="151.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/luigi.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="toad_button" fitHeight="100.0" layoutX="531.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/toad.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="wario_button" fitHeight="100.0" layoutX="605.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/wario.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="yoshi_button" fitHeight="100.0" layoutX="736.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/yoshi.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="piranha_button" fitHeight="100.0" layoutX="819.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/piranha.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="donkeyKong_button" fitHeight="100.0" layoutX="886.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/kong.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="boo_button" fitHeight="198.0" fitWidth="100.0" layoutX="53.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/boo.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="wiggler_button" fitHeight="84.0" fitWidth="101.0" layoutX="911.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/wiggler.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="ludwigVonKoopa_button" fitHeight="100.0" fitWidth="200.0" layoutX="254.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/ludwig_von_koopa.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="hammerBro_button" fitHeight="100.0" fitWidth="170.0" layoutX="377.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/hammer_bro.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="wendyKoopa_button" fitHeight="100.0" fitWidth="171.0" layoutX="488.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/wendy_koopa.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="cappy_button" fitHeight="100.0" fitWidth="180.0" layoutX="589.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/cappy.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="daisy_button" fitHeight="100.0" fitWidth="114.0" layoutX="787.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/daisy.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="rosalina_button" fitHeight="100.0" fitWidth="152.0" layoutX="698.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/rosalina.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="waluigi_button" fitHeight="100.0" fitWidth="109.0" layoutX="850.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/waluigi.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="drMario_button" fitHeight="100.0" fitWidth="141.0" layoutX="171.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/dr_mario.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="lemmyKoopa_button" fitHeight="100.0" layoutX="261.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/lemmy_koopa.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="nabbit_button" fitHeight="100.0" layoutX="161.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/nabbit.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="toadsworth_button" fitHeight="100.0" layoutX="420.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/toadsworth.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="iggyKoopa_button" fitHeight="100.0" layoutX="337.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/iggy_koopa.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="dryBones_button" fitHeight="100.0" layoutX="502.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/dry_bones.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="kamek_button" fitHeight="70.0" fitWidth="129.0" layoutX="603.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/kamek.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="royKoopa_button" fitHeight="100.0" layoutX="746.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/roy_koopa.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="mortonKoopa_button" fitHeight="100.0" layoutX="933.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/morton_koopa.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="birdo_button" fitHeight="100.0" layoutX="867.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/birdo.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView id="image" fx:id="bobomb_button" fitHeight="100.0" fitWidth="198.0" layoutX="53.0" layoutY="387.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/bob-omb.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="62.0" layoutY="528.0" prefHeight="35.0" prefWidth="86.0" text="| Hero -" textFill="#d0d0d0">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="choosenHero_label" layoutX="161.0" layoutY="528.0" prefHeight="35.0" prefWidth="331.0" textFill="#d0d0d0">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="532.0" layoutY="528.0" prefHeight="35.0" prefWidth="239.0" text="Game Start Status" textFill="#d0d0d0">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="32.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="game_output" editable="false" layoutX="524.0" layoutY="591.0" prefHeight="127.0" prefWidth="470.0" promptText="Game output" style="-fx-control-inner-background: #d0d0d0;" />
+      <ImageView fx:id="close_button" fitHeight="80.0" fitWidth="84.0" layoutX="929.0" layoutY="8.0" preserveRatio="true">
+         <image>
+            <Image url="@resources/close.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Line endX="1024.0" endY="172.0" fill="#979797" layoutY="-76.0" startY="172.0" stroke="#909090" strokeWidth="8.0">
+         <effect>
+            <Lighting specularConstant="0.65" specularExponent="13.95" surfaceScale="3.13">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#614949" />
+               </light>
+            </Lighting>
+         </effect>
+      </Line>
+      <Line endX="1024.0" endY="172.0" fill="#979797" layoutY="341.0" startY="172.0" stroke="#909090" strokeWidth="8.0">
+         <effect>
+            <Lighting specularConstant="0.65" specularExponent="13.95" surfaceScale="3.13">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="248.02" color="#614949" />
+               </light>
+            </Lighting>
+         </effect>
+      </Line>
+      <TableView fx:id="friendly_table" layoutX="23.0" layoutY="592.0" prefHeight="156.0" prefWidth="231.0" />
+      <TableView fx:id="enemy_table" layoutX="262.0" layoutY="592.0" prefHeight="156.0" prefWidth="231.0" />
+      <Label alignment="CENTER" layoutX="23.0" layoutY="563.0" prefHeight="35.0" prefWidth="231.0" text="Friendly" textFill="#264eff">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="268.0" layoutY="563.0" prefHeight="35.0" prefWidth="225.0" text="Enemy" textFill="#ff5100">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="20.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="timeStatus_progressBar" layoutX="752.0" layoutY="533.0" prefHeight="25.0" prefWidth="239.0" progress="0.0" />
+      <Label fx:id="team_label" alignment="CENTER" layoutX="25.0" layoutY="528.0" prefHeight="35.0" prefWidth="40.0" textFill="#d0d0d0">
+         <font>
+            <Font name="BigNoodleTitling" size="32.0" />
+         </font>
+      </Label>
+      <TextField fx:id="chat_input" layoutX="524.0" layoutY="723.0" prefHeight="25.0" prefWidth="470.0" />
+   </children>
+</AnchorPane>

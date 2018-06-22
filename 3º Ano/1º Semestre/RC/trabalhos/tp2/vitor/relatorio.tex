@@ -1,0 +1,571 @@
+% This is based on the LLNCS.DEM the demonstration file of
+% the LaTeX macro package from Springer-Verlag
+% for Lecture Notes in Computer Science,
+% version 2.4 for LaTeX2e as of 16. April 2010
+%
+% See http://www.springer.com/computer/lncs/lncs+authors?SGWID=0-40209-0-0-0
+% for the full guidelines.
+%
+\documentclass{llncs}
+
+\usepackage{float}
+\usepackage{graphicx} % Required to insert images
+\usepackage{indentfirst}
+\usepackage[hyphens,spaces,obeyspaces]{url}
+\urlstyle{same}
+\def\UrlBreaks{\do\/\do-} % Dealing with big links
+\usepackage{hyperref}
+
+%% Language and font encodings
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+\title{Redes de Computadores}
+\subtitle{Ensaio - 2º Trabalho Prático | Protocolo IP}
+
+\author{Paulo Caldas (a79089), Pedro Henrique (a77377), Vitor Peixoto (a79175)}
+
+
+\institute{
+    Universidade do Minho, Departamento de Informática, 4710-057 Braga, Portugal\\
+    e-mail: \{a79089, a77377, a79175\}@alunos.uminho.pt
+}
+
+\setlength{\voffset}{2in} 	%\setlength{\voffset}{2.5in}
+\maketitle              	% typeset the title of the contribution
+
+\newpage
+\vspace{-1.9em}
+
+\section*{Parte 1 - Datagramas IP e Fragmentação}
+\small
+
+\section{}
+
+O primeiro passo passará por construir a topologia CORE, com os \textit{hosts} n1 e n4 e os \textit{routers} n2 e n3, estando o \textit{host} n1 ligado ao \textit{router} n2, n2 ligado ao \textit{router} n3, que por sua vez se encontra ligado ao \textit{host} n4, tal como é indicado no enunciado do problema. Finalmente, é iniciada a sessão do modelo de rede associado a esta topologia.
+
+\begin{figure}[!hb]
+    \begin{center}
+        \includegraphics[scale=0.50]{topologia.png}
+        \caption{Topologia CORE}
+    \end{center}
+\end{figure}
+\vspace{-4.3em}
+
+\subsection*{a)}
+
+Recorrendo ao comando \textit{tcpdump}, procuramos obter um extrato dos pacotes com origem no \textit{host} n1, assim como outro extrato dos pacotes que têm n1 como destino, guardando os \textit{outputs} resultantes destas filtragens em dois ficheiros distintos, com o nome \textit{source} e \textit{destination}, respetivamente.
+
+Os comandos utilizados foram:
+
+\[
+    \begin{array}{l l l l l l l}
+        tcpdump&-i &eth0 &src &10.0.0.10 &-w &source \\
+        tcpdump&-i &eth0 &dst &10.0.0.10 &-w &destination
+    \end{array}
+\]
+
+De seguida, é executado o comando \textit{traceroute} a partir de n1 e com o endereço IP de destino correspondente ao do \textit{host} n4, que permitirá descobrir a rota IP da origem ao destino.
+
+O comando utilizado é o que se segue:
+
+\[
+	\begin{array}{l l l l l l l}
+		traceroute&-I&10.0.2.10
+	\end{array}
+\]
+
+\setlength{\voffset}{-0.45in}
+
+\subsection*{b)}
+
+Possuímos agora dois ficheiros para analisar. Usando o \textit{Wireshark}, são agora abertos os ficheiros que contêm os extratos dos pacotes com origem e destino no \textit{host} n1. Com recurso ao filtro \texttt{icmp}, obtemos apenas conteúdo relativo ao protocolo ICMP (\textit{Internet Control Message Protocol}).
+
+Analisando o ficheiro \textbf{\texttt{source}}, é possível verificar que o tráfego com origem no \textit{host} n1 (IP \texttt{10.0.0.10}) consiste em vários \textit{ping requests}, com destino ao \textit{host} n4 (IP \texttt{10.0.2.10}), com TTL (\textit{time-to-live}) crescente. Inicialmente 1, é incrementado em 1 unidade a cada 3 pacotes, como é expectável, uma vez que tal como é descrito no enunciado, o comando \textit{traceroute} faz com que sejam enviados 3 datagramas (correspondentes aos previamente mencionados \textit{ping requests}) com TTL inicial de 1, para dessa forma identificar o elemento da rede a 1 salto de distância, recorrendo a uma mensagem ICMP a ser enviada por este último à origem, neste caso, o \textit{host} n1. Isto ocorre sucessivamente, com TTL crescente, até ser atingido o elemento da rede com o dado IP de destino, neste caso, o \textit{host} n4. Do comando \textit{traceroute} resultam os endereços IP dos elementos da rede a cada salto até ao destino e por cada uma destas entradas são apresentados 3 \textit{ping times}, calculados com o envio de cada um dos 3 pacotes a cada IP.
+
+\begin{figure}[!hb]
+	\begin{center}
+		\includegraphics[scale=0.8]{traceroute.png}
+		\caption{Output resultante do \textit{traceroute}}
+	\end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.50]{incrementThree.png}
+        \caption{Demonstração de TTL a ser incrementado a cada três pacotes}
+    \end{center}
+\end{figure}
+
+Relativamente ao ficheiro \textbf{\texttt{destination}}, que contém o extrato dos pacotes recebidos pelo \textit{host} n1 (IP \texttt{10.0.0.10}), é possível distinguir 2 tipos de mensagens ICMP diferentes: 6 delas apresentam a informação \textit{time-to-live exceeded in transit} - 3 enviadas pelo \textit{router} n2 (IP \texttt{10.0.0.1}) e outras 3 pelo \textit{router} n3 (IP \texttt{10.0.1.2}); as restantes correspondem a \textit{ping replies} enviados pelo \textit{host} n4 (IP \texttt{10.0.2.10}). Este resultado era também expectável, pois os datagramas com TTL de 1 ou 2 não chegarão a n4, o destino, o que provocará as mensagens que verificamos que n2 e n3 enviam. Para valores de TTL maiores ou iguais a 3, os datagramas chegarão ao destino e verificamos então a ocorrência de \textit{ping replies} enviados por n4. O TTL destas mensagens será 62, o que corresponde ao valor por defeito, 64, com 2 decrementos de 1 unidade, que ocorrem no processamento dos pacotes nos \textit{routers} n2 e n3.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.40]{n1Destination.png}
+        \caption{Pacotes recebidos por n1: \textit{ping replies} e \textit{TTL exceeded}}
+    \end{center}
+\end{figure}
+
+\subsection*{c)}
+
+O valor inicial mínimo do campo TTL para alcançar o destino n4 deverá ser 3. Se for 1 ou 2, o pacote será descartado pelo primeiro ou segundo \textit{routers} e prontamente será enviada a mensagem ICMP informando a origem que o \textit{time-to-live} foi excedido em trânsito. 
+
+Para efeitos de verificação, com alguma redundância, pois apenas confirmam os resultados obtidos na alínea anterior, apoiados pela topologia criada, executamos o comando \textit{ping}, com origem em n1 e destino em n4 e valores de TTL variados, e de seguida serão analisados os resultados.
+
+O comando utilizado é então:
+
+\[
+    \begin{array}{l l l l l l}
+        ping&-t& x&-c&1&10.0.2.10
+    \end{array}
+\]
+
+A \textit{flag} -c indica o número de pacotes a serem enviados ao endereço IP de destino (neste caso, 1). A \textit{flag} -t indica o valor do campo TTL do pacote.
+
+E os resultados da execução são:
+
+\begin{figure}[!hb]
+	\begin{center}
+		\includegraphics[scale=0.75]{ping_1_1_c.png}
+		\caption{Comandos \textit{ping} a serem executados com diferentes valores de TTL} 
+	\end{center}
+\end{figure}
+
+Isto confirma que, de facto, o valor do campo TTL necessita de ser \textbf{maior ou igual a 3} de modo a que o pacote não seja descartado e chegue então ao \textit{host} n4.
+
+\subsection*{d)}
+
+Para determinar o tempo de ida-e-volta médio, serão utilizados os valores apresentados pelo output do comando \textit{traceroute} de n1 para n4. Este apresenta os três tempos (\textit{ping times}) obtidos para cada salto até ao destino. 
+Referente ao tempo de ida-e-volta do \textit{host} n1 para o \textit{host} n4, temos:
+
+\[
+	\begin{array} {l l l l l l}
+    	tempo\_medio = \frac{0.056 + 0.014 + 0.010}{3} ms = 0.02(6) ms
+	\end{array}
+\]
+
+\section{}
+
+Começamos por executar o comando:
+
+\[
+    \begin{array}{l l l l l l}
+       traceroute&-I&router-di.uminho.pt
+    \end{array}
+\]
+
+\subsection*{a)}
+
+O endereço IP da interface ativa do computador utilizado para fazer este trabalho pode ser determinado recorrendo às primeiras mensagens ICMP enviadas, associadas a \textit{ping requests} resultantes da execução do comando \textit{traceroute}, identificando o IP de origem: \textbf{\texttt{192.168.100.159}}. Outra indicação do IP de origem é o facto de apenas um IP receber mensagens \textit{TTL exceeded}, ou seja, foi da interface identificada por esse endereço IP que o tráfego gerado pelo comando \textit{traceroute} partiu.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[scale=0.30]{tracerouteDI.png}
+        \caption{Tráfego gerado pelo comando \textit{traceroute}}
+    \end{center}
+\end{figure}
+
+\subsection*{b)}
+
+O valor do campo protocolo é ICMP (1). O \textit{Internet Control Message Protocol} é utilizado para a comunicação entre dispositivos no nível de rede, com funções de controlo (como reportar erros, por exemplo). Geralmente não possui \textit{payload} útil, o que significa que o protocolo ICMP não é utilizado para transferência de dados entre sistemas.
+
+\subsection*{c)}
+
+Analisando o primeiro pacote ICMP capturado pelo \textit{Wireshark}, podemos verificar que o tamanho do cabeçalho IPv4 é de 20 \textit{bytes}. O tamanho do \textit{payload} corresponderá ao tamanho total do pacote menos o tamanho do cabeçalho, ou seja, \textbf{60 - 20 = 40 \textit{bytes}}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[scale=0.65]{ipInfo.png}
+        \caption{Tamanho do cabeçalho e tamanho total do pacote}
+    \end{center}
+\end{figure}
+
+\subsection*{d)}
+
+Para determinar se o datagrama IP foi ou não fragmentado, devemos proceder a verificar o valor da \textit{flag} \textit{more fragments} e do campo \textit{fragment offset}. Como é possível verificar pela imagem, estes encontram-se a 0, o que indica que o datagrama não se encontra fragmentado.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[scale=0.65]{fragmentInfo.png}
+        \caption{\textit{Flag more fragments} e campo \textit{fragment offset}}
+    \end{center}
+\end{figure}
+
+\subsection*{e)}
+
+Analisando os pacotes enviados pela interface ativa do computador, os campos do cabeçalho IP que variam são:
+
+\begin{itemize}
+    \item o TTL (\textit{time-to-live}), que é incrementado a cada três pacotes;
+    \item o ID único de cada pacote;
+    \item o \textit{header checksum}.
+\end{itemize}
+
+\subsection*{f)}
+
+O campo de identificação é único para cada pacote e é incrementado em 1 unidade por cada pacote criado, enquanto que o TTL é igual entre cada conjunto de 3 pacotes. Isto acontece porque o programa \textit{traceroute}, partindo de um valor inicial, incrementa o valor do TTL em 1 unidade por cada envio de um grupo de 3 pacotes. Dessa forma obtém 3 tempos distintos de ida-e-volta e assim passa a possuir alguma informação redundante que pode ser útil em casos em que o envio de um pacote falhe pontualmente por alguma razão arbitrária, sendo agora possível obter um \textit{ping time} no envio dos restantes pacotes com o mesmo TTL, ou até mesmo para poder criar uma melhor perceção sobre o \textit{ping time} verdadeiro relativo a um pacote com um determinado TTL, pois assim qualquer atraso pontual pode ser identificado em comparação com os tempos obtidos para os restantes pacotes de igual TTL.
+
+\subsection*{g)}
+
+O campo TTL dos pacotes relativos à série de respostas ICMP TTL \textit{exceeded} é igual entre si e toma o valor de 64. Este valor permanece constante para todas as mensagens de resposta ICMP TTL \textit{exceeded} enviadas ao nosso \textit{host} pois é um valor por defeito que provém e é definido pelo próprio \textit{router} de destino.
+
+\setlength{\voffset}{-1.0in}
+
+\section{}
+
+Começamos por executar o comando \textit{traceroute} utilizando pacotes de 3042 \textit{bytes}:
+
+\[
+    \begin{array}{l l l l l}
+        traceroute&-I&3042
+    \end{array}
+\]
+
+\subsection*{a)}
+
+Após localizar a primeira mensagem ICMP verificamos que, de facto, esta foi fragmentada. Houve a necessidade de o fazer, uma vez que a MTU (\textit{maximum transmission unit}) de pelo menos um dos \textit{routers} é menor do que o tamanho do pacote inicial enviado (3042 \textit{bytes}).
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[scale=0.65]{fragments.png}
+        \caption{Demonstração dos 3 fragmentos usados para reconstruir o primeiro pacote.}
+    \end{center}
+\end{figure}
+
+\vspace{-3.8em}
+
+\subsection*{b)}
+
+É possível identificar que o datagrama foi fragmentado recorrendo à \textit{flag} \textit{more fragments}, apresentando esta o valor 1. Sabemos que se trata do primeiro fragmento pois o valor que o campo \textit{fragment offset} toma é 0. O tamanho deste datagrama IP é de 1500 \textit{bytes} (20 de cabeçalho + 1480 de dados), que corresponde à MTU de pelo menos um dos \textit{routers} que encaminhou o tráfego gerado pelo comando \textit{traceroute}.
+
+\subsection*{c)}
+
+Podemos afirmar que este fragmento não se trata do primeiro do datagrama IP original já que este apresenta um valor diferente de 0 no campo \textit{fragment offset} do cabeçalho. Podemos também inferir a existência de fragmentos adicionais pela \textit{flag} \textit{more fragments}, que toma o valor 1.
+
+\subsection*{d)}
+
+Foram criados 3 fragmentos, que partilham o mesmo valor de identificação no cabeçalho IP, relativo ao datagrama IP original. O último fragmento é detetado pela \textit{flag} \textit{more fragments}, que toma o valor 0, e o campo \textit{fragment offset}, quando este toma um valor diferente de 0. Isto significa que o fragmento sob análise corresponde ao último referente a um dado datagrama IP original.
+
+\subsection*{e)}
+
+Os campos que mudam no cabeçalho IP entre os diferentes fragmentos são a \textit{flag} que informa sobre a fragmentação de um pacote e o campo \textit{fragment offset}. Para a reconstrução do datagrama IP original, é utilizado o seu identificador, presente em todos os seus fragmentos, que permite assim associá-los. Para além disto, temos as \textit{flags} relativas à fragmentação e o valor do campo \textit{fragment offset}, sendo estes dados úteis para determinar a possível ocorrência de fragmentação de um pacote. O valor da \textit{flag} poderá indicar a existência de \textit{more fragments} (MF) para todos os fragmentos de um pacote, excluindo o último. O valor de \textit{fragment offset} permite sequenciar os fragmentos e determinar a posição do fragmento na reconstrução do datagrama original. É também útil para identificar o último fragmento de um dado pacote, uma vez que este indica a não existência de mais fragmentos, sendo \texttt{MF = 0}. A única distinção entre o fragmento e um pacote não fragmentado será o valor do \textit{offset}, que sendo diferente de 0 indica a ocorrência de fragmentação. O campo que indica o tamanho do pacote será também útil na reassemblagem, sendo a partir dele possível perceber quando o datagrama original está finalmente reconstruído.
+
+\newpage
+\vspace{-1.9em}
+
+\section*{Parte 2}
+
+\section*{1}
+
+Começamos por recriar a topologia indicada no enunciado do problema:
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[scale=0.22]{topologyNames.png}
+        \caption{Topologia utilizada e nomes de cada dispositivo}
+    \end{center}
+\end{figure}
+
+\vspace*{-2.5em}
+
+\subsection*{a)}
+
+Os respetivos endereços IP e máscara de rede atribuídos a cada interface da rede foram os seguintes:
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[scale=0.22]{topologyAddresses.png}
+        \caption{Visualização dos endereços IP e máscaras de rede da topologia}
+    \end{center}
+\end{figure}
+
+A máscara de rede será \texttt{11111111.11111111.11111111.00000000} ou 255.255.255.0, que corresponde a /24 em notação CIDR. 
+
+\subsection*{b)}
+
+Segundo o padrão \texttt{RFC 1918}, os endereços IP que não devem ser utilizados na Internet, mas que no entanto funcionam como endereços privados são os compreendidos nos seguintes intervalos:
+
+\[
+\begin{array}{l l l}
+    192.168.0.0&-&192.168.255.255 \\
+    172.16.0.0&-&172.31.255.255 \\
+    10.0.0.0&-&10.255.255.255
+\end{array}
+\]
+
+Assim sendo, podemos concluir que os endereços que vemos na topologia CORE são \textbf{privados}.
+
+\subsection*{c)}
+
+Os \textit{switches} não lhes têm atribuídos endereços IP, uma vez que estes funcionam no segundo nível do modelo OSI (ligação de dados). As unidades de dados protocolares neste nível são designadas por \textit{frames}, enquanto que na 3ª camada, a de rede, se designam por datagramas ou pacotes. Isto significa que os \textit{switches} não têm endereços IP associados às suas interfaces, pois não há essa noção no nível a que estes operam, uma vez que o \textit{Internet Protocol} e os seus métodos de endereçamento são referentes ao nível acima.
+
+\subsection*{d)}
+
+Para verificar a conectividade entre o servidores e os vários portáteis podíamos correr, na \textit{shell} origem e destino respetivamente, comandos \textit{ping} e \textit{tcpdump}. Por outro lado, o programa CORE permite verificar conectividade entre certos nodos. Seguem-se a visualização de alguns testes:
+
+\vspace{-2.5em}
+
+\begin{figure}[!ht]
+    \centering
+    \begin{minipage}{0.40\textwidth}
+        \centering
+        \includegraphics[width=1.2\textwidth]{run1.png} % first figure itself
+        \caption{P1 com S1}
+    \end{minipage}\hfill
+    \begin{minipage}{0.40\textwidth}
+        \centering
+        \includegraphics[width=1.2\textwidth]{run2.png} % second figure itself
+        \caption{P4 com S1}
+    \end{minipage}
+
+\end{figure}
+
+\vspace{-4.9em}
+
+\begin{figure}[!ht]
+    \centering
+    \begin{minipage}{0.40\textwidth}
+        \centering
+        \includegraphics[width=1.2\textwidth]{run3.png} % first figure itself
+        \caption{P6 com S1}
+    \end{minipage}\hfill
+    \begin{minipage}{0.40\textwidth}
+        \centering
+        \includegraphics[width=1.2\textwidth]{run4.png} % second figure itself
+        \caption{P7 com S1}
+    \end{minipage}
+\end{figure}
+
+\newpage
+
+\subsection*{e)}
+Utilizando o mesmo método da alínea anterior, verificamos que existe de facto conectividade entre os servidores e o \textit{router} de acesso:
+
+\begin{figure}[!ht]
+    \centering
+    \begin{minipage}{0.40\textwidth}
+        \centering
+        \includegraphics[width=1.2\textwidth]{run5.png} % first figure itself
+        \caption{S1 com R}
+    \end{minipage}\hfill
+    \begin{minipage}{0.40\textwidth}
+        \centering
+        \includegraphics[width=1.2\textwidth]{run6.png} % second figure itself
+        \caption{S2 com R}
+    \end{minipage}
+\end{figure}
+
+\section*{2}
+
+\subsection*{a)}
+
+Esta é a tabela de endereçamento para o \textit{router} do departamento B:
+
+\[
+    \begin{array}{l l l l l l l l l l l l r}
+Destination  &&  Gateway    &&    Genmask       && Flags && MSS&Window &&irtt&Iface\\
+10.0.0.0     &&  0.0.0.0    &&    255.255.255.0 && U     &&   0&0      &&   0&eth0\\
+10.0.1.0     &&  0.0.0.0    &&    255.255.255.0 && U     &&   0&0      &&   0&eth1\\
+10.0.2.0     &&  10.0.1.2   &&    255.255.255.0 && UG    &&   0&0      &&   0&eth1\\
+10.0.3.0     &&  10.0.0.2   &&    255.255.255.0 && UG    &&   0&0      &&   0&eth0\\
+10.0.4.0     &&  0.0.0.0    &&    255.255.255.0 && U     &&   0&0      &&   0&eth2\\
+10.0.5.0     &&  10.0.0.2   &&    255.255.255.0 && UG    &&   0&0      &&   0&eth0\\
+10.0.6.0     &&  10.0.0.2   &&    255.255.255.0 && UG    &&   0&0      &&   0&eth0\\
+10.0.7.0     &&  10.0.1.2   &&    255.255.255.0 && UG    &&   0&0      &&   0&eth1\\
+10.0.8.0     &&  10.0.0.2   &&    255.255.255.0 && UG    &&   0&0      &&   0&eth0\\
+\end{array}
+\]
+
+Para um dos computadores portáteis do departamento B:
+
+\[
+\begin{array}{l l l l l l l l l l l l l l r }
+Destination &&  Gateway    &&   Genmask       &&Flags &&MSS&& Window&&irtt&&Iface\\
+0.0.0.0     &&  10.0.4.1   &&   0.0.0.0       &&UG    &&  0&& 0     &&   0&&eth0\\
+10.0.4.0    &&  0.0.0.0    &&   255.255.255.0 &&U     &&  0&& 0     &&   0&&eth0
+\end{array}
+\]
+
+Estas são tabelas de \textit{routing} que de cada dispositivo para descobrir o próximo salto que um pacote deverá fazer para chegar ao seu destino.
+
+Por exemplo, no \textit{router} B, se o destino pertencer à rede 10.0.5.0 (por exemplo, o portátil P2 com endereço IP 10.0.5.20), sabe que o seu próximo salto é 10.0.0.2 que, como podemos visualizar na topologia, significa reencaminhar o pacote para o \textit{router} A.
+
+Segundo o mesmo raciocínio no portátil da rede B, se o destino for da rede 10.0.4.0 (a rede onde se encontra) saberá que o próximo salto é 0.0.0.0, que significa que o dispositivo de destino estará na mesma rede local onde o portátil se encontra. Todavia, se for qualquer outro tipo de destino que não corresponda ao previamente discutido (porque só existem duas entradas nesta tabela), o próximo salto será 10.0.4.1, ou seja, o \textit{router} B reencaminhará o pacote.
+
+\subsection*{b)}
+
+Para verificar que tipo de encaminhamento está a ser utilizado, podemos alterar existência de ligações entre dispositivos e ver como o sistema reage. De facto, executando o comando \textit{traceroute} a partir de P4 e com destino em P1, verificamos que farão parte da rota os \textit{routers} Rb e Ra. Eliminando a conectividade entre estes dois \textit{routers} e executando o mesmo comando, verificamos que uma rota alternativa é utilizada. Isto é indicação de que encaminhamento dinâmico é utilizado. 
+
+Uma outra possibilidade passa por executar \texttt{ps -e} na \textit{shell} de um dos \textit{routers} utilizados e confirmar que processos estão a correr. É possível verificar que o processo \texttt{ospfd} está a correr, que é um \textit{daemon} utilizado pelos \textit{routers} no \textit{routing} dinâmico.
+
+\subsection*{c)}
+
+Na \textit{shell} do servidor 1 é executado o comando:
+
+\[
+\begin{array}{l l l l l l l}
+route&del&-net&0.0.0.0
+\end{array}
+\]
+
+Este retira a entrada da tabela para a rota por defeito. As implicações são as seguintes: o servidor pode comunicar com quaisquer dispositivos que estejam na sua rede, mas não consegue comunicar com quaisquer outros, uma vez que o \textit{gateway} 10.0.6.1 (\textit{router} D) foi removido. Estas possíveis implicações foram confirmadas com uso do comando \textit{traceroute} a partir de dispositivos dentro e fora da rede para o servidor 1.
+
+
+\newpage
+
+\subsection*{d)}
+
+Para restaurar a conectividade para o servidor 1, executamos na \textit{shell} do servidor 1 os seguintes comandos:
+
+\[
+\begin{array}{l l l l l l l l l l l l l l l l}
+route&add&-net&10.0.0.0&netmask&255.255.255.0&gw&10.0.6.1 \\
+route&add&-net&10.0.1.0&netmask&255.255.255.0&gw&10.0.6.1 \\
+route&add&-net&10.0.2.0&netmask&255.255.255.0&gw&10.0.6.1 \\
+route&add&-net&10.0.3.0&netmask&255.255.255.0&gw&10.0.6.1 \\
+route&add&-net&10.0.4.0&netmask&255.255.255.0&gw&10.0.6.1 \\
+route&add&-net&10.0.5.0&netmask&255.255.255.0&gw&10.0.6.1 \\
+route&add&-net&10.0.7.0&netmask&255.255.255.0&gw&10.0.6.1 \\
+route&add&-net&10.0.8.0&netmask&255.255.255.0&gw&10.0.6.1
+\end{array}
+\]
+
+O servidor 1 poderá agora encaminhar pacotes com destino nas várias sub-redes da topologia criada, sem que seja utilizada a rota por defeito (0.0.0.0), servindo-se do \textit{router} da sua sub-rede.
+
+\subsection*{e)}
+
+Segue-se a tabela de \textit{routing} resultante referente a S1.
+\[
+\begin{array}{l l l l l l l l l l l l l l r }
+Destination  && Gateway    &&   Genmask      && Flags &&MSS&& Window&&irtt&&Iface \\
+10.0.0.0     && 10.0.6.1   &&   255.255.255.0&& UG    &&  0&& 0     &&   0&&eth0 \\
+10.0.1.0     && 10.0.6.1   &&   255.255.255.0&& UG    &&  0&& 0     &&   0&&eth0 \\
+10.0.2.0     && 10.0.6.1   &&   255.255.255.0&& UG    &&  0&& 0     &&   0&&eth0 \\
+10.0.3.0     && 10.0.6.1   &&   255.255.255.0&& UG    &&  0&& 0     &&   0&&eth0 \\
+10.0.4.0     && 10.0.6.1   &&   255.255.255.0&& UG    &&  0&& 0     &&   0&&eth0 \\
+10.0.5.0     && 10.0.6.1   &&   255.255.255.0&& UG    &&  0&& 0     &&   0&&eth0 \\
+10.0.6.0     && 0.0.0.0    &&   255.255.255.0&& U     &&  0&& 0     &&   0&&eth0 \\
+10.0.7.0     && 10.0.6.1   &&   255.255.255.0&& UG    &&  0&& 0     &&   0&&eth0 \\
+10.0.8.0     && 10.0.6.1   &&   255.255.255.0&& UG    &&  0&& 0     &&   0&&eth0
+\end{array}
+\]
+
+\textbf{Nota:} Foi utilizada a mesma máscara do \textit{default gateway} que removemos na alínea anterior.
+
+É feito um \textit{ping request} com destino ao servidor 1 a partir de todos os aparelhos da topologia para verificar se a conectividade do sistema foi recuperada.
+
+\section*{3}
+
+\subsection*{1)}
+
+Começamos por analisar o endereço IP que nos é dado:
+
+\[
+\begin{array}{l l l l l l l l l l l}
+&&&<-rede&|&hosts-> \\
+Address:& 10101100&.&00010000&|.&00000000&.&00000000\\
+& (172)&&(16)&|&(0)&&(0)\\
+
+&&&&|&&\\
+Mask:&11111111&.&11111111&|.&00000000&.&00000000 \\
+& (255)&&(255)&&(0)&&(0)
+\end{array}
+\]
+
+São dados 16 bits para identificar a rede e outros 16 bits para identificar interfaces dos \textit{hosts}. Podemos servir-nos destes últimos para criar sub-redes segundo as necessidades da topologia.
+
+Neste problema, o endereçamento entre os \textit{routers} permanece inalterado, pelo que as sub-redes a definir com este novo endereçamento serão apenas as dos departamentos A, B, C e D. É necessário garantir, pelo menos, dois \textit{hosts} utilizáveis para três das sub-redes e quatro \textit{hosts} utilizáveis para o departamento D. Dividimos então o nosso endereço em quatro sub-endereços com igual capacidade de endereçamento de \textit{hosts}, pelo que será necessário garantir quatro \textit{hosts} para todas elas, tendo em consideração os dois endereços especiais:\\
+
+\[
+\begin{array}{l l l l l l l l}
+2^n&\geq&4 + 2& <=>\\
+2^n&\geq&6& <=> \\
+n&\geq&\log_{2} 6& <=> \\
+n&\geq&2.584962501
+\end{array}
+\]
+
+Precisamos então de pelo menos três bits para identificar \textit{hosts} em cada sub-rede.
+
+Inicialmente poderíamos pensar em utilizar apenas dois bits endereçar quatro sub-redes, mas necessitamos de reservar 2 endereços para propósitos de identificação da rede global e \textit{broadcasting}. Assim, serão necessários três bits da porção de endereçamento de \textit{hosts} para definir as sub-redes dos departamentos, com um total de $2^3 = 8$ sub-redes que, não contando com as duas reservadas, nos possibilitam 6 sub-redes utilizáveis.
+
+\[
+\begin{array} {l l l l l l l}
+172.16.0.0/19  &:&Reservado \\
+172.16.32.0/19 &:&Rede_A \\
+172.16.64.0/19 &:&Rede_B \\
+172.16.96.0/19 &:&Rede_C \\
+172.16.128.0/19&:&Rede_D \\
+172.16.160.0/19&:&Livre \\
+172.16.192.0/19&:&Livre \\
+172.16.224.0/19&:&Reservado
+\end{array}
+\]
+
+Cada uma das sub-redes possui mais de três bits para identificar \textit{hosts}, pelo que os requisitos são cumpridos. 
+
+Todavia, será necessário ter em consideração os riscos e benefícios associados. Por um lado, o uso mínimo de bits para identificação de sub-redes para cumprir os requisitos leva à falta de flexibilidade/adaptabilidade da topologia. Por exemplo, caso sejam criados novos departamentos que exijam conexão à rede, os recursos de endereçamento rapidamente se tornariam escassos e seria necessário reestruturar o endereçamento de forma a cumprir os novos requisitos. Por outro lado, o uso do mínimo número de bits para identificar as redes possibilita o máximo de bits para endereçamento de \textit{hosts}. Isto constitui uma vantagem importante, pois nesta rede será bastante provável haver um grande número de dispositivos conectados, sendo assim útil e benéfico disponibilizar um mais vasto espaço de endereçamento para vários dispositivos.
+
+\newpage
+
+A topologia final é a seguinte:
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.35]{finalNetwork.png}
+		\caption{Topologia utilizando \textit{subnetting}}
+	\end{center}
+\end{figure}
+
+\subsection*{2)}
+
+Cada uma das sub redes utiliza 19 bits para identificação de rede. Assim a máscara de rede será:
+
+\[
+\begin{array}{l l l l l l l l l l l}
+&&&&& \hspace*{-2.25em}<-rede| \\
+Mask:&11111111&.&11111111&.&111|00000&.&00000000 \\
+Decimal: & (255)&&(255)&&(224)&&(0)
+\end{array}
+\]
+
+ O número de bits dedicados ao endereçamento de \textit{hosts} será 13 e 2 dos endereços totais serão reservados. Assim sendo, cada departamento pode endereçar $2^{13} - 2 = 8190$ \textit{hosts} IP na sua rede.
+
+\newpage
+
+\subsection*{3)}
+
+Utilizamos a mesma ferramenta que o CORE disponibiliza para garantir conectividade entre e dentro de departamentos:
+
+\begin{figure}[!ht]
+	\centering
+	\begin{minipage}{0.40\textwidth}
+		\centering
+		\includegraphics[width=1.2\textwidth]{2ndrun1.png}
+		\caption{P1 com S1}
+	\end{minipage}\hfill
+	\begin{minipage}{0.40\textwidth}
+		\centering
+		\includegraphics[width=1.2\textwidth]{2ndrun2.png}
+		\caption{P4 com S1}
+	\end{minipage}
+\end{figure}
+\vspace{-4.9em}
+\begin{figure}[!ht]
+	\centering
+	\begin{minipage}{0.40\textwidth}
+		\centering
+		\includegraphics[width=1.2\textwidth]{2ndrun3.png}
+		\caption{P4 com P6}
+	\end{minipage}\hfill
+	\begin{minipage}{0.40\textwidth}
+		\centering
+		\includegraphics[width=1.2\textwidth]{2ndrun4.png}
+		\caption{P8 com S2}
+	\end{minipage}
+\end{figure}
+
+\end{document}

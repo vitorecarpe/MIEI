@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="580.0" prefWidth="1012.0" spacing="12.0">
+         <children>
+            <HBox prefHeight="136.0" prefWidth="900.0" spacing="12.0">
+               <children>
+                  <StackPane>
+                     <children>
+                        <ImageView id="doomfist" fx:id="doomfist" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#doomfistOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Doomfist.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="DOOMFIST" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="genji" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#genjiOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Genji.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="GENJI" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="mccree" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#mccreeOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/McCree.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="MCCREE" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="pharah" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#pharahOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Pharah.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="PHARAH" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="reaper" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#reaperOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Reaper.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="REAPER" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="soldier76" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#soldier76OnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Soldier76.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="SOLDIER: 76" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_LEFT">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="sombra" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#sombraOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Sombra.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="SOMBRA" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="tracer" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#tracerOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Tracer.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="TRACER" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="bastion" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#bastionOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Bastion.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="BASTION" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <ImageView fx:id="hanzo" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#hanzoOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Hanzo.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="HANZO" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+               <children>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="junkrat" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#junkratOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Junkrat.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="JUNKRAT" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="mei" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#meiOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Mei.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="MEI" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="torbjorn" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#torbjornOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Torbjorn.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="TORBJÖRN" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="widowmaker" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#widowmakerOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Widowmaker.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="WIDOWMAKER" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="dva" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#dvaOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/D.Va.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="D.VA" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="orisa" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#orisaOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Orisa.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="ORISA" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="reinhardt" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#reinhardtOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Reinhardt.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="REINHARDT" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="roadhog" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#roadhogOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Roadhog.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="ROADHOG" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="winston" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#winstonOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Winston.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="WINSTON" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="zarya" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#zaryaOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Zarya.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: black;" text="ZARYA" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+               <children>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="ana" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#anaOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Ana.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: black;" text="ANA" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="lucio" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#lucioOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Lúcio.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="41.0" prefWidth="86.0" style="-fx-background-color: black;" text="LÚCIO" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="mercy" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#mercyOnAction" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_CENTER">
+                           <image>
+                              <Image url="@resources/Mercy.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="86.0" style="-fx-background-color: black;" text="MERCY" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="moira" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#moiraOnAction" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_CENTER">
+                           <image>
+                              <Image url="@resources/Moira.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="86.0" style="-fx-background-color: black;" text="MOIRA" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="symmetra" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#symmetraOnAction" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_CENTER">
+                           <image>
+                              <Image url="@resources/Symmetra.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="86.0" style="-fx-background-color: black;" text="SYMMETRA" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="zenyatta" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#zenyattaOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Zenyatta.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="86.0" style="-fx-background-color: black;" text="ZENYATTA" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="daniel" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#danielOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Daniel.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="86.0" style="-fx-background-color: black;" text="DANIEL" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_LEFT">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="helena" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#helenaOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Helena.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="86.0" style="-fx-background-color: black;" text="HELENA" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="mariana" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#marianaOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Mariana.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="86.0" style="-fx-background-color: black;" text="MARIANA" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="pedro" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#pedroOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Pedro.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" graphicTextGap="5.0" opacity="0.7" prefHeight="28.0" prefWidth="86.0" style="-fx-background-color: black;" text="PEDRO" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Roboto Condensed Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <Label fx:id="time" alignment="CENTER">
+               <font>
+                  <Font name="Jamrul" size="34.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

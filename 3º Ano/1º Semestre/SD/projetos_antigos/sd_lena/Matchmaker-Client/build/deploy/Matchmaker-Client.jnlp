@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Matchmaker-Client.jnlp">
+  <information>
+    <title>Matchmaker-Client</title>
+    <vendor>Grupo33</vendor>
+    <description>UnderWatch</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Matchmaker-Client.jar" size="2896193" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="gui.Main"  name="UnderWatch" />
+  <update check="background"/>
+</jnlp>

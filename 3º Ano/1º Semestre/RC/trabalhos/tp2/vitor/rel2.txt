@@ -1,0 +1,64 @@
+1.
+
+a) Por a imagem.
+
+b) Tratam-se de endereços privados porque estão na gama de valores reservados exclusivamente para IPs privados. Estes são
+ -> 192.168.0.0 
+ -> 172.16.0.0
+ -> 10.0.0.0
+
+c) Os switches desta topologia não lhes têm atribuidos um endereço IP, pois estes funcionam no segundo nível (Ligação de dados). Assim sendo, os switches não transportam pacotes, sendo que apenas os pacotes necessitam de endereço IP para comunicar. Logo, os switches não necessitam de endereço IP pois trabalham a um nível mais baixo do modelo OSI.
+
+d) shell de p1: ping -c 1 p2
+   shell de p2: tcpdump host p2
+
+   fazer isso para todas as combinações entre computadores e computador-servidor.
+
+e) verificado, como queriamos demonstrar.
+
+
+
+2. 
+
+a) Na shell do router n2 (departamento B): netstat -rn
+
+b) Para verificar se é estático ou dinâmico, prestar atenção à tabela de endereçamentos do router n2, executar vários pings entre hosts que estão ligados a n2 até ao exterior e verificar se a tabela de routing se adapta. Portanto, podemos dizer que encaminhamento estático é utilizado.
+
+c) route del -net 0.0.0.0
+   Implicações: não pode comunicar para o exterior da própria rede, mas pode comunicar na própria rede (testar )
+
+d) route add default gw 10.0.6.1 eth0
+
+e) (testar)   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

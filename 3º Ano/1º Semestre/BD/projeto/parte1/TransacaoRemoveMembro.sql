@@ -1,0 +1,17 @@
+DELIMITER $$
+CREATE PROCEDURE removeMembro (IN memID INT, IN memFalecimento DATE)
+
+BEGIN
+DECLARE erro BOOL DEFAULT 0; 
+DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET erro=1;
+START TRANSACTION;
+
+UPDATE Membro m SET m.falecimento=memFalecimento WHERE id_membro=memID;
+DELETE FROM Membro_pertence_Banda WHERE id_membro=memID;
+
+IF erro
+THEN ROLLBACK;
+ELSE COMMIT;
+END IF;
+END
+$$

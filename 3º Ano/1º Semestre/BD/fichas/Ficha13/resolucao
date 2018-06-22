@@ -1,0 +1,9 @@
+b)
+Match (a:Person)-[:ACTED_IN]->(m:movie) with a, count(m) As movie_count
+WHere movie_count >= 2 return a, movie_count order by movie_count DESC
+(nao funciona)
+
+c)
+match(a:Person)-[:ACTED_IN]->(m:Movie)<-[:DIRECTED]-(a) with a, count(m)
+as movie_count where movie_count >= 1 return a, movie_count order by movie_count DESC
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2a110d;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.RegisterMenu">
+   <children>
+      <Label alignment="CENTER" layoutX="20.0" layoutY="39.0" prefHeight="66.0" prefWidth="361.0" text="Register User" textFill="WHITE">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="61.0" />
+         </font>
+      </Label>
+      <TextField fx:id="username_input" layoutX="37.0" layoutY="116.0" opacity="0.9" prefHeight="62.0" prefWidth="327.0" promptText="Username" style="-fx-font: 24px &quot;System&quot;;" />
+      <TextField fx:id="email_input" layoutX="37.0" layoutY="194.0" opacity="0.9" prefHeight="62.0" prefWidth="327.0" promptText="Email" style="-fx-font: 24px &quot;System&quot;;" />
+      <PasswordField fx:id="password_input" layoutX="37.0" layoutY="273.0" opacity="0.9" prefHeight="62.0" prefWidth="327.0" promptText="Password" style="-fx-font: 24px &quot;System&quot;;" />
+      <PasswordField fx:id="cpassword_input" layoutX="37.0" layoutY="352.0" opacity="0.9" prefHeight="62.0" prefWidth="327.0" promptText="Confirm Password" style="-fx-font: 24px &quot;System&quot;;" />
+      <Button fx:id="register_button" layoutX="37.0" layoutY="438.0" mnemonicParsing="false" opacity="0.9" prefHeight="62.0" prefWidth="327.0" text="Register">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Label fx:id="message_label" alignment="CENTER" layoutX="37.0" layoutY="524.0" opacity="0.9" prefHeight="62.0" prefWidth="327.0" text="Msg" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

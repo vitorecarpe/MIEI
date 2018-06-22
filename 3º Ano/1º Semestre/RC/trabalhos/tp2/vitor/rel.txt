@@ -1,0 +1,45 @@
+1. 
+a) na shell n1 - tcpdump -i eth0 src 10.0.0.10 -w "source"
+                 tcpdump -i eth0 dst 10.0.0.10 -w "destination"
+                 traceroute -I 10.0.2.10
+
+b) Relativamente ao trafego enviado por 10.0.0.10: unicamente ping requests para 10.0.2.10, cujo TTL incrementava a cada 3 packets (faz sentido, pois é a estratégia do traceroute). Todos os pacotes são do protocolo ICMP. Os comprimentos do pacote são todos iguais.
+Relativamente ao tráfego enviado para 10.0.0.10: vários pings replies de TTL=62. São recebidas 6 mensagens de "Time-to-live exceeded", 3 de n2 e 3 de n3 (isto porque traceroute envia 3 pacotes por cada valor de TTL por isso cada router intermédio precisa de reportar 3 falhas de envio de pacote).
+
+c) Deve ser no mínimo 3. Vamos correr na shell n1 "ping -t x -c 1 10.0.2.10". Isto é, enviar 1 pacote para n4 com TTL inicial igual a x.
+Para TTL=1 -> time-to-live exceeded
+Para TTL=2 -> time-to-live exceeded
+Para TTL=3 -> ping replied
+
+d) Tempo médio até ao destino n4 será a média dos três tempos de output para o IP de n4:
+(0.053 + 0.031 + 0.028)/3 = 0.037(3) ms
+
+2.
+traceroute -I router-di.uminho.pt
+a) Com o comando corrido, com o Wireshark ligado. Filtrar todas as mensagens ICMP e ordenar por tempo. O IP origem da 1ª mensagem será o IP identificador da interface ativa do meu computador: 192.168.100.159. Também é possível identificar pois é o único a receber mensagens TTL exceeded.
+
+b) O valor do campo protocolo é ICMP: Internet Control Message Protocol. Este é o utilizado para controlo IP, e não envio de dados (payload).
+
+c) O tamanho do cabeçalho é 20 bytes (informação retirada do Wireshark pois faz parte do cabeçalho IP). O tamanho do payload será o tamanho total do pacote (informação contida no cabeçalho IP) menos o tamanho do header: 60-20 = 40 bytes.
+
+d) Não foi fragmentado, pois a flag "more fragments" do primeiro pacote está a zero.
+
+e) Carregar na coluna "source" do Wireshark. O endereço do interface ativo da minha máquina recebeu ping replies e TTL exceeded. O que varia nos pacotes enviados pelo interface ativo atual da minha máquina é o TTL (incrementa a cada 3 pacotes). Só foi obtida resposta para TTL=1. Faz sentido pois a distância máxima do IP destino precisa de 2 hops. Para TTLs maiores que 1 existe ping reply. Varia também o ID único de cada pacote. As mensagens de ping request e reply têm 76 bytes, e as de TTL exceeded 104 bytes.
+
+f) O TTL é incrementado a cada 3 pacotes. O IP é incrementado a cada novo pacote. 
+
+g) Carregar na coluna "destination" do Wireshark, identificar os campos TTL exceeded. O TTL é 64 nos três pacotes, pois estes vêm do único IP que não consegue retornar o pacote ao destino. O número 64 é definido pelo router que contém esse IP.
+
+3.
+a) Foi necessário fragmentar pois o MTU (maximum transmission unit) de um dos aparelhos é menor que o pacote enviado (3042 bytes).
+
+b) Imprimir nesta pergunta !!!!!!!!!!!!!!!!!!! ACHTUNG
+A informação que indica que o datagrama foi fragmentado é a flag "more fragments"
+Trata-se do primeiro fragmento de um pacote fragmentado se "more fragments" é 1 e "fragment offset" é 0.
+TAMANHO DATAGRAMA: ???
+
+c) Fragmentado se "more fragments" igual a 1. Não será o primeiro fragmento se "fragment offset" for diferente de 0. Tem 1480 bytes de payload. Haverá mais fragmentos se "more fragments" for 1.
+
+d) Foram criados 3 fragmentos a partir do datagrama original (1480+1480+62 = 3022 bytes). Último fragmento se "more fragments" igual a 0 e "offset" diferente de 0.
+
+e) Os campos que mudam são a flag "more fragments", a flag "fragment offset" e ID do fragmento (CONFIRMARRRRR) - este permite identificar cada fragmento ao seu conjunto único.

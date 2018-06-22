@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.LoginMenu">
+   <children>
+      <ImageView fitHeight="814.0" fitWidth="1024.0" preserveRatio="true">
+         <image>
+            <Image url="@resources/menu.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="username_input" layoutX="138.0" layoutY="335.0" opacity="0.9" prefHeight="62.0" prefWidth="327.0" promptText="Username" style="-fx-font: 24px &quot;System&quot;;" />
+      <PasswordField fx:id="password_input" layoutX="138.0" layoutY="415.0" opacity="0.9" prefHeight="62.0" prefWidth="327.0" promptText="Password" style="-fx-font: 24px &quot;System&quot;;" />
+      <Button fx:id="login_button" layoutX="138.0" layoutY="494.0" mnemonicParsing="false" opacity="0.9" prefHeight="62.0" prefWidth="327.0" text="Login">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Label fx:id="createNewAccount_label" alignment="CENTER" layoutX="143.0" layoutY="574.0" opacity="0.9" prefHeight="34.0" prefWidth="318.0" style="-fx-cursor: hand;" text="Create new account" textAlignment="CENTER" textFill="#bfbfbf" underline="true">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="error_label" alignment="CENTER" contentDisplay="CENTER" layoutX="74.0" layoutY="641.0" opacity="0.9" prefHeight="103.0" prefWidth="452.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="137.0" layoutY="249.0" opacity="0.9" prefHeight="66.0" prefWidth="327.0" text="Start Session" textFill="#e4e4e4">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="61.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

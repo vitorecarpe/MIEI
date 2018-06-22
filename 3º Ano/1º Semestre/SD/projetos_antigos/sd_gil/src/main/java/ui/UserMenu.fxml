@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #2a110d;" stylesheets="@resources/image_button.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.UserMenu">
+   <children>
+      <Label fx:id="name_label" layoutX="29.0" layoutY="7.0" prefHeight="105.0" prefWidth="800.0" text="username" textFill="#d0d0d0">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="96.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="98.0" layoutY="245.0" prefHeight="42.0" prefWidth="266.0" text="#Times Played" textFill="#d0d0d0">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="38.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberPlays_label" layoutX="334.0" layoutY="242.0" prefHeight="48.0" prefWidth="81.0" text="n" textFill="#d0d0d0">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="38.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="-1.0" layoutY="290.0" prefHeight="42.0" prefWidth="506.0" text="Wins/Losses" textFill="#d0d0d0">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="38.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="106.0" text="Rank - " textFill="#d0d0d0">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="44.0" />
+         </font>
+      </Label>
+      <Label fx:id="rank_label" layoutX="127.0" layoutY="107.0" prefHeight="48.0" prefWidth="53.0" text="n" textFill="#cfcfcf">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="44.0" />
+         </font>
+      </Label>
+      <Line endX="512.0" endY="768.0" startX="512.0" startY="174.0" stroke="#909090" strokeWidth="12.0">
+         <effect>
+            <Lighting diffuseConstant="0.81" specularConstant="0.72" specularExponent="5.12" surfaceScale="5.68">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="90.0" color="#614949" />
+               </light>
+            </Lighting>
+         </effect>
+      </Line>
+      <Line endX="1024.0" endY="172.0" fill="#979797" startY="172.0" stroke="#909090" strokeWidth="8.0">
+         <effect>
+            <Lighting specularConstant="0.65" specularExponent="13.95" surfaceScale="3.13">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#614949" />
+               </light>
+            </Lighting>
+         </effect>
+      </Line>
+      <Label alignment="CENTER" layoutX="13.0" layoutY="161.0" prefHeight="105.0" prefWidth="479.0" text="Statistics" textFill="#ff3535">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="60.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="571.0" layoutY="606.0" prefHeight="68.0" prefWidth="404.0" text="Play" textFill="#ff3535">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="60.0" />
+         </font>
+      </Label>
+      <PieChart fx:id="winLost_piechart" labelLineLength="18.0" layoutX="87.0" layoutY="330.0" legendVisible="false" prefHeight="244.0" prefWidth="336.0" stylesheets="@resources/pieStyle.css" />
+      <Label alignment="CENTER" layoutX="-2.0" layoutY="565.0" prefHeight="42.0" prefWidth="506.0" text="Most Played Heroes" textFill="#d0d0d0">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="38.0" />
+         </font>
+      </Label>
+      <TableView fx:id="topHeroes_table" layoutX="134.0" layoutY="608.0" prefHeight="141.0" prefWidth="233.0" style="-fx-background-color: #d0d0d0;">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Button fx:id="play_button" layoutX="569.0" layoutY="674.0" mnemonicParsing="false" opacity="0.9" prefHeight="73.0" prefWidth="404.0" style="-fx-font: 40px &quot;BigNoodleTitling&quot;;" text="Find Game!">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="515.0" layoutY="161.0" prefHeight="105.0" prefWidth="512.0" text="Global Ranks (Top 100)" textFill="#ff3535">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="60.0" />
+         </font>
+      </Label>
+      <TableView fx:id="globalRanks_table" layoutX="569.0" layoutY="265.0" prefHeight="328.0" prefWidth="404.0" style="-fx-control-inner-background: #d0d0d0;">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <ImageView id="image" fx:id="close_button" fitHeight="75.0" fitWidth="73.0" layoutX="906.0" layoutY="27.0" preserveRatio="true">
+         <image>
+            <Image url="@resources/close.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="906.0" layoutY="116.0" prefHeight="28.0" prefWidth="73.0" text="Close" textFill="#d0d0d0">
+         <font>
+            <Font name="BigNoodleTitling Oblique" size="25.0" />
+         </font>
+      </Label>
+      <ProgressIndicator fx:id="loading_progressIndicator" layoutX="909.0" layoutY="682.0" prefHeight="57.0" prefWidth="53.0" />
+   </children>
+</AnchorPane>

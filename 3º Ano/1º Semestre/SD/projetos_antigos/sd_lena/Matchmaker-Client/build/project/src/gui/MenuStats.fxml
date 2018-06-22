@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <BorderPane prefHeight="182.0" prefWidth="500.0">
+         <top>
+            <VBox prefHeight="183.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+               </padding>
+               <children>
+                  <Label text="Your stats:">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0">
+                     <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                     </padding>
+                  </Separator>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Ranking:" GridPane.rowIndex="1" />
+                        <Label text="Number of matches played:" GridPane.rowIndex="2" />
+                        <Label text="Number of matches won:" GridPane.rowIndex="3" />
+                        <Label id="ranking" fx:id="ranking" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label id="nrPlayed" fx:id="nrPlayed" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label id="nrWon" fx:id="nrWon" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="476.0" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#buttonJogarOnAction" text="Jogar" />
+                        <Button fx:id="buttonLogout" mnemonicParsing="false" onAction="#buttonLogoutOnAction" text="Logout" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

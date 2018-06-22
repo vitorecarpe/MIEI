@@ -1,0 +1,169 @@
+Caros alunos,
+
+Abaixo, fornece-se alguma informação que poderá ser útil para o trabalho.
+
+Informação sobre os perfis e as UCs complementares do 4º ano de MiEI (o formato é o utilizado pela DC):
+
+curso={
+                u'BI':{
+                    u'UC1' :{'nome':u'BI-UC1-Sistemas Operacionais','diasem':'sex'},
+                    u'UC2' :{'nome':u'BI-UC2-Data Warehousing', 'diasem':'sex'},
+                    u'UC3' :{'nome':u'BI-UC3-Processamento Analítico de Dados', 'diasem':'sex'},
+                    u'UC4' :{'nome':u'BI-UC4-Análise de Dados', 'diasem':'sex'}
+                },
+                u'SDC':{
+                    u'UC1' :{'nome':u'SDC-UC1-Criptografia e Segurança da Informação' ,'diasem':'seg'},
+                    u'UC2' :{'nome':u'SDC-UC2-Paradigmas de Sistemas Distribuídos','diasem':'seg'},
+                    u'UC3' :{'nome':u'SDC-UC3-Segurança de Sistemas Informáticos','diasem':'seg'},
+                    u'UC4' :{'nome':u'SDC-UC4-Sistemas Distribuídos Confiáveis','diasem':'seg'}
+                },
+                u'EA':{
+                    u'UC1' :{'nome':u'EA-UC1-Infraestruturas de Centro de Dados' ,'diasem':'ter'},
+                    u'UC2' :{'nome':u'EA-UC2-Administração de Base de Dados' ,'diasem':'ter'},
+                    u'UC3' :{'nome':u'EA-UC3-Arquiteturas Aplicacionais' ,'diasem':'ter'},
+                    u'UC4' :{'nome':u'EA-UC4-Sistemas Interativos' ,'diasem':'ter'}
+                },
+                u'ESS':{
+                    u'UC1' :{'nome':u'ESS-UC1-Engenharia de Requisitos','diasem':'qui'},
+                    u'UC2' :{'nome':u'ESS-UC2-Arquiteturas de Software','diasem':'qui'},
+                    u'UC3' :{'nome':u'ESS-UC3-Gestão do Processo de Software','diasem':'qui'},
+                    u'UC4' :{'nome':u'ESS-UC4-Engenharia Web','diasem':'qui'}
+                },
+                u'CPD':{
+                    u'UC1' :{'nome': u'CPD-UC1-Arquiteturas Avançadas','diasem':'ter'},
+                    u'UC2' :{'nome':u'CPD-UC2-Paradigmas de Computação Paralela','diasem':'ter'},
+                    u'UC3' :{'nome':u'CPD-UC3-Algoritmos Paralelos','diasem':'ter'},
+                    u'UC4' :{'nome':u'CPD-UC4-Engenharia dos Sistemas de Computação','diasem':'ter'}
+                },
+                u'CG':{
+                    u'UC1' :{'nome':u'CG-UC1-Visualização e Iluminação I','diasem':'qui'},
+                    u'UC2' :{'nome':u'CG-UC2-Visão por Computador','diasem':'qui'},
+                    u'UC3' :{'nome':u'CG-UC3-Visualização e Iluminação II','diasem':'qui'},
+                    u'UC4' :{'nome':u'CG-UC4-Tecnologias e Aplicações','diasem':'qui'}
+                },
+                u'ERS':{
+                    u'UC1' :{'nome':u'ERS-UC1-Tecnologias e Protocolos de Rede' ,'diasem':'sex'},
+                    u'UC2' :{'nome':u'ERS-UC2-Gestão de Redes','diasem':'sex'},
+                    u'UC3' :{'nome':u'ERS-UC3-Redes Multi Serviços','diasem':'sex'},
+                    u'UC4' :{'nome':u'ERS-UC4-Serviços e Sistemas Multimédia','diasem':'sex'}
+                },
+                u'Bio':{
+                    u'UC1' :{'nome':u'Bio-UC1-Algoritmos para Análise de Sequências Biológicas','diasem':'sex'},
+                    u'UC2' :{'nome':u'Bio-UC2-Laboratórios de Bioinformática','diasem':'sex'},
+                    u'UC3' :{'nome':u'Bio-UC3-Algoritmos Avançados de Bioinformática','diasem':'sex'},
+                    u'UC4' :{'nome':u'Bio-UC4-Extração de Conhecimento de Bases de Dados Biológicas','diasem':'sex'}
+                },
+                u'SI':{
+                    u'UC1' :{'nome':u'SI-UC1-Agentes Inteligentes','diasem':'seg'},
+                    u'UC2' :{'nome':u'SI-UC2-Aprendizaem e Extração de Conhecimento','diasem':'seg'},
+                    u'UC3' :{'nome':u'SI-UC3-Computação Natural','diasem':'seg'},
+                    u'UC4' :{'nome':u'SI-UC4-Sistemas Autónomos','diasem':'seg'}
+                },
+                u'MFES':{
+                    u'UC1' :{'nome':u'MFES-UC1-Especificação e Modelação','diasem':'qui'},
+                    u'UC2' :{'nome':u'MFES-UC2-Análise e Teste de Software','diasem':'qui'},
+                    u'UC3' :{'nome':u'MFES-UC3-Arquitetura e Cálculo','diasem':'qui'},
+                    u'UC4' :{'nome':u'MFES-UC4-Verificaçao Formal','diasem':'qui'}
+                },
+                u'PLC':{
+                    u'UC1' :{'nome':u'PLC-UC1-Gramáticas na Compreensão de Software','diasem':'seg'},
+                    u'UC2' :{'nome':u'PLC-UC2-Processamento e Representação de Informação','diasem':'seg'},
+                    u'UC3' :{'nome':u'PLC-UC3-Scripting no Processamento de Linguagem Natural','diasem':'seg'},
+                    u'UC4' :{'nome':u'PLC-UC4-Processamento e Representação de Conhecimento','diasem':'seg'}
+                },
+}
+
+ucs={
+    u'MD' : {'nome':u'Mineração de Dados','diasem':'ter','per':'M'},
+    u'VC' : {'nome':u'Visão por Computador','diasem':'qui','per':'T'},
+    u'CP' : {'nome':u'Computação Paralela','diasem':'qua','per':'M'},
+    u'SSI' : {'nome':u'Segurança de Sistemas Informáticos','diasem':'ter','per':'T'},
+    u'PDSJ' : {'nome':u'Processamento de Dados com Streams de Java','diasem':'qua','per':'M'},
+    u'AEBD':{'nome':u'Administração e Exploração de Bases de Dados','diasem':'ter','per':'M'},
+    u'ER':{'nome':u'Engenharia de Requisitos','diasem':'sex','per':'T'},
+    u'GR':{'nome':u'Gestão de Redes','diasem':'qui','per':'M'},
+    u'ATS':{'nome':u'Análise e Teste de Software','diasem':'ter','per':'T'},
+    u'SPLN':{'nome':u'Scripting no Processamento de Linguagem Natural','diasem':'sex','per':'M'},
+    u'SDB':{'nome':u'System Deployment and Benchmarking','diasem':'qua','per':'M'},
+    u'IATA':{'nome':u'Inteligência Ambiente - Tecnologias e Aplicações','diasem':'qua','per':'M'},
+    }
+
+UCs dos três primeiros anos (novamente, no formato utilizado pela DC):
+
+UCS={
+    ('H501N1', 'Álgebra Linear EI','AL'),
+    ('H501N2', 'Cálculo','Calc'),
+    ('H501N3' ,'Tópicos de Matemática Discreta','TMD'),
+    ('H501N4' ,'Programação Funcional','PF'),
+    ('H501N5' ,'Elementos de Engenharia de Sistemas','EES'),
+    ('H501N6' ,'Laboratórios de Informática I','LI1'),
+    ('H502N1' ,'Sistemas de Computação','SC'),
+    ('H502N2' ,'Análise','ANALISE'),
+    ('H502N3' ,'Tópicos de Física Moderna','TFM'),
+    ('H502N4' ,'Lógica EI','Log'),
+    ('H502N5' ,'Programação Imperativa','PI'),
+    ('H502N6' ,'Laboratórios de Informática II','LI2'),
+    ('H503N1' ,'Introdução aos Sistemas Dinâmicos','ISD'),
+    ('H503N2' ,'Estatística Aplicada','EA'),
+    ('H503N3' ,'Engenharia Económica','EE'),
+    ('H503N4' ,'Arquitetura de Computadores','AC'),
+    ('H503N5' ,'Comunicação de Dados','CD'),
+    ('H503N6' ,'Algoritmos e Complexidade','ALG'),
+    ('H504N1' ,'Sistemas Operativos','SO'),
+    ('H504N2' ,'Programação Orientada aos Objetos','POO'),
+    ('H504N3' ,'Eletromagnetismo EE','EM'),
+    ('H504N5' ,'Cálculo de Programas','CP'),
+    ('H504N6' ,'Laboratórios de Informática III','LI3'),
+    ('H505N1' ,'Bases de Dados','BD'),
+    ('H505N2' ,'Desenvolvimento de Sistemas de Software','DSS'),
+    ('H505N3' ,'Modelos Determinísticos de Investigação Operacional','MDIO'),
+    ('H505N4' ,'Sistemas Distribuídos','SD'),
+    ('H505N5' ,'Redes de Computadores','RC'),
+    ('H505N6' ,'Métodos Numéricos e Otimização não Linear','MNOnL'),
+    ('H506N1' ,'Sistemas de Representação de Conhecimento e Raciocínio','SRCR'),
+    ('H506N2' ,'Computação Gráfica','CG'),
+    ('H506N3' ,'Modelos Estocásticos de Investigação Operacional','MEIO'),
+    ('H506N4' ,'Comunicações por Computador','CC'),
+    ('H506N5' ,'Processamento de Linguagens','PL'),
+    ('H506N6' ,'Laboratórios de Informática IV','LI4'),
+
+}
+
+Podem considerar que a informação sobre o horário é também recebida num formato semelhante a estes.
+
+No final, os turnos são gerados no seguinte formato:
+
+H1= [
+    ['Calc-TP1','AL-TP4','TMD-TP1','PF-TP1','LI1-PL6','EES-PL4'],
+    ['Calc-TP1','AL-TP4','TMD-TP1','PF-TP2','LI1-PL3','EES-PL6'],
+
+    ['Calc-TP2','AL-TP3','TMD-TP2','PF-TP3','LI1-PL7','EES-PL3'],
+    ['Calc-TP2','AL-TP3','TMD-TP2','PF-TP6','LI1-PL1','EES-PL7'],
+
+    ['Calc-TP3', 'AL-TP2', 'TMD-TP3', 'PF-TP5', 'LI1-PL5', 'EES-PL5'],
+    ['Calc-TP3', 'AL-TP2', 'TMD-TP3', 'PF-TP7', 'LI-PL2', 'EES-PL7'],
+
+    ['Calc-TP4', 'AL-TP1', 'TMD-TP4', 'PF-TP4', 'LI1-PL4', 'EES-PL1'],
+    ['Calc-TP4', 'AL-TP1', 'TMD-TP4', 'PF-TP8', 'LI1-PL8', 'EES-PL2'],
+
+]
+
+H2 = [
+    ['EA-TP3','EE-TP4','ISD-TP3','CD-TP1','ALG-TP7','AC-PL2'],
+    ['EA-TP3','EE-TP4','ISD-TP3','CD-TP1','ALG-TP4','AC-PL1'],
+
+    ['EA-TP2','EE-TP2','ISD-TP1','CD-TP4','ALG-TP1','AC-PL4'],
+    ['EA-TP2','EE-TP2','ISD-TP1','CD-TP4','ALG-TP6','AC-PL6'],
+
+    ['EA-TP1','EE-TP3','ISD-TP2','CD-TP3','ALG-TP2','AC-PL3'],
+    ['EA-TP1','EE-TP3','ISD-TP2','CD-TP3','ALG-TP5','AC-PL5'],
+
+]
+
+H3 = [
+    ['RC-PL4','BD-PL6','SD-PL5','MNOnL-PL1','DSS-PL4','MDIO-TP1'],
+    ['RC-PL1','BD-PL5','SD-PL1','MNOnL-PL5','DSS-PL5','MDIO-TP2'],
+    ['RC-PL3','BD-PL3','SD-PL3','MNOnL-PL2','DSS-PL6','MDIO-TP3'],
+    ['RC-PL6','BD-PL2','SD-PL6','MNOnL-PL4','DSS-PL3','MDIO-TP4'],
+
+]

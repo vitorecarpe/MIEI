@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="351.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="356.0" prefWidth="500.0">
+         <children>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="8.0" prefHeight="8.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Team A" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="19.0" />
+                     </font></Label>
+                  <Label fx:id="teamAplayer1" text="Label" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Label fx:id="teamAplayer2" text="Label" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <Label fx:id="teamAplayer3" text="Label" GridPane.rowIndex="4" />
+                  <Label fx:id="teamAplayer4" text="Label" GridPane.rowIndex="5" />
+                  <Label text="Team B" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                     <font>
+                        <Font size="19.0" />
+                     </font></Label>
+                  <Label fx:id="teamBplayer1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="teamBplayer2" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="teamBplayer3" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="teamBplayer4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label fx:id="teamAplayer5" text="Label" GridPane.rowIndex="6" />
+                  <Label fx:id="teamBplayer5" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Separator prefWidth="200.0" GridPane.rowIndex="1" />
+                  <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+               </padding>
+            </GridPane>
+            <Separator prefWidth="200.0">
+               <padding>
+                  <Insets bottom="10.0" left="14.0" right="14.0" top="10.0" />
+               </padding>
+            </Separator>
+            <HBox alignment="CENTER" prefHeight="71.0" prefWidth="500.0">
+               <children>
+                  <ProgressIndicator prefHeight="68.0" prefWidth="52.0" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="24.0" prefWidth="500.0">
+               <children>
+                  <Label alignment="CENTER" text="Loading window..." />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

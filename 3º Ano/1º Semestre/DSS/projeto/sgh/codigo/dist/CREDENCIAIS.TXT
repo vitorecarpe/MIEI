@@ -1,0 +1,69 @@
+======================
+CREDENCIAIS DE EXEMPLO
+======================
+
+Diretor de Curso: 
+
+ID: 10000
+PW: prh
+
+======================
+
+Diretor de UC: 
+
+ID: 10100
+PW: jbb
+
+ID: 10144
+PW: jcc
+
+======================
+
+Docente: 
+
+ID: 10234
+PW: anr
+
+ID: 10354
+PW: tp
+
+ID: 10231
+PW: st
+
+======================
+
+Estudante: 
+
+ID: 79175
+PW: vitor
+
+ID: 79617
+PW: raul
+
+ID: 78416
+PW: kiko
+
+======================
+
+Trabalhador-estudante:
+
+ID: 77777
+PW: yoko
+
+ID: 78787
+PW: arthur
+
+======================
+
+Mais credenciais
+disponíveis no
+povoamento da base de
+dados "population.sql"
+
+======================
+
+Grupo 22:
+
+Francisco Oliveira
+Raul Vilas Boas
+Vitor Peixoto
