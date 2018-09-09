@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1526480344348.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "D325D8D4",
+    "lastKnownWriteTime" : 1526647227,
+    "last_content_update" : 1526647227240,
+    "path" : "C:/Users/Utilizador/Desktop/SRCR/tp3/tp3/red.R",
+    "project_path" : "red.R",
+    "properties" : {
+        "cursorPosition" : "7,23",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
