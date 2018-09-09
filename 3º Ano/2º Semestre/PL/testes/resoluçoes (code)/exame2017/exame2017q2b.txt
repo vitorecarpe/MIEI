@@ -1,0 +1,9 @@
+
+void functionVOID(int ola, char fds){
+    ola amigos;
+}
+
+int functionINT( ){
+    ola amigos;
+    return 0;
+}

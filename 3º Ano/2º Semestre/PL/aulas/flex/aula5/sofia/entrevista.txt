@@ -1,0 +1,6 @@
+ELE=José Mário Monteiro
+EU=Ana Gomes
+EU: Como se chama?
+ELE: José.
+EU: Onde vive?
+ELE: Em Braga.

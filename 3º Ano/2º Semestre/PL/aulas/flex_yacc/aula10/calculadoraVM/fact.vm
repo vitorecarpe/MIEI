@@ -1,0 +1,6 @@
+	pushn 26
+	pushn 10
+start
+	read
+	atoi
+	storeg 0

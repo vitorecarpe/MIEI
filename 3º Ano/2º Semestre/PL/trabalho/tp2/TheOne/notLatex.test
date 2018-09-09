@@ -1,0 +1,200 @@
+
+%! Introdução
+# Introdução
+No âmbito da unidade curricular de Processamento de Linguagens, 
+foi-nos pedido que, baseado em Markdown, 
+criássemos uma linguagem semelhante e uma ferramenta em Flex 
+capaz de tranformar esta notação mais leve em \LaTeX. 
+%newline
+Neste relatório será explicado o processo de desenvolvimento 
+e as decisões tomadas ao longo da realização do trabalho.
+
+# Requisitos
+Neste trabalho foram pedidos vários requisitos principais, os quais falaremos em breve, 
+contudo, tomamos iniciativa de adicionar algumas funcionalidades extra, com intuito 
+de aprofundarmos o nosso conhecimento e aprendizagem neste tópico.
+%newline
+Passamos agora a mostrar os requisitos em causa:
+
+## Principais
+Foi-nos pedido que a nossa ferramenta fosse capaz de:
+>>* Criar vários níveis de títulos
+>* Formatar o texto para:
+    >>* Negrito
+    >* Itálico
+    >* Sublinhado
+    <
+>* Criar listas de tópicos:
+    >>* Não-numerados
+    >* Numerados
+    >* Tipo entrada de dicionário 
+    <
+<
+
+## Extras
+Ainda como extras, a nossa ferramenta é capaz de:
+>>* Texto rasurado
+>* Aceitar alguns comandos especiais:
+    >>* Footnote %note{footnote}
+    >* Comentários %!Este é um comentário
+    >* Inserir novo parágrafo e quebra de página
+    >* Inserir imagens
+    <
+<
+
+
+%! Header tipo Chapter. Nao disponivel em artigos
+#Demonstração
+
+##Níveis de títulos
+A nossa linguagem permite a utilização de todos os 
+níveis de títulos existentes no \LaTeX. 
+%newline
+Neste caso "Demonstração" seria um exemplo de título do tipo /{Chapter} 
+e "Níveis de títulos" um tipo /{Section}. 
+%newline
+Neste caso, o título deste capítulo "Demonstração" seria um exemplo 
+de título do tipo /{Chapter} e "Níveis de titulos" um tipo /{Section}. 
+O título de cada nível deve ser sempre indicado no início de uma nova linha, 
+seguindo de “%#”, sendo que o número de ocorrências de “%#” indicam o nível do 
+título (i.e. “%#” indica /{Chapter}, “%#%#” indica /{Section} e por aí adiante).
+%newline
+Para além disto, há a opção de adicionar ou não numeração ao título, 
+bem como o seu aparecimento no índice. Os títulos que não devem ser numerados 
+nem indexados devem seguir-se de um “%*” após todos os “%#”.
+%newline
+Na imagem abaixo, pode-se compreender melhor o funcionamento 
+do processo explicado acima:
+
+###Exemplo de título SubSection
+Temos ainda /{SubSubSection}, /{Paragraph}, /{SubParagraph}, 
+bem como todos os anteriormente referidos títulos na sua versão 
+com %* (asterisco).
+###*Exemplo de título SubSection*
+Exemplo.
+
+[0.7][titulos_flex.png](Código Flex - títulos)
+[1][titulo_source.png](Exemplos de títulos)
+%newpage
+
+##Formatação de texto
+Para os diferentes tipos de formatação são usados os seguintes estilos:
+>>* "%*" para texto bold;
+>* "%/" para texto itálico;
+>* "%_" para texto sublinhado;
+>* "%~" para texto rasurado.
+<
+Este são apenas marcadores de inicio de formatação.
+%newline
+Para além disso, o estado /{formating}, utilizado para sabermos 
+que estamos dentro de uma formatação, não é exclusivo o que permite 
+que qualquer texto possa ser introduzido dentro da formatação 
+bem como formatações adicionais, como será demonstrado.
+
+[0.9][formatacao_flex.png](Código Flex - Formatação)
+
+###Texto exemplo
+Portanto como pedido, a nossa linguagem é capaz de acomodar texto em *{bold}, 
+em /{itálico}, _{sublinhado}, ~{rasurado} bem como qualquer combinação entre eles. 
+%newline
+Por exemplo *{/{_{~{MAIS}}}} 
+%note{ texto em bold+itálico+sublinhado+rasurado}
+
+[0.9][formatacao_source.png](Exemplos de formatação de texto)
+
+%newpage
+
+##Listas
+Outro dos requisitos era a capacidade de criar listas.
+Permitimos a criação de todos os tipos de listas pedidos, 
+bem como listas aninhadas podendo estas ser ou não do mesmo tipo.
+%newline
+Para criar uma qualquer lista deve-se utilizar as seguintes expressões:
+###Listas não numeradas
+>>* "%>%>%*"  para iniciar uma nova Lista não numerada
+    >>* "%>%>%*"  para iniciar uma sub Lista não numerada
+    >* "%>%*" para continuar uma Lista não numerada
+    <
+< 
+###Listas numeradas
+>>1 "%>%>/{dígito}%note{um qualquer dígito}" para iniciar uma nova Lista numerada
+    >>1 "%>%>/{dígito}" para iniciar uma sub Lista numerada
+    >2 "%>/{dígito}" para continuar uma Lista numerada
+    <
+<
+###Entradas tipo dicionário
+>>[Exemplo] "%>%>%[/{palavra}%]" para iniciar uma nova Entrada tipo dicionário
+    >>[NovoExemplo] "%>%>%[/{palavra}%]" para iniciar uma nova Entrada tipo dicionário   
+    >[SubExemplo] %>%[/{palavra}%]" para continuar uma Entrada tipo dicionário
+    <
+<
+Aqui temos alguns exemplos.
+
+[0.7][listas_flex.png](Código Flex - Listas)
+
+%newpage
+
+###Listas aninhadas
+Apresentamos aqui um exemplo com várias listas aninhadas, 
+e algumas delas formatadas.
+>>1 Alínea 1
+    >>* Ponto 1
+        >>[Palavra 1] /{Significado 1 itálico}
+        <
+    >* *{Ponto 2 bold}
+    <
+>2 _{Alínea 2 sublinhado}
+    >>* Ponto 2
+        >>2 Alínea 2.1 rasurado
+            >>* *{/{_{~{Ponto 2.1 bold+itálico+sublinhado+rasurado}}}}
+            <
+        <
+    <
+>1 Alínea 3
+    >>[Palavra 1] Significado 1
+        >>1 ~{Alínea 3.1 rasurado}
+        <
+    >[Palavra 2] Significado 2
+        >>* Alínea 3.2 
+        <
+    <
+<
+
+[0.8][listas_source.png](Exemplos da formatação de listas)
+
+%newpage
+
+##Extras
+Para além do que era pedido, fizemos ainda alguns extras. 
+Primeiramente temos a /{footnote} 
+%note{texto rasurado também era um extra mas já foi falado} 
+que permite adicionar pequenas anotações ao texto, 
+utilizando um simples comando %%note\{texto da nota\}. 
+%newline
+Temos tambem comentários, comandos para inserir novas linhas, 
+novo parágrafo e novas páginas.
+%newline
+%! COMENTARIO
+Podemos também adicionar imagens e efetuar transformações, 
+tais como alterar o tamanho da imagem, 
+bem como adicionar uma legenda.
+%newline
+Para adicionar uma imagem é necessário começar com %[/{dígito}%] 
+que será a escala a que a imagem será representada (escala entre 0.0 e 9.9). 
+Depois da escala deve introduzir o caminho até à imagem, 
+usando para tal o comando %[/{caminho}%]. 
+Finalmente há a hipótese de adicionar uma legenda usando 
+(/{legenda}) após o caminho.
+
+[0.9][imagem_flex.png](Código Flex - Imagem)
+[1][imagem_source.png](Exemplo de formatação de imagems)
+
+#Conclusão
+Este trabalho permitiu consolidar a matéria lecionada 
+nas aulas da unidade curricular, mas também obter um maior 
+conhecimento acerca do funcionamento do Flex, 
+para além de permitir praticar o uso deste tipo de ferramentas 
+para resolver problemas de conversão de linguagem, entre outros.
+%newline
+Em suma, avaliamos a nossa prestação na resolução deste trabalho, como positiva.
+

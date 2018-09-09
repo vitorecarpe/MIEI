@@ -1,0 +1,8 @@
+
+@book{Oli91a,
+    author = "José Nuno Oliveira",
+    title = "Especificação e Semântica",
+    year = 1991,
+    edition = "1.st",
+    publisher = "Departamento de Informática, Univ. do Minho"
+}
