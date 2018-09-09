@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href=("~/Content/StyleSheet1.css") rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" type="image/png" href="~/images/favicon.png">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-brand">
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href='@Url.Action("About", "Home")'>Acerca</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href='@Url.Action("Contact", "Home")'>Contactos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href='@Url.Action("Index", "Home")'>
+                    <img src="~/images/logo.png" style="position: absolute; height:63px; top:0; left:15%;" />
+                </a>
+                <div style="position:absolute; right:15%;">
+                    <a class="number">
+                        <img src="~/images/number.png" style=" height:50px; top:0; " />
+                    </a>
+                    @{
+                        if (Request.IsAuthenticated && User.Identity.Name == "admin")
+                        {
+                            <a href='@Url.Action("Home", "Admin")'>
+                                <img src="~/images/administracao.png" style="margin-left:-5px; height:50px; top:0;" />
+                            </a>
+                        }
+                        else
+                        {
+                            <a href='@Url.Action("Index", "Login")'>
+                                <img src="~/images/login.png" style="margin-left:-5px; height:50px; top:0;" />
+                            </a>
+                        }
+                    }
+
+                </div>
+
+
+            </nav>
+        </header>
+        <div class="content">
+            <div class="container body-content">
+                @RenderBody()
+            </div>
+        </div>
+
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </div>
+    <footer class="card-footer">
+        <div class="firstrow" style="margin-left: 15%; width: 80%;">
+            <div class="col-lg-8">
+                <h3><span class="title" style="color:#EEEEEE; font-family:'San Francisco'; font-size:1.8vh;">&copy; @DateTime.Now.Year - António Canalizador. Todos os direitos reservados.</span></h3>
+                <a href='@Url.Action("Contact", "Home")'><span class="title" style="color:#BBBFCA; font-family:'San Francisco'; font-size:1.8vh;">Contactos</span></a>
+                <a><span class="title" style="color:#EEEEEE; font-family:'San Francisco'; font-size:1.5vh;"> • </span></a>
+                <a href='@Url.Action("About", "Home")'><span class="title" style="color:#BBBFCA; font-family:'San Francisco'; font-size:1.8vh;">Acerca de nós</span></a>
+                @{
+                    if (Request.IsAuthenticated && User.Identity.Name == "admin")
+                    {
+                        <a><span class="title" style="color:#EEEEEE; font-family:'San Francisco'; font-size:1.5vh;"> • </span></a>
+                        <a href='@Url.Action("Home", "Admin")'><span class="title" style="color:#BBBFCA; font-family:'San Francisco'; font-size:1.8vh;">Administração</span></a>
+                    }
+                    else
+                    {
+                        <a><span class="title" style="color:#EEEEEE; font-family:'San Francisco'; font-size:1.5vh;"> • </span></a>
+                        <a href='@Url.Action("Login", "Admin")'><span class="title" style="color:#BBBFCA; font-family:'San Francisco'; font-size:1.8vh;">Login administração</span></a>
+                    }
+                }
+            </div>
+            <div class="col-lg-3">
+                <a href="https://www.facebook.com/antoniocanalizador" target="_blank"><img src="~/images/facebook.png" style="height:50px; top:0; margin-left:10px;" /></a>
+                <a href="https://www.instagram.com/antoniocanalizador" target="_blank"><img src="~/images/instagram.png" style="height:50px; top:0; margin-left:10px;" /></a>
+                <a href="https://www.twitter.com/antoniocanalizador" target="_blank"><img src="~/images/twitter.png" style="height:50px; top:0; margin-left:10px;" /></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
+</html>

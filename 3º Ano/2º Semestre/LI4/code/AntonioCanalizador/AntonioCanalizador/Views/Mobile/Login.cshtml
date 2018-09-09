@@ -1,0 +1,34 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="text-align:center; background-color:#FFFFFF;">
+    <div>
+        <div class="col-lg-3" style="text-align:center;">
+            <a><img src="~/images/staffapp.png" style="width:77%; height:auto; margin-top:4vh; margin-bottom:5vh;" /></a>
+            @{
+                if (!Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("LoginButton", "Mobile", FormMethod.Post))
+                    {
+                        @Html.ValidationSummary(false)
+                        <fieldset style="text-align:center;">
+                            <h3><input type="text" style="width:90%; height:65px; font-size:25px; color:#293C4A; background-color:#EEEEEE;" placeholder="ID Funcionário" name="id" required /></h3>
+                            <h3><input type="password" style="width:90%; height:65px; font-size:25px; color:#293C4A; background-color:#EEEEEE; margin-top:20px;" placeholder="Palavra-passe" name="password" required /></h3>
+                        </fieldset>
+                        <h3><input class="btn btn-lg btn-primary" style="font-family:'San Francisco Bold'; border-radius:40px; border-color:#293C4A; background-color:#293C4A; margin-top:20px;" type="submit" value="ENTRAR" /></h3>
+                    }
+                }
+            }
+        </div>
+    </div>
+</body>
+</html>

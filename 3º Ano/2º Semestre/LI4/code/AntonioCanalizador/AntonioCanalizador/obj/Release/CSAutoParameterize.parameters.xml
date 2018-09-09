@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DataContext-Web.config Connection String" description="DataContext A Cadeia de Conexão usada em web.config pelo aplicativo para acessar o banco de dados." defaultValue="data source=PC-AJ9Q91T0-KIK;initial catalog=AntonioCanalizador;persist security info=True;user id=Antonio;password=antonio;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\KIKO\\Desktop\\GIT\\EngenhariaInformatica\\3º\ Ano\\2º\ Semestre\\LI4\\Code\\AntonioCanalizador\\AntonioCanalizador\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataContext']/@connectionString" />
+  </parameter>
+</parameters>

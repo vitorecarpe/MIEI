@@ -1,0 +1,148 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+    ViewBag.Title = @Model.servico.nome;
+}
+
+<div>
+    <div style="width:100%; height:58vh; margin-top: 50px; background-color: #293C4A;">
+        <div style="width:99%; padding-left:15%;background-color: #293C4A;">
+            <a><img src="@Model.servico.foto" style=" width:30%;" /></a>
+            <a><span class="title_servico">@Model.servico.nome  </span></a>
+            <a><span class="text_servico">@Model.servico.descricao  </span></a>
+            <a><span class="text_duracao">Duração prevista: @Model.servico.duracaoprevista hora(s) </span></a>
+            <div style="width:100%;">
+                <div class="linhas_disp" style="float:left;">Disponibilidade 24/7 </div>
+                @{ if (Model.servico.disponibilidade == 1)
+                    {
+                        <div class="text_disp_sim" style="float:left;"> SIM</div>
+                    }
+                    else
+                    {
+                        <div class="text_disp_nao" style="float:left;"> NÃO</div>
+                    }
+                }
+                <div class="preco" style="background-color:#576671; float:left; margin-top:8px;">Horário normal (9H-17H) </div>
+                <div class="preco" style="background-color:#576671; float:left; margin-top:8px;">Horário extra (17H-9H) </div>
+            </div>
+            <div style="width:100%;">
+                <div class="linhas" style="float:left;">Primeira hora</div>
+                <div class="preco" style="float:left;">@Model.servico.preco_normal_p € </div>
+                @{ if (Model.servico.disponibilidade == 1)
+                    {
+                        <div class="preco" style="float:left;">@Model.servico.preco_extra_p € </div>
+                    }
+                    else
+                    {
+                        <div class="preco" style="float:left;"> - </div>
+                    }
+                }
+            </div>
+            <div style="width:100%;">
+                <div class="linhas" style="float:left;">Restantes horas</div>
+                <div class="preco" style="float:left;">@Model.servico.preco_normal_r € </div>
+                @{ if (Model.servico.disponibilidade == 1)
+                    {
+                        <div class="preco" style="float:left;">@Model.servico.preco_extra_r € </div>
+                    }
+                    else
+                    {
+                        <div class="preco" style="float:left;"> - </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("Confirmar", "Servicos", FormMethod.Post))
+        {
+            @Html.ValidationSummary(false)
+            <fieldset style="margin-left:15%;">
+                <h3><span class="label" style="color:#293C4A; ">Agende um dia e hora à sua escolha:</span></h3>
+                <h3><input type="date" style="float:left;" name="date" required /></h3>
+
+                <input type="tel" list="time" style="float:left; width:7%; margin-left:10px;" name="time">
+                @{ if (Model.servico.disponibilidade == 1)
+                    {
+                        <datalist id="time">
+                            <option value="00:00">
+                            <option value="01:00">
+                            <option value="02:00">
+                            <option value="03:00">
+                            <option value="04:00">
+                            <option value="05:00">
+                            <option value="06:00">
+                            <option value="07:00">
+                            <option value="08:00">
+                            <option value="09:00">
+                            <option value="10:00">
+                            <option value="11:00">
+                            <option value="12:00">
+                            <option value="13:00">
+                            <option value="14:00">
+                            <option value="15:00">
+                            <option value="16:00">
+                            <option value="17:00">
+                            <option value="18:00">
+                            <option value="19:00">
+                            <option value="20:00">
+                            <option value="21:00">
+                            <option value="22:00">
+                            <option value="23:00">
+                        </datalist>
+                    }
+                    else if (Model.servico.duracaoprevista == 8)
+                    {
+                        <datalist id="time">
+                            <option value="09:00">
+                        </datalist>
+                    }
+                    else if (Model.servico.duracaoprevista == 2)
+                    {
+                        <datalist id="time">
+                            <option value="09:00">
+                            <option value="10:00">
+                            <option value="11:00">
+                            <option value="12:00">
+                            <option value="13:00">
+                            <option value="14:00">
+                            <option value="15:00">
+                        </datalist>
+                    }
+                    else if (Model.servico.duracaoprevista == 1)
+                    {
+                        <datalist id="time">
+                            <option value="09:00">
+                            <option value="10:00">
+                            <option value="11:00">
+                            <option value="12:00">
+                            <option value="13:00">
+                            <option value="14:00">
+                            <option value="15:00">
+                            <option value="16:00">
+                        </datalist>
+                    }
+                }
+
+                <h3><input type="text" style="float:left;" name="nome" value="@Model.servico.nome" required hidden /></h3>
+            </fieldset>
+            if (Model.error == 1)
+            {<a><span class="label" style="margin-left:15%; color:red;">Dia não válido. Selecione um novo horário por favor.</span></a>
+            }
+            if (Model.error == 2)
+            {<a><span class="label" style="margin-left:15%; color:red;">Hora não válida. Selecione um novo horário por favor.</span></a>
+            }
+            if (Model.error == 3)
+            {<a><span class="label" style="margin-left:15%; color:red;">Horário indisponível. Selecione um novo horário por favor.</span></a>
+            }
+            if (Model.error == 42)
+            {<a><span class="label" style="margin-left:15%; color:forestgreen;">Serviço agendado com sucesso!</span></a>
+            }
+            <h3><input class="btn btn-lg btn-primary" style="margin-top:1%; margin-left:15%;" type="submit" value="Agendar" /></h3>
+
+
+        }
+    }
+
+</div>

@@ -1,0 +1,88 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Registar";
+}
+<div>
+    <div style="width:100%; margin-top: 50px; background-color: #293C4A;">
+        <div style="width:99%; padding-left:15%;background-color: #293C4A;">
+
+
+            @if (!Request.IsAuthenticated)
+            {
+                using (Html.BeginForm("Adicionar", "Login", FormMethod.Post))
+                {
+                    @Html.ValidationSummary(true)
+                    <div class="firstrow">
+                        <div class="col-lg-4">
+                            <h2><span class="label" style="font-family:Bebas Neue; color:#E69335; font-size:2.7rem;">REGISTE-SE JÁ NO MELHOR SERVIÇO ONLINE DE CANALIZAÇÃO</span></h2>
+                            <a><img src="https://i.imgur.com/EPzpqrI.jpg" style=" width:92%;" /></a>
+                        </div>
+                        <div class="col-lg-8">
+                            <h3><span class="label">Nome completo</span></h3>
+                            <input type="text" style="font-size:1.6rem; width:34vw;" name="nome" id="nome" required />
+
+                            <div class="firstrow">
+
+                                <div class="col-lg-4">
+                                    <h3><span class="label">NIF</span></h3>
+                                    <input type="text" style="font-size:1.6rem;width:15vw;" name="nif_cliente" id="nif_cliente" required />
+
+                                    <h3><span class="label">Data de nascimento</span></h3>
+                                    <input type="date" style="background-color:#192C3A; color:#FFFFFF;width:15vw;" name="data_nascimento" id="data_nascimento" required />
+
+                                    <h3><span class="label">Email</span></h3>
+                                    <input type="text" style="background-color:#192C3A;width:15vw;" name="email" id="email" required />
+
+                                    <h3><span class="label">Palavra-passe</span></h3>
+                                    <input type="text" style="background-color:#192C3A;width:15vw;" name="password" id="password" required />
+
+                                    <h3><span class="label">Telemóvel</span></h3>
+                                    <input type="text" style="background-color:#192C3A;width:15vw;" pattern="[9]{1}[0-9]{8}" name="telemovel" id="telemovel" required />
+
+
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <h3><span class="label">Rua</span></h3>
+                                    <input type="text" style="background-color:#192C3A;width:15vw;" name="rua" id="rua" required />
+
+                                    <h3><span class="label">Andar</span></h3>
+                                    <input type="text" style="background-color:#192C3A;width:15vw;" name="andar" id="andar" required />
+
+                                    <h3><span class="label">Porta</span></h3>
+                                    <input type="text" style="background-color:#192C3A;width:15vw;" name="porta" id="porta" required />
+
+                                    <h3><span class="label">Localidade</span></h3>
+                                    <input type="text" style="background-color:#192C3A;width:15vw;" name="localidade" id="localidade" required />
+
+                                    <h3><span class="label">Código postal</span></h3>
+                                    <input type="text" style="background-color:#192C3A;width:15vw;" name="cod_postal" id="cod_postal" required />
+
+                                </div>
+
+
+                            </div>
+
+                            <h3><span class="label">Foto</span></h3>
+                            <a target="_blank" href='https://imgur.com/upload'><span class="sublabel">(Upload aqui. Inserir link no campo)</span></a>
+                            <br />
+                            <input type="url" style="background-color:#192C3A;width:34vw;color:#FFFFFF;" name="foto" id="foto" required />
+
+                            <br />
+
+                            <input type="submit" value="REGISTAR" style="margin-top:20px; margin-bottom:20px;" class="btn btn-primary btn-lg" />
+
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                @Url.Action("Index", "MyProfile")
+            }
+        </div>
+    </div>
+</div>
+

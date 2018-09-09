@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Funcionários";
+}
+<div>
+    <div style="width:100%; margin-top: 50px; background-color: #293C4A;">
+        <div class="lineseparator">FUNCIONÁRIOS </div>
+        <a href='@Url.Action("Home", "Admin")'>
+            <img src="https://i.imgur.com/fVAgrFb.png" style="position:absolute; margin-left:77%; margin-top:-57px; width:150px; height:auto;" />
+        </a>
+
+        <div style="width:99%; padding-left:15.5%;background-color: #293C4A;">
+
+
+            @{ if (@Model.Count == 0)
+                {
+                    <div class="lineseparator" style="background-color:#293C4A; font-size:25px; margin-left:-8.5%;">Sem funcionários ativos</div>
+                }
+                else
+                {
+                    <div class="firstrow">
+                        <div class="col-lg-10" style="background-color:#293C4A; margin-bottom:20px; padding-bottom:20px;">
+                            <div style="width:100%; display:table; background-color:#E69335;">
+                                <div class="preco" style="font-family:'San Francisco Bold'; font-size:25px; height:50px; width:90px; background-color:#e69335; float:left;"> ID</div>
+                                <div class="preco" style="font-family:'San Francisco Bold'; font-size:25px; height:50px; width:500px; background-color:#e69335; float:left;"> NOME</div>
+                                <div class="preco" style="font-family:'San Francisco Bold'; font-size:25px; height:50px; width:150px; background-color:#e69335; float:left;"> TURNO</div>
+                                <div class="preco" style="font-family:'San Francisco Bold'; font-size:25px; height:50px; width:200px; background-color:#e69335; float:left;"> EDITAR</div>
+                                <div class="preco" style="font-family:'San Francisco Bold'; font-size:25px; height:50px; width:200px; background-color:#e69335; float:left;"> REMOVER</div>
+                            </div>
+                            @{ for (int i = 0; i < Model.Count; i++)
+                                {
+
+                                    if (i % 2 == 0)
+                                    {
+                                        <div style="width:100%; background-color:#293C4A; display:table;">
+                                            <div class="preco" style="font-family:'San Francisco Bold'; font-size:20px; height:50px; width:90px; float:left; background-color:#293C4A;"> @Model[i].id_funcionario</div>
+                                            <div class="preco" style="font-family:'San Francisco Bold'; font-size:20px; height:50px; width:500px; float:left; background-color:#293C4A;"> @Model[i].nome</div>
+                                            <div class="preco" style="font-family:'San Francisco Bold'; font-size:20px; height:50px; width:150px; float:left; background-color:#293C4A;"> @Model[i].turno</div>
+                                            <div class="preco" style="font-family:'San Francisco Bold'; font-size:20px; height:50px; width:200px; float:left; background-color:#293C4A;"> <a href='@Url.Action("EditarFunc", "Admin", new { id = Model[i].id_funcionario})'><span style="color:#FFFFFF">Editar</span></a></div>
+                                            <div class="preco" style="font-family:'San Francisco Bold'; font-size:20px; height:50px; width:200px; float:left; background-color:#293C4A;"> <a href='@Url.Action("RemoveFunc", "Admin", new { id = Model[i].id_funcionario})'><span style="color:#ff5b6a">Remover</span></a></div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div style="width:100%; background-color:#192C3A; display:table;">
+                                            <div class="preco" style="font-family:'San Francisco Bold'; font-size:20px; height:50px; width:90px; float:left; background-color:#192C3A;"> @Model[i].id_funcionario</div>
+                                            <div class="preco" style="font-family:'San Francisco Bold'; font-size:20px; height:50px; width:500px; float:left; background-color:#192C3A;"> @Model[i].nome</div>
+                                            <div class="preco" style="font-family:'San Francisco Bold'; font-size:20px; height:50px; width:150px; float:left; background-color:#192C3A;"> @Model[i].turno</div>
+                                            <div class="preco" style="font-family:'San Francisco Bold'; font-size:20px; height:50px; width:200px; float:left; background-color:#192C3A;"> <a href='@Url.Action("EditarFunc", "Admin", new { id = Model[i].id_funcionario})'><span style="color:#FFFFFF">Editar</span></a></div>
+                                            <div class="preco" style="font-family:'San Francisco Bold'; font-size:20px; height:50px; width:200px; float:left; background-color:#192C3A;"> <a href='@Url.Action("RemoveFunc", "Admin", new { id = Model[i].id_funcionario})'><span style="color:#ff5b6a">Remover</span></a></div>
+                                        </div>
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

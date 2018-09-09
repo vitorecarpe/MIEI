@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="width:100%; background-color:#F8F8F8;">
+    <div style="height:65px; width:100%; text-align:left; background-color:#293C4A; margin-top:-50px; padding-left:15px;">
+        <a href='@Url.Action("IndexToday", "Mobile")'><img src="~/images/staffappheader.png" style="height:65px; right:40%; width:auto; margin-bottom:5vh;" /></a>
+        <a href='@Url.Action("Logout", "Mobile")'><img src="~/images/exit.png" style="height:45px; margin-top:10px; float:right; margin-right:15px; width:auto; margin-bottom:10px;" /></a>
+    </div>
+    <hr style="margin-top:10px;"/>
+    <div style="background-color:#FFFFFF; height:190px;">
+        <div style="height:70px; width:70%; text-align:left; margin-left:10px;">
+            <h5><span style="font-family:'San Francisco Bold'; color:#293C4A; font-size:25px;"> @Model.fatura.nome_servico </span></h5>
+            <h6><span style="font-family:'San Francisco Bold'; color:#777777; font-size:60px;"> @Model.fatura.hora:00 </span></h6>
+            <a><span style="font-family:'San Francisco Bold'; color:#777777; font-size:25px;"> @Model.fatura.dia.ToString("d MMM") </span></a>
+            <h5><span style="font-family:'San Francisco Bold'; color:#293C4A; font-size:18px;"> @Model.fatura.rua_cliente, @Model.fatura.porta_cliente, @Model.fatura.andar_cliente </span></h5>
+            <h5><span style="font-family:'San Francisco Bold'; color:#293C4A; font-size:18px;"> @Model.fatura.cod_postal_cliente - @Model.fatura.localidade_cliente</span></h5>
+        </div>
+        <div style="width:97%; text-align:right;">
+            <a href='@Url.Action("Direcoes", "Mobile")'><img src="~/images/map.png" style="height:100px; right:40%; width:auto; margin-bottom:5vh;" /></a>
+        </div>
+    </div>
+    <hr />
+    @{using (Html.BeginForm("RegistarServico", "Mobile", FormMethod.Post))
+        {
+    <fieldset style="width:96%;">
+        <div class="firstrow">
+            <h1><input type="time" style="width:40vw; height:40px; font-size:18px; color:#293C4A; margin-left:40px; background-color:#EEEEEE;" placeholder="Hora início" name="horainicio" required /></h1>
+            <h1><input type="time" style="width:40vw; height:40px; font-size:18px; color:#293C4A; margin-left:40px; background-color:#EEEEEE;" placeholder="Hora fim" name="horafim" required /></h1>
+            <h1><input type="tel" list="material" style="width:40vw; height:40px; font-size:18px; color:#293C4A; margin-left:40px; background-color:#EEEEEE;" placeholder="Material" name="material"></h1>
+            <datalist id="material">
+                @for (int i = 0; i < Model.material.Count; i++)
+                {
+                    <option value='@Model.material[i].nome'></option>
+                }
+            </datalist>
+            <h1><input type="tel" style="width:40vw; height:40px; font-size:18px; color:#293C4A; margin-left:40px; background-color:#EEEEEE;" placeholder="Quantidade" name="quantidade" /></h1>
+            <h1><input type="text" style="width:88.7vw; height:40px; font-size:18px; color:#293C4A; margin-left:40px; background-color:#EEEEEE;" placeholder="Ocorrências" name="ocorrencias" required /></h1>
+            <h1><input type="text" placeholder="Ocorrências" name="fatura" value='@Model.fatura.id_fatura' required hidden/></h1>
+
+        </div>
+     </fieldset>
+     <h3><input class="btn btn-lg btn-primary" style="font-family:'San Francisco Bold'; border-radius:40px; margin-left:26px; border-color:#293C4A; background-color:#293C4A; margin-top:20px; font-size:30px;" type="submit" value="REGISTAR" /></h3>
+            }
+        }
+</body>
+</html>

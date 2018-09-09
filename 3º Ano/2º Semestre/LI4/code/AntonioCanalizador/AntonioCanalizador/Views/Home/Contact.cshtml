@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Contactos";
+
+    if (Request.IsAuthenticated && User.Identity.Name!="admin")
+    {
+        Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+}
+
+<div>
+    <div style="width:100%; margin-top: 50px; background-color: #293C4A;">
+        <div class="lineseparator">CONTACTOS </div>
+        <div style="width:99%; padding-left:15.5%; text-align:left; background-color: #293C4A;">
+            <h6><a><span class="text-small" style="color:#293C4A; font-size:0px;">. </span></a></h6>
+            <div class="firstrow">
+                <div class="col-lg-3">
+                    <h3><span class="title_left">Localização</span></h3>
+                    <h6><a><span class="text-small" style="font-size:2vh;">R. Eng. Vilalobos, 10 </span></a></h6>
+                    <h6><a><span class="text-small" style="font-size:2vh;">4715-282 - Lamaçães, Braga </span></a></h6>
+                </div>
+                <div class="col-lg-3" style="margin-left:50px;">
+                    <h3><span class="title_left">Telefone</span></h3>
+                    <h6><a><span class="text-small" style="font-size:2vh;">Linha SOS: 252 202 303 </span></a></h6>
+                    <h6><a><span class="text-small" style="font-size:2vh;">Geral: 252 121 833 </span></a></h6>
+                </div>
+                <div class="col-lg-3" style="margin-left:50px;">
+                    <h3><span class="title_left">Email</span></h3>
+                    <h6><a href="mailto:geral@antoniocanalizador.pt"><span class="text-small" style="font-size:2vh;">geral@antoniocanalizador.pt</span></a></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
