@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/vitorpeixoto/Documents/Eng. Informática/3º Ano/2º Semestre/CG/projeto/parte3 (vitor_version)/generator/code/Ponto.h
+
+/Users/vitorpeixoto/Documents/Eng. Informática/3º Ano/2º Semestre/CG/projeto/parte3 (vitor_version)/generator/code/generator.cpp
+math.h
+-
+iostream
+-
+string
+-
+vector
+-
+stdio.h
+-
+stdlib.h
+-
+Ponto.h
+/Users/vitorpeixoto/Documents/Eng. Informática/3º Ano/2º Semestre/CG/projeto/parte3 (vitor_version)/generator/code/Ponto.h
+fstream
+-
+sstream
+-
+

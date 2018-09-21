@@ -1,0 +1,292 @@
+<scene>
+	<group a = "Sistema Solar">
+		<group a = "Sol" >
+			<color R="1" G="0.85" B="0" />
+			<models>
+				<model file="solinho.3d" />
+			</models>
+		</group>
+		<group a = "Planetas" >
+			<group a = "Mercúrio">
+				<translate X="1.7" Y="0.208" Z="0" />
+				<rotate angle="0.01" axisX="0" axisY="0" axisZ="1" />
+				<scale X="0.24" Y="0.24" Z="0.24" />
+				<color R="0.56" G="0.47" B="0.40" />
+				<models>
+					<model file = "planeta.3d" />
+				</models>
+			</group>
+			<group a = "Vénus">
+				<translate X="3" Y="0.18" Z="0" />
+				<rotate angle="2.64" axisX="0" axisY="0" axisZ="1" />
+				<scale X="0.37" Y="0.37" Z="0.37" />
+				<color R="1" G="0.85" B="0.65" />
+				<models>
+					<model file = "planeta.3d" />
+				</models>
+			</group>
+			<group a = "Terra">
+				<translate X="4.5" Y="0" Z="0" />
+				<rotate angle="23.5" axisX="0" axisY="0" axisZ="1" />
+				<scale X="0.58" Y="0.58" Z="0.58" />
+				<color R="0" G="0.45" B="1" />
+				<models>
+					<model file="planeta.3d" />
+				</models>
+				<group a="Luas">
+					<group a="Lua">
+						<rotate angle="-30" axisX="0" axisY="0" axisZ="1" />
+						<translate X="0.7" Y="-0.4" Z="0" />
+						<scale X="0.11" Y="0.11" Z="0.11" />
+						<color R="0.9" G="0.9" B="0.92" />
+						<models>
+							<model file="luazinha.3d" />
+						</models>
+					</group>
+				</group>
+				<group a="Órbitas">
+					<group a="Lua">
+						<rotate angle="-30" axisX="0" axisY="0" axisZ="1" />
+						<scale X="0.4" Y="0.4" Z="0.4" />
+						<color R="0.15" G="0.15" B="0.15" />
+						<models a="1">
+							<model file="orbita.3d" />
+						</models>
+					</group>
+				</group>
+			</group>
+			<group a = "Marte">
+				<translate X="6" Y="0.189" Z="0" />
+				<rotate angle="25.19" axisX="0" axisY="0" axisZ="1" />
+				<scale X="0.4" Y="0.4" Z="0.4" />
+				<color R="0.75" G="0.45" B="0.35" />
+				<models>
+					<model file = "planeta.3d" />
+				</models>
+			</group>
+			<group a = "Júpiter">
+				<translate X="9" Y="0.204" Z="0" />
+				<rotate angle="3.13" axisX="0" axisY="0" axisZ="1" />
+				<scale X="1" Y="1" Z="1" />
+				<color R="0.75" G="0.60" B="0.55" />
+				<models>
+					<model file = "planeta.3d" />
+				</models>
+				<group a="Luas">
+					<group a="Io">
+						<translate X="-0.4" Y="0" Z="0.4" />
+						<scale X="0.06" Y="0.06" Z="0.06" />
+						<color R="0.95" G="0.61" B="0" />
+						<models>
+							<model file="luazinha.3d" />
+						</models>
+					</group>
+					<group a="Europa">
+						<translate X="0.45" Y="0" Z="0.45" />
+						<scale X="0.07" Y="0.07" Z="0.07" />
+						<color R="0.95" G="0.95" B="0.95" />
+						<models>
+							<model file="luazinha.3d" />
+						</models>
+					</group>
+					<group a="Ganimedes">
+						<translate X="0.52" Y="0" Z="-0.52" />
+						<scale X="0.11" Y="0.11" Z="0.11" />
+						<color R="0.85" G="0.80" B="0.65" />
+						<models>
+							<model file="luazinha.3d" />
+						</models>
+					</group>
+					<group a="Calisto">
+						<translate X="-0.6" Y="0" Z="-0.6" />
+						<scale X="0.08" Y="0.08" Z="0.08" />
+						<color R="0.9" G="0.92" B="1" />
+						<models>
+							<model file="luazinha.3d" />
+						</models>
+					</group>
+				</group>
+				<group a="Órbitas">
+					<group a="Io">
+						<scale X="0.283" Y="0.283" Z="0.283" />
+						<color R="0.15" G="0.15" B="0.15" />
+						<models a="1">
+							<model file="orbita.3d" />
+						</models>
+					</group>
+					<group a="Europa">
+						<scale X="0.32" Y="0.32" Z="0.32" />
+						<color R="0.15" G="0.15" B="0.15" />
+						<models a="1">
+							<model file="orbita.3d" />
+						</models>
+					</group>
+					<group a="Ganímedes">
+						<scale X="0.368" Y="0.368" Z="0.368" />
+						<color R="0.15" G="0.15" B="0.15" />
+						<models a="1">
+							<model file="orbita.3d" />
+						</models>
+					</group>
+					<group a="Calisto">
+						<scale X="0.425" Y="0.425" Z="0.425" />
+						<color R="0.15" G="0.15" B="0.15" />
+						<models a="1">
+							<model file="orbita.3d" />
+						</models>
+					</group>
+				</group>
+			</group>
+			<group a = "Saturno">
+				<translate X = "12" Y = "0.524" Z = "0" />
+				<rotate angle = "26.73" axisX = "0" axisY = "0" axisZ = "1" />
+				<scale X = "0.81" Y = "0.81" Z = "0.81" />
+				<color R = "0.75" G = "0.70" B = "0.55" />
+				<models>
+					<model file = "planeta.3d" />
+				</models>
+				<group a = "Luas">
+					<group a="Titã">
+						<translate X="0.75" Y="0" Z="0.75" />
+						<scale X="0.11" Y="0.11" Z="0.11" />
+						<color R="0.85" G="0.80" B="0.35" />
+						<models>
+							<model file="luazinha.3d" />
+						</models>
+					</group>
+				</group>
+				<group a = "Anel">
+					<translate X="0" Y="0" Z="0" />
+					<scale X="0.55" Y="0.55" Z="0.55" />
+					<color R="0.55" G="0.5" B="0.35" />
+					<models>
+						<model file="anelsaturno.3d" />
+					</models>
+				</group>
+				<group a = "Órbitas">
+					<group a="Titã">
+						<scale X="0.53" Y="0.53" Z="0.53" />
+						<color R="0.15" G="0.15" B="0.15" />
+						<models a="1">
+							<model file="orbita.3d" />
+						</models>
+					</group>
+				</group>
+			</group>
+			<group a = "Urano">
+				<translate X="15.5" Y="0.216" Z="0" />
+				<rotate angle="97.77" axisX="0" axisY="0" axisZ="1" />
+				<scale X="0.69" Y="0.69" Z="0.69" />
+				<color R="0.42" G="0.70" B="0.85" />
+				<models>
+					<model file = "planeta.3d" />
+				</models>
+				<group a = "Anel">
+					<translate X="0" Y="0" Z="0" />
+					<scale X="0.4" Y="0.4" Z="0.4" />
+					<color R="0.7" G="0.75" B="0.85" />
+					<models>
+						<model file="anelurano.3d" />
+					</models>
+				</group>
+			</group>
+			<group a = "Neptuno">
+				<translate X="19" Y="0.4" Z="0" />
+				<rotate angle="28.32" axisX="0" axisY="0" axisZ="1" />
+				<scale X="0.72" Y="0.72" Z="0.72" />
+				<color R="0.1" G="0.4" B="0.95" />
+				<models>
+					<model file = "planeta.3d" />
+				</models>
+				<group a = "Luas">
+					<group a="Tritão">
+						<rotate angle="23.5" axisX="0" axisY="0" axisZ="1" />
+						<translate X="-0.72" Y="-0.32" Z="0" />
+						<scale X="0.09" Y="0.09" Z="0.09" />
+						<color R="0.85" G="0.80" B="0.65" />
+						<models>
+							<model file="luazinha.3d" />
+						</models>
+					</group>
+				</group>
+				<group a="Órbitas">
+					<group a="Tritão">
+						<rotate angle="23.5" axisX="0" axisY="0" axisZ="1" />
+						<scale X="0.4" Y="0.4" Z="0.4" />
+						<color R="0.15" G="0.15" B="0.15" />
+						<models a="1">
+							<model file="orbita.3d" />
+						</models>
+					</group>
+				</group>
+			</group>
+		</group>
+		<group a = "Órbitas">
+			<group a = "Mercúrio">
+				<translate X="-0.3" Y="0" Z="0" />
+				<rotate angle="6.3" axisX="0" axisY="0" axisZ="1" />
+				<scale X="1" Y="1" Z="0.8" />
+				<color R="0.3" G="0.3" B="0.3" />
+				<models a="1">
+					<model file="orbita.3d" />
+				</models>
+			</group>
+			<group a = "Vénus">
+				<rotate angle="3.4" axisX="0" axisY="0" axisZ="1" />
+				<scale X="1.5" Y="1.5" Z="1.5" />
+				<color R="0.3" G="0.3" B="0.3" />
+				<models a="1">
+					<model file="orbita.3d" />
+				</models>
+			</group>
+			<group a = "Terra">
+				<scale X="2.25" Y="2.25" Z="2.25" />
+				<color R="0.3" G="0.3" B="0.3" />
+				<models a="1">
+					<model file="orbita.3d" />
+				</models>
+			</group>
+			<group a = "Marte">
+				<rotate angle="1.8" axisX="0" axisY="0" axisZ="1" />
+				<scale X="3" Y="3" Z="3" />
+				<color R="0.3" G="0.3" B="0.3" />
+				<models a="1">
+					<model file="orbita.3d" />
+				</models>
+			</group>
+			<group a = "Júpiter">
+				<rotate angle="1.3" axisX="0" axisY="0" axisZ="1" />
+				<scale X="4.5" Y="4.5" Z="4.5" />
+				<color R="0.3" G="0.3" B="0.3" />
+				<models a="1">
+					<model file="orbita.3d" />
+				</models>
+			</group>
+			<group a = "Saturno">
+				<rotate angle="2.5" axisX="0" axisY="0" axisZ="1" />
+				<scale X="6" Y="6" Z="6" />
+				<color R="0.3" G="0.3" B="0.3" />
+				<models a="1">
+					<model file="orbita.3d" />
+				</models>
+			</group>
+			<group a = "Urano">
+				<rotate angle="0.8" axisX="0" axisY="0" axisZ="1" />
+				<scale X="7.75" Y="7.75" Z="7.75" />
+				<color R="0.3" G="0.3" B="0.3" />
+				<models a="1">
+					<model file="orbita.3d" />
+				</models>
+			</group>
+			<group a = "Neptuno">
+				<rotate angle="1.2" axisX="0" axisY="0" axisZ="1" />
+				<scale X="9.5" Y="9.5" Z="9.5" />
+				<color R="0.3" G="0.3" B="0.3" />
+				<models a="1">
+					<model file="orbita.3d" />
+				</models>
+			</group>
+		</group>
+	</group>
+</scene>
+

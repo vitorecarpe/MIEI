@@ -1,0 +1,10 @@
+Hoje em dia \qq um compra armas e isso não é \mb.
+Eu compro uma arma \sse estiver em perigo eminente.
+Porém ~feliz/ cerca de 1/6 da população compra armas.
+
+---------------------------
+
+comandos:
+$ flex abrev.l
+$ gcc -o abrev lex.yy.c -ll
+$ ./abrev < abrev.txt

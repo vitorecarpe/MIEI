@@ -1,0 +1,17 @@
+digraph{
+	subgraph cluster_TheWilds{
+	label="Exemplo Subgraph"
+	W_GOOGLE [shape=circle label="GOOGLE" tooltip="GOOGLE" href="http://www.google.com" fontcolor="blue"]
+	W_MUSEU [shape=circle label="Museu\nEmigrantes" tooltip="Museu\nEmigrantes" href="http://www.museu-emigrantes.org" fontcolor="blue"]
+	}
+	P_Pedro [shape=Mrecord penwidth=4 label="Pedro" tooltip="Pedro"]
+	P_Antonio [shape=Mrecord penwidth=4 label="Antonio|Canalizador" tooltip="Antonio|Canalizador"]
+	O_MIEI [shape=doublecircle label="MIEI" tooltip="MIEI"]
+	E_paredes [shape=Msquare label="Paredes\nde Coura" tooltip="Paredes\nde Coura" href="https://www.paredesdecoura.com/" fontcolor="blue"]
+	E_SaoJoao [shape=Msquare label="São João" tooltip="São João"]
+	W_GOOGLE -> W_MUSEU [ label="arco"]
+	P_Pedro -> O_MIEI [style=bold label="fez"]
+	P_Pedro -> E_paredes [style=dashed label="participou"]
+	P_Antonio -> E_SaoJoao [style=dashed]
+	label="Exemplo de um Grafo"
+}

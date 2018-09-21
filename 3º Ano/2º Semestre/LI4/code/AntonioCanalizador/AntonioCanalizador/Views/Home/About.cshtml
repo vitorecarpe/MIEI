@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Acerca de nós";
+}
+@{
+    if (Request.IsAuthenticated && User.Identity.Name != "admin")
+    {
+        Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+}
+
+
+
+<div>
+    <div style="width:100%; margin-top: 50px; background-color: #293C4A;">
+        <div class="lineseparator">ACERCA DE NÓS </div>
+        <div style="width:99%; padding-left:15.5%; text-align:left; background-color: #293C4A;">
+            <h6><a><span class="text-small" style="color:#293C4A; font-size:0px;">. </span></a></h6>
+            <div class="firstrow">
+                <div class="col-lg-3">
+                    <h3><span class="title_left">A nossa história</span></h3>
+                    <h6><a><span class="text-small" style="font-size:2vh;">
+                        Fundada em 1938 pelo prestigiado Sr. António Tomás Taveira Santos, grande benemérito da vila.
+                        Iniciou-se assim com a prestação de serviços de venda de água porta a porta, um trabalho modesto,
+                        mas honrado e muito importante para a higiene e saneamento da população.</span></a></h6>
+                    <h6><a><span class="text-small" style="font-size:2vh;">
+                        Ao longo dos anos e com o aparecimento das canalizações na casa das pessoas, o nosso serviço foi-se
+                        adaptando às necessidades dos nossos clientes, permitindo um crescimento da nossa empresa e também
+                        a familiaridade entre os nossos técnicos e os clientes.</span></a></h6>
+                    <h6><a><span class="text-small" style="font-size:2vh;">
+                        Este negócio foi passado de geração em geração, herdando sempre os ensinamentos dos antepassados.
+                        Isso é o que nos distingue e o que faz com que prestemos o melhor serviço da região, pois os nossos
+                        laços familiares estendem-se a todos os nossos clientes.</span></a></h6>
+                </div>
+                <div class="col-lg-3" style="margin-left:50px;">
+                    <h3><span class="title_left">Os nossos serviços</span></h3>
+                    <h6><a><span class="text-small" style="font-size:2vh;">
+                        Atualmente contamos com uma vasta gama de serviços ao seu dispor, sendo que a nossa oferta cresce
+                        continuamente, tal como os equipamentos que temos ao seu dispor.</span></a></h6>
+                    <h6><a><span class="text-small" style="font-size:2vh;">
+                        A qualidade do serviço é que nunca muda. Sempre a melhor prestação, com a familiaridade e preços
+                        baixos que o habituamos.</span></a></h6>
+                    <h6><a><span class="text-small" style="font-size:2vh;">
+                        Se precisa de algum produto, não hesite também em passar pela nossa loja. Temos todos os produtos
+                        de qualidade e aos preços mais baixos.</span></a></h6>
+                </div>
+                <div class="col-lg-3" style="margin-left:50px;">
+                    <h3><span class="title_left">Página Online</span></h3>
+                    <h6><a><span class="text-small" style="font-size:2vh;">
+                        Seja bem-vindo/a ao nosso novo website. Concebido com um design moderno e de fácil utilização, tornando
+                        fácil para si agendar os nossos serviços em qualquer lado e a qualquer hora.</span></a></h6>
+                    <h6><a><span class="text-small" style="font-size:2vh;">
+                        Aqui poderá criar a sua conta pessoal e agendar qualquer serviço que pretenda para a sua data e hora de
+                        preferência. Acabaram as chamadas telefónicas e o tempo de espera. Com este novo serviço, o seu agendamento
+                        é rápido e o horário estabelecido é cumprido!</span></a></h6>
+                    <h6><a><span class="text-small" style="font-size:2vh;">Para além disto, pode verificar na sua área pessoal,
+                        quais os serviços que tem agendados e o seu histórico, podendo também efetuar uma avaliação ao serviço
+                        prestado pelos nossos técnicos. Usufrua de inúmeras vantagens.
+                        </span></a></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

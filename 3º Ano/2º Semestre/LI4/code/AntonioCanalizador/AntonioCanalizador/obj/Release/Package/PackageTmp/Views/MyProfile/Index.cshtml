@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+@{
+    ViewBag.Title = "Área de Cliente";
+}
+
+<div>
+    <div style="width:100%; margin-top: 50px; background-color: #293C4A;">
+        <div style="width:99%; padding-left:15.5%;background-color: #293C4A;">
+            <div class="firstrow">
+                <div class="col-lg-5" style="background-color:#192C3A; margin-bottom:20px; padding-bottom:20px;">
+                    <div style="width:100%; height:100px;">
+                        <div class="preco" style="background-color:#192C3A; float:left; margin-top:20px; width:150px; height:150%;">
+                            <img src="@Model.foto" class="rounded-circle-profile" style="width:100%; height:100%;" />
+                        </div>
+                        <div class="preco" style="background-color:#192C3A; justify-content:flex-start; text-align:left; float:left; margin-top:20px; margin-left:30px; width:23vw; height:150%;">
+                            <a><span class="label" style="font-family:'San Francisco Bold'; text-align:left; color:#E69335; font-size:35px; line-height: 20px;">@Model.nome</span></a>
+                        </div>
+                    </div>
+                    <br />
+                    <h3><span class="label" style="color:#192C3A;">. </span></h3>
+                    <h3><span class="label" style="color:#192C3A;">. </span></h3>
+
+                    <a><span class="label" style="font-family:'San Francisco Bold'; color:#FFFFFF; font-size:20px; padding-left:10px; padding-top:150px;">Email: </span></a>
+                    <a><span class="label" style="font-family:'San Francisco'; color:#FFFFFF; font-size:20px; padding-top:150px;"> @Model.email</span></a>
+                    <h3><span class="label" style="color:#192C3A;">. </span></h3>
+                    <a><span class="label" style="font-family:'San Francisco Bold'; color:#FFFFFF; font-size:20px; padding-left:10px; padding-top:150px;">Data de nascimento: </span></a>
+                    <a><span class="label" style="font-family:'San Francisco'; color:#FFFFFF; font-size:20px; padding-top:150px;"> @Model.data_nascimento.ToShortDateString()</span></a>
+                    <h3><span class="label" style="color:#192C3A;">. </span></h3>
+                    <a><span class="label" style="font-family:'San Francisco Bold'; color:#FFFFFF; font-size:20px; padding-left:10px; padding-top:150px;">Morada: </span></a>
+                    <a><span class="label" style="font-family:'San Francisco'; color:#FFFFFF; font-size:20px; padding-top:250px;">@Model.rua, @Model.porta @Model.andar, @Model.cod_postal - @Model.localidade</span></a>
+                    <h3><span class="label" style="color:#192C3A;">. </span></h3>
+                    <a><span class="label" style="font-family:'San Francisco Bold'; color:#FFFFFF; font-size:20px; padding-left:10px; padding-top:150px;">Telemóvel: </span></a>
+                    <a><span class="label" style="font-family:'San Francisco'; color:#FFFFFF; font-size:20px; padding-top:250px;">@Model.telemovel</span></a>
+
+                </div>
+                <div class="col-lg-6" style="height:20%;">
+                    <a href='@Url.Action("Maintenance", "Home")'>
+                        <img src="https://i.imgur.com/Czl8ncF.png" style="margin-left:18px; width:200px; height:200px;" />
+                    </a>
+                    <a href='@Url.Action("VerAgendados", "MyProfile")'>
+                        <img src="https://i.imgur.com/Nb6COeJ.png" style="margin-left:18px; width:200px; height:200px;" />
+                    </a>
+                    <a href='@Url.Action("Historico", "MyProfile")'>
+                        <img src="https://i.imgur.com/EgrozBg.png" style="margin-left:18px; width:200px; height:200px;" />
+                    </a>
+                    <div class="col-lg-2">
+                        <a href='@Url.Action("Logout", "Login")'>
+                            <img src="https://i.imgur.com/AcLZZgh.png" style="margin-left:4px; margin-top:40px; width:150px; height:auto;" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

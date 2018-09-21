@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Autenticação";
+}
+
+<div>
+    <div style="width:100%; margin-top: 50px; background-color: #293C4A;">
+        <div style="width:99%; padding-left:14%;background-color: #293C4A;">
+            <div class="firstrow">
+                <div class="col-lg-10" style="height:20%;">
+                    <a href='@Url.Action("RegistarServ", "Admin")'>
+                        <img src="https://i.imgur.com/a80xD3q.png" style="margin-left:18px; width:200px; height:200px;" />
+                    </a>
+                    <a href='@Url.Action("VerServs", "Admin")'>
+                        <img src="https://i.imgur.com/O3Nz20B.png" style="margin-left:18px; width:200px; height:200px;" />
+                    </a>
+                    <a href='@Url.Action("RegistarFunc", "Admin")'>
+                        <img src="https://i.imgur.com/7mSm9Lc.png" style="margin-left:18px; width:200px; height:200px;" />
+                    </a>
+                    <a href='@Url.Action("VerFuncs", "Admin")'>
+                        <img src="https://i.imgur.com/1HYNnsP.png" style="margin-left:18px; width:200px; height:200px;" />
+                    </a>
+                    <div class="col-lg-2">
+                        <a href='@Url.Action("Logout", "Login")'>
+                            <img src="https://i.imgur.com/AcLZZgh.png" style="margin-left:4px; margin-top:40px; width:150px; height:auto;" />
+                        </a>
+                        <h3><span class="label" style="color:#192C3A;">. </span></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

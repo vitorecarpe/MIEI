@@ -1,0 +1,19 @@
+O mecanismo de transferencia de zona serve para replicar a base de dados do servidor primario para os servidores secundarios, usando o TCP, uma transferencia do tipo cliente-servidor, sendo o servidor secundario o cliente.
+O servidor secundario é responsavel por iniciar a transferencia ,apesar de ser possivel o servidor primario utilizar uma mensagem NOTIFY, para avisar o secundario de que alteraçoes foram feitas e este iniciar a sincronizaçao de imediato para manter-se atualizado.
+Numa fase inicial o servidor envia o SOA (Start Of Autority) e o cliente compara o seu SERIAL NUMBER  com o do servidor primario a fim de saber se ja tem a versao mais recente. Caso sejam iguais (versao mais recente) o cliente nao precisa de atualizar a base de dados. No entando caso sejam diferentes o cliente inicia a fase de transferencia.
+Na fase de transferencia o cliente inicia enviando uma query do tipo AXFR (Authoritive Tranfer), ao qual o servidor responde com mensagens contendo os seus resource records de todos os dominios conhecidos na zona.
+O AXFR permite replicar dados DNS entre servidores DNS. O cliente liga-se ao servidor AXFR atraves de uma porta TCP, envia o pedido AXFR, recebendo respostas com os dados requeridos e fecha a ligaçao.
+
+
+Sendo o SOA um resource record de elevada importancia para o processo de transferencia de zona, é importante entender os seus parametros.
+ -NAME SERVER- nome do servidor primario da zona
+ -EMAIL ADDRESS- endereço de email do administrador
+ -SERIAL NUMBER- serve como referencia para verificar se é necessario atualizar a base de dados, ou se ja contem a mais recente.
+ -REFRESH- numero de segundos entre cada pedido secundario-primario, ou seja cada verificaçao da base de dados.
+ -RETRY- numero de segundos de espera para reenviar o pedido, caso o servidor nao responda.
+ -EXPIRE- numero de segundos ate o cliente "desistir" de reenviar pedidos ao servidor.
+ -MINIMUM TTL- numero de segundos durante o qual o servidor guarda uma resposta negativa em cache.
+
+Exemplo
+ >dig SOA uminho.pt
+ uminho.pt.              14400   IN      SOA     dns.uminho.pt. servicos.scom.uminho.pt. 2018040101 14400 7200 1209600 300

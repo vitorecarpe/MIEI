@@ -1,0 +1,32 @@
+digraph{
+	subgraph cluster_AllTheThings{
+	subgraph cluster_WildThings{
+	label="Exemplo de Wild's e Ligas"
+	W_Google [shape=circle label="Google" tooltip="Google" href="http://www.google.com" fontcolor="blue"]
+	W_Museu [shape=circle label="Museu\nEmigrantes" tooltip="Museu\nEmigrantes" href="http://www.museu-emigrantes.org" fontcolor="blue"]
+	}
+	subgraph cluster_ThePeople{
+	label="The People"
+	P_Kiko [shape=Mrecord penwidth=4 label="{Kiko|a78416}" tooltip="{Kiko|a78416}" href="https://i.imgur.com/ICrq1Ke.png" fontcolor="blue"]
+	P_Vitor [shape=Mrecord penwidth=4 label="Vitor|Peixoto" tooltip="Vitor|Peixoto"]
+	P_Raul [shape=Mrecord penwidth=4 label="Raul" tooltip="Raul"]
+	}
+	O_nfstuk [shape=doublecircle label="Need for Speed\nTuktuk Edition" tooltip="Need for Speed\nTuktuk Edition" href="https://i.imgur.com/1KaG8KO.jpg" fontcolor="blue"]
+	O_PL [shape=doublecircle label="Processamento\nLinguagens" tooltip="Processamento\nLinguagens"]
+	E_Xadrez [shape=Msquare label="Torneio de\nXadrez" tooltip="Torneio de\nXadrez" href="https://lichess.org/" fontcolor="blue"]
+	E_paredes [shape=Msquare label="Paredes\nde Coura" tooltip="Paredes\nde Coura" href="https://www.paredesdecoura.com/" fontcolor="blue"]
+	E_pokemon [shape=Msquare label="Pokemon" tooltip="Pokemon" tooltip="Gotta catch them all"]
+	W_Google -> W_Museu [ label="busca"]
+	P_Kiko -> O_PL [style=bold label="fez"]
+	P_Kiko -> O_nfstuk [style=bold label="fez"]
+	P_Kiko -> E_Xadrez [style=dashed label="participou"]
+	P_Vitor -> O_nfstuk [style=bold]
+	P_Vitor -> O_PL [style=bold]
+	P_Vitor -> E_paredes [style=dashed]
+	P_Raul -> O_PL [style=bold]
+	P_Raul -> E_pokemon [style=dashed]
+	P_Raul -> E_paredes [style=dashed]
+	label="Isto é um subgrafo com tudo"
+	}
+	label="Um exemplo de Grafo"
+}

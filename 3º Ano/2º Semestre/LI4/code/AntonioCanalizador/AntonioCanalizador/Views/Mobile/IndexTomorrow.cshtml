@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="text-align:center; background-color:#F8F8F8;">
+    <div style="height:65px; width:100%; text-align:left; background-color:#293C4A; margin-top:-50px; padding-left:15px;">
+        <a href='@Url.Action("IndexToday", "Mobile")'><img src="~/images/staffappheader.png" style="height:65px; right:40%; width:auto; margin-bottom:5vh;" /></a>
+        <a href='@Url.Action("Logout", "Mobile")'><img src="~/images/exit.png" style="height:45px; margin-top:10px; float:right; margin-right:15px; width:auto; margin-bottom:10px;" /></a>
+    </div>
+    <div style="height:50px; width:100%; text-align:left; background-color:#429CC8;">
+        <a href='@Url.Action("IndexToday", "Mobile")'><img src="https://i.imgur.com/STmAQWz.png" style="position:absolute; margin-left:0;     width:33.3%; height:auto;" /></a>
+        <a><img src="https://i.imgur.com/4HXo8QZ.png" style="position:absolute; margin-left:33.3%; width:33.3%; height:auto;" /></a>
+        <a href='@Url.Action("IndexAll", "Mobile")'><img src="https://i.imgur.com/FyKfTQB.png" style="position:absolute; margin-left:66.6%; width:33.3%; height:auto;" /></a>
+    </div>
+
+    @{
+        for (int i = 0; i < Model.Count; i++)
+        {
+            <a href='@Url.Action("Servico", "Mobile", new { fatura = Model[i].id_fatura })'>
+                <div style="background-color:#FFFFFF; height:90px; display:flex; justify-content:center; align-items:center;">
+                    <div style="height:70px; width:90%; text-align:left; margin-left:10px;">
+                        <h5><span style="font-family:'San Francisco'; color:#000000; font-size:21px;">@Model[i].nome_servico</span></h5>
+                        <h5><span style="font-family:'San Francisco Bold'; color:#777777; font-size:37px;">@Model[i].hora:00</span></h5>
+                    </div>
+                </div>
+            </a>
+            <hr />
+        }
+    }
+
+</body>
+</html>

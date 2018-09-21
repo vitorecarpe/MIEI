@@ -1,0 +1,8 @@
+?a
+r=1
+repeat(a)
+{
+    r = r * a
+    a = a -1
+}
+!r

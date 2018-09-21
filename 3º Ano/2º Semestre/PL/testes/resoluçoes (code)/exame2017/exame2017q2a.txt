@@ -1,0 +1,8 @@
+( casa - tem -> telhado,porta,janela )
+( casa - pertence -> dono )
+( dono - é -> pessoa )
+( pessoa - exerce -> profissao )
+( pessoa : nome -> string )
+( casa : endereço -> string )
+( casa : retratada -> foto )
+( pessoa : retratada -> foto )

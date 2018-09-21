@@ -1,0 +1,74 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Editar Serviço";
+}
+
+<div>
+    <div style="width:100%; margin-top: 50px; background-color: #293C4A;">
+        <div style="width:99%; padding-left:15.5%;background-color: #293C4A;">
+            <div class="firstrow">
+                <div class="col-lg-4" style="margin-top:20px;">
+                    @{ using (Html.BeginForm("SaveServ", "Admin", FormMethod.Post))
+                        {
+                            @Html.ValidationSummary(true)
+                            <h3><span class="title" style="color:#E69335; font-size:3vh;"> @Model.nome </span></h3>
+
+                            <h3><span class="label">Nome </span></h3>
+                            <input type="text" value='@Model.nome' style="font-size:1rem; overflow:auto;  width:15vw;" name="nome" id="nome" required />
+
+                            <h3><span class="label">Descrição </span></h3>
+                            <input type="text" value='@Model.descricao' style="font-size:1rem; overflow:auto; width:36vw;" name="descricao" id="descricao" required />
+
+                            <h3><span class="label">Disponibilidade 24/7 </span></h3>
+                            <input type="tel" list="disponibilidade" pattern="[1-3]{1}" value='@Model.disponibilidade' style="font-size:1rem; float:left; background-color:#192C3A; color:#FFFFFF; width:10%;" name="disponibilidade">
+                            <datalist id="disponibilidade">
+                                <option value="0">
+                                <option value="1">
+                            </datalist>
+
+                            <h6><span class="label" style="color:#192C3A;">. </span></h6>
+                            <h6><span class="label" style="color:#192C3A;">. </span></h6>
+                            <h3><span class="label">Foto</span></h3>
+                            <a target="_blank" href='https://imgur.com/upload'><span class="sublabel">(Upload aqui. Inserir link no campo)</span></a>
+                            <br /> <input type="text" value='@Model.foto' style="font-size:1rem; overflow:auto;  width:36vw;" name="foto" id="foto" required />
+
+                            <h3><span class="label">PNP (€) </span></h3>
+                            <input type="text" value='@Model.preco_normal_p' style="font-size:1rem; overflow:auto; width:5vw;" name="preco_normal_p" id="preco_normal_p" required />
+
+                            <h3><span class="label">PNR (€) </span></h3>
+                            <input type="text" value='@Model.preco_normal_r' style="font-size:1rem; overflow:auto; width:5vw;" name="preco_normal_r" id="preco_normal_r" required />
+
+                            <h3><span class="label">PEP (€) </span></h3>
+                            <input type="text" value='@Model.preco_extra_p' style="font-size:1rem; overflow:auto; width:5vw;" name="preco_extra_p" id="preco_extra_p" required />
+
+                            <h3><span class="label">PER (€)</span></h3>
+                            <input type="text" value='@Model.preco_extra_r' style="font-size:1rem; overflow:auto; width:5vw;" name="preco_extra_r" id="preco_extra_r" required />
+
+                            <h3><span class="label">Duração prevista (horas) </span></h3>
+                            <input type="text" value='@Model.duracaoprevista' style="font-size:1rem; overflow:auto; width:5vw;" name="duracaoprevista" id="duracaoprevista" required />
+
+
+                            <input type="text" name="id_servico" value="@Model.id_servico" required hidden />
+                            <h2><span class="label" style="color:#192C3A;">. </span></h2>
+
+                            <input type="submit" value="GUARDAR" class="btn btn-primary btn-lg" />
+                            <h3><span class="label" style="color:#192C3A;">. </span></h3>
+
+                        }
+                    }
+                </div>
+
+
+                <div class="col-lg-2" style="margin-top:-20px;">
+                    <a href='@Url.Action("VerServs", "Admin")'>
+                        <img src="https://i.imgur.com/fVAgrFb.png" style="margin-left:4px; margin-top:40px; width:150px; height:auto;" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

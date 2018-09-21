@@ -1,0 +1,3 @@
+/Users/vitorpeixoto/Documents/Eng. Informática/3º Ano/2º Semestre/CG/projeto/parte2 (vitor_version)/generator/build/CMakeFiles/rebuild_cache.dir
+/Users/vitorpeixoto/Documents/Eng. Informática/3º Ano/2º Semestre/CG/projeto/parte2 (vitor_version)/generator/build/CMakeFiles/edit_cache.dir
+/Users/vitorpeixoto/Documents/Eng. Informática/3º Ano/2º Semestre/CG/projeto/parte2 (vitor_version)/generator/build/CMakeFiles/Generator.dir

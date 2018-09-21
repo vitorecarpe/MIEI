@@ -21,8 +21,6 @@ ssize_t readln(int fildes, char* buffer, size_t nbytes) {
 	return i;
 }
 
-
-
 void terminate() {
 	printf("%d esteve ativo durante %d segundos!\n", pidch, ok * 3);
 	kill(pidch, SIGKILL);

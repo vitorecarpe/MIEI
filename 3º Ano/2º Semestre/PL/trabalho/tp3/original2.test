@@ -1,0 +1,19 @@
+digraph {
+    subgraph_TheWilds{
+        label="Exemplo Subgraph"
+        W_GOOGLE [label="GOOGLE" href="http://www.google.com"]
+        W_MUSEU [label="Museu\nEmigrantes" href="http://www.museu-emigrantes.org"]
+    }
+    P_Pedro [label="Pedro"]
+    P_Antonio [label="Antonio|Canalizador"]
+    O_MIEI [label="MIEI"]
+    E_paredes [label="Paredes\nde Coura" href="https://www.paredesdecoura.com/"]
+    E_SaoJoao [label="São João"]
+
+    W_GOOGLE liga W_MUSEU [label="arco"]
+    P_Pedro fez O_MIEI [label="fez"]
+    P_Pedro participou E_paredes [label="participou"]
+    P_Antonio participou E_SaoJoao []
+
+    label="Exemplo de um Grafo"
+}

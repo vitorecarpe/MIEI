@@ -1,0 +1,81 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "António Canalizador";
+}
+
+<div>
+    <div id="myCarousel" class="carousel" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="~/images/banner.png" style="width:100%;">
+                <div class="containerheader">
+                    <div class="carousel-caption text-left">
+                        <p><span class="titleheader">A equipa da António Canalizador está preparada para atender qualquer emergência na sua casa, a qualquer hora do dia!</span></p>
+                        <p><a class="btn btn-lg btn-primary" href='@Url.Action("Index", "Login")' role="button">Registe-se já!</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lineseparator">OS NOSSOS SERVIÇOS</div>
+
+    <div style="width: 100%; background-color: #293C4A;">
+        <div style="width: 90%; background-color: #293C4A;">
+            <div class="firstrow" style="padding-left: 17%; padding-right:5%">
+                <div class="col-lg-3">
+                    <img class="rounded-circle" src="~/images/desentupimentos.png" alt="Generic placeholder image" width="100" height="100">
+                    <h2><span class="title" style="color:#E69335;">DESENTUPIMENTOS</span></h2>
+                    @foreach(var std in (List<string>)ViewData["desentupimentos"])
+                    {
+                        <p><a><span class="text-small"> > @std </span></a></p>
+                    }
+                </div>
+                <div class="col-lg-3">
+                    <img class="rounded-circle" src="~/images/portas.png" alt="Generic placeholder image" width="100" height="100">
+                    <h2><span class="title" style="color:#E69335;">PORTAS E FECHADURAS</span></h2>
+                    @foreach (var std in (List<string>)ViewData["portas"])
+                    {
+                        <p><a><span class="text-small"> > @std </span></a></p>
+                    }
+                </div>
+                <div class="col-lg-3">
+                    <img class="rounded-circle" src="~/images/canalizacao.png" alt="Generic placeholder image" width="100" height="100">
+                    <h2><span class="title" style="color:#E69335;">CANALIZAÇÃO</span></h2>
+                    @foreach (var std in (List<string>)ViewData["canalizacao"])
+                    {
+                        <p><a><span class="text-small"> > @std </span></a></p>
+                    }
+                </div>
+                <div class="col-lg-3">
+                    <img class="rounded-circle" src="~/images/furos.png" alt="Generic placeholder image" width="100" height="100">
+                    <h2><span class="title" style="color:#E69335;">FUROS DE ÁGUA</span></h2>
+                    @foreach (var std in (List<string>)ViewData["furosdagua"])
+                    {
+                        <p><a><span class="text-small"> > @std </span></a></p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 100%; background-color: #f2f4f9;">
+        <div class="lineseparator">PORQUÊ NÓS</div>
+
+        <div class="row featurette" style="width:99%;">
+            <div class="col-md-5" style="margin-left:15.4%; margin-top:40px;">
+
+                <p><span class="text-normal">> Serviço confiável e recomendado desde 1938.</span></p>
+                <p><span class="text-normal">> Disponível 24 horas por dia, 7 dias por semana, 365 dias por ano.</span></p>
+                <p><span class="text-normal">> Técnicos mais experientes da zona.</span></p>
+                <p><span class="text-normal">> Serviço rápido e limpo.</span></p>
+                <p><span class="text-normal">> Possibilidade de efetuar agendamento online.</span></p>
+            </div>
+            <div class="col-md-5">
+                <img src="~/images/ribbons.png" style="width:65%; margin-top:70px;">
+                <p><a class="btn btn-lg btn-primary" style="margin-top:50px;"  href='@Url.Action("Index", "Login")' role="button">Registe-se já!</a></p>
+            </div>
+        </div>
+    </div>
+</div>

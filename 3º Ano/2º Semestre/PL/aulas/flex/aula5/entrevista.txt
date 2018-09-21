@@ -1,0 +1,6 @@
+EU=Ana Gomes
+ELE=José Mário Monteiro
+EU: Como se chama?
+Ele: José.
+Eu: onde
+eLE: quando

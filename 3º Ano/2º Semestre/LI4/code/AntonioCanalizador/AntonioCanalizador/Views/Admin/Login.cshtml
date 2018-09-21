@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Autenticação";
+}
+
+<div>
+    <div style="width:100%; margin-top: 50px; background-color: #293C4A;">
+        <div style="width:99%; padding-left:15%;background-color: #293C4A;">
+            <div class="firstrow" style="padding-left: 10%; padding-right:5%">
+                <div class="col-lg-5">
+                    <h3><span class="title" style="color:#E69335; font-size:4vh;">GESTÃO DO SISTEMA</span></h3>
+                    <h3><span class="title" style="color:#EEEEEE; font-family:'San Francisco'; font-size:2.6vh;">Reservado à administração.</span></h3>
+                    <h3><span class="label" style="color:#192C3A;">. </span></h3>
+                    <div style="width:100%; text-align:left;">
+                    <img src="https://www.materialui.co/materialIcons/action/lock_white_192x192.png" style="width:25%; height:auto; text-align:center;" >
+                        </div>
+                </div>
+                @if (!Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("LoginButton", "Admin", FormMethod.Post))
+                    {
+                        @Html.ValidationSummary(false)
+                        <div class="col-lg-12" padding-right="40px">
+                            <fieldset>
+                                <h3><span class="label">ID</span></h3>
+                                <h3><input type="login" name="id" required /></h3>
+                                <h3><span class="label">Senha</span></h3>
+                                <h3><input type="password" name="senha" required /></h3>
+                            </fieldset>
+                            <h3><input class="btn btn-lg btn-primary" style="margin-top:20px;" type="submit" value="Entrar" /></h3>
+                            <h3><span class="label" style="color:#192C3A;">. </span></h3>
+                        </div>
+                    }
+                }
+                else
+                {
+                    @Url.Action("Index", "MyProfile")
+                }
+            </div>
+        </div>
+    </div>
+</div>

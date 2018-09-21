@@ -1,0 +1,8 @@
+?a
+?b
+c = 1
+repeat(b)
+{
+    c = c*a
+}
+!c

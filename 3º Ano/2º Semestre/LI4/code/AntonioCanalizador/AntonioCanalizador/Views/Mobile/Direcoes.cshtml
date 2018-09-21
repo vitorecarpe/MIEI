@@ -1,0 +1,58 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script type='text/javascript'>
+        var map, directionsManager;
+        function GetMap() {
+            map = new Microsoft.Maps.Map('#myMap', {
+                credentials: 'Ak-Cm1SBlbypOjyePZo7mqFbFLwlmUNYARJWZegDdnaOlu9qm-f2FN0twDwnfLm_'
+            });
+            //Load the directions module.
+            Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
+                //Create an instance of the directions manager.
+                directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+                //Specify where to display the route instructions.
+                directionsManager.setRenderOptions({ itineraryContainer: '#directionsItinerary' });
+                //Specify the where to display the input panel
+                directionsManager.showInputPanel('directionsPanel');
+            });
+        }
+        function GetDirections() {
+            //Clear any previously calculated directions.
+            directionsManager.clearAll();
+            directionsManager.clearDisplay();
+            //Create waypoints to route between.
+            var start = new Microsoft.Maps.Directions.Waypoint({ address: document.getElementById('fromTbx').value });
+            directionsManager.addWaypoint(start);
+            var end = new Microsoft.Maps.Directions.Waypoint({ address: document.getElementById('toTbx').value });
+            directionsManager.addWaypoint(end);
+            //Calculate directions.
+            directionsManager.calculateDirections();
+        }
+    </script>
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[YOUR_BING_MAPS_KEY]' async defer></script>
+</head>
+<body>
+    <div style="height:65px; width:100%; text-align:left; background-color:#293C4A; margin-top:-50px; padding-left:15px;">
+        <a href='@Url.Action("IndexToday", "Mobile")'><img src="~/images/staffappheader.png" style="height:65px; right:40%; width:auto; margin-bottom:5vh;" /></a>
+        <a href='@Url.Action("Logout", "Mobile")'><img src="~/images/exit.png" style="height:45px; margin-top:10px; float:right; margin-right:15px; width:auto; margin-bottom:10px;" /></a>
+    </div>
+    <div id="myMap" style="position:relative;width:100%;height:80%;"></div>
+
+    <div style="margin-top:10px;">
+        <a><input type="tel" style="width:40vw; height:40px; font-size:18px; color:#293C4A; margin-left:40px; background-color:#DEE0EA;" placeholder="Origem" id="fromTbx" required /></a>
+        <a><input type="tel" style="width:40vw; height:40px; font-size:18px; color:#293C4A; margin-left:10px; background-color:#DEE0EA;" placeholder="Destino" id="toTbx" required /></a>
+
+        <div style="width:100%; text-align:center; margin-top:10px;">
+            <input class="btn btn-lg btn-primary" style="width:35%;" onclick="GetDirections()" value="Calcular" />
+        </div>
+    </div>
+</body>
+</html>

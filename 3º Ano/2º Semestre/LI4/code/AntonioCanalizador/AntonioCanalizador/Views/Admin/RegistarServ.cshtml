@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Registar serviço";
+}
+<div>
+    <div style="width:100%; margin-top: 50px; background-color: #293C4A;">
+        <div style="width:99%; padding-left:15%;background-color: #293C4A;">
+
+
+            @if (Request.IsAuthenticated && User.Identity.Name == "admin")
+            {
+                using (Html.BeginForm("RegServ", "Admin", FormMethod.Post))
+                {
+                    @Html.ValidationSummary(true)
+                    <div class="firstrow">
+                        <div class="col-lg-6">
+
+                            <div class="firstrow">
+                                <div class="col-lg-6">
+                                    <h3><span class="label">Nome</span></h3>
+                                    <input type="text" style="font-size:1rem; width:15vw;" name="nome" id="nome" required />
+
+                                    <h3><span class="label">Descrição</span></h3>
+                                    <input type="text" style="font-size:1rem; width:15vw;" name="descricao" id="descricao" required />
+
+                                    <h3><span class="label">Disponibilidade 24/7 (1 ou 0)</span></h3>
+                                    <input type="text" pattern="[0-1]{1}" style="font-size:1rem; background-color:#192C3A; width:15vw;" name="disponibilidade" id="disponibilidade" required />
+                                    
+                                    <h3><span class="label">Duração prevista</span></h3>
+                                    <input type="text" style="font-size:1rem; background-color:#192C3A; width:15vw;" name="duracaoprevista" id="duracaoprevista" required />
+
+                                    <h3><span class="label">Foto</span></h3>
+                                    <a target="_blank" href='https://imgur.com/upload'><span class="sublabel">(Upload aqui. Inserir link no campo. Dimensões: 1500x1000)</span></a>
+                                    <br /> <input type="text" style="font-size:1rem; overflow:auto;  width:15vw;" name="foto" id="foto" required />
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <h3><span class="label">Preço em horário normal na 1ª hora</span></h3>
+                                    <input type="text" style="font-size:1rem; background-color:#192C3A; width:15vw;" name="preco_normal_p" id="preco_normal_p" required />
+
+                                    <h3><span class="label">Preço em horário normal nas restantes horas</span></h3>
+                                    <input type="text" style="font-size:1rem; background-color:#192C3A; width:15vw;" name="preco_normal_r" id="preco_normal_r" required />
+
+                                    <h3><span class="label">Preço em horário extra na 1ª hora</span></h3>
+                                    <input type="text" style="font-size:1rem; background-color:#192C3A; width:15vw;" name="preco_extra_p" id="preco_extra_p" required />
+
+                                    <h3><span class="label">Preço em horário extra nas restantes horas</span></h3>
+                                    <input type="text" style="font-size:1rem; background-color:#192C3A; width:15vw;" name="preco_extra_r" id="preco_extra_r" required />
+
+                                    <h3><span class="label">Tipo</span></h3>
+                                    <a><span class="sublabel">(1-Desentupimentos; 2-Portas; 3-Canalização; 4-Furos)</span></a>
+                                    <br /> <input type="text" pattern="[1-4]{1}" style="font-size:1rem; overflow:auto;  width:15vw;" name="id_tipo" id="id_tipo" required />
+                                </div>
+
+                            </div>
+
+                            <input type="submit" value="REGISTAR" style="margin-top:20px; margin-bottom:20px;" class="btn btn-primary btn-lg" />
+
+                        </div>
+                        <div class="col-lg-2" style="margin-top:0px;">
+                            <a href='@Url.Action("Home", "Admin")'>
+                                <img src="https://i.imgur.com/fVAgrFb.png" style="margin-left:4px; margin-top:40px; width:150px; height:auto;" />
+                            </a>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                @Url.Action("Index", "MyProfile")
+            }
+        </div>
+    </div>
+</div>

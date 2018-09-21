@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\KIKO\\Desktop\\GIT\\EngenhariaInformatica\\3º\ Ano\\2º\ Semestre\\LI4\\Code\\AntonioCanalizador\\AntonioCanalizador\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\KIKO\\Desktop\\GIT\\EngenhariaInformatica\\3º\ Ano\\2º\ Semestre\\LI4\\Code\\AntonioCanalizador\\AntonioCanalizador\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DataContext-Web.config Connection String" description="" value="data source=PC-AJ9Q91T0-KIK;initial catalog=AntonioCanalizador;persist security info=True;user id=Antonio;password=antonio;MultipleActiveResultSets=True;App=EntityFramework" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\KIKO\\Desktop\\GIT\\EngenhariaInformatica\\3º\ Ano\\2º\ Semestre\\LI4\\Code\\AntonioCanalizador\\AntonioCanalizador\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataContext']/@connectionString" />
+  </parameter>
+</parameters>

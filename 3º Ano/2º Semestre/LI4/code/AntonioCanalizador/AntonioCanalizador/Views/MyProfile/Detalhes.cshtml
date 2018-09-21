@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+@{
+    ViewBag.Title = string.Concat("Detalhes - ID: ", @Model.id_fatura);
+    var horai = Model.hora_inicio.ToString();
+    var horaf = Model.hora_fim.ToString();
+}
+
+<div>
+    <div style="width:100%; margin-top: 50px; background-color: #293C4A;">
+        <div style="width:99%; padding-left:15.5%;background-color: #293C4A;">
+            <div class="firstrow">
+                <div class="col-lg-4" style="background-color:#192C3A; margin-bottom:20px; padding-bottom:20px;">
+                    <a><span class="label" style="font-family:'San Francisco Bold'; margin-left:10px; color:#E69335; font-size:35px;">Informação</span></a>
+                    <h3><span class="label" style="color:#192C3A;">. </span></h3>
+
+                    <a><span class="label" style="font-family:'San Francisco Bold'; color:#FFFFFF; font-size:20px; padding-left:10px; padding-top:150px;">Serviço: </span></a>
+                    <a><span class="label" style="font-family:'San Francisco'; color:#FFFFFF; font-size:20px; padding-top:150px;"> @Model.nome_servico</span></a>
+                    <footer>.</footer>
+                    <a><span class="label" style="font-family:'San Francisco Bold'; color:#FFFFFF; font-size:20px; padding-left:10px; padding-top:150px;">Funcionário: </span></a>
+                    <a><span class="label" style="font-family:'San Francisco'; color:#FFFFFF; font-size:20px; padding-top:150px;"> @Model.nome_funcionario</span></a>
+                    <footer>.</footer>
+                    <a><span class="label" style="font-family:'San Francisco Bold'; color:#FFFFFF; font-size:20px; padding-left:10px; padding-top:150px;">Dia: </span></a>
+                    <a><span class="label" style="font-family:'San Francisco'; color:#FFFFFF; font-size:20px; padding-top:250px;">@Model.dia.ToShortDateString()</span></a>
+                    <footer>.</footer>
+                    <a><span class="label" style="font-family:'San Francisco Bold'; color:#FFFFFF; font-size:20px; padding-left:10px; padding-top:150px;">Duração: </span></a>
+                    <a><span class="label" style="font-family:'San Francisco'; color:#FFFFFF; font-size:20px; padding-top:250px;">@horai.Remove(horai.Length - 3, 3) - @horaf.Remove(horai.Length - 3, 3)</span></a>
+                    <footer>.</footer>
+                    <a><span class="label" style="font-family:'San Francisco Bold'; color:#FFFFFF; font-size:20px; padding-left:10px; padding-top:150px;">Preço total: </span></a>
+                    <a><span class="label" style="font-family:'San Francisco'; color:#FFFFFF; font-size:20px; padding-top:250px;">@Model.preco_total €</span></a>
+                    <footer>.</footer>
+                    <a><span class="label" style="font-family:'San Francisco Bold'; color:#FFFFFF; font-size:20px; padding-left:10px; padding-top:150px;">Preço mão-de-obra: </span></a>
+                    <a><span class="label" style="font-family:'San Francisco'; color:#FFFFFF; font-size:20px; padding-top:250px;">@Model.preco_trabalho €</span></a>
+                    <footer>.</footer>
+                    <a><span class="label" style="font-family:'San Francisco Bold'; color:#FFFFFF; font-size:20px; padding-left:10px; padding-top:150px;">Preço material: </span></a>
+                    <a><span class="label" style="font-family:'San Francisco'; color:#FFFFFF; font-size:20px; padding-top:250px;">@Model.preco_materiais €</span></a>
+                    <footer>.</footer>
+                    <a><span class="label" style="font-family:'San Francisco Bold'; color:#FFFFFF; font-size:20px; padding-left:10px; padding-top:150px;">Referência MB: </span></a>
+                    <a><span class="label" style="font-family:'San Francisco'; color:#FFFFFF; font-size:20px; padding-top:250px;">11312/@Model.ref_pagamento</span></a>
+
+                </div>
+                <div class="col-lg-6" style="height:20%;">
+                    @{ using (Html.BeginForm("Comentar", "MyProfile", FormMethod.Post))
+                        {
+                            @Html.ValidationSummary(true)
+                            <h3><span class="label">Escreva (ou atualize) o seu comentário: </span></h3>
+                            <input type="text" placeholder='@Model.comentarios' style="font-size:1rem; overflow:auto;  width:40vw;" name="comentario" id="nome" required />
+                            <footer>.</footer>
+                            <h3><span class="label">Avalie o serviço </span></h3>
+                            <input type="tel" list="estrelas" placeholder='@Model.estrelas' style="float:left; background-color:#192C3A; color:#FFFFFF; width:10%;" name="estrelas" required>
+                            <datalist id="estrelas">
+                                <option value="1">
+                                <option value="2">
+                                <option value="3">
+                                <option value="4">
+                                <option value="5">
+                            </datalist>
+                            <input type="text" name="id_fatura" value="@Model.id_fatura" required hidden />
+
+                            <input type="submit" value="COMENTAR" style="margin-top:-5px; margin-left:140px; " class="btn btn-primary btn-lg" />
+
+                        }
+                    }
+
+
+                    <div class="col-lg-2" style="margin-top:20vh;">
+                        <a href='@Url.Action("Historico", "MyProfile")'>
+                            <img src="https://i.imgur.com/fVAgrFb.png" style="margin-left:4px; margin-top:40px; width:150px; height:auto;" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

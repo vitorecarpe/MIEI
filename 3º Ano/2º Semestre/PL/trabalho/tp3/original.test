@@ -1,0 +1,41 @@
+digraph {
+    subgraph_AllTheThings {
+        subgraph_WildThings {
+            label="Exemplo de Wild's e Ligas"
+            W_Google    [label="Google" 
+                        href="http://www.google.com"]
+            W_Museu     [label="Museu\nEmigrantes"
+                        href="http://www.museu-emigrantes.org"]
+        }
+        subgraph_ThePeople {
+            label="The People"
+            P_Kiko      [label="{Kiko|a78416}" href="https://i.imgur.com/ICrq1Ke.png"]
+            P_Vitor     [label="Vitor|Peixoto"]
+            P_Raul      [label="Raul"]
+        }
+
+        O_nfstuk    [label="Need for Speed\nTuktuk Edition" 
+                    href="https://i.imgur.com/1KaG8KO.jpg"]
+        O_PL        [label="Processamento\nLinguagens"]
+        E_Xadrez    [label="Torneio de\nXadrez" 
+                    href="https://lichess.org/"]
+        E_paredes   [label="Paredes\nde Coura" 
+                    href="https://www.paredesdecoura.com/"]
+        E_pokemon   [label="Pokemon" tooltip="Gotta catch them all"]
+        
+        W_Google liga W_Museu [label="busca"]
+        
+        P_Kiko fez O_PL [label="fez"]
+        P_Kiko fez O_nfstuk [label="fez"]
+        P_Kiko participou E_Xadrez [label="participou"]
+        P_Vitor fez O_nfstuk []
+        P_Vitor fez O_PL []
+        P_Vitor participou E_paredes []
+        P_Raul fez O_PL []
+        P_Raul participou E_pokemon []
+        P_Raul participou E_paredes []
+
+        label="Isto é um subgrafo com tudo"
+    }
+    label="Um exemplo de Grafo"
+}

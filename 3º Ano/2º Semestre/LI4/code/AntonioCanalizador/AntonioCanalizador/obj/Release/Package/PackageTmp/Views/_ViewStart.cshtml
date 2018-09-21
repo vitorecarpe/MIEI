@@ -1,0 +1,10 @@
+﻿@{
+    if (Request.IsAuthenticated && User.Identity.Name!="admin")
+    {
+        Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
