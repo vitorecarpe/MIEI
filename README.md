@@ -2,7 +2,7 @@
 
 ## Integrated Master's Degree at University of Minho
 
-This cycle of studies aims to prepare engineers with abilities in all phases of software development, namely the ones related to analysis, design, implementation and installation of software systems.
+This repository stores all the files and projects developed while taking my course in Computer Software Engineering complemented with a Master's Degree specialized in Software Systems Engineering and Data Science.
 
 ## Content
 
@@ -58,9 +58,6 @@ This cycle of studies aims to prepare engineers with abilities in all phases of 
     - [Artificial Neural Networks](https://github.com/VitorPeixoto97/Artificial-Neural-Networks) - Wine data analysis through a connectionist system using R.
 
 * **4th year  ← I'm here!**
-
-Master's Degree specialized in Software Systems Engineering and Data Science.
-
   - Requirements Engineering
   - Software Archictures
   - Software Process Management
