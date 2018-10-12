@@ -47,7 +47,7 @@ This cycle of studies aims to prepare engineers with abilities in all phases of 
   - Distributed Systems
   - [Computer Communications](https://github.com/VitorPeixoto97/Reverse-Proxy-Server) - Reverse Proxy Server balancing service developed in Java.
   - [Computer Graphics](https://github.com/VitorPeixoto97/Solar-System) - 3D motion Solar System developed with OpenGL.
-  - [Software Labs IV](https://github.com/VitorPeixoto97/Antonio Canalizador) - Plumbing services website developed in ASP.NET MVC.
+  - [Software Labs IV](https://github.com/VitorPeixoto97/Antonio-Canalizador) - Plumbing services website developed in ASP.NET MVC.
   - Languages Processing
     - [Part I](https://github.com/VitorPeixoto97/GAWK-Text-Filter) - Freeling notation text files filtered with GAWK.
     - [Part II](https://github.com/VitorPeixoto97/Markdown-Lookalike-Notation) - Compile LaTeX documents using a Markdown lookalike notation through Flex.
