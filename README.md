@@ -56,12 +56,10 @@ This cycle of studies aims to prepare engineers with abilities in all phases of 
   - Knowledge Representation and Reasoning Systems
     - [Knowledge Representation](https://github.com/VitorPeixoto97/Health-Care-Knowledge-Representation) - Health care system representation using Prolog.
     - [Artificial Neural Networks](https://github.com/VitorPeixoto97/Artificial-Neural-Networks) - Wine data analysis through a connectionist system using R.
-    
-* **← I'm here!**
 
+* **4th year  ← I'm here!**
 Master's Degree specialized in Software Systems Engineering and Data Science.
 
-* **4th year**
   - Requirements Engineering
   - Software Archictures
   - Software Process Management
