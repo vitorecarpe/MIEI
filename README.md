@@ -57,7 +57,7 @@ This cycle of studies aims to prepare engineers with abilities in all phases of 
     - [Knowledge Representation](https://github.com/VitorPeixoto97/Health-Care-Knowledge-Representation) - Health care system representation using Prolog.
     - [Artificial Neural Networks](https://github.com/VitorPeixoto97/Artificial-Neural-Networks) - Wine data analysis through a connectionist system using R.
     
-* <- I'm here!
+* **← I'm here!**
 
 * **4th year**
 
