@@ -59,6 +59,18 @@ This cycle of studies aims to prepare engineers with abilities in all phases of 
     
 * **← I'm here!**
 
-* **4th year**
+Master's Degree specialized in Software Systems Engineering and Data Science.
 
+* **4th year**
+  - Requirements Engineering
+  - Software Archictures
+  - Automatic Learning I
+  - Advanced Computing
+  - NoSQL Databases
+  - Data Mining
+  - Software Process Management
+  - Web Engineering
+  
 * **5th year**
+  - Master's Project
+  - Master's Thesis
