@@ -6,7 +6,7 @@ This cycle of studies aims to prepare engineers with abilities in all phases of 
 
 ## Content
 
-* **1st year**:
+* **1st year**
   - Calculus
   - Funcional Programming
   - [Software Labs I](https://github.com/VitorPeixoto97/Sokoban) - Sokoban game developed in Haskell.
@@ -20,7 +20,7 @@ This cycle of studies aims to prepare engineers with abilities in all phases of 
   - Logic
   - Topics in Modern Physics
 
-* **2nd year**:
+* **2nd year**
   - Algorithms and Complexity
   - Applied Statistics
   - Computer Architctures
@@ -36,7 +36,7 @@ This cycle of studies aims to prepare engineers with abilities in all phases of 
   - Program Calculus
   - Computing with R
 
-* **3rd year**:
+* **3rd year**
   - Numerical Methods and Nonlinear Optimization
   - [Computer Networks](https://github.com/VitorPeixoto97/Computer-Networking-Reports) - Set of reports developed during the semester.
   - [Databases](https://github.com/VitorPeixoto97/MuDBa) - Musical database developed with MySQL.
@@ -56,3 +56,9 @@ This cycle of studies aims to prepare engineers with abilities in all phases of 
   - Knowledge Representation and Reasoning Systems
     - [Knowledge Representation](https://github.com/VitorPeixoto97/Health-Care-Knowledge-Representation) - Health care system representation using Prolog.
     - [Artificial Neural Networks](https://github.com/VitorPeixoto97/Artificial-Neural-Networks) - Wine data analysis through a connectionist system using R.
+    
+* <- I'm here!
+
+* **4th year**
+
+* **5th year**
