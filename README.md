@@ -64,14 +64,14 @@ Master's Degree specialized in Software Systems Engineering and Data Science.
 * **4th year**
   - Requirements Engineering
   - Software Archictures
-  - Automatic Learning I
-  - Advanced Computing
-  - NoSQL Databases
-  - Data Mining
   - Software Process Management
   - Web Engineering
+  - Automatic Learning I
+  - Advanced Computing
   - Automatic Learning II
   - Big Data Management
+  - NoSQL Databases
+  - Data Mining
   - Software Engineering Labs
   
 * **5th year**
