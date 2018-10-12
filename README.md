@@ -58,6 +58,7 @@ This cycle of studies aims to prepare engineers with abilities in all phases of 
     - [Artificial Neural Networks](https://github.com/VitorPeixoto97/Artificial-Neural-Networks) - Wine data analysis through a connectionist system using R.
 
 * **4th year  ← I'm here!**
+
 Master's Degree specialized in Software Systems Engineering and Data Science.
 
   - Requirements Engineering
