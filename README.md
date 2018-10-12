@@ -33,9 +33,26 @@ This cycle of studies aims to prepare engineers with abilities in all phases of 
     - [Part II](https://github.com/VitorPeixoto97/Wikipedia-Parser-II) - Wikipedia metadata parser in Java.
   - [Object Oriented Programming](https://github.com/VitorPeixoto97/UMeR) - UBER lookalike app developed in Java.
   - [Operating Systems](https://github.com/VitorPeixoto97/Notebook-Processor) - Text file processing through pipes in C.
-  - Program Calculation
+  - Program Calculus
   - Computing with R
 
 * **3rd year**:
-  - [Software Systems Development & Databases](https://github.com/) - a Java application that manages the schedule of practical classes in a given major.
-  - [Software Labs IV](https://github.com/) - a babysitting system developed entirely with Microsoft Tools.
+  - Numerical Methods and Nonlinear Optimization
+  - [Computer Networks](https://github.com/VitorPeixoto97/Computer-Networking-Reports) - Set of reports developed during the semester.
+  - [Databases](https://github.com/VitorPeixoto97/MuDBa) - Musical database developed with MySQL.
+  - Deterministic Models of Operational Research
+  - Software Systems Development
+    - [Membership Management App](https://github.com/VitorPeixoto97/) - Simple app developed in Java.
+    - [Schedule Allocation Management App](https://github.com/VitorPeixoto97/Schedule-Allocation-Management) - Modelation and development of a management system in Java.
+  - Distributed Systems
+  - [Computer Communications](https://github.com/VitorPeixoto97/Reverse-Proxy-Server) - Reverse Proxy Server balancing service developed in Java.
+  - [Computer Graphics](https://github.com/VitorPeixoto97/Solar-System) - 3D motion Solar System developed with OpenGL.
+  - [Software Labs IV](https://github.com/VitorPeixoto97/Antonio Canalizador) - Plumbing services website developed in ASP.NET MVC.
+  - Languages Processing
+    - [Part I](https://github.com/VitorPeixoto97/GAWK-Text-Filter) - Freeling notation text files filtered with GAWK.
+    - [Part II](https://github.com/VitorPeixoto97/Markdown-Lookalike-Notation) - Compile LaTeX documents using a Markdown lookalike notation through Flex.
+    - [Part III](https://github.com/VitorPeixoto97/Graph-Generator) - Graph generator using Flex and Yacc.
+  - Stochastic Models of Operational Research
+  - Knowledge Representation and Reasoning Systems
+    - [Knowledge Representation](https://github.com/VitorPeixoto97/Health-Care-Knowledge-Representation) - Health care system representation using Prolog.
+    - [Artificial Neural Networks](https://github.com/VitorPeixoto97/Artificial-Neural-Networks) - Wine data analysis through a connectionist system using R.
