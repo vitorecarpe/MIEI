@@ -70,6 +70,9 @@ Master's Degree specialized in Software Systems Engineering and Data Science.
   - Data Mining
   - Software Process Management
   - Web Engineering
+  - Automatic Learning II
+  - Big Data Management
+  - Software Engineering Labs
   
 * **5th year**
   - Master's Project
