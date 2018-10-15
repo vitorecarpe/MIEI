@@ -11,36 +11,36 @@ This repository stores all the files and projects developed while taking my cour
   - Funcional Programming
   - [Software Labs I](https://github.com/VitorPeixoto97/Sokoban) - Sokoban game developed in Haskell.
   - Linear Algebra
-  - Topics of Systems Engineering
-  - Topics on Discrete Mathematics
+  - Topics in Systems Engineering
+  - Topics in Discrete Mathematics
   - Analysis
   - Computing Systems
   - Imperative Programming
   - [Software Labs II](https://github.com/VitorPeixoto/Big-Two) - Card game developed in C.
-  - Logic
+  - Mathematical Logic
   - Topics in Modern Physics
 
 * **2nd year**
   - Algorithms and Complexity
   - Applied Statistics
-  - Computer Architctures
+  - Computer Architectures
   - Data Communication
   - Economics Engineering
-  - Introduction to Dynamic Systems
+  - Introduction to Dynamical Systems
   - Electromagnetism
   - Software Labs III
     - [Part I](https://github.com/VitorPeixoto97/Wikipedia-Parser-I) - Wikipedia metadata parser in C.
     - [Part II](https://github.com/VitorPeixoto97/Wikipedia-Parser-II) - Wikipedia metadata parser in Java.
   - [Object Oriented Programming](https://github.com/VitorPeixoto97/UMeR) - UBER lookalike app developed in Java.
   - [Operating Systems](https://github.com/VitorPeixoto97/Notebook-Processor) - Text file processing through pipes in C.
-  - Program Calculus
-  - Computing with R
+  - Programming Calculus
+  - Programming with R
 
 * **3rd year**
   - Numerical Methods and Nonlinear Optimization
   - [Computer Networks](https://github.com/VitorPeixoto97/Computer-Networking-Reports) - Set of reports developed during the semester.
   - [Databases](https://github.com/VitorPeixoto97/MuDBa) - Musical database developed with MySQL.
-  - Deterministic Models of Operational Research
+  - Deterministic Models of Operations Research
   - Software Systems Development
     - [Membership Management App](https://github.com/VitorPeixoto97/) - Simple app developed in Java.
     - [Schedule Allocation Management App](https://github.com/VitorPeixoto97/Schedule-Allocation-Management) - Modelation and development of a management system in Java.
@@ -52,7 +52,7 @@ This repository stores all the files and projects developed while taking my cour
     - [Part I](https://github.com/VitorPeixoto97/GAWK-Text-Filter) - Freeling notation text files filtered with GAWK.
     - [Part II](https://github.com/VitorPeixoto97/Markdown-Lookalike-Notation) - Compile LaTeX documents using a Markdown lookalike notation through Flex.
     - [Part III](https://github.com/VitorPeixoto97/Graph-Generator) - Graph generator using Flex and Yacc.
-  - Stochastic Models of Operational Research
+  - Stochastic Models in Operations Research
   - Knowledge Representation and Reasoning Systems
     - [Knowledge Representation](https://github.com/VitorPeixoto97/Health-Care-Knowledge-Representation) - Health care system representation using Prolog.
     - [Artificial Neural Networks](https://github.com/VitorPeixoto97/Artificial-Neural-Networks) - Wine data analysis through a connectionist system using R.
