@@ -66,8 +66,8 @@ This repository stores all the files and projects developed while taking my cour
   - Advanced Computing
   - Automatic Learning II
   - Big Data Management
-  - NoSQL Databases
-  - Data Mining
+  - [NoSQL Databases](https://github.com/VitorPeixoto97/Sakila-NoSQL) - Migration of MySQL Sakila to Oracle SQL, MongoDB and Neo4j.
+  - [Data Mining](https://github.com/VitorPeixoto97/Data-Mining) - Datasets analysis using data mining by classification, clustering and association rules.
   - Software Engineering Labs
   
 * **5th year**
