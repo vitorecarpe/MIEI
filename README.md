@@ -62,7 +62,7 @@ This repository stores all the files and projects developed while taking my cour
   - [Software Architectures](https://github.com/VitorPeixoto97/BetESS-Betting-Platform) - Betting platform with modelation and requirements and developed using Design Patterns.
   - Software Process Management
   - Web Engineering
-  - Automatic Learning I
+  - [Automatic Learning I](https://github.com/VitorPeixoto97/Bank-Marketing) - Bank Marketing dataset analysis including treatment of outliers, missing and imbalanced data. Logistic Regression applied and analysis of most significant variables and their influence in the outcome.
   - Advanced Computing
   - Automatic Learning II
   - Big Data Management
