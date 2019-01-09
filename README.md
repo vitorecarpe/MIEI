@@ -44,7 +44,7 @@ This repository stores all the files and projects developed while taking my cour
   - Software Systems Development
     - [Membership Management App](https://github.com/VitorPeixoto97/) - Simple app developed in Java.
     - [Schedule Allocation Management App](https://github.com/VitorPeixoto97/Schedule-Allocation-Management) - Modelation and development of a management system in Java.
-  - Distributed Systems
+  - [Distributed Systems](https://github.com/Tibblue/Projeto-SD) - Cloud Server Allocation Service developed in Java and using TCP Sockets and Locks.
   - [Computer Communications](https://github.com/VitorPeixoto97/Reverse-Proxy-Server) - Reverse Proxy Server balancing service developed in Java.
   - [Computer Graphics](https://github.com/VitorPeixoto97/Solar-System) - 3D motion Solar System developed with OpenGL.
   - [Software Labs IV](https://github.com/VitorPeixoto97/Antonio-Canalizador) - Plumbing services website developed in ASP.NET MVC.
