@@ -59,7 +59,7 @@ This repository stores all the files and projects developed while taking my cour
 
 * **4th year  ← I'm here!**
   - [Requirements Engineering](https://github.com/diisnc/Credit_Risk_Analysis_1819) - Requirements collected and analysed using Volere Model for Scytale Company.
-  - [Software Architectures](https://github.com/VitorPeixoto97/BetESS-Betting-Platform) - Betting platform with modelation and requirements and developed using Design Patterns.
+  - [Software Architectures](https://github.com/VitorPeixoto97/BetESS-Betting-Platform) - Betting platform developed using Java with Design Patterns and Refactoring Techniques applied.
   - Software Process Management
   - Web Engineering
   - [Automatic Learning I](https://github.com/VitorPeixoto97/Bank-Marketing) - Bank Marketing dataset study involving logistic regression using R.
