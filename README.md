@@ -63,7 +63,7 @@ This repository stores all the files and projects developed while taking my cour
   - Software Process Management
   - Web Engineering
   - [Automatic Learning I](https://github.com/VitorPeixoto97/Bank-Marketing) - Bank Marketing dataset study involving logistic regression using R.
-  - Advanced Computing
+  - Advanced Computing - HTCondor cluster built to process linear regression on a dataset.
   - Automatic Learning II
   - Big Data Management
   - [NoSQL Databases](https://github.com/VitorPeixoto97/Sakila-NoSQL) - Migration of MySQL Sakila to Oracle SQL, MongoDB and Neo4j.
