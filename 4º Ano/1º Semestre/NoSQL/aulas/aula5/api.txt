@@ -1,0 +1,9 @@
+http://nosql.hpeixoto.me/api/sensor/3001
+
+http://nosql.hpeixoto.me/api/sensor/3002
+
+http://nosql.hpeixoto.me/api/sensor/3003
+
+http://nosql.hpeixoto.me/api/sensor/3004
+
+http://nosql.hpeixoto.me/api/sensor/3005

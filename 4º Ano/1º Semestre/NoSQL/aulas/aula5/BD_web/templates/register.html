@@ -1,0 +1,33 @@
+<!Doctype html>
+<meta http-equiv="Refresh" content="5">
+<style>
+        table {
+            border: 1px solid black;
+        }</style>
+<html>
+<h2>Register table</h2>
+    <table style="width:80%">
+        <tr>
+            <th>idRegister</th>
+            <th>bodytemp</th>
+            <th>bloodpress_sys</th>
+            <th>bloodpress_dias</th>
+            <th>bpm</th>
+            <th>timestamp</th>
+            <th>Sensor_idSensor</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td> {{ row[0] }} </td>
+            <td> {{ row[1] }} </td>
+            <td> {{ row[2] }} </td>
+            <td> {{ row[3] }} </td>
+            <td> {{ row[4] }} </td>
+            <td> {{ row[5] }} </td>
+            <td> {{ row[6] }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

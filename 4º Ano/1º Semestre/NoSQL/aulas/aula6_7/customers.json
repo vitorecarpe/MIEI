@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5bd982065af98c33f46eda2d"},"first_name":"John","last_name":"Doe","age":30}
+{"_id":{"$oid":"5bd983475af98c33f46eda2e"},"first_name":"Steven","last_name":"Williams","gender":"male","age":35.0}
+{"_id":{"$oid":"5bd983b95af98c33f46eda30"},"first_name":"Ric","last_name":"Foe"}
+{"_id":{"$oid":"5bd984aa5af98c33f46eda31"},"first_name":"Ana","last_name":"Durant","age":42.0}
+{"_id":{"$oid":"5bd985c75af98c33f46eda32"},"first_name":"Natalia","last_name":"Will","age":44,"gender":"female"}

@@ -1,0 +1,79 @@
+// executar FORA da mongo bash
+// mongoimport --db noSql --collection restaurants --file restaurants.json
+// mongoexport --db noSql --collection restaurants --type=json --fields _id,address,cuisine --out restaurants.json
+
+// 1
+db.restaurants.find()
+
+// 2
+db.restaurants.find({},{restaurant_id:true,name:true,borough:true,cuisine:true})
+
+// 3
+db.restaurants.find({},{restaurant_id:true,name:true,borough:true,cuisine:true,_id:false})
+
+// 4
+db.restaurants.find({},{restaurant_id:true,name:true,borough:true,'address.zipcode':true,_id:false})
+
+// 5
+db.restaurants.find({borough:"Bronx"})
+
+// 6
+// db.restaurants.find({borough:"Bronx"}).limit(5)
+
+// 7
+// db.restaurants.find({borough:"Bronx"}).skip(5).limit(5)
+
+// 8
+db.restaurants.find({"grades.score":{$gt:90}})
+db.restaurants.find({"grades":{$elemMatch:{score:{$gt:90}}}})
+
+// 9
+db.restaurants.find({"grades":{$elemMatch:{score:{$gt:80,$lt:100}}}},
+                    {"grades.score":true})
+
+// 10
+db.restaurants.find({"address.coord.0":{$lt:-95}},
+                    {"address.coord":true})
+
+// 11
+db.restaurants.find({cuisine:{$ne:'American '},"grades.score":{$gt:70},"address.coord.0":{$lt:-65}},
+                    {cuisine:true,"grades.score":true,"address.coord":true})
+
+// 12
+db.restaurants.find({cuisine:{$ne:'American '},"grades.score":{$gt:70},"address.coord.0":{$lt:-65}},
+                    {cuisine:true,"grades.score":true,"address.coord":true})
+
+// 13
+// db.restaurants.find({borough:{$ne:"Brooklyn"},cuisine:{$ne:'American '},"grades.grade":"A"},
+                    // {"borough":true,cuisine:true,"grades.grade":true}).sort({cuisine:-1})
+
+// 14
+db.restaurants.find({borough:"Brooklyn",$or:[{cuisine:{$eq:'American '}},{cuisine:{$eq:"Chinese"}}]},
+                    {"borough":true,cuisine:true})
+
+// 15
+db.restaurants.find({"address.coord":{$type:'double'}},
+                    {"address.coord":true})
+
+// 16
+db.restaurants.find({"address.street":{$exists:true}},
+                    {"address.street":true})
+
+// 17
+// db.restaurants.find({},{cuisine:true,borough:true}).sort({cuisine:1,borough:-1})
+
+// 18
+db.restaurants.find({"address.coord.1":{$gt:42,$lte:52}},
+                    {restaurant_id:true,name:true,address:true})
+
+// 19
+db.restaurants.find({"grades.score":{$not:{$gt:10}}},
+                    {restaurant_id:true,name:true,borough:true,cuisine:true})
+
+// 20
+db.restaurants.find({$and:[{"borough":{$not:{$eq:"Queens"}}},
+                            {"borough":{$not:{$eq:"Bronx"}}},
+                            {"borough":{$not:{$eq:"Brooklyn"}}},
+                            {"borough":{$not:{$eq:"Staten Island"}}}]},
+                    {restaurant_id:true,name:true,borough:true,cuisine:true})
+

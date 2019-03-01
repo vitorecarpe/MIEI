@@ -1,0 +1,332 @@
+---
+title: "Bank Marketing Dataset Classification"
+author: 
+- Manuel Monteiro
+- Tiago Alves
+- Vitor Peixoto
+date: "23 de Dezembro de 2018"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+## Default repo
+
+library(ggplot2) #ggplot2 is a data visualization package for the statistical programming language R.
+library(knitr) #KnitR is a really important tool for reproducible research. You create documents that are a mixture of text and code; when processed through KnitR, the code is replaced by the results and/or figures produced.
+library(randomForest) #e R package "randomForest" is used to create random forests
+library(corrplot) #The corrplot package is a graphical display of a correlation matrix, confidence interval. It also contains some algorithms to do matrix reordering. 
+library(lattice)
+library(caret) #caret has several functions that attempt to streamline the model building and evaluation process, as well as feature selection and other techniques. One of the primary tools in the package is the train function which can be used to. evaluate, using resampling, the effect of model tuning parameters on performance.
+library(colorspace)
+library(grid)
+library(data.table)
+library(RColorBrewer)
+library(VIM) #VIM: Visualization and Imputation of Missing Values. New tools for the visualization of missing and/or imputed values are introduced
+library(MASS) #Support Functions and Datasets for Venables and Ripley's MASS
+# lda: Linear Discriminant Analysis
+# qda: Quadratic Discriminant Analysis
+library(psych)
+library(pander)
+library(magrittr)
+library(dplyr)
+library(boot)
+library(caTools)
+library(glmnet)  #This is where ridge and LASSO reside
+library(ROSE) #Oversampling
+library(rpart)
+library(ROCR)
+library(ggpubr)
+require(caTools)  # loading caTools library
+```
+
+## Import dataset
+
+```{r dataset}
+setwd("/Users/vitorpeixoto/Documents")
+bank_marketing_data_full <- read.csv("bank-additional-full.csv", sep=";",header = TRUE)
+summary(bank_marketing_data_full)
+```
+
+## Explorative Data Analysis
+
+First of all, let's take a look at our dataset.
+```{r dim, echo=TRUE}
+dim(bank_marketing_data_full)
+```
+
+```{r names, echo=TRUE}
+names(bank_marketing_data_full)
+```
+
+```{r head, echo=TRUE}
+head(bank_marketing_data_full)
+```
+
+Then, let's know better our variables by category.
+
+```{r type_of_variables, echo=TRUE}
+split(names(bank_marketing_data_full),sapply(bank_marketing_data_full, function(x) paste(class(x), collapse=" ")))
+```
+
+Let's now take a look at some of the individual variables. We look at the difference between mean, median and possible outliers. Some outliers might need to be fixed.
+
+```{r outlier1, echo=TRUE}  
+boxplot(bank_marketing_data_full$age, main="Age",
+        yaxt="n", xlab="age", horizontal=TRUE,
+        col=16)
+
+barplot(table(bank_marketing_data_full$job), main="Job",
+        col=16, las=2)
+
+barplot(table(bank_marketing_data_full$marital), main="Marital",
+        col=16, las=2)
+
+barplot(table(bank_marketing_data_full$education), main="Education",
+        col=16, las=2)
+
+barplot(table(bank_marketing_data_full$default), main="Default",
+        col=16, las=2)
+
+barplot(table(bank_marketing_data_full$housing), main="Housing",
+        col=16, las=2)
+
+barplot(table(bank_marketing_data_full$loan), main="Loan",
+        col=16, las=2)
+
+barplot(table(bank_marketing_data_full$contact), main="Contact",
+        col=16, las=2)
+
+barplot(table(bank_marketing_data_full$month), main="Month",
+        col=16, las=2)
+
+barplot(table(bank_marketing_data_full$day_of_week), main="Day of Week",
+        col=16, las=2)
+
+boxplot(bank_marketing_data_full$duration, main="Duration",
+        yaxt="n", xlab="duration", horizontal=TRUE,
+        col=16)
+
+boxplot(bank_marketing_data_full$campaign, main="Campaign",
+        yaxt="n", xlab="campaign", horizontal=TRUE,
+        col=16)
+```
+
+*Duration* and *Campaign* have some outliers, but analysing the dataset, we realised that all of them are important to the model and so, we shall keep them.
+
+```{r outlier2, echo=TRUE} 
+boxplot(bank_marketing_data_full$pdays, main="Days since last call (pdays)",
+        yaxt="n", xlab="pdays", horizontal=TRUE,
+        col=16)
+```
+
+*Pdays* has many outliers. This is due to the fact that if this is the first time calling the client, this variable is set as 999 so this creates a lot of 999 instances. This issue is gonna be solved later.
+
+```{r outlier3, echo=TRUE} 
+boxplot(bank_marketing_data_full$previous, main="Previous",
+        yaxt="n", xlab="previous", horizontal=TRUE,
+        col=16)
+
+barplot(table(bank_marketing_data_full$poutcome), main="Previous outcome (poutcome)",
+        col=16, las=2)
+
+boxplot(bank_marketing_data_full$emp.var.rate, main="Employment variation rate (emp.var.rate)",
+        yaxt="n", xlab="emp.var.rate", horizontal=TRUE,
+        col=16)
+
+boxplot(bank_marketing_data_full$cons.price.idx, main="Consumer price index (cons.price.idx)",
+        yaxt="n", xlab="cons.price.idx", horizontal=TRUE,
+        col=16)
+
+boxplot(bank_marketing_data_full$cons.conf.idx, main="Consumer confidence index (cons.conf.idx)",
+        yaxt="n", xlab="cons.conf.idx", horizontal=TRUE,
+        col=16)
+
+boxplot(bank_marketing_data_full$euribor3m, main="Euribor tax at 3 months (euribor3m)",
+        yaxt="n", xlab="euribor3m", horizontal=TRUE,
+        col=16)
+
+boxplot(bank_marketing_data_full$nr.employed, main="Number of people employed (nr.employed)",
+        yaxt="n", xlab="nr.employed", horizontal=TRUE,
+        col=16)
+
+barplot(table(bank_marketing_data_full$y), main="Result variable (y)",
+        col=16, las=2)
+
+```
+
+## Dealing with dataset problems
+
+### Pdays Outliers
+
+As we talked earlier, the value '999' in variable *pdays* means the client has not been previously contacted. That is a obvious outlier and should not be treated as numeric. Instead we must change all numbers to categories. Use 'as.factor' to do that. Also remove classes 25, 26 and 27 who have just one row of data and that can cause trouble when splitting into training and testing data.
+
+```{r outlier_pdays_convert, echo=TRUE}  
+bank_marketing_data_full$pdays <- factor(bank_marketing_data_full$pdays)
+bank_marketing_data_full<-bank_marketing_data_full[!(bank_marketing_data_full$pdays==20 |
+                                                     bank_marketing_data_full$pdays==25 |
+                                                     bank_marketing_data_full$pdays==26 |
+                                                     bank_marketing_data_full$pdays==27),]
+barplot(table(bank_marketing_data_full$pdays), main="Days since last call (pdays)", col=16, las=2)
+```
+
+### Missing data
+
+Check missing values for all columns, assuming that 'unknowns' (not equal to NAs) are treated as missing values by changing those values to NA.
+
+```{r variables_with_missing_values, echo=TRUE}
+bank_marketing_data_full[bank_marketing_data_full=="unknown"] <- NA
+```
+
+Below we can see the plot with the missing data in red.
+
+```{r data_with_missing_data, echo=TRUE}  
+sapply(bank_marketing_data_full, function(x) sum(is.na(x)))
+aggr_plot <- aggr(bank_marketing_data_full, col=c('blue','red'), numbers=TRUE, sortVars=TRUE, labels=names(bank_marketing_data_full), cex.axis=.7, gap=3, ylab=c("Histogram of missing data","Pattern"))
+```
+
+Since the dataset is so dense, we can afford to lose rows with missing data. The next step is to do so and generate again the plot of missing data, showing that no missing data exists anymore.
+
+```{r data_after_missing_data_removal, echo=TRUE}  
+bank_marketing_data_full <- na.omit(bank_marketing_data_full)
+aggr_plot <- aggr(bank_marketing_data_full, col=c('blue','red'), numbers=TRUE, sortVars=TRUE, labels=names(bank_marketing_data_full), cex.axis=.7, gap=3, ylab=c("Histogram of missing data","Pattern"))
+```
+
+### Imbalanced data
+
+One of the main problems of imbalanced data in the result variable is that it generates a model overfitted to the major class. To correct this overfitting we need to balance the samples. This can be done using oversampling by creating new instances of the minor class. Below we show the ratio of *yes* and *no* in the result variable before oversampling.
+
+```{r data_before_balancing_data, echo=TRUE}  
+counts <- table(bank_marketing_data_full$y)
+barplot(counts,col=c("blue","red"),legend = rownames(counts), main = "Term Deposit")
+```
+
+Now we show the ratio of *yes* and *no* in the result variable **after** oversampling.
+
+```{r data_after_balancing_data, echo=TRUE}  
+bank_marketing_data_full <- ovun.sample(y ~ ., data = bank_marketing_data_full, method = "over",N = 53000)$data
+```
+
+Now let's observe the barplot of the result variable. It's much more balanced and thus less prone to overfitting.
+
+```{r plot_after_balancing_data, echo=TRUE}  
+counts <- table(bank_marketing_data_full$y)
+barplot(counts,col=c("blue","red"),legend = rownames(counts), main = "Term Deposit")
+```
+
+## Logistic Regression
+
+### Generate the Model
+
+Creating train and test datasets based on splitting the data in a 80/20 ratio.
+
+```{r split_data, echo=TRUE}  
+set.seed(123)
+sample = sample.split(bank_marketing_data_full,SplitRatio = 0.80)
+train_data = subset(bank_marketing_data_full, sample==TRUE)
+test_data =  subset(bank_marketing_data_full, sample==FALSE)
+```
+
+Logistic Regression model
+
+```{r baseline, echo=TRUE}  
+model<-glm(y~.,data = train_data,family = binomial)
+summary(model)
+```
+
+Checking variable importance for GLM. We could use the R function *cor* or just *plot* it. But since we have too many categorical variables, let's just analyse the p-values obtained in the model and plot them. Since we want p-values below 0.05, let's invert them by subtracting to 1. This way we will get the highest scores to the most important variables and will only take those whose p-value is above 0.95.
+```{r variable_importance, echo=TRUE}  
+pvalues <- 1-summary(model)$coefficients[,4]
+pvalues <- pvalues[-1]
+yyy <- as.list(rep(0.95,length(pvalues)))
+bp=barplot(pvalues, main="Variable importance according to p-values",col=sample(colours(), 200), las=2, cex.names=0.6, cex.axis = 0.7, mgp = c(-1, -0, -1))
+lines(x=bp,y=yyy,col="blue") 
+```
+
+We can compare both results and see if the variable importance according to the p-values checks with the variable correlation between the predictive variables and *y*.
+
+```{r significance, echo=TRUE}
+pairs.panels(bank_marketing_data_full[,c(1:5,21)])
+pairs.panels(bank_marketing_data_full[,c(6:10,21)])
+pairs.panels(bank_marketing_data_full[,c(11:15,21)])
+pairs.panels(bank_marketing_data_full[,c(16:20,21)])
+```
+
+### Prediction for Logistic Regression model and its confusion matrix
+
+```{r predict_baseline, echo=TRUE}
+test_result <- predict(model,test_data,type = "response")
+test_result <- ifelse(test_result > 0.5,1,0)
+
+test_result<-round(test_result,0)
+test_result<-as.factor(test_result)
+levels(test_result)<-c("no","yes")
+actual1<-test_data[,21]
+levels(actual1)<-c("no","yes")
+
+conf1<-confusionMatrix(actual1,test_result,positive = "yes")
+conf1
+```
+
+### ROC curve and respective Area Under Curve value.
+
+```{r roc_auc_all, echo=TRUE}
+roc <- roc.curve(test_data$y, test_result, plotit = F)
+pr <- prediction(as.numeric(test_result), as.numeric(test_data$y))
+prf <- performance(pr, measure = "tpr", x.measure = "fpr")
+plot(prf)
+#Area under ROC curve
+auc <- performance(pr, measure = "auc")
+auc <- auc@y.values[[1]]
+auc
+```
+
+## Model for the most significative variables
+
+### Plot them
+
+Select only most significative variables and plot them.
+```{r sig_plots, echo=TRUE}
+bank_marketing_data_sig <- bank_marketing_data_full[,c("job","education","contact","month","day_of_week","duration","campaign","poutcome","emp.var.rate","cons.price.idx","euribor3m","nr.employed","y")]
+pairs.panels(bank_marketing_data_sig[,c(1:6,13)])
+pairs.panels(bank_marketing_data_sig[,c(7:12,13)])
+```
+
+### Generate the model
+
+Logistic regression for the most significative variables
+```{r sig_baseline, echo=TRUE}
+model_sig<-glm(y~job+education+contact+month+day_of_week+duration+campaign+poutcome+emp.var.rate+cons.price.idx+euribor3m+nr.employed, data = train_data,family = binomial)
+summary(model_sig)
+```
+
+### Prediction for Logistic Regression model and its confusion matrix
+
+```{r predict_sig_baseline, echo=TRUE}
+test_result_sig <- predict(model_sig,test_data,type = "response")
+test_result_sig <- ifelse(test_result_sig > 0.5,1,0)
+
+test_result_sig <- round(test_result_sig,0)
+test_result_sig <- as.factor(test_result_sig)
+levels(test_result_sig) <- c("no","yes")
+actual2 <- test_data[,21]
+levels(actual2) <- c("no","yes")
+
+conf2 <- confusionMatrix(actual2,test_result_sig,positive = "yes")
+conf2
+```
+
+### ROC curve and respective Area Under Curve value.
+
+```{r sig_roc_auc_all, echo=TRUE}
+roc_sig <- roc.curve(test_data$y, test_result_sig, plotit = F)
+pr_sig <- prediction(as.numeric(test_result_sig), as.numeric(test_data$y))
+prf_sig <- performance(pr_sig, measure = "tpr", x.measure = "fpr")
+plot(prf_sig)
+#Area under ROC curve
+auc_sig <- performance(pr_sig, measure = "auc")
+auc_sig <- auc_sig@y.values[[1]]
+auc_sig
+```

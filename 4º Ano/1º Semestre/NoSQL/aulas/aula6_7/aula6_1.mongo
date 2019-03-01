@@ -1,0 +1,82 @@
+// 1
+// show dbs
+
+// 2
+// use customers
+
+// 3
+// db
+
+// 4 
+// db.customers
+
+// 5 
+db.customers.find()
+
+// 6
+db.customers.insert({first_name:'John', last_name:'Doe', age: 30})
+
+// 7
+db.customers.insertMany([
+    {first_name:'Steven', last_name:'Williams', gender: 'male'},
+    {first_name: 'Mary', last_name: 'Troy', age: 19}
+])
+
+// 8
+db.customers.insert({first_name: 'Ric', last_name: 'Foe', address: {street: '4 main st', city: 'Boston'}})
+
+// 9
+db.customers.insert({first_name: 'Ana', last_name: 'Durant', degree: ['phD','Msc'],
+                    address: {street: '4 Square Garden', city: 'New York'}, age: 32})
+
+// 10
+db.customers.insert({first_name: 'Natalia', last_name:'Will', age: 44, gender: 'female'})
+
+// 11
+// db.customers.find()
+// 12
+// db.customers.find().pretty()
+
+// 13
+db.customers.update(
+    {first_name:'Ric'},
+    {$set: {age:45}}
+)
+
+// 14
+db.customers.find({last_name:'Wil'})
+// 15
+db.customers.update(
+    {first_name:'Steven'},
+    {$set: {age:35}}
+)
+
+// 16
+db.customers.update(
+    {first_name:'Ana',age:{$gt:30}},
+    {$inc: {age:10}}
+)
+
+// 17
+db.customers.update(
+    {first_name:"Ric"},
+    {$unset:{age:""}}
+)
+
+// 18
+db.customers.update(
+    {first_name:'Jimy'},
+    {$set:{first_name: "Jimmy", last_name: "Connors", age: 25, gender: "male"}}
+)
+
+// 19
+db.customers.find({age:{$gte:25}})
+
+// 20
+db.customers.find({gender:{$eq:"male"}})
+
+// 21
+db.customers.remove({first_name: "Mary"})
+
+// 22
+db.customers.find({first_name:"male"}})
