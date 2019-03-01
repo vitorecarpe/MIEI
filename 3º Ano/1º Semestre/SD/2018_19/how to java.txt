@@ -1,0 +1,13 @@
+-- COMPILE --
+Compile the Java File to a *.class file
+javac TheJavaFile.java
+
+Execution of the Java File
+java TheJavaFile
+
+-- JAR --
+Creation of an executable *.jar file
+jar -cvfe TheJavaFile.jar <MainClass> TheJavaFile.class
+
+To run the Jar File
+java -jar TheJavaFile.jar

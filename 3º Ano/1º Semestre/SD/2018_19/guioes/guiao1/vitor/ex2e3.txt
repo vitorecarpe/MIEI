@@ -1,0 +1,14 @@
+public class MainGuiao1Exercicio2e3{
+	public static void main(String[] args){
+		int n=10;
+		int i=20;
+
+		Thread[]
+
+		//Create threads
+
+		//Start threads
+
+		//Join threads
+	}
+}
