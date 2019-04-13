@@ -16,7 +16,7 @@ This repository stores all the files and projects developed while taking my cour
   - Analysis
   - Computing Systems
   - Imperative Programming
-  - [Software Labs II](https://github.com/VitorPeixoto/Big-Two) - Card game developed in C.
+  - [Software Labs II](https://github.com/VitorPeixoto97/Big-Two) - Card game developed in C.
   - Mathematical Logic
   - Topics in Modern Physics
 
