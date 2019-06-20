@@ -57,19 +57,21 @@ This repository stores all the files and projects developed while taking my cour
     - [Knowledge Representation](https://github.com/VitorPeixoto97/Health-Care-Knowledge-Representation) - Health care system representation using Prolog.
     - [Artificial Neural Networks](https://github.com/VitorPeixoto97/Artificial-Neural-Networks) - Wine data analysis through a connectionist system using R.
 
-* **4th year  ← I'm here!**
+* **4th year**
   - [Requirements Engineering](https://github.com/diisnc/Credit_Risk_Analysis_1819) - Requirements collected and analysed using Volere Model for Scytale Company.
   - [Software Architectures](https://github.com/VitorPeixoto97/BetESS-Betting-Platform) - Betting platform developed applying Design Patterns and Refactoring Techniques.
   - Software Process Management
-  - Web Engineering
+  - [Web Engineering](https://github.com/VitorPeixoto97/BetESS-Web-Platform) - Betting web platform developed using Django+Vue.js and also scalable and flexible techniques such as microsservices.
   - [Automatic Learning I](https://github.com/VitorPeixoto97/Bank-Marketing) - Bank Marketing dataset study involving logistic regression using R.
   - Advanced Computing - HTCondor cluster built to process linear regression on a dataset.
-  - Automatic Learning II
+  - [Automatic Learning II](https://github.com/mamonteiro-brg/Credit-Card-Fraud) - Analysis on a dataset of Credit Fraud involving application of simple but also deep-learning predictive algorithms using Python.
   - Big Data Management
   - [NoSQL Databases](https://github.com/VitorPeixoto97/Sakila-NoSQL) - Migration of MySQL Sakila to Oracle SQL, MongoDB and Neo4j.
   - [Data Mining](https://github.com/VitorPeixoto97/Data-Mining) - Datasets analysis using data mining by classification, clustering and association rules.
-  - Software Engineering Labs
+  - [Software Engineering Labs](https://github.com/VitorPeixoto97/LEI) - Web platform for managing roller-hockey matches and statistics. Developed in Django and Vue.js.
   
+* **← I'm here!** (on holidays...)
+
 * **5th year**
   - Master's Project
   - Master's Thesis
