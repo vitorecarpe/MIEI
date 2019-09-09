@@ -1,0 +1,8 @@
+
+
+A parte teórica está num ficheiro pdf só com os tópicos a abordar.
+
+Se quiserem testar os .c, o ex 2 tem um script que gera um ficheiro de teste, compila e corre tanto para o
+limite de tempo, como de caracteres.
+
+O ex 3 basta compilar e correr com in e lorem.txt como argumentos.

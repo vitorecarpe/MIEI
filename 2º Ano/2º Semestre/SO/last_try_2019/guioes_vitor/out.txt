@@ -1,0 +1,11 @@
+a.out
+entrada.txt
+ex3
+guiao1.c
+guiao2.c
+guiao3.c
+guiao4.c
+guiao5.c
+out.txt
+redir
+teste_readln.txt
