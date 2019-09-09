@@ -42,7 +42,7 @@ This repository stores all the files and projects developed while taking my cour
   - [Databases](https://github.com/VitorPeixoto97/MuDBa) - Musical database developed with MySQL.
   - Deterministic Models of Operations Research
   - Software Systems Development
-    - [Membership Management App](https://github.com/VitorPeixoto97/) - Simple app developed in Java.
+    - [Membership Dues Management App](https://github.com/VitorPeixoto97/Membership-Dues-Management) - Simple app developed in Java.
     - [Schedule Allocation Management App](https://github.com/VitorPeixoto97/Schedule-Allocation-Management) - Modelation and development of a management system in Java.
   - [Distributed Systems](https://github.com/Tibblue/Projeto-SD) - Cloud Server Allocation Service developed in Java and using TCP Sockets and Locks.
   - [Computer Communications](https://github.com/VitorPeixoto97/Reverse-Proxy-Server) - Reverse Proxy Server balancing service developed in Java.
