@@ -60,12 +60,12 @@ This repository stores all the files and projects developed while taking my cour
 * **4th year**
   - [Requirements Engineering](https://github.com/diisnc/Credit_Risk_Analysis_1819) - Requirements collected and analysed using Volere Model for Scytale Company.
   - [Software Architectures](https://github.com/VitorPeixoto97/BetESS-Betting-Platform) - Betting platform developed applying Design Patterns and Refactoring Techniques.
-  - Software Process Management - Study on the software automatic testing tools such as Selenium, Telerik or TestComplete.
+  - Software Process Management - Study on software testing tools such as Selenium or Telerik.
   - [Web Engineering](https://github.com/VitorPeixoto97/BetESS-Web-Platform) - Betting web platform developed applying scalable and flexible techniques.
   - [Automatic Learning I](https://github.com/VitorPeixoto97/Bank-Marketing) - Bank Marketing dataset study involving logistic regression using R.
   - Advanced Computing - HTCondor cluster built to process linear regression on a dataset.
   - [Automatic Learning II](https://github.com/mamonteiro-brg/Credit-Card-Fraud) - Analysis of Credit Fraud data using deep-learning algorithms with Python.
-  - Big Data Management - Development of an architecture capable of storing, processing and analysing large chunks of data.
+  - Big Data Management - Creating a data flow architecture for large chunks of data.
   - [NoSQL Databases](https://github.com/VitorPeixoto97/Sakila-NoSQL) - Migration of MySQL Sakila to Oracle SQL, MongoDB and Neo4j.
   - [Data Mining](https://github.com/VitorPeixoto97/Data-Mining) - Datasets analysis using data mining by classification, clustering and association rules.
   - [Software Engineering Labs](https://github.com/VitorPeixoto97/LEI) - Website for managing roller-hockey matches and statistics. Developed in Django and Vue.js.
