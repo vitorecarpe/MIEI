@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scenario xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" xmlns:opns="http://www.omnigroup.com/namespace/OmniPlan/v2" id="bzXb9LtowBB">
+  <start-date>2019-02-13T08:00:00.000Z</start-date>
+  <prototype-task>
+    <task id="t-2">
+      <title>Task 1</title>
+      <effort>28800</effort>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t-3">
+      <title>Milestone 1</title>
+      <type>milestone</type>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t-4">
+      <title>Group 1</title>
+      <type>group</type>
+    </task>
+  </prototype-task>
+  <prototype-resource>
+    <resource id="r-2">
+      <name>Resource 1</name>
+      <type>Staff</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-3">
+      <name>Equipment 1</name>
+      <type>Equipment</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-4">
+      <name>Material 1</name>
+      <type>Material</type>
+      <units-available>0</units-available>
+      <efficiency>0</efficiency>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-5">
+      <name>Group 1</name>
+      <type>Group</type>
+    </resource>
+  </prototype-resource>
+  <top-resource idref="r-1"/>
+  <resource id="r-1">
+    <name/>
+    <type>Group</type>
+    <child-resource idref="r1"/>
+  </resource>
+  <resource id="r1">
+    <name>Resource 1</name>
+    <type>Staff</type>
+  </resource>
+  <top-task idref="t-1"/>
+  <task id="t-1">
+    <type>group</type>
+    <child-task idref="t21"/>
+    <child-task idref="t3"/>
+    <child-task idref="t24"/>
+    <child-task idref="t4"/>
+    <child-task idref="t5"/>
+    <child-task idref="t13"/>
+    <child-task idref="t19"/>
+    <child-task idref="t17"/>
+    <child-task idref="t27"/>
+  </task>
+  <task id="t3">
+    <title>Familiarização com ferramentas de software</title>
+    <effort>435600</effort>
+    <effort-done>435600</effort-done>
+    <start-constraint-date>2019-03-20T09:00:00.000Z</start-constraint-date>
+    <recalculate>effort</recalculate>
+    <fixed-duration>435600</fixed-duration>
+    <start-no-earlier-than>2019-03-20T09:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t4">
+    <title>Mockups</title>
+    <effort>144000</effort>
+    <effort-done>144000</effort-done>
+    <start-constraint-date>2019-03-19T08:00:00.000Z</start-constraint-date>
+    <recalculate>effort</recalculate>
+    <fixed-duration>144000</fixed-duration>
+    <start-no-earlier-than>2019-03-19T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t5">
+    <title>Checkpoint 1</title>
+    <type>milestone</type>
+    <completion-percentage>1</completion-percentage>
+    <locked-start-date>2019-03-27T23:59:00.000Z</locked-start-date>
+    <locked-end-date>2019-03-27T23:59:00.000Z</locked-end-date>
+    <start-constraint-date>2019-03-27T23:59:00.000Z</start-constraint-date>
+    <recalculate>effort</recalculate>
+    <fixed-duration>0</fixed-duration>
+    <start-no-earlier-than>2019-03-27T23:59:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t13">
+    <title>Desenvolvimento</title>
+    <type>group</type>
+    <recalculate>effort</recalculate>
+    <fixed-duration>1296000</fixed-duration>
+    <child-task idref="t30"/>
+    <child-task idref="t36"/>
+    <child-task idref="t37"/>
+    <child-task idref="t38"/>
+    <child-task idref="t39"/>
+    <child-task idref="t40"/>
+    <child-task idref="t41"/>
+    <child-task idref="t42"/>
+    <child-task idref="t43"/>
+    <child-task idref="t44"/>
+    <child-task idref="t45"/>
+    <child-task idref="t46"/>
+    <child-task idref="t47"/>
+  </task>
+  <task id="t17">
+    <title>Checkpoint 2</title>
+    <type>milestone</type>
+    <completion-percentage>1</completion-percentage>
+    <locked-start-date>2019-05-29T22:59:00.000Z</locked-start-date>
+    <locked-end-date>2019-05-29T22:59:00.000Z</locked-end-date>
+    <start-constraint-date>2019-05-29T22:59:00.000Z</start-constraint-date>
+    <recalculate>effort</recalculate>
+    <fixed-duration>0</fixed-duration>
+    <start-no-earlier-than>2019-05-29T22:59:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t19">
+    <title>Fase de testes</title>
+    <effort>144000</effort>
+    <effort-done>144000</effort-done>
+    <start-constraint-date>2019-06-13T07:00:00.000Z</start-constraint-date>
+    <recalculate>effort</recalculate>
+    <fixed-duration>144000</fixed-duration>
+    <start-no-earlier-than>2019-06-13T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t21">
+    <title>Requisitos</title>
+    <effort>406800</effort>
+    <effort-done>406800</effort-done>
+    <start-constraint-date>2019-02-26T10:00:00.000Z</start-constraint-date>
+    <recalculate>effort</recalculate>
+    <fixed-duration>406800</fixed-duration>
+    <start-no-earlier-than>2019-02-26T10:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t24">
+    <title>Modelação</title>
+    <effort>518400</effort>
+    <effort-done>518400</effort-done>
+    <locked-start-date>2019-03-06T08:00:00.000Z</locked-start-date>
+    <start-constraint-date>2019-03-06T08:00:00.000Z</start-constraint-date>
+    <recalculate>effort</recalculate>
+    <fixed-duration>518400</fixed-duration>
+    <start-no-earlier-than>2019-03-06T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t27">
+    <title>Entrega final</title>
+    <type>milestone</type>
+    <completion-percentage>1</completion-percentage>
+    <locked-start-date>2019-06-20T07:00:00.000Z</locked-start-date>
+    <locked-end-date>2019-06-20T07:00:00.000Z</locked-end-date>
+    <start-constraint-date>2019-06-20T07:00:00.000Z</start-constraint-date>
+    <recalculate>effort</recalculate>
+    <fixed-duration>0</fixed-duration>
+    <start-no-earlier-than>2019-06-20T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t30">
+    <title>Implementação dos grupos de utilizadores</title>
+    <effort>144000</effort>
+    <effort-done>144000</effort-done>
+    <start-constraint-date>2019-04-10T08:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-04-10T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t36">
+    <title>Funcionalidade “Adicionar clube”</title>
+    <effort>144000</effort>
+    <start-constraint-date>2019-04-17T08:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-04-17T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t37">
+    <title>Funcionalidade “Adicionar gestor”</title>
+    <effort>144000</effort>
+    <effort-done>100800</effort-done>
+    <start-constraint-date>2019-04-17T08:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-04-17T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t38">
+    <title>Funcionalidade “Adicionar técnico”</title>
+    <effort>144000</effort>
+    <effort-done>144000</effort-done>
+    <start-constraint-date>2019-04-17T08:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-04-17T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t39">
+    <title>Funcionalidade “Adicionar atleta”</title>
+    <effort>144000</effort>
+    <effort-done>144000</effort-done>
+    <start-constraint-date>2019-04-17T08:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-04-17T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t40">
+    <title>Funcionalidades “Adicionar formação” e “Associar atleta a formação”</title>
+    <effort>144000</effort>
+    <effort-done>144000</effort-done>
+    <start-constraint-date>2019-04-24T08:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-04-24T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t41">
+    <title>Funcionalidade “Adicionar jogo”</title>
+    <effort>230400</effort>
+    <effort-done>230400</effort-done>
+    <start-constraint-date>2019-04-30T08:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-04-30T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t42">
+    <title>API relógio e funcionalidade “Manipular relógio”</title>
+    <effort>144000</effort>
+    <effort-done>144000</effort-done>
+    <start-constraint-date>2019-05-01T08:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-05-01T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t43">
+    <title>Funcionalidade “Registar evento”</title>
+    <effort>288000</effort>
+    <effort-done>288000</effort-done>
+    <start-constraint-date>2019-05-10T08:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-05-10T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t44">
+    <title>Funcionalidade “Consultar estatísticas”</title>
+    <effort>288000</effort>
+    <effort-done>288000</effort-done>
+    <start-constraint-date>2019-05-21T08:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-05-21T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t45">
+    <title>Funcionalidades “Sinalizar e editar evento”</title>
+    <effort>115200</effort>
+    <effort-done>115200</effort-done>
+    <start-constraint-date>2019-05-29T08:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-05-29T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t46">
+    <title>Funcionalidade “Criar novo tipo de evento”</title>
+    <effort>115200</effort>
+    <effort-done>115200</effort-done>
+    <start-constraint-date>2019-05-31T08:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-05-31T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t47">
+    <title>Funcionalidade “Personalizar matriz do campo”</title>
+    <effort>144000</effort>
+    <start-constraint-date>2019-06-06T08:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-06-06T08:00:00.000Z</start-no-earlier-than>
+  </task>
+  <critical-path root="-1" enabled="false" resources="false">
+    <color space="srgb" r="1" g="0.5" b="0.5"/>
+  </critical-path>
+</scenario>

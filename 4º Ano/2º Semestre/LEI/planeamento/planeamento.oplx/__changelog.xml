@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<changelog xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2">
+  <version>2.1</version>
+  <task-change-set user="Vitor Peixoto" date="2019-06-25T22:10:42.953Z" timestamp="2019-06-25T22:10:42.953Z">
+    <change idref="t3" attribute="internalEffortDone" type="real" from="273600" to="435600" resolved="yes"/>
+    <change idref="t17" attribute="percentCompleteForMilestone" type="real" from="0" to="1" resolved="yes"/>
+    <change idref="t19" attribute="internalEffortDone" type="real" from="0" to="144000" resolved="yes"/>
+    <change idref="t27" attribute="percentCompleteForMilestone" type="real" from="0" to="1" resolved="yes"/>
+    <change idref="t30" attribute="internalEffortDone" type="real" from="0" to="144000" resolved="yes"/>
+    <change idref="t37" attribute="internalEffortDone" type="real" from="0" to="100800" resolved="yes"/>
+    <change idref="t38" attribute="internalEffortDone" type="real" from="0" to="144000" resolved="yes"/>
+    <change idref="t39" attribute="internalEffortDone" type="real" from="0" to="144000" resolved="yes"/>
+    <change idref="t40" attribute="internalEffortDone" type="real" from="0" to="144000" resolved="yes"/>
+    <change idref="t41" attribute="internalEffortDone" type="real" from="0" to="230400" resolved="yes"/>
+    <change idref="t42" attribute="internalEffortDone" type="real" from="0" to="144000" resolved="yes"/>
+    <change idref="t43" attribute="internalEffortDone" type="real" from="0" to="288000" resolved="yes"/>
+    <change idref="t44" attribute="internalEffortDone" type="real" from="0" to="288000" resolved="yes"/>
+    <change idref="t45" attribute="internalEffortDone" type="real" from="0" to="115200" resolved="yes"/>
+    <change idref="t46" attribute="internalEffortDone" type="real" from="0" to="115200" resolved="yes"/>
+  </task-change-set>
+</changelog>
