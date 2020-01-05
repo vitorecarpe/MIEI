@@ -1,10 +1,10 @@
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Conta {
-    private int saldo;
+    private double saldo;
     private ReentrantLock lockConta = new ReentrantLock();
 
-    public Conta(int saldo){
+    public Conta(double saldo){
         this.saldo = saldo;
     }
 

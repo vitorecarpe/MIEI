@@ -7,7 +7,6 @@ public class Cliente2 implements Runnable{
 
 	public void run(){
 		banco.transfere(0, 1, 10);
-		banco.fecharConta();
-		
+		banco.fecharConta(0);
 	}
 }

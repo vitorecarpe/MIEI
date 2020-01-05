@@ -17,5 +17,9 @@ public class Main{
 
 		System.out.println("Valor na conta 0: " + b.consultar(0));
 		System.out.println("Valor na conta 1: " + b.consultar(1));
+		System.out.println("Valor na conta 1: " + b.consultar(2));
+		System.out.println("Valor na conta 1: " + b.consultar(3));
+		System.out.println("Valor na conta 1: " + b.consultar(4));
+		System.out.println("Valor na conta 1: " + b.consultar(5));
 	}
 }
