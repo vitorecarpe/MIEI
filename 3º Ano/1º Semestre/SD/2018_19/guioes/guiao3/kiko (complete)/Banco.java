@@ -92,11 +92,22 @@ public class Banco{
 
 	public double somaSaldo(ArrayList<Integer> cs) throws NullPointerException{
 		double total = 0;
+		ArrayList<Integer> contasLocked = new ArrayList(cs.size());
 		this.lockBanco.lock();
+
+		// primeiro é necessario dar lock a todas as contas
 		for(Integer c : cs){
-			total += this.consultar(c);
+			if(contas.containsKey(c)){
+				this.contas.get(c).lock();
+				contasLocked.add(c);
+			}
 		}
 		this.lockBanco.unlock();
+
+		for(int id : contasLocked){
+			total += this.contas.get(id).consultar();
+			this.contas.get(id).unlock();
+		}
 		System.out.println("Total nas contas atm: " + total);
 		return total;
 	}

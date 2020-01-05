@@ -9,10 +9,10 @@ public class Cliente1 implements Runnable{
 
 	public void run(){
 		ArrayList<Integer> contas = new ArrayList<>();
+		contas.add(0);
 		contas.add(1);
 		contas.add(2);
 		contas.add(3);
-		contas.add(4);
 		contas.add(9);
 		banco.somaSaldo(contas);
 
