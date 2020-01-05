@@ -47,7 +47,9 @@ public class Banco{
 		double valor = 0;
 		this.lockBanco.lock();
 		try{
+			this.contas.get(id).lock();
 			valor = this.contas.get(id).consultar();
+			this.contas.get(id).unlock();
 		} catch (NullPointerException np){
 			np.printStackTrace();
 		}
@@ -86,7 +88,16 @@ public class Banco{
 			np.printStackTrace();
 		}
 		this.lockBanco.unlock();
-		
-		
+	}
+
+	public double somaSaldo(ArrayList<Integer> cs) throws NullPointerException{
+		double total = 0;
+		this.lockBanco.lock();
+		for(Integer c : cs){
+			total += this.consultar(c);
+		}
+		this.lockBanco.unlock();
+		System.out.println("Total nas contas atm: " + total);
+		return total;
 	}
 }
