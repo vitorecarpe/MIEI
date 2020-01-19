@@ -1,120 +1,116 @@
+import java.net.Socket;
+
+import jdk.internal.org.jline.utils.InputStreamReader;
+
 public class Shuttle implements Controlador{
-	
-	int npass;
-	int terminal;
-	boolean movimento;
-	ReentrantLock lock;
-	ArrayList<Condition> conds;
+    private int terminal;
+    private int npass;
+    private boolean emAndamento;
+    private ReentrantLock l;
+    private ArrayList<Condition> cond;
+    private Condition minPass;
 
-	public Shuttle(int np, int t, boolean m){
-		npass = np;
-		terminal = t;
-		movimento = m;
-		lock = new ReentrantLock();
-		conds = new ArrayList<>(lock.newCondition());
-		condMinPass = lock.newCondition();
-	}
+    public Shuttle(){
+        this.terminal = 1;
+        this.npass = 0;
+        this.emAndamento = false;
+        this.l = new ReentrantLock();
+        this.cond = new ArrayList<>(this.l.newCondition());
+        this.minPass = this.l.newCondition();
+    }
 
-	void requisita_viagem(int origem, int destino){
-		lock.lock();
-		
-		while((terminal!=origem) ||
-			  (npass<10) ||
-			  (npass>30) ||
-			  (movimento)){
-			conds.get(origem).await();
-		}
-		npass++;
+    void requisita_viagem(int origem, int destino){
+        this.l.lock();
 
-		lock.unlock();
-	}
+        while(origem != this.terminal || this.pass > 30 || this.emAndamento){
+            this.cond.get(origem).await();
+        }
+        this.npass++;
+        this.minPass.signal();
+        this.l.unlock();
+    }
 
-	void espera(int destino){
-		lock.lock();
+    public void espera(int destino){
+        this.l.lock();
 
-		while(terminal!=destino ||
-			  movimento){
-			conds.get(destino).await();
-		}
+        while(destino != this.terminal || this.emAndamento){
+            this.cond.get(destino).await();
+        }
+        this.npass--;
+        this.l.unlock();
+    }
 
-		npass--;
+    public void chegada(){
+        this.l.lock();
+        this.emAndamento = false;
+        this.cond.get(this.terminal).signalAll();
+        this.l.unlock();
+    }
 
-		lock.unlock();
-	}
-
-	void chegada(){
-		lock.lock();
-
-		movimento=false;
-		terminal=(terminal+1)%5;
-		conds.get(terminal).signalAll();
-
-		lock.unlock();
-	}
-
-	void partida(){
-		lock.lock();
-
-		movimento=true;
-
-		lock.unlock();
-	}
+    public void partida(){
+        this.l.lock();
+        while(this.npass < 10) this.minPass.await();
+        this.emAndamento = true;
+        this.l.unlock();
+    }
 }
 
-
-
 public class WorkerShuttle implements Runnable{
-	Controlador shuttle = new Shuttle(0, 1, false);
 
-	public WorkerShuttle(Controlador s){
-		this.shuttle=s;
-	}
+    Shuttle sh; 
+
+    public WorkerShuttle(Shuttle sh){
+        this.sh = sh;
+    }
 
 	public void run(){
 		while(true){
-			partida();
+			shuttle.partida();
 			Thread.sleep(5*60);
-			chegada();
-			Thread.sleep(2*60);
+			shuttle.chegada();
 		}
 	}
 }
 
 public class WorkerClient implements Runnable{
-	Socket sc = new Socket();
+    Socket sc = new Socket(localhost, 5000);
+    Shuttle sh;
 
-	public WorkerClient(Socket s){
-		this.sc = s;
+	public WorkerClient(Socket s, Shuttle sh){
+        this.sc = s;
+        this.sh = sh;
 	}
 
 	public void run(){
-		ObjectInputStream in = ...;
-		ObjectOutputStream out = ...;
+		BufferedReader in = new BufferedReader(new InputStreamReader(sc.getInputStream()));
+		PrintWriter out = new PrintWriter(sc.getOutputStream());
 
-		out.println("Onde se encontra?");
+        out.println("Onde se encontra?");
+        out.flush();
 		String origem = in.readLine();
-		out.println("Para onde pretende viajar?");
+        out.println("Para onde pretende viajar?");
+        out.flush();
 		String destino= in.readLine();
 
 		shuttle.requisita_viagem(origem, destino);
 		shuttle.espera(destino);
 
-		in.close();
-		out.close();
+        sc.shutdownOutput();
+        sc.shutdownInput();
+		sc.close();
 	}
 }
 
 public class Servidor {
 	public static void main(){
 		ServerSocket ss = new ServerSocket(5000);
-		Controlador shuttle = new Shuttle(0,1,false);
+		Shuttle shuttle = new Shuttle();
 
 		new Thread(new WorkerShuttle(shuttle)).start();
 
 		while(true){
 			Socket sc = ss.accept();
-			new Thread(new WorkerClient(sc)).start();
+			new Thread(new WorkerClient(sc, shuttle)).start();
 		}
-
 	}
 }
