@@ -72,4 +72,4 @@ This repository stores all the files and projects developed while taking my cour
   
 * **5th year** ← I'm here!
   - [Project in Software Engineering](http://github.com/diisnc/wanna) - WANNA - Web and Mobile platform for fashion clothing resale based on social networks.
-  - Master's Thesis
+  - [Master's Thesis](http://github.com/vitorecarpe/Thesis) - Building a hybrid recommender engine for [Beevo](http://beevo.com) e-commerce platforms.
